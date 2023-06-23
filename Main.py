@@ -39,7 +39,7 @@ text_MainStartGame = defaultFont.render('START', False, WHITE)
 text_MainLoadGame = defaultFont.render('LOAD', False, WHITE)
 text_MainSetting = defaultFont.render('SETTING', False, WHITE)
 text_MainExit = defaultFont.render('EXIT', False, WHITE)
-text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_ 2020-2023', True, GRAY)
+text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRAY)
 
 def quitGameBtn():
     pygame.quit()
