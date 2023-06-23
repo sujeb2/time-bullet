@@ -13,7 +13,7 @@ isMainMenuScene = True
 print("Reading Images..")
 img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png')
 img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(1280, 720))
-img_gameLogo = pygame.image.load('./src/img/gameicon.png')
+img_gameLogo = pygame.image.load('./src/img/gameicon_placeholder.png')
 
 # 재설정
 print("Initallizing..")
