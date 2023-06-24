@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, math, GameSetting, os
 from tkinter import messagebox
 
 # Color
@@ -53,12 +53,16 @@ try:
     hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png')
 
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
+
+    tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
     print("Loaded.")
-except Exception as e:
-    messagebox.showerror(title='Error occurred', message=e)
+except:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
     print("Error occurred while loading Images.")
     print("Is file even exists?")
-    print(e)
     quitGame()
 
 # 재설정
@@ -71,12 +75,16 @@ try:
     display = pygame.display
     csrImg_rect = csrImg_Crosshair.get_rect()
     pygame.mouse.set_visible(False)
+    tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
+
     print("Initallized.")
-except Exception as e:
-    messagebox.showerror(title='Error occurred', message=e)
+except:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
     print("Error occurred while initallizing game.")
     print("May occurrs because of weird pygame bug lol")
-    print(e)
 
 # SFX / OST
 print("Loading Sounds..")
@@ -90,11 +98,13 @@ try:
     ost_MainMenu = './src/sound/ost/background_ambient1.wav'
 
     print("Loaded.")
-except Exception as e:
-    messagebox.showerror(title='Error occurred', message=e)
+except:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
     print("Error occurred while loading Sound.")
-    print("Is file even exists?")
-    print(e)
+    print("Is file even exists?") # over 100!
     quitGame()
 
 # 폰트및 타이틀 재설정
@@ -109,11 +119,13 @@ try:
     defaultBulletFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 24)
 
     print("Loaded.")
-except Exception as e:
-    messagebox.showerror(title='Error occurred', message=e)
+except:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
     print("Error occurred while reseting font/title.")
     print("May occurrs because of weird pygame bug lol")
-    print(e)
 finally:
     if display.get_caption == '':
         display.set_caption('Caption not set.')
@@ -130,42 +142,91 @@ text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRA
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        print('Loading Player Sprite..')
+        try:
+            self.playerSprite = pygame.transform.rotozoom(pygame.image.load('.\\src\\img\\animations\\entity\\player\\placeholder\\indiv_animation\\player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
+            self.playerPos = pygame.math.Vector2(GameSetting.PLAYER_START_X, GameSetting.PLAYER_START_Y)
+            self.playerSpeed = GameSetting.PLAYER_SPEED
+        except:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+            messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+            print("Error occurred while loading Player Sprite.")
+            print("Is file even exists?")
+            quitGame()
+
+    def userInput(self):
+        self.velo_x = 0
+        self.velo_y = 0
+
+        userInputKey = pygame.key.get_pressed()
+
+        if userInputKey[pygame.K_LEFT]:
+            self.velo_x = -self.playerSpeed
+        if userInputKey[pygame.K_RIGHT]:
+            self.velo_y = self.playerSpeed
+        if userInputKey[pygame.K_UP]:
+            self.velo_y = -self.playerSpeed
+        if userInputKey[pygame.K_DOWN]:
+            self.velo_y = self.playerSpeed
+
+    def playerMove(self):
+        self.playerPos == pygame.math.Vector2(self.velo_x, self.velo_y)
+
+    def playerUpdate(self):
+        self.userInput()
+        self.playerMove()
+
+player = Player()
+
 # 메인
 print("Replaying MainMenuScene..")
 try:
-    #pygame.mixer.music.load(ost_MainMenu)
-    #pygame.mixer.music.set_volume(45)
-    #pygame.mixer.Sound.play()
-
     while isMainMenuScene:
+        inputKey = pygame.key.get_pressed()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 isMainMenuScene = False
                 isMainGameScene = False
 
+        screen.blit(tile_mapDefaultBackground, [0, 0])
+
         # render text
-        screen.blit(text_MainLogoTitle, [200, 300])
-        screen.blit(text_MainStartGame, [200, 342])
-        screen.blit(text_MainLoadGame, [200, 372])
-        screen.blit(text_MainSetting, [200, 402])
-        screen.blit(text_MainExit, [200, 432])
-        screen.blit(text_copyrightTeamName, [200, 465])
+        #screen.blit(text_MainLogoTitle, [200, 300])
+        #screen.blit(text_MainStartGame, [200, 342])
+        #screen.blit(text_MainLoadGame, [200, 372])
+        #screen.blit(text_MainSetting, [200, 402])
+        #screen.blit(text_MainExit, [200, 432])
+        #screen.blit(text_copyrightTeamName, [200, 465])
 
         # render hud
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
-        screen.blit(hud_HealthFull, [100, 20])
+        screen.blit(hud_HealthFull, [100, 20]) # over 200!
         screen.blit(icn_GunSelect_handGun, [30, 60])
         screen.blit(hud_bulletLeft, [66, 60])
         screen.blit(hud_bulletMax, [100, 60])
 
-        pygame.display.flip()
+        # render player
+        screen.blit(player.playerSprite, player.playerPos)
 
+        # Player Movement
+        Player.playerUpdate()
+
+        pygame.display.flip()
         pygame.display.update()
         dt = clock.tick(300) / 700
-except Exception as e:
-    messagebox.showerror(title='Error occurred', message=e)
-    print("Error occurred while replaying mainmenu scene.")
-    print(e)
+except:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
+    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    print("Error occurred while replaying scene.")
+    quitGame()
 
 pygame.quit()
