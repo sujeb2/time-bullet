@@ -1,1 +1,1 @@
-code . --new-window --verbose --log info tunnel
+code . --new-window --log info tunnel
