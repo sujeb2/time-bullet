@@ -1,4 +1,4 @@
-import pygame, GameManager
+import pygame, sys
 from tkinter import messagebox
 
 # Color
@@ -9,6 +9,11 @@ GRAY = (97, 97, 97)
 # bool
 isMainGameScene = False
 isMainMenuScene = True
+
+def quitGame():
+    print("Exiting..")
+    pygame.quit()
+    sys.exit() # to make sure that game is closed.
 
 # Image
 print("Reading Images..")
@@ -23,7 +28,7 @@ except Exception as e:
     print("Error occurred while loading Images.")
     print("Is file even exists?")
     print(e)
-    GameManager.Manager.quitGame()
+    quitGame()
 
 # 재설정
 print("Initallizing..")
@@ -59,12 +64,12 @@ except Exception as e:
     print("Error occurred while loading Sound.")
     print("Is file even exists?")
     print(e)
-    GameManager.Manager.quitGame()
+    quitGame()
 
 # 폰트및 타이틀 재설정
 print("Resetting Font/Title..")
 try:
-    display.set_caption('gamenamehere')
+    display.set_caption('spsroEngine Scene Replayer')
     display.set_icon(img_gameLogo)
 
     # Font
@@ -93,7 +98,7 @@ text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRA
 # 메인
 print("Replaying MainMenuScene..")
 try:
-    pygame.mixer.Sound.play(ost_MainMenuAmbientLoop)
+    pygame.mixer.Sound.play(ost_MainMenuAmbientLoop, loops=-1)
 
     while isMainMenuScene:
         for event in pygame.event.get():
