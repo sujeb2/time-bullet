@@ -1,1 +1,1 @@
-code . --new-window --log info tunnel
+code . --new-window --log info Main.py
