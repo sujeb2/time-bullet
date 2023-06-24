@@ -1,4 +1,4 @@
-import pygame, time, sys
+import pygame, time, sys, GameManager
 from tkinter import messagebox
 
 # Color
@@ -10,12 +10,6 @@ GRAY = (97, 97, 97)
 isMainGameScene = False
 isMainMenuScene = True
 
-def quitGame():
-    print("Exiting..")
-    pygame.quit()
-    # to make sure that game is closed.
-    sys.exit()
-
 # Image
 print("Reading Images..")
 try:
@@ -23,13 +17,13 @@ try:
     img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(1280, 720))
     img_gameLogo = pygame.image.load('./src/img/gameicon_placeholder.png')
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
+    print("Loaded.")
 except Exception as e:
     messagebox.showerror(title='Error occurred', message=e)
     print("Error occurred while loading Images.")
     print("Is file even exists?")
     print(e)
-    quitGame()
-    
+    GameManager.Manager.quitGame()
 
 # 재설정
 print("Initallizing..")
@@ -41,18 +35,43 @@ try:
     display = pygame.display
     csrImg_rect = csrImg_Crosshair.get_rect()
     pygame.mouse.set_visible(False)
+    print("Initallized.")
 except Exception as e:
     messagebox.showerror(title='Error occurred', message=e)
     print("Error occurred while initallizing game.")
     print("May occurrs because of weird pygame bug lol")
     print(e)
 
+# SFX / OST
+print("Loading Sounds..")
+try:
+    # sfx
+    sfx_HandgunFire1 = pygame.mixer.music.load('./src/sound/sfx/handgun/handgun_fire1.wav')
+    sfx_HandgunNoAmmo = pygame.mixer.music.load('./src/sound/sfx/handgun/handgun_noammo.wav')
+    sfx_HandgunReload = pygame.mixer.music.load('./src/sound/sfx/handgun/handgun_reload.wav')
+
+    # ost
+    ost_MainMenuAmbientLoop = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
+    ost_MainMenuAmbientLoop = pygame.mixer.music.set_volume(45)
+    print("Loaded.")
+except Exception as e:
+    messagebox.showerror(title='Error occurred', message=e)
+    print("Error occurred while loading Sound.")
+    print("Is file even exists?")
+    print(e)
+    GameManager.Manager.quitGame()
 
 # 폰트및 타이틀 재설정
 print("Resetting Font/Title..")
 try:
     display.set_caption('gamenamehere')
     display.set_icon(img_gameLogo)
+
+    # Font
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+    defaultCopyrightFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 20)
+
+    print("Loaded.")
 except Exception as e:
     messagebox.showerror(title='Error occurred', message=e)
     print("Error occurred while reseting font/title.")
@@ -61,10 +80,6 @@ except Exception as e:
 finally:
     if display.get_caption == '':
         display.set_caption('Caption not set.')
-
-# Font
-defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
-defaultCopyrightFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 20)
 
 # 텍스트
 print("Resetting text object..")
@@ -78,10 +93,9 @@ text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRA
 # 메인
 print("Replaying MainMenuScene..")
 try:
-    while isMainMenuScene:
-        csrImg_rect.center = pygame.mouse.get_pos() # update custom cursor position
-        #screen.blit(csrImg_Crosshair, pygame.mouse.get_pos)
+    pygame.mixer.Sound.play(ost_MainMenuAmbientLoop)
 
+    while isMainMenuScene:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 isMainMenuScene = False
