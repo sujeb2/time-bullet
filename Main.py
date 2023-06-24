@@ -1,4 +1,4 @@
-import pygame, time, sys, GameManager
+import pygame, GameManager
 from tkinter import messagebox
 
 # Color
