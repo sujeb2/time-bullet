@@ -19,6 +19,7 @@ setup(
                 "LICENSE",
                 "requirements.txt",
                 "src",
+                "GameSetting.py",
             ],
         }
     },

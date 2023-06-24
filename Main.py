@@ -141,6 +141,7 @@ text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRA
 
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
+hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -210,13 +211,14 @@ try:
         screen.blit(hud_HealthFull, [100, 20]) # over 200!
         screen.blit(icn_GunSelect_handGun, [30, 60])
         screen.blit(hud_bulletLeft, [66, 60])
-        screen.blit(hud_bulletMax, [100, 60])
+        screen.blit(hud_bulletMax, [108, 60])
+        screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
         screen.blit(player.playerSprite, player.playerPos)
 
         # Player Movement
-        Player.playerUpdate()
+        #Player.playerUpdate()
 
         pygame.display.flip()
         pygame.display.update()
