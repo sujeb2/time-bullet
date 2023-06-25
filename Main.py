@@ -328,12 +328,17 @@ try:
         screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
-        defaultSpritesGroup.draw(screen)
-        defaultSpritesGroup.update()
+        #defaultSpritesGroup.draw(screen)
+        #defaultSpritesGroup.update()
 
         if GameSetting.SHOW_PLAYERHITBOX == True:
             pygame.draw.rect(screen, 'red', player.PlayerHitBoxRect, width=2)
             pygame.draw.rect(screen, 'yellow', player.rect, width=2)
+        else:
+            pass
+        
+        if GameSetting.SHOW_CURRENTFPS == True:
+            pygame.display.set_caption(f"{clock.get_fps()}")
         else:
             pass
 
