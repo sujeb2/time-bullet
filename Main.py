@@ -161,82 +161,134 @@ class Player(pygame.sprite.Sprite): # main player class
             quitGame()
 
     def playerRotation(self): # player rotation
-        self.mouseCord = pygame.mouse.get_pos()
-        self.x_change_mouse_player = (self.mouseCord[0] - self.PlayerHitBoxRect.centerx)
-        self.y_change_mouse_player = (self.mouseCord[1] - self.PlayerHitBoxRect.centery)
-        self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
-        self.playerSprite = pygame.transform.rotate(self.basePlayerImage, -self.angle)
-        self.rect = self.playerSprite.get_rect(center = self.PlayerHitBoxRect.center)
+        try:
+            self.mouseCord = pygame.mouse.get_pos()
+            self.x_change_mouse_player = (self.mouseCord[0] - self.PlayerHitBoxRect.centerx)
+            self.y_change_mouse_player = (self.mouseCord[1] - self.PlayerHitBoxRect.centery)
+            self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
+            self.playerSprite = pygame.transform.rotate(self.basePlayerImage, -self.angle)
+            self.rect = self.playerSprite.get_rect(center = self.PlayerHitBoxRect.center)
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while rotating player.")
+            print(traceback.format_exc())
+            quitGame()
+
 
     def userInput(self): # player movement
-        self.velo_x = 0
-        self.velo_y = 0
+        try:
+            self.velo_x = 0
+            self.velo_y = 0
 
-        userInputKey = pygame.key.get_pressed()
+            userInputKey = pygame.key.get_pressed()
 
-        if userInputKey[pygame.K_d]:
-            self.velo_x = self.playerSpeed
-        if userInputKey[pygame.K_a]:
-            self.velo_x = -self.playerSpeed
-        if userInputKey[pygame.K_w]:
-            self.velo_y = -self.playerSpeed
-        if userInputKey[pygame.K_s]:
-            self.velo_y = self.playerSpeed
+            if userInputKey[pygame.K_d]:
+                self.velo_x = self.playerSpeed
+            if userInputKey[pygame.K_a]:
+                self.velo_x = -self.playerSpeed
+            if userInputKey[pygame.K_w]:
+                self.velo_y = -self.playerSpeed
+            if userInputKey[pygame.K_s]:
+                self.velo_y = self.playerSpeed
 
-        if self.velo_x != 0 and self.velo_y != 0:
-            self.velo_x /= math.sqrt(2)
-            self.velo_y /= math.sqrt(2)
+            if self.velo_x != 0 and self.velo_y != 0:
+                self.velo_x /= math.sqrt(2)
+                self.velo_y /= math.sqrt(2)
 
-        if pygame.mouse.get_pressed() == (1, 0, 0):
-            self.playerShoot = True
-            self.isPlayerShooting()
-        else:
-            self.playerShoot = False
+            if pygame.mouse.get_pressed() == (1, 0, 0):
+                self.playerShoot = True
+                self.isPlayerShooting()
+            else:
+                self.playerShoot = False
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while checking user input.")
+            print(traceback.format_exc())
+            quitGame()
 
     def playerMove(self): # actual movement
-        self.playerPos += pygame.math.Vector2(self.velo_x, self.velo_y)
-        self.PlayerHitBoxRect.center = self.playerPos
-        self.rect.center = self.PlayerHitBoxRect.center
+        try:
+            self.playerPos += pygame.math.Vector2(self.velo_x, self.velo_y)
+            self.PlayerHitBoxRect.center = self.playerPos
+            self.rect.center = self.PlayerHitBoxRect.center
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while moving player.")
+            print(traceback.format_exc())
+            quitGame()
 
     def isPlayerShooting(self):
-        if self.shootCooldown == 0:
-            self.shootCooldown = GameSetting.PLAYER_SHOOT_COOLDOWN
-            spawnBulletPos = self.playerPos
-            self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
-            bulletSpriteGroup.add(self.bullet)
-            defaultSpritesGroup.add(self.bullet)
+        try:
+            if self.shootCooldown == 0:
+                self.shootCooldown = GameSetting.PLAYER_SHOOT_COOLDOWN
+                spawnBulletPos = self.playerPos
+                self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
+                bulletSpriteGroup.add(self.bullet)
+                defaultSpritesGroup.add(self.bullet)
+            else:
+                pass
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while checking player is shooting.")
+            print(traceback.format_exc())
+            quitGame()
 
     def playerUpdate(self): # player update
-        self.userInput()
-        self.playerMove()
-        self.playerRotation()
+        try:
+            self.userInput()
+            self.playerMove()
+            self.playerRotation()
 
-        if self.shootCooldown > 0:
-            self.shootCooldown -= 1
+            if self.shootCooldown > 0:
+                self.shootCooldown -= 1
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while updating player.")
+            print(traceback.format_exc())
+            quitGame()
 
 class Bullet(pygame.sprite.Sprite): # Bullet object
     def __init__(self, x, y, angle):
         super().__init__()
-        self.bulletImg = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
-        self.bulletImg = pygame.transform.rotozoom(self.bulletImg, 0, GameSetting.BULLET_VIEW_SIZE)
-        self.rect = self.bulletImg.get_rect()
-        self.rect.center = (x, y)
-        self.bulletX = x
-        self.bulletY = y
-        self.angle = angle
-        self.bulletSpeed = GameSetting.BULLET_SHOOT_SPEED
-        self.velo_x = math.cos(self.angle * (2*math.pi/360)) * self.bulletSpeed
-        self.velo_y = math.sin(self.angle * (2*math.pi/360)) * self.bulletSpeed
+        print("Initallizing..")
+        try:
+            self.bulletImg = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
+            self.bulletImg = pygame.transform.rotozoom(self.bulletImg, 0, GameSetting.BULLET_VIEW_SIZE)
+            self.rect = self.bulletImg.get_rect()
+            self.rect.center = (x, y)
+            self.bulletX = x
+            self.bulletY = y
+            self.angle = angle
+            self.bulletSpeed = GameSetting.BULLET_SHOOT_SPEED
+            self.velo_x = math.cos(self.angle * (2*math.pi/360)) * self.bulletSpeed
+            self.velo_y = math.sin(self.angle * (2*math.pi/360)) * self.bulletSpeed
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while initallizing bullet object.")
+            print(traceback.format_exc())
+            quitGame()
 
     def bulletMovement(self):
-        self.bulletX += self.velo_x
-        self.bulletY += self.velo_y
+        try:
+            self.bulletX += self.velo_x
+            self.bulletY += self.velo_y
 
-        self.rect.x = int(self.bulletX)
-        self.rect.y = int(self.bulletY)
+            self.rect.x = int(self.bulletX)
+            self.rect.y = int(self.bulletY)
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while moving bullet.")
+            print(traceback.format_exc())
+            quitGame()
 
     def bulletUpdate(self):
-        self.bulletMovement()
+        try:
+            self.bulletMovement()
+        except:
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+            print("Error occurred while updating bullet object.")
+            print(traceback.format_exc())
+            quitGame()
 
 player = Player()
 
@@ -276,7 +328,7 @@ try:
         screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
-        defaultSpritesGroup.draw(player.playerSprite, screen)
+        defaultSpritesGroup.draw(screen)
         defaultSpritesGroup.update()
 
         if GameSetting.SHOW_PLAYERHITBOX == True:
