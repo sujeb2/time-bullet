@@ -307,6 +307,8 @@ try:
             if event.type == pygame.QUIT:
                 isMainMenuScene = False
                 isMainGameScene = False
+                pygame.quit()
+                exit()
 
         screen.blit(tile_mapDefaultBackground, [0, 0])
 
@@ -328,7 +330,7 @@ try:
         screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
-        #defaultSpritesGroup.draw(screen)
+        defaultSpritesGroup.draw(screen)
         #defaultSpritesGroup.update()
 
         if GameSetting.SHOW_PLAYERHITBOX == True:
