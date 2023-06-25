@@ -1,4 +1,6 @@
-import pygame, sys, math, GameSetting, os
+import pygame, sys, math, GameSetting, os, traceback
+
+from pygame import *
 from tkinter import messagebox
 
 # Color
@@ -15,12 +17,16 @@ MaxHandgunBullet = 255
 MaxMachineGunBullet = 255
 MaxHandgunLoadBullet = 18
 MaxMachinegunLoadBullet = 75
+CurrentHandgunBulletLeft = 18
+CurrentMachinegunBulletLeft = 75
 
 # str
 str_MaxHandgunBullet = str(MaxHandgunBullet)
 str_MaxMachineGunBullet = str(MaxMachineGunBullet)
 str_MaxHandgunLoadBullet = str(MaxHandgunLoadBullet)
 str_MaxMachinegunLoadBullet = str(MaxMachinegunLoadBullet)
+str_CurrntHandgunBulletLeft = str(CurrentHandgunBulletLeft)
+str_CurrentMachinegunBulletLeft = str(CurrentMachinegunBulletLeft)
 str_SceneName = ''
 
 def quitGame():
@@ -58,10 +64,7 @@ try:
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
     print("Loaded.")
 except:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while loading Images.")
     print("Is file even exists?")
     quitGame()
@@ -79,10 +82,7 @@ try:
 
     print("Initallized.")
 except:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while initallizing game.")
     print("May occurrs because of weird pygame bug lol")
 
@@ -99,10 +99,7 @@ try:
 
     print("Loaded.")
 except:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while loading Sound.")
     print("Is file even exists?") # over 100!
     quitGame()
@@ -120,10 +117,7 @@ try:
 
     print("Loaded.")
 except:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while reseting font/title.")
     print("May occurrs because of weird pygame bug lol")
 finally:
@@ -139,7 +133,7 @@ text_MainSetting = defaultFont.render('SETTING', False, WHITE)
 text_MainExit = defaultFont.render('EXIT', False, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRAY)
 
-hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
+hud_bulletLeft = defaultBulletFont.render(str_CurrntHandgunBulletLeft, False, WHITE)
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 
@@ -155,23 +149,24 @@ class Player(pygame.sprite.Sprite): # main player class
             self.rect = self.PlayerHitBoxRect.copy()
             self.playerSpeed = GameSetting.PLAYER_SPEED
             self.playerDefaultDashSpeed = GameSetting.PLAYER_DASH_SPEED
+            self.playerShoot = False
+            self.shootCooldown = 0
+            self.currentHandgunLeft = CurrentHandgunBulletLeft
+            self.currentMachinegunLeft = CurrentMachinegunBulletLeft
             print("Loaded.")
         except:
-            exc_type, exc_obj, exc_tb = sys.exc_info()
-            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-            print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-            messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
             print("Error occurred while loading Player Sprite.")
             print("Is file even exists?")
             quitGame()
 
     def playerRotation(self): # player rotation
-        self.MouseCord = pygame.mouse.get_pos()
-        self.playerMouseX = (self.MouseCord[0] - self.PlayerHitBoxRect.centerx)
-        self.playerMouseY = (self.MouseCord[1] - self.PlayerHitBoxRect.centery)
-        self.playerAngle = math.degrees(math.atan2(self.playerMouseY, self.playerMouseX))
-        self.playerImg = pygame.transform.rotate(self.basePlayerImage, -self.playerAngle)
-        self.rect = self.playerImg .get_rect(center = self.PlayerHitBoxRect.center)
+        self.mouseCord = pygame.mouse.get_pos()
+        self.x_change_mouse_player = (self.mouseCord[0] - self.PlayerHitBoxRect.centerx)
+        self.y_change_mouse_player = (self.mouseCord[1] - self.PlayerHitBoxRect.centery)
+        self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
+        self.playerSprite = pygame.transform.rotate(self.basePlayerImage, -self.angle)
+        self.rect = self.playerSprite.get_rect(center = self.PlayerHitBoxRect.center)
 
     def userInput(self): # player movement
         self.velo_x = 0
@@ -188,18 +183,67 @@ class Player(pygame.sprite.Sprite): # main player class
         if userInputKey[pygame.K_s]:
             self.velo_y = self.playerSpeed
 
+        if self.velo_x != 0 and self.velo_y != 0:
+            self.velo_x /= math.sqrt(2)
+            self.velo_y /= math.sqrt(2)
+
+        if pygame.mouse.get_pressed() == (1, 0, 0):
+            self.playerShoot = True
+            self.isPlayerShooting()
+        else:
+            self.playerShoot = False
+
     def playerMove(self): # actual movement
         self.playerPos += pygame.math.Vector2(self.velo_x, self.velo_y)
         self.PlayerHitBoxRect.center = self.playerPos
         self.rect.center = self.PlayerHitBoxRect.center
 
+    def isPlayerShooting(self):
+        if self.shootCooldown == 0:
+            self.shootCooldown = GameSetting.PLAYER_SHOOT_COOLDOWN
+            spawnBulletPos = self.playerPos
+            self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
+            bulletSpriteGroup.add(self.bullet)
+            defaultSpritesGroup.add(self.bullet)
+
     def playerUpdate(self): # player update
         self.userInput()
         self.playerMove()
         self.playerRotation()
-        self.shoot()
+
+        if self.shootCooldown > 0:
+            self.shootCooldown -= 1
+
+class Bullet(pygame.sprite.Sprite): # Bullet object
+    def __init__(self, x, y, angle):
+        super().__init__()
+        self.bulletImg = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
+        self.bulletImg = pygame.transform.rotozoom(self.bulletImg, 0, GameSetting.BULLET_VIEW_SIZE)
+        self.rect = self.bulletImg.get_rect()
+        self.rect.center = (x, y)
+        self.bulletX = x
+        self.bulletY = y
+        self.angle = angle
+        self.bulletSpeed = GameSetting.BULLET_SHOOT_SPEED
+        self.velo_x = math.cos(self.angle * (2*math.pi/360)) * self.bulletSpeed
+        self.velo_y = math.sin(self.angle * (2*math.pi/360)) * self.bulletSpeed
+
+    def bulletMovement(self):
+        self.bulletX += self.velo_x
+        self.bulletY += self.velo_y
+
+        self.rect.x = int(self.bulletX)
+        self.rect.y = int(self.bulletY)
+
+    def bulletUpdate(self):
+        self.bulletMovement()
 
 player = Player()
+
+defaultSpritesGroup = pygame.sprite.Group()
+bulletSpriteGroup = pygame.sprite.Group()
+
+defaultSpritesGroup.add(player)
 
 # 메인
 print(f"Replaying {str_SceneName}..")
@@ -232,20 +276,22 @@ try:
         screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
-        screen.blit(player.playerSprite, player.rect)
+        defaultSpritesGroup.draw(player.playerSprite, screen)
+        defaultSpritesGroup.update()
 
-        # Player Movement
-        player.playerUpdate()
+        if GameSetting.SHOW_PLAYERHITBOX == True:
+            pygame.draw.rect(screen, 'red', player.PlayerHitBoxRect, width=2)
+            pygame.draw.rect(screen, 'yellow', player.rect, width=2)
+        else:
+            pass
 
         pygame.display.flip()
         pygame.display.update()
         dt = clock.tick(60)
 except:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print(f"{exc_type}, {exc_obj}, {exc_tb}, {fname}")
-    messagebox.showerror(title='Error occurred', message=f'{exc_type},\nObject: {exc_obj},\nLine: {exc_tb},\nType:{fname}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while replaying scene.")
+    print(traceback.format_exc())
     quitGame()
 
 pygame.quit()
