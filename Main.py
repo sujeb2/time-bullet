@@ -21,6 +21,7 @@ str_MaxHandgunBullet = str(MaxHandgunBullet)
 str_MaxMachineGunBullet = str(MaxMachineGunBullet)
 str_MaxHandgunLoadBullet = str(MaxHandgunLoadBullet)
 str_MaxMachinegunLoadBullet = str(MaxMachinegunLoadBullet)
+str_SceneName = ''
 
 def quitGame():
     print("Exiting..")
@@ -73,8 +74,7 @@ try:
     clock = pygame.time.Clock()
     dt = 0
     display = pygame.display
-    csrImg_rect = csrImg_Crosshair.get_rect()
-    pygame.mouse.set_visible(False)
+    pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
 
     print("Initallized.")
@@ -143,14 +143,19 @@ hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 
-class Player(pygame.sprite.Sprite):
+class Player(pygame.sprite.Sprite): # main player class
     def __init__(self):
         super().__init__()
         print('Loading Player Sprite..')
         try:
-            self.playerSprite = pygame.transform.rotozoom(pygame.image.load('.\\src\\img\\animations\\entity\\player\\placeholder\\indiv_animation\\player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
             self.playerPos = pygame.math.Vector2(GameSetting.PLAYER_START_X, GameSetting.PLAYER_START_Y)
+            self.playerSprite = pygame.transform.rotozoom(pygame.image.load('.\\src\\img\\animations\\entity\\player\\placeholder\\indiv_animation\\player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
+            self.basePlayerImage = self.playerSprite
+            self.PlayerHitBoxRect = self.basePlayerImage.get_rect(center = self.playerPos)
+            self.rect = self.PlayerHitBoxRect.copy()
             self.playerSpeed = GameSetting.PLAYER_SPEED
+            self.playerDefaultDashSpeed = GameSetting.PLAYER_DASH_SPEED
+            print("Loaded.")
         except:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -160,34 +165,46 @@ class Player(pygame.sprite.Sprite):
             print("Is file even exists?")
             quitGame()
 
-    def userInput(self):
+    def playerRotation(self): # player rotation
+        self.MouseCord = pygame.mouse.get_pos()
+        self.playerMouseX = (self.MouseCord[0] - self.PlayerHitBoxRect.centerx)
+        self.playerMouseY = (self.MouseCord[1] - self.PlayerHitBoxRect.centery)
+        self.playerAngle = math.degrees(math.atan2(self.playerMouseY, self.playerMouseX))
+        self.playerImg = pygame.transform.rotate(self.basePlayerImage, -self.playerAngle)
+        self.rect = self.playerImg .get_rect(center = self.PlayerHitBoxRect.center)
+
+    def userInput(self): # player movement
         self.velo_x = 0
         self.velo_y = 0
 
         userInputKey = pygame.key.get_pressed()
 
-        if userInputKey[pygame.K_LEFT]:
+        if userInputKey[pygame.K_d]:
+            self.velo_x = self.playerSpeed
+        if userInputKey[pygame.K_a]:
             self.velo_x = -self.playerSpeed
-        if userInputKey[pygame.K_RIGHT]:
-            self.velo_y = self.playerSpeed
-        if userInputKey[pygame.K_UP]:
+        if userInputKey[pygame.K_w]:
             self.velo_y = -self.playerSpeed
-        if userInputKey[pygame.K_DOWN]:
+        if userInputKey[pygame.K_s]:
             self.velo_y = self.playerSpeed
 
-    def playerMove(self):
-        self.playerPos == pygame.math.Vector2(self.velo_x, self.velo_y)
+    def playerMove(self): # actual movement
+        self.playerPos += pygame.math.Vector2(self.velo_x, self.velo_y)
+        self.PlayerHitBoxRect.center = self.playerPos
+        self.rect.center = self.PlayerHitBoxRect.center
 
-    def playerUpdate(self):
+    def playerUpdate(self): # player update
         self.userInput()
         self.playerMove()
+        self.playerRotation()
+        self.shoot()
 
 player = Player()
 
 # 메인
-print("Replaying MainMenuScene..")
+print(f"Replaying {str_SceneName}..")
 try:
-    while isMainMenuScene:
+    while isMainMenuScene: # replay scene
         inputKey = pygame.key.get_pressed()
 
         for event in pygame.event.get():
@@ -215,14 +232,14 @@ try:
         screen.blit(hud_bulletSlash, [95, 60])
 
         # render player
-        screen.blit(player.playerSprite, player.playerPos)
+        screen.blit(player.playerSprite, player.rect)
 
         # Player Movement
-        #Player.playerUpdate()
+        player.playerUpdate()
 
         pygame.display.flip()
         pygame.display.update()
-        dt = clock.tick(300) / 700
+        dt = clock.tick(60)
 except:
     exc_type, exc_obj, exc_tb = sys.exc_info()
     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
