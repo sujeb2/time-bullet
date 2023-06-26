@@ -277,7 +277,7 @@ try:
 
         # debug
         if GameSetting.SHOW_PLAYERHITBOX == True:
-            pygame.draw.rect(screen, 'red', player.PlayerHitBoxRect, width=2)
+            pygame.draw.rect(screen, 'red', player.hitbox_rect, width=2)
             pygame.draw.rect(screen, 'yellow', player.rect, width=2)
         else:
             pass
