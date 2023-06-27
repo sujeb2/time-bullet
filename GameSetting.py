@@ -1,7 +1,7 @@
 # Setup
 WIDTH = 1280
 HEIGHT = 720
-DEF_FPS = 1000
+DEF_FPS = 60
 
 # Player Setting
 PLAYER_START_X = 0
