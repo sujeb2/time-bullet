@@ -1,5 +1,6 @@
 import pygame, sys, math, GameSetting, time, traceback
 from tkinter import messagebox
+from pytmx.util_pygame import load_pygame
 
 # Color
 WHITE = (255, 255, 255)
@@ -15,6 +16,8 @@ MaxHandgunBullet = 255
 MaxMachineGunBullet = 255
 MaxHandgunLoadBullet = 18
 MaxMachinegunLoadBullet = 75
+LoadedHandgunBullet = 18
+LoadedMachineBullet = 75
 
 # str
 str_MaxHandgunBullet = str(MaxHandgunBullet)
@@ -74,6 +77,7 @@ try:
     display = pygame.display
     pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
+    print(f'GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS},\n{GameSetting.SHOW_PLAYERHITBOX}')
 
     print("Initallized.")
 except:
@@ -118,7 +122,7 @@ except:
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while reseting font/title.")
     print("May occurrs because of weird pygame bug lol")
-finally:
+finally: 
     if display.get_caption == '':
         display.set_caption('Caption not set.')
 
@@ -254,18 +258,10 @@ try:
 
         screen.blit(tile_mapDefaultBackground, [0, 0])
 
-        # render text
-        #screen.blit(text_MainLogoTitle, [200, 300])
-        #screen.blit(text_MainStartGame, [200, 342])
-        #screen.blit(text_MainLoadGame, [200, 372])
-        #screen.blit(text_MainSetting, [200, 402])
-        #screen.blit(text_MainExit, [200, 432])
-        #screen.blit(text_copyrightTeamName, [200, 465])
-
         # render hud
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
-        screen.blit(hud_HealthFull, [100, 20]) # over 200!
+        screen.blit(hud_HealthFull, [100, 20])
         screen.blit(icn_GunSelect_handGun, [30, 60])
         screen.blit(hud_bulletLeft, [66, 60])
         screen.blit(hud_bulletMax, [108, 60])
