@@ -149,6 +149,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.hitbox_rect.copy()
         self.speed = GameSetting.PLAYER_SPEED
         self.shoot = False
+        self.isDashing = False
         self.shoot_cooldown = 0
         self.gunBarrelOffset = pygame.math.Vector2(GameSetting.GUN_OFFSET_X, GameSetting.GUN_OFFSET_Y)
        
@@ -161,7 +162,6 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
         self.rect = self.image.get_rect(center = self.hitbox_rect.center)
        
-
     def user_input(self):
         self.velocity_x = 0
         self.velocity_y = 0
@@ -181,11 +181,16 @@ class Player(pygame.sprite.Sprite):
             self.velocity_x /= math.sqrt(2)
             self.velocity_y /= math.sqrt(2)
 
-        if pygame.mouse.get_pressed() == (1, 0, 0) or keys[pygame.K_SPACE]:
+        if pygame.mouse.get_pressed() == (1, 0, 0):
             self.shoot = True
             self.is_shooting()
         else:
             self.shoot = False
+
+        if keys[pygame.K_SPACE]:
+            self.isDashing = True
+        else:
+            self.isDashing = False
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -284,7 +289,7 @@ try:
             pass
 
         pygame.display.update()
-        dt = clock.tick(60)
+        dt = clock.tick(GameSetting.DEF_FPS)
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
