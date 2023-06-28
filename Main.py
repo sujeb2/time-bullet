@@ -1,6 +1,8 @@
-import pygame, sys, math, GameSetting, time, traceback
+import pygame, sys, math, GameSetting, time, traceback, os, LevelData
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
+from LevelSetting import *
+from Level import Level
 
 # Color
 WHITE = (255, 255, 255)
@@ -73,11 +75,12 @@ try:
     pygame.init()
     screen = pygame.display.set_mode((1280, 720))
     clock = pygame.time.Clock()
+    level = Level(LevelData.mp_tutorial, screen)
     dt = 0
     display = pygame.display
     pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
-    print(f'GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS},\n{GameSetting.SHOW_PLAYERHITBOX}')
+    print(f'GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
 
     print("Initallized.")
 except:
@@ -261,7 +264,7 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
 
-        screen.blit(tile_mapDefaultBackground, [0, 0])
+        level.run()
 
         # render hud
         screen.blit(hud_HealthFull, [30, 20])
@@ -275,13 +278,6 @@ try:
         # render player
         allSpritesGroup.draw(screen)
         allSpritesGroup.update()
-
-        # debug
-        if GameSetting.SHOW_PLAYERHITBOX == True:
-            pygame.draw.rect(screen, 'red', player.hitbox_rect, width=2)
-            pygame.draw.rect(screen, 'yellow', player.rect, width=2)
-        else:
-            pass
         
         if GameSetting.SHOW_CURRENTFPS == True:
             pygame.display.set_caption(f"FPS: {clock.get_fps()}")
