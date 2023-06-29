@@ -3,6 +3,7 @@ from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from LevelSetting import *
 from Level import Level
+from Title import titleManager
 
 # Color
 WHITE = (255, 255, 255)
@@ -278,6 +279,8 @@ try:
         # render player
         allSpritesGroup.draw(screen)
         allSpritesGroup.update()
+
+        Title.createTitle('SCENE I', 'The End', 0, 0)
         
         if GameSetting.SHOW_CURRENTFPS == True:
             pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -290,6 +293,7 @@ except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print("Error occurred while replaying scene.")
+    print(f'{traceback.format_exc()}')
     quitGame()
 
 pygame.quit()
