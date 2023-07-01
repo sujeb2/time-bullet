@@ -97,7 +97,7 @@ except:
     print(f"ERROR: Is file even exists?{bcolors.ENDC}")
     quitGame()
 
-# 재설정
+# game init
 print("INFO: Initallizing..")
 try:
     pygame.init()
@@ -136,7 +136,7 @@ except:
     print(f"ERROR: Is file even exists?{bcolors.ENDC}") # over 100!
     quitGame()
 
-# 폰트및 타이틀 재설정
+# font setup
 print("INFO: Resetting Font/Title..")
 try:
     display.set_caption('spsroEngine Scene Replayer')
