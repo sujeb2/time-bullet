@@ -84,7 +84,7 @@ except:
 print("INFO: Initallizing..")
 try:
     pygame.init()
-    screen = pygame.display.set_mode((1280, 720))
+    screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT))
     clock = pygame.time.Clock()
     level = Level(LevelData.mp_tutorial, screen)
     dt = 0
