@@ -3,7 +3,6 @@ from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from LevelSetting import *
 from Level import Level
-from Title import titleManager
 
 # Color
 WHITE = (255, 255, 255)
@@ -29,13 +28,24 @@ str_MaxHandgunLoadBullet = str(MaxHandgunLoadBullet)
 str_MaxMachinegunLoadBullet = str(MaxMachinegunLoadBullet)
 str_SceneName = ''
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def quitGame():
-    print("Exiting..")
+    print("INFO: Exiting..")
     pygame.quit()
     sys.exit() # to make sure that game is closed.
 
 # Image
-print("Reading Images..")
+print("INFO: Reading Images..")
 try:
     img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png')
     img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(1280, 720))
@@ -62,16 +72,16 @@ try:
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
 
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
-    print("Loaded.")
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print("Error occurred while loading Images.")
-    print("Is file even exists?")
+    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Images.")
+    print(f"ERROR: Is file even exists?{bcolors.ENDC}")
     quitGame()
 
 # 재설정
-print("Initallizing..")
+print("INFO: Initallizing..")
 try:
     pygame.init()
     screen = pygame.display.set_mode((1280, 720))
@@ -81,17 +91,17 @@ try:
     display = pygame.display
     pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
-    print(f'GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
+    print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
 
-    print("Initallized.")
+    print(f"{bcolors.OKGREEN}SUCCESS: Initallized.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print("Error occurred while initallizing game.")
-    print("May occurrs because of weird pygame bug lol")
+    print(f"{bcolors.FAIL}ERROR: Error occurred while initallizing game.")
+    print(f"ERROR: May occurrs because of weird pygame bug lol{bcolors.ENDC}")
 
 # SFX / OST
-print("Loading Sounds..")
+print("INFO: Loading Sounds..")
 try:
     # sfx
     sfx_Handgun = ['./src/sound/sfx/handgun/handgun_fire1.wav', './src/sound/sfx/handgun/handgun_noammo.wav', './src/sound/sfx/handgun/handgun_reload.wav']
@@ -101,16 +111,16 @@ try:
     # ost
     ost_MainMenu = './src/sound/ost/background_ambient1.wav'
 
-    print("Loaded.")
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print("Error occurred while loading Sound.")
-    print("Is file even exists?") # over 100!
+    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Sound.")
+    print(f"ERROR: Is file even exists?{bcolors.ENDC}") # over 100!
     quitGame()
 
 # 폰트및 타이틀 재설정
-print("Resetting Font/Title..")
+print("INFO: Resetting Font/Title..")
 try:
     display.set_caption('spsroEngine Scene Replayer')
     display.set_icon(img_gameLogo)
@@ -119,19 +129,21 @@ try:
     defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
     defaultCopyrightFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 20)
     defaultBulletFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 24)
+    mainTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 25)
+    subTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 15)
 
-    print("Loaded.")
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print("Error occurred while reseting font/title.")
-    print("May occurrs because of weird pygame bug lol")
+    print(f"{bcolors.FAIL}ERROR: Error occurred while reseting font/title.")
+    print(f"ERROR: May occurrs because of weird pygame bug lol{bcolors.ENDC}")
 finally: 
     if display.get_caption == '':
         display.set_caption('Caption not set.')
 
 # 텍스트
-print("Resetting text object..")
+print("INFO: Resetting text object..")
 text_MainLogoTitle = defaultFont.render('게임이름을여기에입력', True, WHITE)
 text_MainStartGame = defaultFont.render('START', False, WHITE)
 text_MainLoadGame = defaultFont.render('LOAD', False, WHITE)
@@ -143,12 +155,20 @@ hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 
+def checkFps():
+    if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
+        pass
+    else:
+        print(f"{bcolors.WARNING}WARNING: FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
+        print(f"WARNING: This may 'unplayable' for certain players.{bcolors.ENDC}")
+
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.pos = pygame.math.Vector2(GameSetting.PLAYER_START_X, GameSetting.PLAYER_START_Y)
         self.image = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
         self.base_player_image = self.image
+        self.playerShootFrame = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame2.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
         self.hitbox_rect = self.base_player_image.get_rect(center = self.pos)
         self.rect = self.hitbox_rect.copy()
         self.speed = GameSetting.PLAYER_SPEED
@@ -198,6 +218,7 @@ class Player(pygame.sprite.Sprite):
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
+            self.base_player_image = self.playerShootFrame
             self.shoot_cooldown = GameSetting.BULLET_COOLDOWN
             spawnBulletPos = self.pos + self.gunBarrelOffset.rotate(self.angle)
             self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
@@ -205,6 +226,7 @@ class Player(pygame.sprite.Sprite):
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
+            self.base_player_image = self.image
 
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
@@ -255,7 +277,7 @@ bulletGroup = pygame.sprite.Group()
 allSpritesGroup.add(player)
 
 # 메인
-print(f"Replaying {str_SceneName}..")
+print(f"INFO: Replaying {str_SceneName}..")
 try:
     while isMainMenuScene: # replay scene
         inputKey = pygame.key.get_pressed()
@@ -279,21 +301,21 @@ try:
         # render player
         allSpritesGroup.draw(screen)
         allSpritesGroup.update()
-
-        Title.createTitle('SCENE I', 'The End', 0, 0)
         
         if GameSetting.SHOW_CURRENTFPS == True:
             pygame.display.set_caption(f"FPS: {clock.get_fps()}")
         else:
             pass
 
+        checkFps()
+
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
 except:
     print(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print("Error occurred while replaying scene.")
-    print(f'{traceback.format_exc()}')
+    print(f"{bcolors.FAIL}Error occurred while replaying scene.")
+    print(f'{traceback.format_exc()}{bcolors.ENDC}')
     quitGame()
 
 pygame.quit()

@@ -21,17 +21,21 @@
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx": {
-            "scale": 3,
-            "selectedLayer": 1,
+            "scale": 4,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 961.6666666666665,
-                "y": 799.6666666666666
+                "x": 685.75,
+                "y": 872.25
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 11
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx": {
             "dynamicWrapping": false,
@@ -73,11 +77,13 @@
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx"
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx"
     ],
     "project": "hacknslash.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
