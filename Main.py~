@@ -354,7 +354,7 @@ try:
         else:
             pass
 
-        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+        if GameSetting.SHOW_CURRENTFPS_TOSCREEN = True:
             screen.blit(debug_showFps, [0, 0])
         else:
             pass
