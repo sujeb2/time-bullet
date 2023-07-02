@@ -314,7 +314,7 @@ def killPlayer():
         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 
-# 메인
+# main
 print(f"INFO: Replaying {str_SceneName}..")
 try:
     while isMainMenuScene: # replay scene
@@ -336,8 +336,6 @@ try:
                 isMainGameScene = False
 
         level.run()
-
-        # render hud
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
         screen.blit(hud_HealthFull, [100, 20])
