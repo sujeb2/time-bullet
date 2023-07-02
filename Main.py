@@ -168,9 +168,9 @@ text_MainSetting = defaultFont.render('SETTING', True, WHITE)
 text_MainExit = defaultFont.render('EXIT', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRAY)
 
-hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
-hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, True, WHITE)
-hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
+hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
+hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
+hud_bulletSlash = defaultBulletFont.render('/', False, WHITE)
 
 debug_showFps = defaultFont.render(str(clock.get_fps()), False, WHITE)
 
@@ -246,6 +246,7 @@ class Player(pygame.sprite.Sprite):
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
+            time.sleep(1)
             self.base_player_image = self.image
 
     def move(self):

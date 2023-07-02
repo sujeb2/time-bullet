@@ -246,6 +246,7 @@ class Player(pygame.sprite.Sprite):
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
+            time.sleep(1)
             self.base_player_image = self.image
 
     def move(self):
@@ -354,7 +355,7 @@ try:
         else:
             pass
 
-        if GameSetting.SHOW_CURRENTFPS_TOSCREEN = True:
+        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
             screen.blit(debug_showFps, [0, 0])
         else:
             pass
