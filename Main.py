@@ -159,7 +159,7 @@ finally:
     if display.get_caption == '':
         display.set_caption('Caption not set.')
 
-# 텍스트
+# font reset
 print("INFO: Resetting text object..")
 text_MainLogoTitle = defaultFont.render('게임이름을여기에입력', True, WHITE)
 text_MainStartGame = defaultFont.render('START', True, WHITE)
