@@ -1,4 +1,4 @@
-import pygame, sys, math, GameSetting, time, traceback, os, LevelData
+import pygame, sys, math, GameSetting, time, traceback, os, LevelData, json
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from LevelSetting import *
@@ -28,6 +28,14 @@ str_MaxHandgunLoadBullet = str(MaxHandgunLoadBullet)
 str_MaxMachinegunLoadBullet = str(MaxMachinegunLoadBullet)
 str_SceneName = ''
 
+data = {
+    'mxHandgunBullet': MaxHandgunBullet,
+    'crtHandgunBullet': LoadedHandgunBullet,
+    'crtScene': str_SceneName,
+    'playerX': 0,
+    'playerY': 0
+}
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -38,6 +46,15 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+print("INFO: Reading save file..")
+try:
+    with open('.\\src\\save\\0\\playerSaveData.json') as svFile:
+        data = json.load(svFile)
+    svFile.close()
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+except:
+    print(f"")
 
 def quitGame():
     print("INFO: Exiting..")
@@ -145,14 +162,14 @@ finally:
 # 텍스트
 print("INFO: Resetting text object..")
 text_MainLogoTitle = defaultFont.render('게임이름을여기에입력', True, WHITE)
-text_MainStartGame = defaultFont.render('START', False, WHITE)
-text_MainLoadGame = defaultFont.render('LOAD', False, WHITE)
-text_MainSetting = defaultFont.render('SETTING', False, WHITE)
-text_MainExit = defaultFont.render('EXIT', False, WHITE)
+text_MainStartGame = defaultFont.render('START', True, WHITE)
+text_MainLoadGame = defaultFont.render('LOAD', True, WHITE)
+text_MainSetting = defaultFont.render('SETTING', True, WHITE)
+text_MainExit = defaultFont.render('EXIT', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRAY)
 
-hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
-hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
+hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
+hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, True, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 
 def checkFps():
@@ -160,7 +177,8 @@ def checkFps():
         pass
     else:
         print(f"{bcolors.WARNING}WARNING: FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
-        print(f"WARNING: This may 'unplayable' for certain players.{bcolors.ENDC}")
+        print(f"WARNING: This may cause 'unplayable' for certain players.{bcolors.ENDC}")
+        killPlayer()
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -276,6 +294,23 @@ bulletGroup = pygame.sprite.Group()
 
 allSpritesGroup.add(player)
 
+def killPlayer():
+    print("INFO: Removing Sprites from group..")
+    try:
+        allSpritesGroup.remove(player)
+        print(f'{bcolors.OKGREEN}SUCCESS: Removed.{bcolors.ENDC}')
+    except:
+        print(f"{bcolors.FAIL}Failed to remove sprite 'player' from 'allSpritesGroup'!")
+        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+    print("INFO: Adding player to 'allSpritesGroup'..")
+    try:
+        allSpritesGroup.add(player)
+        print(f'{bcolors.OKGREEN}SUCCESS: Added.{bcolors.ENDC}')
+    except:
+        print(f"{bcolors.FAIL}Failed to add sprite 'player' to 'allSpritesGroup'!")
+        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+
+
 # 메인
 print(f"INFO: Replaying {str_SceneName}..")
 try:
@@ -284,6 +319,16 @@ try:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                print("INFO: Saving..")
+                try:
+                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                        json.dump(data, svFile)
+                    svFile.close()
+                    print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+                except:
+                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+
                 isMainMenuScene = False
                 isMainGameScene = False
 
