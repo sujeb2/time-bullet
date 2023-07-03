@@ -54,7 +54,10 @@ try:
     svFile.close()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
-    print(f"")
+    print(f"{bcolors.FAIL}ERROR: Error occurred while loading 'save/0/playeSaveData.json' file.")
+    print(f"This might happen when player changed some data.{bcolors.ENDC}")
+
+print("INFO: Checking file requirements..")
 
 def quitGame():
     print("INFO: Exiting..")
@@ -241,12 +244,11 @@ class Player(pygame.sprite.Sprite):
             self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
         elif keys[pygame.K_f] and keys[pygame.K_a]:
             self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+        # lee go wae duam
         elif keys[pygame.K_f] and keys[pygame.K_w]:
-            pass
-            #self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
+            self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
         elif keys[pygame.K_f] and keys[pygame.K_s]:
-            pass
-            #self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
+            self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -273,6 +275,8 @@ class Player(pygame.sprite.Sprite):
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
+
+
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, angle):

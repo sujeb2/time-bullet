@@ -235,16 +235,17 @@ class Player(pygame.sprite.Sprite):
             self.isDashing = True
         else:
             self.isDashing = False
-
+    
+        # to-do: fix player y velocity value multiply while pressing player speed change key
         if keys[pygame.K_f] and keys[pygame.K_d]:
             self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
         elif keys[pygame.K_f] and keys[pygame.K_a]:
             self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+        # lee go wae duam
         elif keys[pygame.K_f] and keys[pygame.K_w]:
-            self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
+            self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
         elif keys[pygame.K_f] and keys[pygame.K_s]:
             self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
-            
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
