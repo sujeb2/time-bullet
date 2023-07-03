@@ -1,6 +1,6 @@
 # Setup
-WIDTH = 1600
-HEIGHT = 900
+WIDTH = 1280
+HEIGHT = 720
 DEF_FPS = 60
 
 # Player Setting

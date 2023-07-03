@@ -161,7 +161,7 @@ finally:
 
 # font reset
 print("INFO: Resetting text object..")
-text_MainLogoTitle = defaultFont.render('게임이름을여기에입력', True, WHITE)
+text_MainLogoTitle = defaultFont.render('TIME AND\nBULLET', True, WHITE)
 text_MainStartGame = defaultFont.render('START', True, WHITE)
 text_MainLoadGame = defaultFont.render('LOAD', True, WHITE)
 text_MainSetting = defaultFont.render('SETTING', True, WHITE)
@@ -235,6 +235,12 @@ class Player(pygame.sprite.Sprite):
             self.isDashing = True
         else:
             self.isDashing = False
+
+        if keys[pygame.K_f] and keys[pygame.K_d]:
+            self.velocity_x = self.speed*2
+        elif keys[pygame.K_f] and keys[pygame.K_a]:
+            self.velocity_X = self.speed/2
+            
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -314,7 +320,7 @@ def killPlayer():
         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 
-# 메인
+# main
 print(f"INFO: Replaying {str_SceneName}..")
 try:
     while isMainMenuScene: # replay scene
@@ -336,8 +342,6 @@ try:
                 isMainGameScene = False
 
         level.run()
-
-        # render hud
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
         screen.blit(hud_HealthFull, [100, 20])

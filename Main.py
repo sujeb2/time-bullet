@@ -161,7 +161,7 @@ finally:
 
 # font reset
 print("INFO: Resetting text object..")
-text_MainLogoTitle = defaultFont.render('게임이름을여기에입력', True, WHITE)
+text_MainLogoTitle = defaultFont.render('TIME AND\nBULLET', True, WHITE)
 text_MainStartGame = defaultFont.render('START', True, WHITE)
 text_MainLoadGame = defaultFont.render('LOAD', True, WHITE)
 text_MainSetting = defaultFont.render('SETTING', True, WHITE)
@@ -235,6 +235,16 @@ class Player(pygame.sprite.Sprite):
             self.isDashing = True
         else:
             self.isDashing = False
+
+        if keys[pygame.K_f] and keys[pygame.K_d]:
+            self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+        elif keys[pygame.K_f] and keys[pygame.K_a]:
+            self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+        elif keys[pygame.K_f] and keys[pygame.K_w]:
+            self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
+        elif keys[pygame.K_f] and keys[pygame.K_s]:
+            self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
+            
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
