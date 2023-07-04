@@ -1,4 +1,4 @@
-import pygame, CSVSupport, traceback
+import pygame, CSVSupport, traceback, Main
 
 class Level:
     def __init__(self, level_data, surface):
@@ -24,6 +24,7 @@ class Level:
             print("[LEVEL MANAGER] Error occurred while creating tile group.")
             print(f"[LEVEL MANAGER] Traceback: \n{traceback.format_exc()}")
             print("[LEVEL MANAGER] Bliting debug map..")
+            Main.screen.blit(Main.img_backgroundLoop, [0, 0])
 
     def run(self): # run game / level
         pass
