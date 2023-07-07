@@ -199,7 +199,7 @@ class Player(pygame.sprite.Sprite):
         self.isDashing = False
         self.shoot_cooldown = 0
         self.gunBarrelOffset = pygame.math.Vector2(GameSetting.GUN_OFFSET_X, GameSetting.GUN_OFFSET_Y)
-       
+        self.playerMana = 100       
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -240,15 +240,22 @@ class Player(pygame.sprite.Sprite):
             self.isDashing = False
     
         # to-do: fix player y velocity value multiply while pressing player speed change key
-        if keys[pygame.K_f] and keys[pygame.K_d]:
-            self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
-        elif keys[pygame.K_f] and keys[pygame.K_a]:
-            self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+        if self.playerMana < 0:
+            pass
+        else:
+            if keys[pygame.K_f] and keys[pygame.K_d]:
+                self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+                self.playerMana -= 5
+            elif keys[pygame.K_f] and keys[pygame.K_a]:
+                self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
+                self.playerMana -= 5
         # lee go wae duam
-        elif keys[pygame.K_f] and keys[pygame.K_w]:
-            self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
-        elif keys[pygame.K_f] and keys[pygame.K_s]:
-            self.velocity_y = self.speed*GameSetting.SLOWSPEED_Y
+            elif keys[pygame.K_f] and keys[pygame.K_w]:
+                self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
+                self.playerMana -= 5
+            elif keys[pygame.K_f] and keys[pygame.K_s]:
+                self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
+                self.playerMana -= 5
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -352,6 +359,9 @@ try:
                 isMainGameScene = False
 
         level.run()
+        
+        screen.blit(img_backgroundLoop, [0, 0])
+
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
         screen.blit(hud_HealthFull, [100, 20])

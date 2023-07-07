@@ -1,0 +1,23 @@
+{
+	"before": {
+		"before_boss_notenoughmana": "Hey, just remind you that you're going to experience is pretty difficult to you.",
+		"before_boss1": "Well, person that trespassing OUR COMPANY and, trying to kill me?"
+	},
+
+	"intro": {
+		"intro_line1": "Do you know who i am?",
+		"intro_line2": "I'm the ceo of this company and, you are going to ruin everything?",
+		"intro_line3": "Well i'm not going to prey you this time.",
+		"intro_line4": "As you wish i'm just going to kill you right now if you don't mind.",
+		"intro_line5": "Good luck with that"
+	},
+
+	"play": {
+		"play_line1": "Really? Is that all you got?",
+		"play_line2": "Just be sure.",
+		"play_line3": "Not all co-workers get infinite lives."
+	},
+
+	"killed": "You just being stupid this time.",
+	"waited": "Seriously?"
+}
