@@ -1,2 +1,4 @@
 pygame
 pyinstaller
+tkinter
+pytmx
