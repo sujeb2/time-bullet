@@ -1,4 +1,4 @@
 pygame
 pyinstaller
-tkinter
 pytmx
+pathfinding
