@@ -51,7 +51,6 @@ print("INFO: Reading save file..")
 try:
     with open('.\\src\\save\\0\\playerSaveData.json') as svFile:
         data = json.load(svFile)
-    svFile.close()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{bcolors.FAIL}ERROR: Error occurred while loading 'save/0/playeSaveData.json' file.")
@@ -259,7 +258,7 @@ class Player(pygame.sprite.Sprite):
         # lee go wae duam
             elif keys[pygame.K_f] and keys[pygame.K_w]:
                 self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
-                self.playerMana -= GameSetting.PLAERMANA_REMOVE_VAL
+                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
             elif keys[pygame.K_f] and keys[pygame.K_s]:
                 self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
@@ -345,66 +344,70 @@ def killPlayer():
         allSpritesGroup.add(player)
         print(f'{bcolors.OKGREEN}SUCCESS: Added.{bcolors.ENDC}')
     except:
-        print(f"{bcolors.FAIL}Failed to add sprite 'player' to 'allSpritesGroup'!")
+        print(f"{bcolors.FAIL}ERROR: Failed to add sprite 'player' to 'allSpritesGroup'!")
         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 
 # main
-print(f"INFO: Replaying {str_SceneName}..")
-try:
-    while isMainMenuScene: # replay scene
-        inputKey = pygame.key.get_pressed()
+def runScene():
+    print(f"INFO: Replaying {str_SceneName}..")
+    try:
+        while isMainMenuScene: # replay scene
+            inputKey = pygame.key.get_pressed()
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                print("INFO: Saving..")
-                try:
-                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                        json.dump(data, svFile)
-                    svFile.close()
-                    print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                except:
-                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    print("INFO: Saving..")
+                    try:
+                        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                            json.dump(data, svFile)
+                        svFile.close()
+                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+                    except:
+                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
-                isMainMenuScene = False
-                isMainGameScene = False
+                    isMainMenuScene = False
+                    isMainGameScene = False
 
-        level.run()
+            level.run()
+            
+            screen.blit(img_backgroundLoop, [0, 0])
+
+            screen.blit(hud_HealthFull, [30, 20])
+            screen.blit(hud_HealthFull, [65, 20])
+            screen.blit(hud_HealthFull, [100, 20])
+            screen.blit(icn_GunSelect_handGun, [30, 60])
+            screen.blit(hud_bulletLeft, [66, 60])
+            screen.blit(hud_bulletMax, [108, 60])
+            screen.blit(hud_bulletSlash, [95, 60])
+
+            # render player
+            allSpritesGroup.draw(screen)
+            allSpritesGroup.update()
         
-        screen.blit(img_backgroundLoop, [0, 0])
+            if GameSetting.SHOW_CURRENTFPS == True:
+                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+            else:
+                pass
 
-        screen.blit(hud_HealthFull, [30, 20])
-        screen.blit(hud_HealthFull, [65, 20])
-        screen.blit(hud_HealthFull, [100, 20])
-        screen.blit(icn_GunSelect_handGun, [30, 60])
-        screen.blit(hud_bulletLeft, [66, 60])
-        screen.blit(hud_bulletMax, [108, 60])
-        screen.blit(hud_bulletSlash, [95, 60])
+            if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+                screen.blit(debug_showFps, [0, 0])
+            else:
+                pass
 
-        # render player
-        allSpritesGroup.draw(screen)
-        allSpritesGroup.update()
-        
-        if GameSetting.SHOW_CURRENTFPS == True:
-            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-        else:
-            pass
+            checkFps()
 
-        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
-            screen.blit(debug_showFps, [0, 0])
-        else:
-            pass
+            pygame.display.update()
+            dt = clock.tick(GameSetting.DEF_FPS)
+    except:
+        print(f"{traceback.format_exc}")
+        messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+        print(f"{bcolors.FAIL}Error occurred while replaying scene.")
+        print(f'{traceback.format_exc()}{bcolors.ENDC}')
+        quitGame()
 
-        checkFps()
-
-        pygame.display.update()
-        dt = clock.tick(GameSetting.DEF_FPS)
-except:
-    print(f"{traceback.format_exc}")
-    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}Error occurred while replaying scene.")
-    print(f'{traceback.format_exc()}{bcolors.ENDC}')
-    quitGame()
+if __name__ == '__main__':
+    runScene()
 
 pygame.quit()
