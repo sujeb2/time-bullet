@@ -259,7 +259,7 @@ class Player(pygame.sprite.Sprite):
         # lee go wae duam
             elif keys[pygame.K_f] and keys[pygame.K_w]:
                 self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
-                self.playerMana -= GameSetting.PLAERMANA_REMOVE_VAL
+                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
             elif keys[pygame.K_f] and keys[pygame.K_s]:
                 self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
