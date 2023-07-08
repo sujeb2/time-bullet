@@ -345,7 +345,7 @@ def killPlayer():
         allSpritesGroup.add(player)
         print(f'{bcolors.OKGREEN}SUCCESS: Added.{bcolors.ENDC}')
     except:
-        print(f"{bcolors.FAIL}Failed to add sprite 'player' to 'allSpritesGroup'!")
+        print(f"{bcolors.FAIL}ERROR: Failed to add sprite 'player' to 'allSpritesGroup'!")
         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 
