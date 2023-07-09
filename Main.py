@@ -1,4 +1,4 @@
-import pygame, sys, math, GameSetting, time, traceback, os, LevelData, json
+import pygame, sys, math, GameSetting, time, traceback, os, LevelData, json, jsonschema
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from LevelSetting import *
@@ -47,16 +47,43 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def validateJson(jsonData): # validate save file
+    try:
+        jsonschema.validate(instance=jsonData, schema=data)
+    except jsonschema.ErrorTree.errors:
+        print(f"{bcolors.FAIL}ERROR: Failed to validate player save data, is File even exists?\nTraceBack: {traceback.format_exc()}{bcolors.ENDC}")
+        return False
+    return True
+
 print("INFO: Reading save file..")
 try:
-    with open('.\\src\\save\\0\\playerSaveData.json') as svFile:
+    with open('.\\src\\save\\0\\playerSaveData.json', 'r') as svFile:
         data = json.load(svFile)
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{bcolors.FAIL}ERROR: Error occurred while loading 'save/0/playeSaveData.json' file.")
     print(f"This might happen when player changed some data.{bcolors.ENDC}")
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+    pygame.quit()
+    sys.exit()
 
-print("INFO: Checking file requirements..")
+
+
+print("INFO: Checking save file requirements..")
+try:
+    with open('.\\src\\save\\0\\playerSaveData.json', 'r') as pSv:
+        mainData = str(json.load(pSv))
+        isFileVaild = validateJson(mainData)
+
+        if isFileVaild:
+            print(f"{bcolors.OKCYAN}SUCCESS: playerSaveData is vaild.{bcolors.ENDC}")
+        else:
+            print(f"{bcolors.WARNING}WARN: playerSaveData isn't vaild as default state.{bcolors.ENDC}")
+except FileNotFoundError:
+    print(f"{bcolors.FAIL}ERROR: Failed to read playerSaveData, is File even exists?\nTraceback: {traceback.format_exc()}{bcolors.ENDC}")
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+    pygame.quit()
+    sys.exit()
 
 def quitGame():
     print("INFO: Exiting..")
@@ -349,65 +376,61 @@ def killPlayer():
 
 
 # main
-def runScene():
-    print(f"INFO: Replaying {str_SceneName}..")
-    try:
-        while isMainMenuScene: # replay scene
-            inputKey = pygame.key.get_pressed()
+print(f"INFO: Replaying {str_SceneName}..")
+try:
+    while isMainMenuScene: # replay scene
+        inputKey = pygame.key.get_pressed()
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print("INFO: Saving..")
-                    try:
-                        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                            json.dump(data, svFile)
-                        svFile.close()
-                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                    except:
-                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                print("INFO: Saving..")
+                try:
+                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                        json.dump(data, svFile)
+                    svFile.close()
+                    print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+                except:
+                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
-                    isMainMenuScene = False
-                    isMainGameScene = False
+                isMainMenuScene = False
+                isMainGameScene = False
 
-            level.run()
+        level.run()
             
-            screen.blit(img_backgroundLoop, [0, 0])
+        screen.blit(img_backgroundLoop, [0, 0])
 
-            screen.blit(hud_HealthFull, [30, 20])
-            screen.blit(hud_HealthFull, [65, 20])
-            screen.blit(hud_HealthFull, [100, 20])
-            screen.blit(icn_GunSelect_handGun, [30, 60])
-            screen.blit(hud_bulletLeft, [66, 60])
-            screen.blit(hud_bulletMax, [108, 60])
-            screen.blit(hud_bulletSlash, [95, 60])
+        screen.blit(hud_HealthFull, [30, 20])
+        screen.blit(hud_HealthFull, [65, 20])
+        screen.blit(hud_HealthFull, [100, 20])
+        screen.blit(icn_GunSelect_handGun, [30, 60])
+        screen.blit(hud_bulletLeft, [66, 60])
+        screen.blit(hud_bulletMax, [108, 60])
+        screen.blit(hud_bulletSlash, [95, 60])
 
-            # render player
-            allSpritesGroup.draw(screen)
-            allSpritesGroup.update()
+        # render player
+        allSpritesGroup.draw(screen)
+        allSpritesGroup.update()
         
-            if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-            else:
-                pass
+        if GameSetting.SHOW_CURRENTFPS == True:
+            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+        else:
+            pass
 
-            if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
-                screen.blit(debug_showFps, [0, 0])
-            else:
-                pass
+        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+            screen.blit(debug_showFps, [0, 0])
+        else:
+            pass
 
-            checkFps()
+        checkFps()
 
-            pygame.display.update()
-            dt = clock.tick(GameSetting.DEF_FPS)
-    except:
-        print(f"{traceback.format_exc}")
-        messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-        print(f"{bcolors.FAIL}ERROR: `Error occurred while replaying scene.")
-        print(f'{traceback.format_exc()}{bcolors.ENDC}')
-        quitGame()
-
-if __name__ == '__main__':
-    runScene()
+        pygame.display.update()
+        dt = clock.tick(GameSetting.DEF_FPS)
+except:
+    print(f"{traceback.format_exc}")
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+    print(f"{bcolors.FAIL}ERROR: `Error occurred while replaying scene.")
+    print(f'{traceback.format_exc()}{bcolors.ENDC}')
+    quitGame()
 
 pygame.quit()
