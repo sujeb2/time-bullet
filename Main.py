@@ -216,7 +216,7 @@ def checkFps():
         print(f"WARNING: This may cause 'unplayable' for certain players.{bcolors.ENDC}")
         killPlayer()
 
-class Player(pygame.sprite.Sprite):
+class Player(pygame.sprite.Sprite): # player
     def __init__(self):
         super().__init__()
         self.pos = pygame.math.Vector2(GameSetting.PLAYER_START_X, GameSetting.PLAYER_START_Y)
@@ -282,7 +282,7 @@ class Player(pygame.sprite.Sprite):
             elif keys[pygame.K_f] and keys[pygame.K_a]:
                 self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-        # lee go wae duam
+        # 이거 버그 수정하기
             elif keys[pygame.K_f] and keys[pygame.K_w]:
                 self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
@@ -321,6 +321,7 @@ class Player(pygame.sprite.Sprite):
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
 
+    # 만들어야 하는거 - 대쉬
 
 
 class Bullet(pygame.sprite.Sprite):
