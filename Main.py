@@ -398,7 +398,7 @@ try:
 
         level.run()
             
-        screen.blit(img_backgroundLoop, [0, 0])
+        #screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
