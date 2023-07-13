@@ -1,8 +1,9 @@
-import pygame, sys, math, GameSetting, time, traceback, os, LevelData, json, jsonschema
+import pygame, sys, math, GameSetting, time, traceback, LevelData, json, jsonschema
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from LevelSetting import *
 from Level import Level
+from videoplayer import Video
 
 # Color
 WHITE = (255, 255, 255)
@@ -164,10 +165,20 @@ try:
 
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
-    print(f"{traceback.format_exc}")
+    print(f"{traceback.format_exc()}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     print(f"{bcolors.FAIL}ERROR: Error occurred while loading Sound.")
     print(f"ERROR: Is file even exists?{bcolors.ENDC}") # over 100!
+    quitGame()
+
+print("INFO: Reading Video..")
+try:
+    start_std = Video('.\\src\\mp4\\std_start.mp4')
+    start_std.set_size((GameSetting.WIDTH, GameSetting.HEIGHT))
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+except FileNotFoundError:
+    print(f'{bcolors.FAIL}ERROR: Failed to load video file, is File even exist?\nReturning Traceback: {traceback.format_exc()}{bcolors.ENDC}')
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     quitGame()
 
 # font setup
@@ -308,6 +319,9 @@ class Player(pygame.sprite.Sprite): # player
             time.sleep(1)
             self.base_player_image = self.image
 
+    def dash(self):
+        self.speed = GameSetting.PLAYER_DASH_SPEED
+
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
         self.hitbox_rect.center = self.pos
@@ -320,9 +334,6 @@ class Player(pygame.sprite.Sprite): # player
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
-
-    # 만들어야 하는거 - 대쉬
-
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, angle):
@@ -380,6 +391,12 @@ def killPlayer():
 print(f"INFO: Replaying {str_SceneName}..")
 try:
     while isMainMenuScene: # replay scene
+        start_std.draw(screen, (0, 0))
+        pygame.display.update()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                start_std.close()
+
         inputKey = pygame.key.get_pressed()
 
         for event in pygame.event.get():
