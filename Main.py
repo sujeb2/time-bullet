@@ -1,8 +1,6 @@
-import pygame, sys, math, GameSetting, time, traceback, LevelData, json, jsonschema
+import pygame, sys, math, GameSetting, time, traceback, json, jsonschema
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
-from LevelSetting import *
-from Level import Level
 from videoplayer import Video
 from pygame.locals import *
 
@@ -71,8 +69,6 @@ except:
     pygame.quit()
     sys.exit()
 
-
-
 print("INFO: Checking save file requirements..")
 try:
     with open('.\\src\\save\\0\\playerSaveData.json', 'r') as pSv:
@@ -136,7 +132,6 @@ try:
     pygame.init()
     screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT), flags)
     clock = pygame.time.Clock()
-    level = Level(LevelData.mp_tutorial, screen)
     dt = 0
     display = pygame.display
     pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
@@ -415,8 +410,6 @@ try:
 
                 isMainMenuScene = False
                 isMainGameScene = False
-
-        level.run()
             
         #screen.blit(img_backgroundLoop, [0, 0])
 
