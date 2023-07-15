@@ -4,6 +4,7 @@ from pytmx.util_pygame import load_pygame
 from LevelSetting import *
 from Level import Level
 from videoplayer import Video
+from pygame.locals import *
 
 # Color
 WHITE = (255, 255, 255)
@@ -36,6 +37,8 @@ data = {
     'playerX': 0,
     'playerY': 0
 }
+
+flags = GameSetting.SCREEN_FLAGS
 
 class bcolors:
     HEADER = '\033[95m'
@@ -131,7 +134,7 @@ except:
 print("INFO: Initallizing..")
 try:
     pygame.init()
-    screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT))
+    screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT), flags)
     clock = pygame.time.Clock()
     level = Level(LevelData.mp_tutorial, screen)
     dt = 0
@@ -316,7 +319,6 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
-            time.sleep(1)
             self.base_player_image = self.image
 
     def dash(self):
