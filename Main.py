@@ -59,12 +59,13 @@ def validateJson(jsonData): # validate save file
 
 print("INFO: Reading save file..")
 try:
-    with open('.\\src\\save\\0\\playerSaveData.json', 'r') as svFile:
+    with open('.\\src\\save\\0\\playerSaveData.json', 'r+', encoding='utf-8') as svFile:
         data = json.load(svFile)
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{bcolors.FAIL}ERROR: Error occurred while loading 'save/0/playeSaveData.json' file.")
-    print(f"This might happen when player changed some data.{bcolors.ENDC}")
+    print(f"ERROR: This might happen when player changed some data.{bcolors.ENDC}")
+    print(f'{bcolors.WARNING}WARN: Returning Traceback:\n{traceback.format_exc()}{bcolors.ENDC}')
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     pygame.quit()
     sys.exit()
@@ -95,7 +96,9 @@ print("INFO: Reading Images..")
 try:
     img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png')
     img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(1280, 720))
-    img_gameLogo = pygame.image.load('./src/img/gameicon_placeholder.png')
+    img_gameFavicon = pygame.image.load('./src/img/gameicon_placeholder.png')
+    img_gameLogo = pygame.image.load('./src/img/gamelogo.png')
+    img_gameLogo = pygame.transform.scale(img_gameLogo, (200, 100))
 
     icn_bulletFull = pygame.image.load('./src/img/icon/indiv_icon/Bullet.png')
     icn_bulletFull = pygame.transform.scale(icn_bulletFull, (32, 32))
@@ -118,6 +121,8 @@ try:
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
 
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
+
+    mainMenu_backgruond = pygame.image.load('.\src\img\ｂａｃｋｇｒｏｕｎｄ\ｍａｉｎｍｅｎｕ＿ｂａｃｋｇｒｏｕｎｄ.png')
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -182,8 +187,8 @@ except FileNotFoundError:
 # font setup
 print("INFO: Resetting Font/Title..")
 try:
-    display.set_caption('spsroEngine Scene Replayer')
-    display.set_icon(img_gameLogo)
+    display.set_caption(f'TIME / BULLET - {GameSetting.VER}')
+    display.set_icon(img_gameFavicon)
 
     # Font
     defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
@@ -387,13 +392,7 @@ def killPlayer():
 # main
 print(f"INFO: Replaying {str_SceneName}..")
 try:
-    while isMainMenuScene: # replay scene
-        start_std.draw(screen, (0, 0))
-        pygame.display.update()
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                start_std.close()
-
+    while isMainGameScene: # replay scene
         inputKey = pygame.key.get_pressed()
 
         for event in pygame.event.get():
@@ -425,6 +424,42 @@ try:
         allSpritesGroup.draw(screen)
         allSpritesGroup.update()
         
+        if GameSetting.SHOW_CURRENTFPS == True:
+            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+        else:
+            pass
+
+        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+            screen.blit(debug_showFps, [0, 0])
+        else:
+            pass
+
+        checkFps()
+
+        pygame.display.update()
+        dt = clock.tick(GameSetting.DEF_FPS)
+    while isMainMenuScene:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                print("INFO: Saving..")
+                try:
+                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                        json.dump(data, svFile)
+                    svFile.close()
+                    print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+                except:
+                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+
+                isMainMenuScene = False
+                isMainGameScene = False
+
+        screen.blit(img_gameLogo, [30, 20])
+        screen.blit(text_MainStartGame, [30, 560])
+        screen.blit(text_MainLoadGame, [30, 590])
+        screen.blit(text_MainSetting, [30, 620])
+        screen.blit(text_MainExit, [30, 650])
+
         if GameSetting.SHOW_CURRENTFPS == True:
             pygame.display.set_caption(f"FPS: {clock.get_fps()}")
         else:
