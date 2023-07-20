@@ -390,11 +390,12 @@ bulletGroup = pygame.sprite.Group()
 allSpritesGroup.add(player)
 
 # main
-print(f"INFO: Replaying {str_SceneName}..")
 if GameSetting.RUN_GAME_BEFORE_MENU:
     isMainGameScene = True
     isMainMenuScene = False
+    print(f"INFO: Replaying 'dev_test.tmx'..")
 else:
+    print(f"INFO: Replaying 'menu.tmx'..")
     isMainGameScene = False
     isMainMenuScene = True
 
