@@ -10,8 +10,8 @@ BLACK = (0, 0, 0)
 GRAY = (97, 97, 97)
 
 # bool
-isMainGameScene = False
-isMainMenuScene = True
+isMainGameScene = True
+isMainMenuScene = False
 
 # int
 MaxHandgunBullet = 255
@@ -165,7 +165,7 @@ try:
 
     # ost
     ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
-    pygame.mixer.music.play(-1)
+    #pygame.mixer.music.play(-1)
 
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
@@ -221,7 +221,7 @@ hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', False, WHITE)
 
-debug_showFps = defaultFont.render(str(clock.get_fps()), False, WHITE)
+debug_showFps = defaultFont.render('', False, WHITE)
 
 def checkFps():
     if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
@@ -229,7 +229,7 @@ def checkFps():
     else:
         print(f"{bcolors.WARNING}WARNING: FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
         print(f"WARNING: This may cause 'unplayable' for certain players.{bcolors.ENDC}")
-        killPlayer()
+        #killPlayer()
 
 class Player(pygame.sprite.Sprite): # player
     def __init__(self):
@@ -373,23 +373,6 @@ bulletGroup = pygame.sprite.Group()
 
 allSpritesGroup.add(player)
 
-def killPlayer():
-    print("INFO: Removing Sprites from group..")
-    try:
-        allSpritesGroup.remove(player)
-        print(f'{bcolors.OKGREEN}SUCCESS: Removed.{bcolors.ENDC}')
-    except:
-        print(f"{bcolors.FAIL}Failed to remove sprite 'player' from 'allSpritesGroup'!")
-        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-    print("INFO: Adding player to 'allSpritesGroup'..")
-    try:
-        allSpritesGroup.add(player)
-        print(f'{bcolors.OKGREEN}SUCCESS: Added.{bcolors.ENDC}')
-    except:
-        print(f"{bcolors.FAIL}ERROR: Failed to add sprite 'player' to 'allSpritesGroup'!")
-        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-
-
 # main
 print(f"INFO: Replaying {str_SceneName}..")
 try:
@@ -471,6 +454,7 @@ try:
             pass
 
         if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+            debug_showFps = str(clock.get_fps())
             screen.blit(debug_showFps, [0, 0])
         else:
             pass

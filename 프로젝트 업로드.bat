@@ -1,8 +1,8 @@
 @echo off
-title М■└К║°Л═²М┼╦ Л≈┘К█╟Л²╢М┼╦ Л┼╓М│╛К╕╫М┼╦
+title га╥на╖ф╝ ╬В╥н╣Е ╫╨е╘╦Ёф╝
 git add -A
-git commit -a -m "Pull Request by someone"
+git commit -a -m "hotfix"
 git push
-echo Л└╠ЙЁ╣
+echo ╪╨╟Ь
 pause
 exit
