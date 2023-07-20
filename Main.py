@@ -122,7 +122,7 @@ try:
 
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
 
-    mainMenu_backgruond = pygame.image.load('.\src\img\ｂａｃｋｇｒｏｕｎｄ\ｍａｉｎｍｅｎｕ＿ｂａｃｋｇｒｏｕｎｄ.png')
+    mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png')
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -164,7 +164,8 @@ try:
     sfx_Click = ['']
 
     # ost
-    ost_MainMenu = './src/sound/ost/background_ambient1.wav'
+    ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
+    pygame.mixer.music.play(-1)
 
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
@@ -439,6 +440,7 @@ try:
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
     while isMainMenuScene:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 print("INFO: Saving..")
@@ -453,6 +455,9 @@ try:
 
                 isMainMenuScene = False
                 isMainGameScene = False
+
+
+        screen.blit(mainMenu_backgruond, [0, 0])
 
         screen.blit(img_gameLogo, [30, 20])
         screen.blit(text_MainStartGame, [30, 560])
