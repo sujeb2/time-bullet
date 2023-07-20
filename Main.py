@@ -1,10 +1,12 @@
-import pygame, sys, math, GameSetting, time, traceback, json, jsonschema
-
+# default imports
+import pygame, sys, math, GameSetting, traceback, json, jsonschema
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from videoplayer import Video
 from pygame.locals import *
-from pytmx.util_pygame import load_pygame
+from MapSetting import *
+from Level import LevelManager
+from LevelData import *
 
 # Color
 WHITE = (255, 255, 255)
@@ -14,7 +16,6 @@ GRAY = (97, 97, 97)
 # bool
 isMainGameScene = False
 isMainMenuScene = True
-isDebugState = GameSetting.DEBUG_STATE
 
 # int
 MaxHandgunBullet = 255
@@ -144,6 +145,7 @@ try:
     display = pygame.display
     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
+    level = LevelManager(mp_tutorial, screen)
     print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
     if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
@@ -171,7 +173,8 @@ try:
     ost_MainMenu = pygame.mixer.music.set_volume(GameSetting.MUSIC_VOL)
     print(f'INFO: Volume set to {GameSetting.MUSIC_VOL}%')
     if isMainMenuScene == True and isMainGameScene == False:
-        pygame.mixer.music.play(-1)
+        #pygame.mixer.music.play(-1)
+        pass
     elif isMainGameScene == True and isMainMenuScene == False:
         pass
 
@@ -218,12 +221,14 @@ finally:
 
 # font reset
 print("INFO: Resetting text object..")
-text_MainLogoTitle = defaultFont.render('TIME AND\nBULLET', True, WHITE)
+text_MainLogoTitle = defaultFont.render('TIME \ BULLET', True, WHITE)
 text_MainStartGame = defaultFont.render('START', True, WHITE)
 text_MainLoadGame = defaultFont.render('LOAD', True, WHITE)
 text_MainSetting = defaultFont.render('SETTING', True, WHITE)
 text_MainExit = defaultFont.render('EXIT', True, WHITE)
-text_copyrightTeamName = defaultCopyrightFont.render('SONGRO STUDIO_', True, GRAY)
+text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', True, GRAY)
+text_autoSave = defaultFont.render('자동 저장중..', False, WHITE)
+text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
@@ -238,6 +243,24 @@ def checkFps():
         print(f"{bcolors.WARNING}WARNING: FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
         print(f"WARNING: This may cause 'unplayable' for certain players.{bcolors.ENDC}")
         #killPlayer()
+
+def autoSave():
+    print("INFO: AutoSaving..")
+    Saving = 5
+    try:
+        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+            json.dump(data, svFile)
+            print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+        
+        while Saving > 0:
+            screen.blit(text_autoSave, [0, 0])
+            Saving -= 1
+
+        if Saving == 0:
+            Saving = 5
+    except:
+        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 class Player(pygame.sprite.Sprite): # player
     def __init__(self):
@@ -400,6 +423,7 @@ else:
     isMainMenuScene = True
 
 try:
+    autoSave()
     while isMainGameScene: # replay scene
         inputKey = pygame.key.get_pressed()
 
@@ -418,7 +442,7 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
             
-        #screen.blit(img_backgroundLoop, [0, 0])
+        screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
@@ -464,12 +488,16 @@ try:
             pass
 
         screen.blit(mainMenu_backgruond, [0, 0])
+        screen.blit(text_version, [32, 53])
 
-        screen.blit(img_gameLogo, [30, 20])
+        screen.blit(text_MainLogoTitle, [30, 20])
+
         screen.blit(text_MainStartGame, [30, 560])
         screen.blit(text_MainLoadGame, [30, 590])
         screen.blit(text_MainSetting, [30, 620])
         screen.blit(text_MainExit, [30, 650])
+
+        screen.blit(text_copyrightTeamName, [985, 650])
 
         #checkFps()
 
