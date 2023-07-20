@@ -1,5 +1,5 @@
 @echo off
-title TIMEBULLET Run Script
+title TIME/BULLET Run Script
 python Main.py
 pause
 exit

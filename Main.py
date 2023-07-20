@@ -10,8 +10,9 @@ BLACK = (0, 0, 0)
 GRAY = (97, 97, 97)
 
 # bool
-isMainGameScene = True
-isMainMenuScene = False
+isMainGameScene = False
+isMainMenuScene = True
+isDebugState = GameSetting.DEBUG_STATE
 
 # int
 MaxHandgunBullet = 255
@@ -109,12 +110,14 @@ try:
     icn_GunSelect_machineGun = pygame.image.load('./src/img/icon/indiv_icon/Machinegun.png')
     icn_GunSelect_machineGun = pygame.transform.scale(icn_GunSelect_machineGun, (32, 32))
     
-    hud_HealthFull = pygame.image.load('./src/img/hud/Health1.png')
+    hud_HealthFull = pygame.image.load('./src/img/hud/hud_health1.png')
     hud_HealthFull = pygame.transform.scale(hud_HealthFull, (32, 32))
-    hud_HealthHalf = pygame.image.load('./src/img/hud/Health1Half.png')
+    hud_HealthHalf = pygame.image.load('./src/img/hud/hud_health_half.png')
     hud_HealthHalf = pygame.transform.scale(hud_HealthHalf, (32, 32))
-    hud_HealthEmpty = pygame.image.load('./src/img/hud/HealthEmpty.png')
+    hud_HealthEmpty = pygame.image.load('./src/img/hud/hud_health_empty.png')
     hud_HealthEmpty = pygame.transform.scale(hud_HealthEmpty, (32, 32))
+    hud_radiation = pygame.image.load('./src/img/hud/hud_radiation.png')
+    hud_radiation = pygame.transform.scale(hud_radiation, (32, 32))
     
     hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png')
 
@@ -165,7 +168,12 @@ try:
 
     # ost
     ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
-    #pygame.mixer.music.play(-1)
+    ost_MainMenu = pygame.mixer.music.set_volume(GameSetting.MUSIC_VOL)
+    print(f'INFO: Volume set to {GameSetting.MUSIC_VOL}%')
+    if isMainMenuScene == True and isMainGameScene == False:
+        pygame.mixer.music.play(-1)
+    elif isMainGameScene == True and isMainMenuScene == False:
+        pass
 
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
@@ -254,8 +262,13 @@ class Player(pygame.sprite.Sprite): # player
         self.x_change_mouse_player = (self.mouse_coords[0] - self.hitbox_rect.centerx)
         self.y_change_mouse_player = (self.mouse_coords[1] - self.hitbox_rect.centery)
         self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
-        self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
-        self.rect = self.image.get_rect(center = self.hitbox_rect.center)
+        rotated_image = pygame.transform.rotate(self.base_player_image, -self.angle)
+
+        # Create a new surface with per-pixel alpha to smooth the rotated image
+        self.image = pygame.Surface(rotated_image.get_size(), pygame.SRCALPHA)
+        self.image.blit(rotated_image, (0, 0))
+
+        self.rect = self.image.get_rect(center=self.hitbox_rect.center)
        
     def user_input(self):
         self.velocity_x = 0
@@ -378,6 +391,13 @@ allSpritesGroup.add(player)
 
 # main
 print(f"INFO: Replaying {str_SceneName}..")
+if GameSetting.RUN_GAME_BEFORE_MENU:
+    isMainGameScene = True
+    isMainMenuScene = False
+else:
+    isMainGameScene = False
+    isMainMenuScene = True
+
 try:
     while isMainGameScene: # replay scene
         inputKey = pygame.key.get_pressed()
@@ -397,7 +417,7 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
             
-        #screen.blit(img_backgroundLoop, [0, 0])
+        screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
@@ -416,12 +436,7 @@ try:
         else:
             pass
 
-        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
-            screen.blit(debug_showFps, [0, 0])
-        else:
-            pass
-
-        checkFps()
+        #checkFps()
 
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
@@ -442,6 +457,10 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
 
+        if GameSetting.SHOW_CURRENTFPS == True:
+            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+        else:
+            pass
 
         screen.blit(mainMenu_backgruond, [0, 0])
 
@@ -451,18 +470,7 @@ try:
         screen.blit(text_MainSetting, [30, 620])
         screen.blit(text_MainExit, [30, 650])
 
-        if GameSetting.SHOW_CURRENTFPS == True:
-            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-        else:
-            pass
-
-        if GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
-            debug_showFps = str(clock.get_fps())
-            screen.blit(debug_showFps, [0, 0])
-        else:
-            pass
-
-        checkFps()
+        #checkFps()
 
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
