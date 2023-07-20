@@ -241,6 +241,7 @@ class Player(pygame.sprite.Sprite): # player
         self.hitbox_rect = self.base_player_image.get_rect(center = self.pos)
         self.rect = self.hitbox_rect.copy()
         self.speed = GameSetting.PLAYER_SPEED
+        self.playerDashSpeed = GameSetting.PLAYER_DASH_SPEED
         self.shoot = False
         self.isDashing = False
         self.shoot_cooldown = 0
@@ -283,6 +284,7 @@ class Player(pygame.sprite.Sprite): # player
 
         if keys[pygame.K_SPACE]:
             self.isDashing = True
+            self.dash()
         else:
             self.isDashing = False
     
@@ -323,6 +325,7 @@ class Player(pygame.sprite.Sprite): # player
             self.base_player_image = self.image
 
     def dash(self):
+        #if self.isl
         self.speed = GameSetting.PLAYER_DASH_SPEED
 
     def move(self):
