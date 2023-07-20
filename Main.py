@@ -1,8 +1,10 @@
 import pygame, sys, math, GameSetting, time, traceback, json, jsonschema
+
 from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from videoplayer import Video
 from pygame.locals import *
+from pytmx.util_pygame import load_pygame
 
 # Color
 WHITE = (255, 255, 255)
@@ -118,13 +120,11 @@ try:
     hud_HealthEmpty = pygame.transform.scale(hud_HealthEmpty, (32, 32))
     hud_radiation = pygame.image.load('./src/img/hud/hud_radiation.png')
     hud_radiation = pygame.transform.scale(hud_radiation, (32, 32))
-    
     hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png')
 
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
 
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
-
     mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png')
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
@@ -142,11 +142,11 @@ try:
     clock = pygame.time.Clock()
     dt = 0
     display = pygame.display
-    pygame.mouse.set_system_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
+    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
     print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
-    if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True and GameSetting.SHOW_CURRENTFPS_TOSCREEN == True:
+    if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
         print(f'{bcolors.WARNING}WARNING: Too many debug updates! it may slow down performance.{bcolors.ENDC}')
     else:
         pass
@@ -418,7 +418,7 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
             
-        screen.blit(img_backgroundLoop, [0, 0])
+        #screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])

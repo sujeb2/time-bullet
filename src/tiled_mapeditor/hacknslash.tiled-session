@@ -24,8 +24,8 @@
             "scale": 1,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 1175,
-                "y": 906
+                "x": 1173,
+                "y": 904
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx": {
@@ -63,12 +63,12 @@
             "scaleInEditor": 1
         }
     },
-    "last.exportedFilePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial",
+    "last.exportedFilePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/json",
     "last.externalTilesetPath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset",
     "last.imagePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/img/map_sprite",
     "map.fixedSize": true,
     "map.height": 115,
-    "map.lastUsedExportFilter": "CSV files (*.csv)",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
