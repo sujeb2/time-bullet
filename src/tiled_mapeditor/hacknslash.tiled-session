@@ -21,11 +21,11 @@
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 1,
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 1202,
-                "y": 828
+                "x": 956,
+                "y": 1014.6666666666666
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx": {
@@ -82,7 +82,6 @@
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx"
     ],
@@ -91,10 +90,10 @@
     "recentFiles": [
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/easteregg.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSprites.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/Block.tsx",
