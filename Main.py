@@ -8,6 +8,8 @@ from MapSetting import *
 from Level import LevelManager
 from LevelData import *
 
+print('INFO: Loading..')
+
 # Color
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -416,9 +418,7 @@ allSpritesGroup.add(player)
 if GameSetting.RUN_GAME_BEFORE_MENU:
     isMainGameScene = True
     isMainMenuScene = False
-    print(f"INFO: Replaying 'dev_test.tmx'..")
 else:
-    print(f"INFO: Replaying 'menu.tmx'..")
     isMainGameScene = False
     isMainMenuScene = True
 
@@ -442,7 +442,7 @@ try:
                 isMainMenuScene = False
                 isMainGameScene = False
             
-        screen.blit(img_backgroundLoop, [0, 0])
+        #screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
@@ -462,6 +462,8 @@ try:
             pass
 
         #checkFps()
+
+        level.run()
 
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
