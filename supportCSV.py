@@ -15,6 +15,7 @@ def importCsvLayout(path): # support csv
         return terrainMap
     
 def importCutTileSheet(path): # cut tilesheet and apply
+    print(f'Tileset Render path: {path}')
     surface = pygame.image.load(path).convert_alpha()
     tileNumX = int(surface.get_size()[0] / MapSetting.tile_size)
     tileNumY = int(surface.get_size()[1] / MapSetting.tile_size)
@@ -26,7 +27,7 @@ def importCutTileSheet(path): # cut tilesheet and apply
             x = col * MapSetting.tile_size
             y = row * MapSetting.tile_size
             newSurface = pygame.Surface((MapSetting.tile_size, MapSetting.tile_size))
-            newSurface.blit(surface, (x, y), pygame.Rect(x, y, MapSetting.tile_size, MapSetting.tile_size))
+            newSurface.blit(surface, (0, 0), pygame.Rect(x, y, MapSetting.tile_size, MapSetting.tile_size))
             cutTiles.append(newSurface)
 
     return cutTiles

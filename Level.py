@@ -9,12 +9,13 @@ class LevelManager:
         print('[LEVEL MANAGER] Initallizing..')
         try:
             self.displaySurf = surface
-            terrainLayout = supportCSV.importCsvLayout(levelData['base'])
+            self.worldShift = 0
             
+            terrainLayout = supportCSV.importCsvLayout(levelData['base'])
             self.terrainSprites = self.createTileGroup(terrainLayout, 'base')
         except:
             print('[LEVEL MANAGER] Failed to initallize map!')
-            print(f"{traceback.format_exc()}")
+            print(f"[LEVEL MANAGER] {traceback.format_exc()}")
             messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
 
     def createTileGroup(self, layout, type): # draw tile
@@ -22,7 +23,7 @@ class LevelManager:
 
         for rowIndex, row in enumerate(layout): # tile y pos
             for colIndex, val in enumerate(row): # tile x pos
-                if val != -1:
+                if val != '-1':
                     x = colIndex * MapSetting.tile_size
                     y = rowIndex * MapSetting.tile_size
 
@@ -35,9 +36,10 @@ class LevelManager:
                             spriteGroup.add(sprite)
                         except:
                             print(f'[LEVEL MANAGER] Invalid terrainTileList index for value {val}')
+                            print(f'[LEVEL MANAGER] {traceback.format_exc()}')
 
         return spriteGroup
 
     def run(self):
         self.terrainSprites.draw(self.displaySurf)
-        self.terrainSprites.update(-4)
+        self.terrainSprites.update(self.worldShift)

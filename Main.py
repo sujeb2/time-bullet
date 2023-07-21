@@ -14,6 +14,7 @@ print('INFO: Loading..')
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (97, 97, 97)
+DARK_GRAY = (23, 23, 23)
 
 # bool
 isMainGameScene = False
@@ -101,7 +102,7 @@ def quitGame():
 print("INFO: Reading Images..")
 try:
     img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png')
-    img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(1280, 720))
+    img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(GameSetting.WIDTH, GameSetting.HEIGHT))
     img_gameFavicon = pygame.image.load('./src/img/gameicon_placeholder.png')
     img_gameLogo = pygame.image.load('./src/img/gamelogo.png')
     img_gameLogo = pygame.transform.scale(img_gameLogo, (200, 100))
@@ -148,7 +149,7 @@ try:
     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
     level = LevelManager(mp_tutorial, screen)
-    print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
+    #print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
     if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
         print(f'{bcolors.WARNING}WARNING: Too many debug updates! it may slow down performance.{bcolors.ENDC}')
@@ -229,7 +230,7 @@ text_MainLoadGame = defaultFont.render('LOAD', True, WHITE)
 text_MainSetting = defaultFont.render('SETTING', True, WHITE)
 text_MainExit = defaultFont.render('EXIT', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', True, GRAY)
-text_autoSave = defaultFont.render('자동 저장중..', False, WHITE)
+text_autoSave = defaultFont.render('자동 저장중..', False, DARK_GRAY)
 text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
@@ -255,7 +256,7 @@ def autoSave():
             print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
         
         while Saving > 0:
-            screen.blit(text_autoSave, [0, 0])
+            screen.blit(text_autoSave, [30, 650])
             Saving -= 1
 
         if Saving == 0:
@@ -441,8 +442,11 @@ try:
 
                 isMainMenuScene = False
                 isMainGameScene = False
-            
-        #screen.blit(img_backgroundLoop, [0, 0])
+        
+        if GameSetting.DRAW_GREYBACKGROUND_ASVOID:
+            screen.blit(img_backgroundLoop, [0, 0])
+        else:
+            pass
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])
@@ -462,7 +466,7 @@ try:
             pass
 
         #checkFps()
-
+        
         level.run()
 
         pygame.display.update()
