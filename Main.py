@@ -282,6 +282,7 @@ class Player(pygame.sprite.Sprite): # player
         self.gunBarrelOffset = pygame.math.Vector2(GameSetting.GUN_OFFSET_X, GameSetting.GUN_OFFSET_Y)
         self.playerMana = 100       
         self.playerManaCooldown = GameSetting.PLAYERMANA_COOLDOWN
+        self.playerVignette = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -304,6 +305,7 @@ class Player(pygame.sprite.Sprite): # player
 
         if keys[pygame.K_w]:
             self.velocity_y = -self.speed
+            self.playerVignette.blit(screen, self.pos)
         if keys[pygame.K_s]:
             self.velocity_y = self.speed
         if keys[pygame.K_d]:
@@ -437,16 +439,13 @@ try:
                     svFile.close()
                     print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
                 except:
-                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                    print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
                     print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
                 isMainMenuScene = False
                 isMainGameScene = False
         
-        if GameSetting.DRAW_GREYBACKGROUND_ASVOID:
-            screen.blit(img_backgroundLoop, [0, 0])
-        else:
-            pass
+        screen.blit(img_backgroundLoop, [0, 0])
 
         screen.blit(hud_HealthFull, [30, 20])
         screen.blit(hud_HealthFull, [65, 20])

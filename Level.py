@@ -10,12 +10,12 @@ class LevelManager:
         try:
             self.displaySurf = surface
             self.worldShift = 0
-            
             terrainLayout = supportCSV.importCsvLayout(levelData['base'])
+            
             self.terrainSprites = self.createTileGroup(terrainLayout, 'base')
         except:
             print('[LEVEL MANAGER] Failed to initallize map!')
-            print(f"[LEVEL MANAGER] {traceback.format_exc()}")
+            print(f"{traceback.format_exc()}")
             messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
 
     def createTileGroup(self, layout, type): # draw tile
@@ -28,15 +28,16 @@ class LevelManager:
                     y = rowIndex * MapSetting.tile_size
 
                     if type == 'base':
+                        print('[LEVEL MANAGER] Reading through file...')
                         try:
-                            terrainTileList = supportCSV.importCutTileSheet('.\\src\\img\\map_tile\\Tileset.png')
-                            tileSurface = terrainTileList[int(val)]
-                            sprite = TileManager.StaticTile(MapSetting.tile_size, x, y, tileSurface)
+                            terrain_tile_list = supportCSV.importCutTileSheet('.\\src\\img\\map_tile\\Tileset.png')
+                            tile_surface = terrain_tile_list[int(val)]
+                            sprite = TileManager.StaticTile(MapSetting.tile_size, x, y, tile_surface)
                             sprite = TileManager.Tile(MapSetting.tile_size, x, y)
                             spriteGroup.add(sprite)
+                            print('[LEVEL MANAGER] Successfully readed.')
                         except:
-                            print(f'[LEVEL MANAGER] Invalid terrainTileList index for value {val}')
-                            print(f'[LEVEL MANAGER] {traceback.format_exc()}')
+                            print(f'[LEVEL MANAGER] Failed to read tile {val}')
 
         return spriteGroup
 

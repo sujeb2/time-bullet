@@ -10,10 +10,11 @@ class Tile(pygame.sprite.Sprite): # tile manager
         print('[TILE MANAGER] Initallizing..')
         try:
             self.image = pygame.Surface((size, size))
-            #self.image.fill('gray')
+            #self.image.fill('grey')
             self.rect = self.image.get_rect(topleft = (x, y))
+            print('[TILE MANAGER] Initallized.')
         except:
-            print('[TILE MANAGER] Error occurred while initalizing tile.')
+            print('[TILE MANAGER] Error occurred while initializing tile.')
             print(f"[TILE MANAGER] {traceback.format_exc()}")
             messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
         
@@ -21,6 +22,7 @@ class Tile(pygame.sprite.Sprite): # tile manager
         self.rect.x += shift
 
 class StaticTile(Tile):
-    def __init__(self, size, x, y, surface):
-        super().__init__(size, x, y)
-        self.image = surface
+	def __init__(self, size, x, y, surface):
+		super().__init__(size, x, y)
+		self.image = surface
+        
