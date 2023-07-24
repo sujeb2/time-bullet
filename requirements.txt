@@ -1,3 +1,6 @@
 pygame
 pyinstaller
 jsonschema
+pytmx
+pymediainfo
+ffpyplayer

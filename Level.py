@@ -1,29 +1,46 @@
-import pygame, CSVSupport, traceback
+import pygame, supportCSV, traceback, MapSetting, TileManager
+from tkinter import messagebox
 
-class Level:
-    def __init__(self, level_data, surface):
-        print("[LEVEL MANAGER] Initallizing..")
+# spsro Level Manager v1.0
+# copyright songro studio_ 2020 - 2023
+
+class LevelManager:
+    def __init__(self, levelData, surface):
+        print('[LEVEL MANAGER] Initallizing..')
         try:
-            self.display_surface = surface
-            terrainLayout = CSVSupport.importCsvLayout(level_data['base'])
+            self.displaySurf = surface
+            self.worldShift = 0
+            terrainLayout = supportCSV.importCsvLayout(levelData['base'])
+            
             self.terrainSprites = self.createTileGroup(terrainLayout, 'base')
         except:
-            print("[LEVEL MANAGER] Error occurred while initallizing level.")
-            print(f"[LEVEL MANAGER] Traceback: \n{traceback.format_exc()}")
+            print('[LEVEL MANAGER] Failed to initallize map!')
+            print(f"{traceback.format_exc()}")
+            messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
 
-    def createTileGroup(self, layout, type):
-        print("[LEVEL MANAGER] Creating tile groups..")
-        try:
-            spriteGroup = pygame.sprite.Group()
-            
-            for row in layout:
-                print(row)
+    def createTileGroup(self, layout, type): # draw tile
+        spriteGroup = pygame.sprite.Group()
 
-            return spriteGroup
-        except:
-            print("[LEVEL MANAGER] Error occurred while creating tile group.")
-            print(f"[LEVEL MANAGER] Traceback: \n{traceback.format_exc()}")
-            print("[LEVEL MANAGER] Bliting debug map..")
+        for rowIndex, row in enumerate(layout): # tile y pos
+            for colIndex, val in enumerate(row): # tile x pos
+                if val != '-1':
+                    x = colIndex * MapSetting.tile_size
+                    y = rowIndex * MapSetting.tile_size
 
-    def run(self): # run game / level
-        pass
+                    if type == 'base':
+                        print('[LEVEL MANAGER] Reading through file...')
+                        try:
+                            terrain_tile_list = supportCSV.importCutTileSheet('.\\src\\img\\map_tile\\Tileset.png')
+                            tile_surface = terrain_tile_list[int(val)]
+                            sprite = TileManager.StaticTile(MapSetting.tile_size, x, y, tile_surface)
+                            sprite = TileManager.Tile(MapSetting.tile_size, x, y)
+                            spriteGroup.add(sprite)
+                            print('[LEVEL MANAGER] Successfully readed.')
+                        except:
+                            print(f'[LEVEL MANAGER] Failed to read tile {val}')
+
+        return spriteGroup
+
+    def run(self):
+        self.terrainSprites.draw(self.displaySurf)
+        self.terrainSprites.update(self.worldShift)

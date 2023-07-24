@@ -6,11 +6,21 @@
     "activeFile": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
     "expandedProjectPaths": [
     ],
+    "exportAsImage.drawTileGrid": true,
+    "exportAsImage.useCurrentScale": true,
     "fileStates": {
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/Block.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/csv/evo_1/evo_1.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 826.3333333333333,
+                "y": 724.6666666666666
+            }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tuto_01.tmx": {
             "scale": 0.75,
@@ -21,51 +31,56 @@
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx": {
-            "scale": 2,
-            "selectedLayer": 3,
+            "scale": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 929,
-                "y": 969
+                "x": 924,
+                "y": 1062
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1.5,
+            "scaleInEditor": 8
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx": {
-            "scaleInDock": 3,
-            "scaleInEditor": 11
+            "scaleInDock": 5.5,
+            "scaleInEditor": 8
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 8,
+            "scaleInEditor": 8
+        },
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 4,
+            "scaleInEditor": 11
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSprites.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1,
+            "scaleInDock": 0.75,
             "scaleInEditor": 1
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/PlayerSetup.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
+            "scaleInDock": 5.5,
             "scaleInEditor": 32
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
+            "scaleInDock": 3,
             "scaleInEditor": 8
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/easteregg.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1,
+            "scaleInDock": 0.5,
             "scaleInEditor": 1
         }
     },
-    "last.exportedFilePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial",
+    "last.exportedFilePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/csv/tutorial",
     "last.externalTilesetPath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset",
-    "last.imagePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/img/map_sprite",
+    "last.imagePath": "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/img/map_tile",
     "map.fixedSize": true,
     "map.height": 115,
     "map.lastUsedExportFilter": "CSV files (*.csv)",
@@ -77,17 +92,18 @@
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx"
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx"
     ],
     "project": "hacknslash.tiled-project",
-    "property.type": "string",
+    "property.type": "bool",
     "recentFiles": [
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/easteregg.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSprites.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/Block.tsx",
@@ -100,5 +116,6 @@
         "height": 16,
         "width": 16
     },
-    "tileset.type": 0
+    "tileset.type": 0,
+    "tileset.useTransparentColor": true
 }

@@ -1,8 +1,9 @@
 @echo off
-title í”„ë¡œì íŠ¸ ì—…ë°ì´íŠ¸ ìŠ¤í¬ë¦½íŠ¸
+title ÇÁ·ÎÁ§Æ® ¾÷·Îµå ½ºÅ©¸³Æ®
 git add -A
-git commit -a -m "Pull Request by someone"
+set /p commit_str=¾÷·ÎµåÇÒ ¸Ş¼¼Áö ÀÔ·Â: 
+git commit -a -m "%commit_str%"
 git push
-echo ì„±ê³µ
+echo ¼º°ø
 pause
 exit
