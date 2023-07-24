@@ -366,10 +366,8 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
-<<<<<<< HEAD
+
             time.sleep(0)
-=======
->>>>>>> b404918126910e16cbb8f57c16fdc57ec942bd0c
             self.base_player_image = self.image
 
     def dash(self):
