@@ -305,7 +305,7 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
-            time.sleep(1)
+            time.sleep(0)
             self.base_player_image = self.image
 
     def move(self):
