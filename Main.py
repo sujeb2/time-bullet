@@ -4,10 +4,8 @@ from tkinter import messagebox
 from pytmx.util_pygame import load_pygame
 from videoplayer import Video
 from pygame.locals import *
-from MapSetting import *
-from Level import LevelManager
-from LevelData import *
 from ButtonManager import Button
+
 
 print('INFO: Loading..')
 
@@ -155,7 +153,6 @@ try:
     running = True
     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
-    level = LevelManager(mp_tutorial, screen)
     #print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
     if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
@@ -239,6 +236,7 @@ text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
 hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', False, WHITE)
+hud_playerMana = defaultBulletFont.render('100%', False, WHITE)
 
 debug_showFps = defaultFont.render('', False, WHITE)
 
@@ -284,8 +282,9 @@ class Player(pygame.sprite.Sprite): # player
         self.shoot_cooldown = 0
         self.gunBarrelOffset = pygame.math.Vector2(GameSetting.GUN_OFFSET_X, GameSetting.GUN_OFFSET_Y)
         self.playerMana = 100       
-        self.playerManaCooldown = GameSetting.PLAYERMANA_COOLDOWN
+        self.playerManaCooldown = 5
         self.playerVignette = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
+        self.isDashAble = True
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -367,8 +366,17 @@ class Player(pygame.sprite.Sprite): # player
             self.bulletLeft -= 1
 
     def dash(self):
-        #if self.isl
-        self.speed = GameSetting.PLAYER_DASH_SPEED
+        if self.isDashAble:
+            if self.playerMana > 0:
+                self.playerMana -= GameSetting.PLAYER_DASH_REMOVE_MANA_VAL
+                self.speed = GameSetting.PLAYER_DASH_SPEED
+            else:
+                self.isDashAble == False
+                for cooldown in range(5, -1, -1):
+                    self.playerManaCooldown -= 1
+                    if self.playerManaCooldown < 0:
+                        self.isDashAble == True
+                    
 
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
@@ -461,6 +469,7 @@ while running:
             screen.blit(hud_bulletLeft, [66, 60])
             screen.blit(hud_bulletMax, [108, 60])
             screen.blit(hud_bulletSlash, [95, 60])
+            screen.blit(hud_playerMana, [30, 100])
 
             # render player
             allSpritesGroup.draw(screen)
@@ -472,8 +481,7 @@ while running:
                 pass
 
             #checkFps()
-            
-            level.run()
+
 
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
