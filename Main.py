@@ -326,29 +326,22 @@ class Player(pygame.sprite.Sprite): # player
             self.shoot = False
 
         if keys[pygame.K_SPACE]:
-            self.isDashing = True
-            self.dash()
+            if self.playerMana > 0:
+                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
+                self.speed = 5
+            else:
+                pass
         else:
-            self.isDashing = False
-    
-        # to-do: fix player y velocity value multiply while pressing player speed change key
-        if self.playerMana < 0:
-            print('INFO: ReAdding Mana..')
-            self.playerMana = 100
+            self.speed = 3
+        
+        if keys[pygame.K_f]:
+            if self.playerMana > 0:
+                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
+                self.speed = 1
+            else:
+                pass
         else:
-            if keys[pygame.K_f] and keys[pygame.K_d]:
-                self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-            elif keys[pygame.K_f] and keys[pygame.K_a]:
-                self.velocity_x = self.speed/GameSetting.SLOWSPEED_X
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-        # 이거 버그 수정하기
-            elif keys[pygame.K_f] and keys[pygame.K_w]:
-                self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-            elif keys[pygame.K_f] and keys[pygame.K_s]:
-                self.velocity_y = self.speed/GameSetting.SLOWSPEED_Y
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
+            self.speed = 3
 
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True:
             print(self.playerMana)
@@ -365,18 +358,12 @@ class Player(pygame.sprite.Sprite): # player
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
 
-    def dash(self):
-        if self.isDashAble:
-            if self.playerMana > 0:
-                self.playerMana -= GameSetting.PLAYER_DASH_REMOVE_MANA_VAL
-                self.speed = GameSetting.PLAYER_DASH_SPEED
-            else:
-                self.isDashAble == False
-                for cooldown in range(5, -1, -1):
-                    self.playerManaCooldown -= 1
-                    if self.playerManaCooldown < 0:
-                        self.isDashAble == True
-                    
+    def checkPlayerMana(self):
+        if self.playerMana < 0:
+            print("INFO: ReAdding playerMana to 100")
+            self.playerMana = 100
+        else:
+            pass
 
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
@@ -387,6 +374,7 @@ class Player(pygame.sprite.Sprite): # player
         self.user_input()
         self.move()
         self.player_rotation()
+        self.checkPlayerMana()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -459,8 +447,11 @@ while running:
                     isMainMenuScene = False
                     isMainGameScene = False
                     isMainMenuToDemo = False
-            
-            screen.blit(img_backgroundLoop, [0, 0])
+                    pygame.quit()
+            try:
+                screen.blit(img_backgroundLoop, [0, 0])
+            except:
+                pass
 
             screen.blit(hud_HealthFull, [30, 20])
             screen.blit(hud_HealthFull, [65, 20])
@@ -543,6 +534,7 @@ while running:
                 isMainMenuScene = False
                 isMainGameScene = False
                 isMainMenuToDemo = False
+                pygame.quit()
 
             #checkFps()
 
