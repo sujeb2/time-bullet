@@ -325,7 +325,7 @@ class Player(pygame.sprite.Sprite): # player
         else:
             self.shoot = False
 
-        if keys[pygame.K_SPACE]:
+        if keys[pygame.K_SPACE]: # player dash
             if self.playerMana > 0:
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
                 self.speed = 5
@@ -333,8 +333,8 @@ class Player(pygame.sprite.Sprite): # player
                 pass
         else:
             self.speed = 3
-        
-        if keys[pygame.K_f]:
+    
+        if keys[pygame.K_f]: # player slow
             if self.playerMana > 0:
                 self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
                 self.speed = 1
@@ -369,7 +369,7 @@ class Player(pygame.sprite.Sprite): # player
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
         self.hitbox_rect.center = self.pos
         self.rect.center = self.hitbox_rect.center
-
+        
     def update(self):
         self.user_input()
         self.move()
@@ -405,8 +405,17 @@ class Bullet(pygame.sprite.Sprite):
         if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime:
             self.kill() 
 
+    def checkIsSlowState(self):
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_f]:
+            pass
+        else:
+            pass
+
     def update(self):
         self.bullet_movement()
+        #self.checkIsSlowState()
 
 player = Player()
 allSpritesGroup = pygame.sprite.Group()
