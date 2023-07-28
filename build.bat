@@ -190,15 +190,6 @@ pyinstaller --clean ^
             --add-data="src/img/player_deco/vignette.png;src/img/player_deco" ^
             --add-data="src/img/gameicon_placeholder.png;src/img/" ^
             --add-data="src/img/gamelogo.png;src/img/" ^
-            :: map data
-            --add-data="src/maps/csv/evo_1/evo_1.tmx;src/maps/csv/evo_1/" ^
-            --add-data="src/maps/csv/tutorial/tutorial_Base.tmx;src/maps/csv/tutorial/" ^
-            --add-data="src/maps/csv/tutorial/tutorial_Deco.csv;src/maps/csv/tutorial/" ^
-            --add-data="src/maps/csv/tutorial/tutorial_Object.csv;src/maps/csv/tutorial/" ^
-            --add-data="src/maps/csv/tutorial/tutorial_SetupTile.csv;src/maps/csv/tutorial/" ^
-            --add-data="src/maps/csv/tutorial/tutorial.csv;src/maps/csv/tutorial/" ^
-            --add-data="src/maps/csv/tutorial.tmx;src/maps/" ^
-            --add-data="src/maps/README.md;src/maps/" ^
             :: mp4
             --add-data="src/mp4/std_start.mp4;src/mp4" ^
             :: save data
