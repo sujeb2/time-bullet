@@ -358,7 +358,6 @@ class Player(pygame.sprite.Sprite): # player
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
-            self.base_player_image = self.playerShootFrame
             self.shoot_cooldown = GameSetting.BULLET_COOLDOWN
             spawnBulletPos = self.pos + self.gunBarrelOffset.rotate(self.angle)
             self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
@@ -366,9 +365,6 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
-
-            time.sleep(0)
-            self.base_player_image = self.image
 
     def dash(self):
         #if self.isl
