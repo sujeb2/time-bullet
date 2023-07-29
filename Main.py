@@ -1,11 +1,9 @@
 # default imports
 import pygame, sys, math, GameSetting, traceback, json, jsonschema
 from tkinter import messagebox
-from pytmx.util_pygame import load_pygame
 from videoplayer import Video
 from pygame.locals import *
 from ButtonManager import Button
-
 
 print('INFO: Loading..')
 
@@ -275,6 +273,7 @@ class Player(pygame.sprite.Sprite): # player
         self.playerShootFrame = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame2.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
         self.hitbox_rect = self.base_player_image.get_rect(center = self.pos)
         self.rect = self.hitbox_rect.copy()
+        self.lastTick = pygame.time.get_ticks()
         self.speed = GameSetting.PLAYER_SPEED
         self.playerDashSpeed = GameSetting.PLAYER_DASH_SPEED
         self.shoot = False
@@ -282,7 +281,7 @@ class Player(pygame.sprite.Sprite): # player
         self.shoot_cooldown = 0
         self.gunBarrelOffset = pygame.math.Vector2(GameSetting.GUN_OFFSET_X, GameSetting.GUN_OFFSET_Y)
         self.playerMana = 100       
-        self.playerManaCooldown = 5
+        self.playerManaCooldown = 500
         self.playerVignette = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
         self.isDashAble = True
 
@@ -326,25 +325,29 @@ class Player(pygame.sprite.Sprite): # player
             self.shoot = False
 
         if keys[pygame.K_SPACE]: # player dash
-            if self.playerMana > 0:
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-                self.speed = 5
-            else:
-                pass
+            self.speed = 5
         else:
             self.speed = 3
     
         if keys[pygame.K_f]: # player slow
-            if self.playerMana > 0:
-                self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
-                self.speed = 1
-            else:
-                pass
+            self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
+            self.speed = 1
         else:
             self.speed = 3
 
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True:
             print(self.playerMana)
+        else:
+            pass
+
+    def checkMana(self):
+        if self.playerMana < 0:
+            if self.playerManaCooldown > 0:
+                self.playerManaCooldown -= self.lastTick
+            else:
+                print("INFO: ReAdding Mana..")
+                self.playerMana = 100
+                self.playerManaCooldown = 500
         else:
             pass
 
@@ -358,13 +361,6 @@ class Player(pygame.sprite.Sprite): # player
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
 
-    def checkPlayerMana(self):
-        if self.playerMana < 0:
-            print("INFO: ReAdding playerMana to 100")
-            self.playerMana = 100
-        else:
-            pass
-
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
         self.hitbox_rect.center = self.pos
@@ -374,7 +370,7 @@ class Player(pygame.sprite.Sprite): # player
         self.user_input()
         self.move()
         self.player_rotation()
-        self.checkPlayerMana()
+        self.checkMana()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -436,11 +432,9 @@ else:
     isMainGameScene = False
     isMainMenuScene = True
 
-while running:
+def gameDemo():
     try:
         while isMainGameScene: # replay scene
-            inputKey = pygame.key.get_pressed()
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     print("INFO: Saving..")
@@ -452,10 +446,6 @@ while running:
                     except:
                         print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
                         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-
-                    isMainMenuScene = False
-                    isMainGameScene = False
-                    isMainMenuToDemo = False
                     pygame.quit()
             try:
                 screen.blit(img_backgroundLoop, [0, 0])
@@ -474,35 +464,36 @@ while running:
             # render player
             allSpritesGroup.draw(screen)
             allSpritesGroup.update()
-            
+                
             if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
             else:
                 pass
 
-            #checkFps()
-
-
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
+    except:
+        pygame.quit()
 
-        while isMainMenuScene:
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print("INFO: Saving..")
-                    try:
-                        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                            json.dump(data, svFile)
+def mainMenu():
+    try:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                print("INFO: Saving..")
+                try:
+                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                        json.dump(data, svFile)
                         svFile.close()
                         print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                    except:
-                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+                except:
+                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
+                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
-                    isMainMenuScene = False
-                    isMainGameScene = False
-                    isMainMenuToDemo = False
+                isMainMenuScene = False
+                isMainGameScene = False
+                isMainMenuToDemo = False
+
+                pygame.quit()
 
             if GameSetting.SHOW_CURRENTFPS == True:
                 pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -517,12 +508,12 @@ while running:
 
             if btnStart.drawBtn(screen):
                 print('INFO: Pressed Start.')
-            
+                
             if btnLoad.drawBtn(screen):
                 isMainGameScene = True
                 isMainMenuScene = False
                 isMainMenuToDemo = False
-                
+                    
                 with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
                     data = json.load(pSv)
                     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
@@ -545,40 +536,23 @@ while running:
                 isMainMenuToDemo = False
                 pygame.quit()
 
-            #checkFps()
-
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
-        
-        while isMainMenuToDemo:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print("INFO: Saving..")
-                    try:
-                        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                            json.dump(data, svFile)
-                        svFile.close()
-                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                    except:
-                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+    except:
+        pygame.quit()
 
-                    isMainMenuScene = False
-                    isMainGameScene = False
-                    isMainMenuToDemo = False
+while running:
+    try:
+        while isMainGameScene:
+            gameDemo()
 
-            if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-            else:
-                pass
-
-            pygame.display.update()
-            dt = clock.tick(GameSetting.DEF_FPS)
-            
+        while isMainMenuScene:
+            mainMenu()
     except:
         print(f"{traceback.format_exc}")
         messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-        print(f"{bcolors.FAIL}ERROR: `Error occurred while replaying scene.")
+        print(f"{bcolors.FAIL}ERROR: Error occurred while replaying scene.")
         print(f'{traceback.format_exc()}{bcolors.ENDC}')
-        quitGame()
+        pygame.quit()
+
 pygame.quit()
