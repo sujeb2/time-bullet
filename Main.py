@@ -95,51 +95,6 @@ def quitGame():
     print("INFO: Exiting..")
     pygame.quit()
 
-# Image
-print("INFO: Reading Images..")
-try:
-    img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png')
-    img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(GameSetting.WIDTH, GameSetting.HEIGHT))
-    img_gameFavicon = pygame.image.load('./src/img/gameicon_placeholder.png')
-    img_gameLogo = pygame.image.load('./src/img/gamelogo.png')
-    img_gameLogo = pygame.transform.scale(img_gameLogo, (200, 100))
-
-    icn_bulletFull = pygame.image.load('./src/img/icon/indiv_icon/Bullet.png')
-    icn_bulletFull = pygame.transform.scale(icn_bulletFull, (32, 32))
-    icn_bulletEmpty = pygame.image.load('./src/img/icon/indiv_icon/BulletEmpty.png')
-    icn_bulletEmpty = pygame.transform.scale(icn_bulletEmpty, (32, 32))
-    icn_GunSelect_handGun = pygame.image.load('./src/img/icon/indiv_icon/Handgun.png')
-    icn_GunSelect_handGun = pygame.transform.scale(icn_GunSelect_handGun, (32, 32))
-    icn_GunSelect_machineGun = pygame.image.load('./src/img/icon/indiv_icon/Machinegun.png')
-    icn_GunSelect_machineGun = pygame.transform.scale(icn_GunSelect_machineGun, (32, 32))
-    
-    hud_HealthFull = pygame.image.load('./src/img/hud/hud_health1.png')
-    hud_HealthFull = pygame.transform.scale(hud_HealthFull, (32, 32))
-    hud_HealthHalf = pygame.image.load('./src/img/hud/hud_health_half.png')
-    hud_HealthHalf = pygame.transform.scale(hud_HealthHalf, (32, 32))
-    hud_HealthEmpty = pygame.image.load('./src/img/hud/hud_health_empty.png')
-    hud_HealthEmpty = pygame.transform.scale(hud_HealthEmpty, (32, 32))
-    hud_radiation = pygame.image.load('./src/img/hud/hud_radiation.png')
-    hud_radiation = pygame.transform.scale(hud_radiation, (32, 32))
-    hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png')
-
-    btn_Start = pygame.image.load('./src/img/button/menu/start_btn.png')
-    btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png')
-    btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png')
-    btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png')
-
-    csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png')
-
-    tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png')
-    mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png')
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
-except:
-    print(f"{traceback.format_exc}")
-    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Images.")
-    print(f"ERROR: Is file even exists?{bcolors.ENDC}")
-    quitGame()
-
 # game init
 print("INFO: Initallizing..")
 try:
@@ -165,13 +120,56 @@ except:
     print(f"{bcolors.FAIL}ERROR: Error occurred while initallizing game.")
     print(f"ERROR: May occurrs because of weird pygame bug lol{bcolors.ENDC}")
 
+# Image
+print("INFO: Reading Images..")
+try:
+    img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png').convert_alpha()
+    img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(GameSetting.WIDTH, GameSetting.HEIGHT))
+    img_gameFavicon = pygame.image.load('./src/img/gameicon_placeholder.png').convert_alpha()
+    img_gameLogo = pygame.image.load('./src/img/gamelogo.png').convert_alpha()
+    img_gameLogo = pygame.transform.scale(img_gameLogo, (200, 100))
+
+    icn_GunSelect_handGun = pygame.image.load('./src/img/icon/indiv_icon/Handgun.png').convert_alpha()
+    icn_GunSelect_handGun = pygame.transform.scale(icn_GunSelect_handGun, (32, 32))
+    icn_GunSelect_machineGun = pygame.image.load('./src/img/icon/indiv_icon/Machinegun.png').convert_alpha()
+    icn_GunSelect_machineGun = pygame.transform.scale(icn_GunSelect_machineGun, (32, 32))
+    
+    hud_HealthFull = pygame.image.load('./src/img/hud/hud_health1.png').convert_alpha()
+    hud_HealthFull = pygame.transform.scale(hud_HealthFull, (32, 32))
+    hud_HealthHalf = pygame.image.load('./src/img/hud/hud_health_half.png').convert_alpha()
+    hud_HealthHalf = pygame.transform.scale(hud_HealthHalf, (32, 32))
+    hud_HealthEmpty = pygame.image.load('./src/img/hud/hud_health_empty.png').convert_alpha()
+    hud_HealthEmpty = pygame.transform.scale(hud_HealthEmpty, (32, 32))
+    hud_radiation = pygame.image.load('./src/img/hud/hud_radiation.png').convert_alpha()
+    hud_radiation = pygame.transform.scale(hud_radiation, (32, 32))
+    hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png').convert_alpha()
+
+    btn_Start = pygame.image.load('./src/img/button/menu/start_btn.png').convert_alpha()
+    btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
+    btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
+    btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
+
+    csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
+
+    tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert_alpha()
+    mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png').convert_alpha()
+
+    map_devTest = pygame.image.load('./src/maps/png/dev_test.png').convert_alpha()
+    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+except:
+    print(f"{traceback.format_exc}")
+    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
+    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Images.")
+    print(f"ERROR: Is file even exists?{bcolors.ENDC}")
+    quitGame()
+
 # SFX / OST
 print("INFO: Loading Sounds..")
 try:
     # sfx
-    sfx_Handgun = ['./src/sound/sfx/handgun/handgun_fire1.wav', './src/sound/sfx/handgun/handgun_noammo.wav', './src/sound/sfx/handgun/handgun_reload.wav']
-    sfx_smg = ['./src/sound/sfx/smg/smg_startloop.wav', './src/sound/sfx/smg/smg_loop.wav', './src/sound/sfx/smg/smg_endloop.wav', './src/sound/sfx/smg/smg_noammo.wav', './src/sound/sfx/smg/smg_realod.wav']
-    sfx_Click = ['']
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+    sfx_handgunNoAmmo = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_noammo.wav")
+    sfx_handgunReload = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_reload.wav")
 
     # ost
     ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
@@ -231,10 +229,10 @@ text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', T
 text_autoSave = defaultFont.render('자동 저장중..', False, DARK_GRAY)
 text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
-hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, False, WHITE)
-hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, False, WHITE)
-hud_bulletSlash = defaultBulletFont.render('/', False, WHITE)
-hud_playerMana = defaultBulletFont.render('100%', False, WHITE)
+hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
+hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, True, WHITE)
+hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
+hud_playerMana = defaultBulletFont.render('100%', True, WHITE)
 
 debug_showFps = defaultFont.render('', False, WHITE)
 
@@ -264,6 +262,19 @@ def autoSave():
         print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
+def generateGlowEffect(glow, rad):
+    lightSurface = pygame.Surface((rad * 2, rad * 2), pygame.SRCALPHA)
+    layers = 25
+    glow = pygame.math.clamp(glow, 0, 255)
+
+    for i in range(layers):
+        k = i * glow
+        k = pygame.math.clamp(k, 0, 255)
+
+        pygame.draw.circle(lightSurface, (k, k, k), lightSurface.get_rect().center, rad - i * 3)
+
+    return lightSurface
+
 class Player(pygame.sprite.Sprite): # player
     def __init__(self):
         super().__init__()
@@ -284,19 +295,15 @@ class Player(pygame.sprite.Sprite): # player
         self.playerManaCooldown = 500
         self.playerVignette = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
         self.isDashAble = True
+        self.health = 3
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
-        self.x_change_mouse_player = (self.mouse_coords[0] - self.hitbox_rect.centerx)
-        self.y_change_mouse_player = (self.mouse_coords[1] - self.hitbox_rect.centery)
+        self.x_change_mouse_player = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
+        self.y_change_mouse_player = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
         self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
-        rotated_image = pygame.transform.rotate(self.base_player_image, -self.angle)
-
-        # Create a new surface with per-pixel alpha to smooth the rotated image
-        self.image = pygame.Surface(rotated_image.get_size(), pygame.SRCALPHA)
-        self.image.blit(rotated_image, (0, 0))
-
-        self.rect = self.image.get_rect(center=self.hitbox_rect.center)
+        self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
+        self.rect = self.image.get_rect(center = self.hitbox_rect.center)
        
     def user_input(self):
         self.velocity_x = 0
@@ -413,7 +420,26 @@ class Bullet(pygame.sprite.Sprite):
         self.bullet_movement()
         #self.checkIsSlowState()
 
+class Camera(pygame.sprite.Group): # custom camera function
+    def __init__(self):
+        super().__init__()
+        self.offset = pygame.math.Vector2()
+        self.floor_rect = map_devTest.get_rect(topleft = (0, 0))
+
+    def custom_draw(self):
+        self.offset.x = player.rect.centerx - GameSetting.WIDTH // 2
+        self.offset.y = player.rect.centery - GameSetting.HEIGHT // 2
+
+        # draw the floor
+        floor_offset_pos = self.floor_rect.topleft - self.offset
+        screen.blit(map_devTest, floor_offset_pos)
+
+        for sprite in allSpritesGroup:
+            offset_pos = sprite.rect.topleft - self.offset
+            screen.blit(sprite.image, offset_pos)
+
 player = Player()
+camera = Camera()
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 
@@ -434,6 +460,7 @@ else:
 
 def gameDemo():
     try:
+        print('INFO: Starting..')
         while isMainGameScene: # replay scene
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -446,24 +473,22 @@ def gameDemo():
                     except:
                         print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
                         print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-                    pygame.quit()
-            try:
-                screen.blit(img_backgroundLoop, [0, 0])
-            except:
-                pass
+                    sys.exit()
+
+            screen.blit(img_backgroundLoop, [0, 0])
+
+            # render
+            camera.custom_draw()
+            allSpritesGroup.update()
 
             screen.blit(hud_HealthFull, [30, 20])
             screen.blit(hud_HealthFull, [65, 20])
             screen.blit(hud_HealthFull, [100, 20])
-            screen.blit(icn_GunSelect_handGun, [30, 60])
-            screen.blit(hud_bulletLeft, [66, 60])
-            screen.blit(hud_bulletMax, [108, 60])
-            screen.blit(hud_bulletSlash, [95, 60])
+            screen.blit(icn_GunSelect_handGun, [30, 670])
+            screen.blit(hud_bulletLeft, [75, 670])
+            screen.blit(hud_bulletSlash, [103, 670])
+            screen.blit(hud_bulletMax, [115, 670])
             screen.blit(hud_playerMana, [30, 100])
-
-            # render player
-            allSpritesGroup.draw(screen)
-            allSpritesGroup.update()
                 
             if GameSetting.SHOW_CURRENTFPS == True:
                     pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -493,7 +518,7 @@ def mainMenu():
                 isMainGameScene = False
                 isMainMenuToDemo = False
 
-                pygame.quit()
+                sys.exit()
 
             if GameSetting.SHOW_CURRENTFPS == True:
                 pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -531,9 +556,6 @@ def mainMenu():
                     print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
                     print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
-                isMainMenuScene = False
-                isMainGameScene = False
-                isMainMenuToDemo = False
                 pygame.quit()
 
             pygame.display.update()
