@@ -426,7 +426,7 @@ class Camera(pygame.sprite.Group): # custom camera function
         self.offset = pygame.math.Vector2()
         self.floor_rect = map_devTest.get_rect(topleft = (0, 0))
 
-    def custom_draw(self):
+    def cameraDraw(self):
         self.offset.x = player.rect.centerx - GameSetting.WIDTH // 2
         self.offset.y = player.rect.centery - GameSetting.HEIGHT // 2
 
@@ -437,10 +437,50 @@ class Camera(pygame.sprite.Group): # custom camera function
             offset_pos = sprite.rect.topleft - self.offset
             screen.blit(sprite.image, offset_pos)
 
+class Enemy(pygame.sprite.Sprite):
+    def __init__(self, position):
+        super().__init__(enemyGroup, allSpritesGroup)
+        self.image = pygame.image.load('.\\src\\img\\animations\\entity\\enemy\\indiv_animation\\zombie_frame1.png').convert_alpha()
+        self.image = pygame.transform.rotozoom(self.image, 0, GameSetting.ENEMY_VIEWSIZE)
+
+        self.rect = self.image.get_rect()
+        self.rect.center = position
+
+        self.direction = pygame.math.Vector2()
+        self.velocity = pygame.math.Vector2()
+        self.speed = GameSetting.ENEMY_SPEED
+
+        self.position = pygame.math.Vector2(position)
+
+    def pathTracePlayer(self):
+        player_vector = pygame.math.Vector2(player.hitbox_rect.center)
+        enemy_vector = pygame.math.Vector2(self.rect.center)
+        distance = self.getVectorDistance(player_vector, enemy_vector)
+
+        if distance > 0:
+            self.direction = (player_vector - enemy_vector).normalize()
+        else:
+            self.direction = pygame.math.Vector2()
+        
+        self.velocity = self.direction * self.speed
+        self.position += self.velocity
+
+        self.rect.centerx = self.position.x
+        self.rect.centery = self.position.y
+
+
+    def getVectorDistance(self, vector_1, vector_2):
+        return (vector_1 - vector_2).magnitude()
+    
+    def update(self):
+        self.pathTracePlayer()
+
 player = Player()
 camera = Camera()
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
+enemyGroup = pygame.sprite.Group()
+zombie = Enemy((400,400))
 
 btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
@@ -477,7 +517,7 @@ def gameDemo():
             screen.blit(img_backgroundLoop, [0, 0])
 
             # render
-            camera.custom_draw()
+            camera.cameraDraw()
             allSpritesGroup.update()
 
             screen.blit(hud_HealthFull, [30, 20])
