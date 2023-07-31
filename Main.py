@@ -72,8 +72,9 @@ except:
     print(f"ERROR: This might happen when player changed some data.{bcolors.ENDC}")
     print(f'{bcolors.WARNING}WARN: Returning Traceback:\n{traceback.format_exc()}{bcolors.ENDC}')
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    pygame.quit()
-    sys.exit()
+    print('INFO: Writting default save file...')
+    with open('./src/save/0/playerSaveData.json', 'w') as writeSvFile:
+        writeSvFile.write('{"mxHandgunBullet": 255, "crtHandgunBullet": 20000, "crtScene": "", "playerX": 0, "playerY": 0}')
 
 print("INFO: Checking save file requirements..")
 try:
@@ -452,7 +453,7 @@ class Enemy(pygame.sprite.Sprite):
 
         self.position = pygame.math.Vector2(position)
 
-    def pathTracePlayer(self):
+    def pathTracePlayer(self): # path tracing
         player_vector = pygame.math.Vector2(player.hitbox_rect.center)
         enemy_vector = pygame.math.Vector2(self.rect.center)
         distance = self.getVectorDistance(player_vector, enemy_vector)
@@ -497,7 +498,7 @@ else:
     isMainGameScene = False
     isMainMenuScene = True
 
-def gameDemo():
+def gameDemo(): # main game
     try:
         print('INFO: Starting..')
         while isMainGameScene: # replay scene
@@ -539,7 +540,7 @@ def gameDemo():
     except:
         pygame.quit()
 
-def mainMenu():
+def mainMenu(): # main menu
     try:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -571,7 +572,7 @@ def mainMenu():
             screen.blit(text_copyrightTeamName, [985, 650])
 
             if btnStart.drawBtn(screen):
-                print('INFO: Pressed Start.')
+                gameDemo()
                 
             if btnLoad.drawBtn(screen):
                 isMainGameScene = True
