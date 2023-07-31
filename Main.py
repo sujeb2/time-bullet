@@ -430,8 +430,7 @@ class Camera(pygame.sprite.Group): # custom camera function
         self.offset.x = player.rect.centerx - GameSetting.WIDTH // 2
         self.offset.y = player.rect.centery - GameSetting.HEIGHT // 2
 
-        # draw the floor
-        floor_offset_pos = self.floor_rect.topleft - self.offset
+        floor_offset_pos = self.floor_rect.topleft - self.offset # map offset
         screen.blit(map_devTest, floor_offset_pos)
 
         for sprite in allSpritesGroup:
