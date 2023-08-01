@@ -535,7 +535,7 @@ else:
 def gameDemo(): # main game
     try:
         print('INFO: Starting..')
-        while isMainGameScene: # replay scene
+        while True: # replay scene
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     print("INFO: Saving..")
@@ -579,6 +579,7 @@ def gameDemo(): # main game
 
 def mainMenu(): # main menu
     try:
+        while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
