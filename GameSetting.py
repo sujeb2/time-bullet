@@ -19,7 +19,8 @@ MOTD = {
     '혹시 지금 쓰는 버전이 데모버전이라는건 알고게시나요?',
     '데모!',
     'PYRO GAMING',
-    '이 메세지가 반복될수도 있을수도..'
+    '이 메세지가 반복될수도 있을수도..',
+    '이러한 메세지를 MOTD(Message Of The Day)이라고 불리는걸 아시나요?'
 }
 # Player Setting
 PLAYER_START_X = 150
