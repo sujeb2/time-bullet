@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -109,8 +109,11 @@ try:
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
     #print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
-    if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
-        print(f'{bcolors.WARNING}WARNING: Too many debug updates! it may slow down performance.{bcolors.ENDC}')
+    if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+        if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
+            print(f'{bcolors.WARNING}WARNING: Too many debug updates! it may slow down performance.{bcolors.ENDC}')
+        else:
+            pass
     else:
         pass
 
@@ -171,6 +174,9 @@ try:
     sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
     sfx_handgunNoAmmo = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_noammo.wav")
     sfx_handgunReload = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_reload.wav")
+    sfx_playerHurt = pygame.mixer.Sound("./src/sound/sfx/player/hurt.wav")
+    sfx_playerDash = pygame.mixer.Sound("./src/sound/sfx/player/dash.wav")
+    sfx_playerRadiation = pygame.mixer.Sound('./src/sound/sfx/player/radiation.wav')
 
     # ost
     ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
@@ -227,6 +233,7 @@ finally:
 print("INFO: Resetting text object..")
 text_MainLogoTitle = defaultFont.render('TIME \ BULLET', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', True, GRAY)
+text_mainMenuMotd = defaultCopyrightFont.render(random.choice(list(GameSetting.MOTD)), True, WHITE)
 text_autoSave = defaultFont.render('자동 저장중..', False, DARK_GRAY)
 text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
@@ -359,6 +366,14 @@ class Player(pygame.sprite.Sprite): # player
         else:
             pass
 
+    def playerDamage(self):
+        if self.health > 0:
+            self.health -= 1
+            sfx_playerHurt.play()
+        else:
+            self.healh = 0
+            zombie.isPlayerAlive = False
+
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
             self.shoot_cooldown = GameSetting.BULLET_COOLDOWN
@@ -453,35 +468,49 @@ class Enemy(pygame.sprite.Sprite):
 
         self.position = pygame.math.Vector2(position)
 
+        self.isPlayerAlive = True
+
     def pathTracePlayer(self): # path tracing
-        player_vector = pygame.math.Vector2(player.hitbox_rect.center)
-        enemy_vector = pygame.math.Vector2(self.rect.center)
-        distance = self.getVectorDistance(player_vector, enemy_vector)
+        if self.isPlayerAlive:
+            player_vector = pygame.math.Vector2(player.hitbox_rect.center)
+            enemy_vector = pygame.math.Vector2(self.rect.center)
+            distance = self.getVectorDistance(player_vector, enemy_vector)
 
-        if distance > 0:
-            self.direction = (player_vector - enemy_vector).normalize()
+            if distance > 0:
+                self.direction = (player_vector - enemy_vector).normalize()
+            else:
+                self.direction = pygame.math.Vector2()
+            
+            self.velocity = self.direction * self.speed
+            self.position += self.velocity
+
+            self.rect.centerx = self.position.x
+            self.rect.centery = self.position.y
         else:
-            self.direction = pygame.math.Vector2()
-        
-        self.velocity = self.direction * self.speed
-        self.position += self.velocity
-
-        self.rect.centerx = self.position.x
-        self.rect.centery = self.position.y
-
+            pass
 
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
     
+    def checkIsSlowState(self):
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_f]:
+            self.speed = self.speed / 1
+        else:
+            pass
+    
     def update(self):
         self.pathTracePlayer()
+        self.checkIsSlowState()
 
 player = Player()
 camera = Camera()
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
-zombie = Enemy((400,400))
+obstaclesGroup = pygame.sprite.Group()
+zombie = Enemy((0, 0))
 
 btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
@@ -529,9 +558,12 @@ def gameDemo(): # main game
             screen.blit(hud_bulletSlash, [103, 670])
             screen.blit(hud_bulletMax, [115, 670])
             screen.blit(hud_playerMana, [30, 100])
-                
-            if GameSetting.SHOW_CURRENTFPS == True:
-                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+            
+            if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+                if GameSetting.SHOW_CURRENTFPS == True:
+                        pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                else:
+                    pass
             else:
                 pass
 
@@ -559,9 +591,11 @@ def mainMenu(): # main menu
                 isMainMenuToDemo = False
 
                 sys.exit()
-
-            if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+            if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+                if GameSetting.SHOW_CURRENTFPS == True:
+                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                else:
+                    pass
             else:
                 pass
 
@@ -570,6 +604,7 @@ def mainMenu(): # main menu
 
             screen.blit(text_MainLogoTitle, [30, 20])
             screen.blit(text_copyrightTeamName, [985, 650])
+            screen.blit(text_mainMenuMotd, [32, 83])
 
             if btnStart.drawBtn(screen):
                 gameDemo()

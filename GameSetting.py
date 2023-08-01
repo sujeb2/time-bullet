@@ -4,8 +4,17 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '1.0.9'
-
+VER = '1.1'
+MOTD = {
+    '버그가 있거나, 피드백을 주고 싶으세요? 저의 디스코드에 들어와보세요!',
+    '여전히 플레이 하고 있으시네요!',
+    '여기엔 뭐가 있을까요...',
+    '여기까지 오는데 총 3개월이 걸렸어요!',
+    '개발자들은 현재 자고 있을수도..',
+    '이거 보고 있으신가요?',
+    '여전히 시간은 가고 있어요 *똑딱똑딱*',
+    '혹시 이 메세지를 볼려고 게임을 계속 껐다가 키는건 아니죠?'
+}
 # Player Setting
 PLAYER_START_X = 150
 PLAYER_START_Y = 150
@@ -25,6 +34,7 @@ GAME_DEFAULTSOUND_PLAY = False
 MUSIC_VOL = 20
 
 # Debug
+IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG = True
 SHOW_CURRENTFPS = True
 DEBUG_FPSWARNING_VALUE = 15
 SHOW_PLAYERMANA_CONSOLE = False
