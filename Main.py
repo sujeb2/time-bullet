@@ -151,6 +151,7 @@ try:
     btn_Start = pygame.image.load('./src/img/button/menu/start_btn.png').convert_alpha()
     btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
+    btn_Copyright = pygame.image.load('./src/img/button/menu/copyright_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
 
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
@@ -512,9 +513,10 @@ enemyGroup = pygame.sprite.Group()
 obstaclesGroup = pygame.sprite.Group()
 zombie = Enemy((0, 0))
 
-btnStart = Button(30, 560, btn_Start, 1)
-btnLoad = Button(30, 590, btn_Load, 1)
-btnSetting = Button(30, 620, btn_Setting, 1)
+btnStart = Button(32, 530, btn_Start, 1)
+btnLoad = Button(32, 560, btn_Load, 1)
+btnSetting = Button(31, 590, btn_Setting, 1)
+btnCopyright = Button(29, 620, btn_Copyright, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
 
 allSpritesGroup.add(player)
@@ -574,23 +576,10 @@ def gameDemo(): # main game
 
 def mainMenu(): # main menu
     try:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                print("INFO: Saving..")
-                try:
-                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                        json.dump(data, svFile)
-                        svFile.close()
-                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                except:
-                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-
-                isMainMenuScene = False
-                isMainGameScene = False
-                isMainMenuToDemo = False
-
-                sys.exit()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    sys.exit()
+                    
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
                 if GameSetting.SHOW_CURRENTFPS == True:
                     pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -620,17 +609,9 @@ def mainMenu(): # main menu
 
             btnSetting.drawBtn(screen)
 
-            if btnExit.drawBtn(screen):
-                print("INFO: Saving..")
-                try:
-                    with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
-                        json.dump(data, svFile)
-                        svFile.close()
-                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
-                except:
-                    print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                    print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+            btnCopyright.drawBtn(screen)
 
+            if btnExit.drawBtn(screen):
                 pygame.quit()
 
             pygame.display.update()
