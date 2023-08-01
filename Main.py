@@ -234,7 +234,10 @@ finally:
 print("INFO: Resetting text object..")
 text_MainLogoTitle = defaultFont.render('TIME \ BULLET', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', True, GRAY)
-text_mainMenuMotd = defaultCopyrightFont.render(random.choice(list(GameSetting.MOTD)), True, WHITE)
+if list(GameSetting.MOTD) == '':
+    text_mainMenuMotd = defaultCopyrightFont.render('지정되지 않은 메세지 입니다.', True, WHITE)
+else:
+    text_mainMenuMotd = defaultCopyrightFont.render(random.choice(list(GameSetting.MOTD)), True, WHITE)
 text_autoSave = defaultFont.render('자동 저장중..', False, DARK_GRAY)
 text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
