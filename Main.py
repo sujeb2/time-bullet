@@ -564,7 +564,8 @@ def gameDemo(): # main game
             camera.cameraDraw()
             allSpritesGroup.update()
 
-            hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}MANA', True, WHITE)
+            # debug info update
+            hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨)', True, WHITE)
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
@@ -584,8 +585,8 @@ def gameDemo(): # main game
                     pass
                 if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
                     screen.blit(hud_debugFpsScreen, [30, 77])
-                    screen.blit(hud_debugMilliTickScreen, [30, 99])
-                    screen.blit(hud_playerMana, [30, 119])
+                    screen.blit(hud_debugMilliTickScreen, [30, 100])
+                    screen.blit(hud_playerMana, [30, 120])
             else:
                 pass
 
@@ -602,7 +603,7 @@ def mainMenu(): # main menu
             if GameSetting.SHOW_CURRENTFPS == True:
                 pygame.display.set_caption(f"FPS: {clock.get_fps()}")
             else:
-                 pass
+                pass
         else:
             pass
 
