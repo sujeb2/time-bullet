@@ -426,7 +426,14 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.y = int(self.y)
 
         if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime:
-            self.kill() 
+            self.kill()
+
+    def checkColliedwithEnemy(self):
+        if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, False):
+            zombie.damage -= 1
+            if zombie.damage < 0:
+                zombie.kill()
+                zombie.damage = 5
 
     def checkIsSlowState(self):
         keys = pygame.key.get_pressed()
@@ -439,6 +446,7 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.bullet_movement()
         #self.checkIsSlowState()
+        self.checkColliedwithEnemy()
 
 class Camera(pygame.sprite.Group): # custom camera function
     def __init__(self):
@@ -473,6 +481,8 @@ class Enemy(pygame.sprite.Sprite):
         self.position = pygame.math.Vector2(position)
 
         self.isPlayerAlive = True
+
+        self.damage = 5
 
     def pathTracePlayer(self): # path tracing
         if self.isPlayerAlive:
@@ -533,7 +543,6 @@ else:
     isMainMenuScene = True
 
 def gameDemo(): # main game
-    try:
         print('INFO: Starting..')
         while True: # replay scene
             for event in pygame.event.get():
@@ -546,7 +555,7 @@ def gameDemo(): # main game
                         print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
                     except:
                         print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
-                        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+                        print(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     sys.exit()
 
             screen.blit(img_backgroundLoop, [0, 0])
@@ -555,6 +564,11 @@ def gameDemo(): # main game
             camera.cameraDraw()
             allSpritesGroup.update()
 
+            hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}MANA', True, WHITE)
+            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨)', True, WHITE)
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
+            hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
+
             screen.blit(hud_HealthFull, [30, 20])
             screen.blit(hud_HealthFull, [65, 20])
             screen.blit(hud_HealthFull, [100, 20])
@@ -562,66 +576,63 @@ def gameDemo(): # main game
             screen.blit(hud_bulletLeft, [75, 670])
             screen.blit(hud_bulletSlash, [103, 670])
             screen.blit(hud_bulletMax, [115, 670])
-            screen.blit(hud_playerMana, [30, 100])
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
                 if GameSetting.SHOW_CURRENTFPS == True:
                         pygame.display.set_caption(f"FPS: {clock.get_fps()}")
                 else:
                     pass
+                if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
+                    screen.blit(hud_debugFpsScreen, [30, 77])
+                    screen.blit(hud_debugMilliTickScreen, [30, 99])
+                    screen.blit(hud_playerMana, [30, 119])
             else:
                 pass
 
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
-    except:
-        pygame.quit()
 
 def mainMenu(): # main menu
-    try:
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
                     
-            if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-                if GameSetting.SHOW_CURRENTFPS == True:
-                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-                else:
-                    pass
+        if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+            if GameSetting.SHOW_CURRENTFPS == True:
+                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
             else:
-                pass
+                 pass
+        else:
+            pass
 
-            screen.blit(mainMenu_backgruond, [0, 0])
-            screen.blit(text_version, [32, 53])
+        screen.blit(mainMenu_backgruond, [0, 0])
+        screen.blit(text_version, [32, 53])
+        screen.blit(text_MainLogoTitle, [30, 20])
+        screen.blit(text_copyrightTeamName, [985, 650])
+        screen.blit(text_mainMenuMotd, [32, 83])
 
-            screen.blit(text_MainLogoTitle, [30, 20])
-            screen.blit(text_copyrightTeamName, [985, 650])
-            screen.blit(text_mainMenuMotd, [32, 83])
-
-            if btnStart.drawBtn(screen):
-                gameDemo()
+        if btnStart.drawBtn(screen):
+            gameDemo()
                 
-            if btnLoad.drawBtn(screen):
-                isMainGameScene = True
-                isMainMenuScene = False
-                isMainMenuToDemo = False
+        if btnLoad.drawBtn(screen):
+            isMainGameScene = True
+            isMainMenuScene = False
+            isMainMenuToDemo = False
                     
-                with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
-                    data = json.load(pSv)
-                    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+            with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
+                data = json.load(pSv)
+                print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 
-            btnSetting.drawBtn(screen)
+        btnSetting.drawBtn(screen)
 
-            btnCopyright.drawBtn(screen)
+        btnCopyright.drawBtn(screen)
 
-            if btnExit.drawBtn(screen):
-                pygame.quit()
+        if btnExit.drawBtn(screen):
+            pygame.quit()
 
-            pygame.display.update()
-            dt = clock.tick(GameSetting.DEF_FPS)
-    except:
-        pygame.quit()
+        pygame.display.update()
+        dt = clock.tick(GameSetting.DEF_FPS)
 
 while running:
     try:
