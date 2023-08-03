@@ -309,6 +309,7 @@ class Player(pygame.sprite.Sprite): # player
         self.isDashAble = True
         self.health = 3
         self.hurtCooldown = 100
+        self.bulletLeft = LoadedHandgunBullet
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -392,7 +393,6 @@ class Player(pygame.sprite.Sprite): # player
             self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
-            self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
             sfx_handgunFire.play()
 
@@ -581,7 +581,7 @@ def gameDemo(): # main game
             hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨)', True, WHITE)
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
-            hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
+            hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
