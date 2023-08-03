@@ -251,7 +251,7 @@ hud_playerMana = defaultBulletFont.render('100%', True, WHITE)
 
 debug_showFps = defaultFont.render('', False, WHITE)
 showIfDebugging = defaultBulletFont.render('DEBUG MODE', True, ORANGE)
-showIfNonProductMode = defaultBulletFont.render('개발자 모드', True, YELLOW)
+showIfNonProductMode = defaultBulletFont.render('완성된 제품이 아님', True, YELLOW)
 
 def checkFps():
     if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
@@ -596,7 +596,7 @@ def gameDemo(): # main game
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
                 screen.blit(showIfDebugging, [30, 67])
-                screen.blit(showIfNonProductMode, [200, 67])
+                screen.blit(showIfNonProductMode, [30, 640])
 
                 if GameSetting.SHOW_CURRENTFPS == True:
                         pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -633,20 +633,21 @@ def mainMenu(): # main menu
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-                    
-        if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-            if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-            else:
-                pass
-        else:
-            pass
 
         screen.blit(mainMenu_backgruond, [0, 0])
         screen.blit(text_version, [32, 53])
         screen.blit(text_MainLogoTitle, [30, 20])
         screen.blit(text_copyrightTeamName, [985, 650])
         screen.blit(text_mainMenuMotd, [32, 83])
+
+        if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+            screen.blit(showIfDebugging, [985, 630])
+            if GameSetting.SHOW_CURRENTFPS == True:
+                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+            else:
+                pass
+        else:
+            pass
 
         if btnStart.drawBtn(screen):
             gameDemo()
