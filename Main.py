@@ -341,7 +341,6 @@ class Player(pygame.sprite.Sprite): # player
         if pygame.mouse.get_pressed() == (1, 0, 0):
             self.shoot = True
             self.is_shooting()
-            sfx_handgunFire.play()
         else:
             self.shoot = False
 
@@ -395,6 +394,7 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft = MaxHandgunLoadBullet
             self.bulletLeft -= 1
+            sfx_handgunFire.play()
 
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
