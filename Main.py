@@ -12,6 +12,9 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (97, 97, 97)
 DARK_GRAY = (23, 23, 23)
+ORANGE = (252, 186, 3)
+PURPLE = (119, 3, 252)
+YELLOW = (252, 252, 3)
 
 # bool
 isMainGameScene = False
@@ -247,6 +250,8 @@ hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 hud_playerMana = defaultBulletFont.render('100%', True, WHITE)
 
 debug_showFps = defaultFont.render('', False, WHITE)
+showIfDebugging = defaultBulletFont.render('DEBUG MODE', True, ORANGE)
+showIfNonProductMode = defaultBulletFont.render('개발자 모드', True, YELLOW)
 
 def checkFps():
     if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
@@ -395,6 +400,7 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
             self.bulletLeft -= 1
             sfx_handgunFire.play()
+        sfx_handgunFire.stop()
 
     def move(self):
         self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
@@ -589,14 +595,17 @@ def gameDemo(): # main game
             screen.blit(hud_bulletMax, [115, 670])
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+                screen.blit(showIfDebugging, [30, 67])
+                screen.blit(showIfNonProductMode, [200, 67])
+
                 if GameSetting.SHOW_CURRENTFPS == True:
                         pygame.display.set_caption(f"FPS: {clock.get_fps()}")
                 else:
                     pass
                 if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
-                    screen.blit(hud_debugFpsScreen, [30, 77])
-                    screen.blit(hud_debugMilliTickScreen, [30, 100])
-                    screen.blit(hud_playerMana, [30, 120])
+                    screen.blit(hud_debugFpsScreen, [30, 97])
+                    screen.blit(hud_debugMilliTickScreen, [30, 120])
+                    screen.blit(hud_playerMana, [30, 145])
             else:
                 pass
 
