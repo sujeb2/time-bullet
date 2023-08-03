@@ -308,6 +308,7 @@ class Player(pygame.sprite.Sprite): # player
         self.playerVignette = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
         self.isDashAble = True
         self.health = 3
+        self.hurtCooldown = 100
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -340,6 +341,7 @@ class Player(pygame.sprite.Sprite): # player
         if pygame.mouse.get_pressed() == (1, 0, 0):
             self.shoot = True
             self.is_shooting()
+            sfx_handgunFire.play()
         else:
             self.shoot = False
 
@@ -370,13 +372,19 @@ class Player(pygame.sprite.Sprite): # player
         else:
             pass
 
-    def playerDamage(self):
-        if self.health > 0:
-            self.health -= 1
-            sfx_playerHurt.play()
-        else:
-            self.healh = 0
-            zombie.isPlayerAlive = False
+    def checkColliedWithEnemy(self):
+        if pygame.sprite.groupcollide(playerGroup, enemyGroup, True, False):
+            self.hurtCooldown -= self.lastTick
+
+            if self.hurtCooldown <= 0:
+                self.health -= 1
+                sfx_playerHurt.play()
+                self.hurtCooldown == 100
+
+            if self.health <= 0:
+                self.kill()
+                self.health = 3
+
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -398,6 +406,7 @@ class Player(pygame.sprite.Sprite): # player
         self.move()
         self.player_rotation()
         self.checkMana()
+        self.checkColliedWithEnemy()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -431,7 +440,7 @@ class Bullet(pygame.sprite.Sprite):
     def checkColliedwithEnemy(self):
         if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, False):
             zombie.damage -= 1
-            if zombie.damage < 0:
+            if zombie.damage <= 0:
                 zombie.kill()
                 zombie.damage = 5
 
@@ -524,6 +533,7 @@ allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
 obstaclesGroup = pygame.sprite.Group()
+playerGroup = pygame.sprite.Group()
 zombie = Enemy((0, 0))
 
 btnStart = Button(32, 530, btn_Start, 1)
@@ -533,6 +543,7 @@ btnCopyright = Button(29, 620, btn_Copyright, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
 
 allSpritesGroup.add(player)
+playerGroup.add(player)
 
 # main
 if GameSetting.RUN_GAME_BEFORE_MENU:
@@ -556,6 +567,7 @@ def gameDemo(): # main game
                     except:
                         print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
                         print(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
+                    pygame.quit()
                     sys.exit()
 
             screen.blit(img_backgroundLoop, [0, 0])
@@ -563,6 +575,7 @@ def gameDemo(): # main game
             # render
             camera.cameraDraw()
             allSpritesGroup.update()
+            playerGroup.update()
 
             # debug info update
             hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
@@ -570,9 +583,6 @@ def gameDemo(): # main game
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
 
-            screen.blit(hud_HealthFull, [30, 20])
-            screen.blit(hud_HealthFull, [65, 20])
-            screen.blit(hud_HealthFull, [100, 20])
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
             screen.blit(hud_bulletSlash, [103, 670])
@@ -590,13 +600,29 @@ def gameDemo(): # main game
             else:
                 pass
 
+            if player.health >= 3:
+                screen.blit(hud_HealthFull, [30, 20])
+                screen.blit(hud_HealthFull, [65, 20])
+                screen.blit(hud_HealthFull, [100, 20])
+            elif player.health <= 2:
+                screen.blit(hud_HealthFull, [30, 20])
+                screen.blit(hud_HealthFull, [65, 20])
+                screen.blit(hud_HealthEmpty, [100, 20])
+            elif player.health <= 0:
+                screen.blit(hud_HealthEmpty, [30, 20])
+                screen.blit(hud_HealthEmpty, [65, 20])
+                screen.blit(hud_HealthEmpty, [100, 20])
+        
+
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
+        sys.exit()
 
 def mainMenu(): # main menu
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.quit()
                 sys.exit()
                     
         if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
