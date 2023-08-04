@@ -4,6 +4,7 @@ from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
 from ButtonManager import Button
+from csv import reader
 
 print('INFO: Loading..')
 
@@ -130,17 +131,20 @@ except:
 # Image
 print("INFO: Reading Images..")
 try:
+    # background / Favicon
     img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png').convert_alpha()
     img_backgroundLoop = pygame.transform.scale(img_backgroundLoop,(GameSetting.WIDTH, GameSetting.HEIGHT))
     img_gameFavicon = pygame.image.load('./src/img/gameicon_placeholder.png').convert_alpha()
     img_gameLogo = pygame.image.load('./src/img/gamelogo.png').convert_alpha()
     img_gameLogo = pygame.transform.scale(img_gameLogo, (200, 100))
 
+    # icon
     icn_GunSelect_handGun = pygame.image.load('./src/img/icon/indiv_icon/Handgun.png').convert_alpha()
     icn_GunSelect_handGun = pygame.transform.scale(icn_GunSelect_handGun, (32, 32))
     icn_GunSelect_machineGun = pygame.image.load('./src/img/icon/indiv_icon/Machinegun.png').convert_alpha()
     icn_GunSelect_machineGun = pygame.transform.scale(icn_GunSelect_machineGun, (32, 32))
     
+    # hud
     hud_HealthFull = pygame.image.load('./src/img/hud/hud_health1.png').convert_alpha()
     hud_HealthFull = pygame.transform.scale(hud_HealthFull, (32, 32))
     hud_HealthHalf = pygame.image.load('./src/img/hud/hud_health_half.png').convert_alpha()
@@ -151,18 +155,36 @@ try:
     hud_radiation = pygame.transform.scale(hud_radiation, (32, 32))
     hudBackground_weaponSelect = pygame.image.load('./src/img/hud/weapon_select.png').convert_alpha()
 
+    # button
     btn_Start = pygame.image.load('./src/img/button/menu/start_btn.png').convert_alpha()
     btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
     btn_Copyright = pygame.image.load('./src/img/button/menu/copyright_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
 
+    # crosshair
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
 
+    # background
     tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert_alpha()
     mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png').convert_alpha()
+    img_demoMapBackground = pygame.image.load('./src/maps/png/dev_test.png').convert_alpha()
 
     map_devTest = pygame.image.load('./src/maps/png/dev_test.png').convert_alpha()
+
+    # map wall
+    backgroundWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert_alpha()
+    topWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile1.png').convert_alpha()
+    topLeftDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile2.png').convert_alpha()
+    rightStraightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile3.png').convert_alpha()
+    toprightDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile4.png').convert_alpha()
+    straightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile6.png').convert_alpha()
+    straightNonDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile9.png').convert_alpha()
+    topRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile1.png').convert_alpha()
+    rightNonLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile14.png').convert_alpha()
+    topLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile12.png').convert_alpha()
+    leftNonRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile16.png').convert_alpha()
+    nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -390,6 +412,20 @@ class Player(pygame.sprite.Sprite): # player
                 self.kill()
                 self.health = 3
 
+    def check_collision(self, direction):
+        for sprite in obstaclesGroup:
+            if sprite.rect.colliderect(self.rect):
+                if direction == "horizontal":
+                    if self.velocity_x > 0:
+                        self.base_player_image.right = sprite.rect.left
+                    if self.velocity_x < 0:
+                        self.base_player_image.left = sprite.rect.right
+                
+                if direction == "vertical":
+                    if self.velocity_y < 0:
+                        self.base_player_image.top = sprite.rect.bottom
+                    if self.velocity_y > 0:
+                        self.base_player_image.bottom = sprite.rect.top
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -443,12 +479,12 @@ class Bullet(pygame.sprite.Sprite):
         if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime:
             self.kill()
 
-    def checkColliedwithEnemy(self):
-        if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, False):
-            zombie.damage -= 1
-            if zombie.damage <= 0:
-                zombie.kill()
-                zombie.damage = 5
+    #def checkColliedwithEnemy(self):
+    #    if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, False):
+    #        zombie.damage -= 1
+    #        if zombie.damage <= 0:
+    #            zombie.kill()
+    #            zombie.damage = 5
 
     def checkIsSlowState(self):
         keys = pygame.key.get_pressed()
@@ -461,24 +497,7 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.bullet_movement()
         #self.checkIsSlowState()
-        self.checkColliedwithEnemy()
-
-class Camera(pygame.sprite.Group): # custom camera function
-    def __init__(self):
-        super().__init__()
-        self.offset = pygame.math.Vector2()
-        self.floor_rect = map_devTest.get_rect(topleft = (0, 0))
-
-    def cameraDraw(self):
-        self.offset.x = player.rect.centerx - GameSetting.WIDTH // 2
-        self.offset.y = player.rect.centery - GameSetting.HEIGHT // 2
-
-        floor_offset_pos = self.floor_rect.topleft - self.offset # map offset
-        screen.blit(map_devTest, floor_offset_pos)
-
-        for sprite in allSpritesGroup:
-            offset_pos = sprite.rect.topleft - self.offset
-            screen.blit(sprite.image, offset_pos)
+        #self.checkColliedwithEnemy()
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, position):
@@ -533,14 +552,124 @@ class Enemy(pygame.sprite.Sprite):
         self.pathTracePlayer()
         self.checkIsSlowState()
 
+class GameLevel(pygame.sprite.Group): 
+    def __init__(self):
+        super().__init__()
+        self.offset = pygame.math.Vector2()
+        self.floor_rect = img_demoMapBackground.get_rect(topleft = (0,0))
+        self.enemy_spawn_pos = []
+        self.health_spawn_pos = []
+        self.create_map()
+
+    def create_map(self):
+        layouts = {"boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
+                   "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
+                   "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
+                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv")
+                  }
+
+        for style, layout in layouts.items():
+            for row_index, row in enumerate(layout):
+                for col_index, col in enumerate(row):
+                    if col != "-1":
+                        x = col_index * GameSetting.TILESIZE
+                        y = row_index * GameSetting.TILESIZE
+                        if style == "boundary":
+                            Tile((x,y), [obstaclesGroup], "boundary", col)
+                        if style == "walls":
+                            Tile((x,y), [allSpritesGroup], "walls", col)  
+                        if style == "enemies":
+                            self.enemy_spawn_pos.append((x, y))
+                        if style == "health potions":
+                            self.health_spawn_pos.append((x, y))
+
+    def import_csv_layout(self, path):
+        terrain_map = []
+        with open(path) as level_map:
+            layout = reader(level_map, delimiter=",")
+            for row in layout:
+                terrain_map.append(list(row))
+            return terrain_map
+    
+    def custom_draw(self): 
+        self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
+        self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
+
+        #draw the floor
+        floor_offset_pos = self.floor_rect.topleft - self.offset
+        screen.blit(img_demoMapBackground, floor_offset_pos)
+
+        # draw the PLAYER'S rectangles for demonstration purposes
+        # base_rect = player.base_player_rect.copy().move(-self.offset.x, -self.offset.y)
+        # pygame.draw.rect(screen, "red", base_rect, width=2)
+        # rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
+        # pygame.draw.rect(screen, "yellow", rect, width=2)
+
+        # # draw the ZOMBIE'S rectangles for demonstration purposes
+        # base_rect = necromancer.base_zombie_rect.copy().move(-self.offset.x, -self.offset.y)
+        # pygame.draw.rect(screen, "red", base_rect, width=2)
+        # rect = necromancer.rect.copy().move(-self.offset.x, -self.offset.y)
+        # pygame.draw.rect(screen, "yellow", rect, width=2)   
+
+        # print(base_rect.x, base_rect.y)
+
+
+        for sprite in allSpritesGroup: 
+            offset_pos = sprite.rect.topleft - self.offset
+            screen.blit(sprite.image, offset_pos)
+
+class Tile(pygame.sprite.Sprite): 
+    def __init__(self, pos, groups, type, unique_id):
+        super().__init__(groups)
+        if type == "boundary":
+            self.image = backgroundWall
+        elif type == "walls":
+            if unique_id == "0":
+                self.image = topWall
+            if unique_id == "1":
+                self.image = topLeftDownWall
+            if unique_id == "2":
+                self.image = rightStraightWall
+            if unique_id == "3":
+                self.image = toprightDownWall
+            if unique_id == "4":
+                self.image = straightWall
+            if unique_id == "5":
+                self.image = straightWall
+            if unique_id == "6":
+                self.image = backgroundWall
+            if unique_id == "7":
+                self.image = straightWall
+            if unique_id == "8":
+                self.image = straightNonDownWall
+            if unique_id == "9":
+                self.image = topRightWall
+            if unique_id == "10":
+                self.image = rightStraightWall
+            if unique_id == "11":
+                self.image = topLeftWall
+            if unique_id == "12":
+                self.image = nonWall
+            if unique_id == "13":
+                self.image = rightNonLeftWall
+            if unique_id == "14":
+                self.image = rightStraightWall
+            if unique_id == "15":
+                self.image = leftNonRightWall
+
+        # if type == "props":
+        #     self.image = torch_img
+        
+        self.rect = self.image.get_rect(topleft = pos) 
+
 player = Player()
-camera = Camera()
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
 obstaclesGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
-zombie = Enemy((0, 0))
+demoLevel = GameLevel()
+#zombie = Enemy((0, 0))
 
 btnStart = Button(32, 530, btn_Start, 1)
 btnLoad = Button(32, 560, btn_Load, 1)
@@ -576,10 +705,9 @@ def gameDemo(): # main game
                     pygame.quit()
                     sys.exit()
 
-            screen.blit(img_backgroundLoop, [0, 0])
+            demoLevel.custom_draw()
 
             # render
-            camera.cameraDraw()
             allSpritesGroup.update()
             playerGroup.update()
 
