@@ -466,7 +466,7 @@ class Player(pygame.sprite.Sprite): # player
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
             self.bulletLeft -= 1
-            #sfx_handgunFire.play()
+            sfx_handgunFire.play(1)
 
     def move(self):
         self.hitbox_rect.centerx += self.velocity_x
@@ -493,7 +493,7 @@ class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, angle): 
         super().__init__()
         self.image = entity_Bullet
-        self.image = pygame.transform.rotozoom(self.image, 0, 0.5)
+        self.image = pygame.transform.rotozoom(self.image, 0, GameSetting.BULLET_VIEWSIZE)
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.x = x
@@ -502,7 +502,7 @@ class Bullet(pygame.sprite.Sprite):
         self.angle = angle
         self.x_vel = math.cos(self.angle * (2*math.pi/360)) * self.speed
         self.y_vel = math.sin(self.angle * (2*math.pi/360)) * self.speed
-        self.bullet_lifetime = 750
+        self.bullet_lifetime = GameSetting.BULLET_LIFETIME
         self.spawn_time = pygame.time.get_ticks() # gets the specific time that the bullet was created, stays static
         
 
