@@ -562,7 +562,8 @@ class GameLevel(pygame.sprite.Group):
         self.create_map()
 
     def create_map(self):
-        layouts = {"boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
+        layouts = {
+                   "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
                    "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
                    "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
                    "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv")
@@ -716,6 +717,8 @@ def gameDemo(): # main game
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨)', True, WHITE)
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
+            hud_debugMapInfoScreen = defaultBulletFont.render('현재 "dev_test.csv" 불러와짐', True, WHITE)
+            hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
@@ -724,7 +727,9 @@ def gameDemo(): # main game
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
                 screen.blit(showIfDebugging, [30, 67])
-                screen.blit(showIfNonProductMode, [30, 640])
+
+                if GameSetting.ISPRODUCTMODE == False:
+                    screen.blit(showIfNonProductMode, [30, 640])
 
                 if GameSetting.SHOW_CURRENTFPS == True:
                         pygame.display.set_caption(f"FPS: {clock.get_fps()}")
@@ -734,6 +739,8 @@ def gameDemo(): # main game
                     screen.blit(hud_debugFpsScreen, [30, 97])
                     screen.blit(hud_debugMilliTickScreen, [30, 120])
                     screen.blit(hud_playerMana, [30, 145])
+                    screen.blit(hud_debugMapInfoScreen, [30, 170])
+                    screen.blit(hud_debugVerInfoScreen, [30, 195])
             else:
                 pass
 

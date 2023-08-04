@@ -4,7 +4,7 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '1.1.2'
+VER = '1.3'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',
@@ -53,6 +53,7 @@ DRAW_GREYBACKGROUND_ASVOID = True
 YES_THIS_IS_DEBUGGER_IDC = False
 SHOW_DEBUGINFO_TOSCREEN = True
 SHOW_COLLISION_BOXES = True
+ISPRODUCTMODE = True
 
 # Bullet
 BULLET_COOLDOWN = 15
