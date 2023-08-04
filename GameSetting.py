@@ -23,9 +23,6 @@ MOTD = {
     '이러한 메세지를 MOTD(Message Of The Day)이라고 불리는걸 아시나요?'
 }
 # Player Setting
-PLAYER_START_X = 150
-PLAYER_START_Y = 150
-# 1.0x, 1.5x, 2x
 PLAYER_VIEW_SIZE = 1.4
 PLAYER_SPEED = 2
 PLAYER_DASH_SPEED = 90

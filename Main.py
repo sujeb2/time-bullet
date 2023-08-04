@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, UserData
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, UserData, FadeInOut
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -187,6 +187,8 @@ try:
     leftNonRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile16.png').convert_alpha()
     nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
     voidWall = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
+
+    entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -316,14 +318,40 @@ def generateGlowEffect(glow, rad):
 
     return lightSurface
 
+def createTitle(title, subtitle, x, y):
+    print("[TITLE MANAGER] Creating Title..")
+    try:
+        lastTick = pygame.time.get_ticks()
+        fadeOutValue = 350
+
+        titleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+        subtitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 20)
+
+        titleText = titleFont.render(title, True, (255, 255, 255))
+        subtitleText = subtitleFont.render(subtitle, (255, 255, 255))
+
+        screen.blit(titleText, [x, y])
+        screen.blit(subtitleText, [x, y+10])
+
+        fadeOutValue -= lastTick
+
+        if fadeOutValue <= 0:
+            FadeInOut.FadeManager.fadeOut(titleText)
+            FadeInOut.FadeManager.fadeOut(subtitleText)
+
+    except:
+        print("[TITLE MANAGER] Error occurred while creating title.")
+        print(f"[TITLE MANAGER] Traceback: {traceback.print_exc}")
+
+
 class Player(pygame.sprite.Sprite): # player
-    def __init__(self):
+    def __init__(self, pos):
         super().__init__()
-        self.pos = pygame.math.Vector2(GameSetting.PLAYER_START_X, GameSetting.PLAYER_START_Y)
+        self.pos = pos
         self.image = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
         self.base_player_image = self.image
         self.playerShootFrame = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame2.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
-        self.hitbox_rect = self.base_player_image.get_rect(center = self.pos)
+        self.hitbox_rect = self.base_player_image.get_rect(center = pos)
         self.rect = self.hitbox_rect.copy()
         self.lastTick = pygame.time.get_ticks()
         self.speed = GameSetting.PLAYER_SPEED
@@ -339,6 +367,7 @@ class Player(pygame.sprite.Sprite): # player
         self.health = 3
         self.hurtCooldown = 100
         self.bulletLeft = LoadedHandgunBullet
+        self.vecPos = pygame.math.Vector2(pos)
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -416,18 +445,18 @@ class Player(pygame.sprite.Sprite): # player
 
     def check_collision(self, direction):
         for sprite in obstaclesGroup:
-            if sprite.rect.colliderect(self.rect):
+            if sprite.rect.colliderect(self.hitbox_rect):
                 if direction == "horizontal":
                     if self.velocity_x > 0:
-                        self.base_player_image.right = sprite.rect.left
+                        self.hitbox_rect.right = sprite.rect.left
                     if self.velocity_x < 0:
-                        self.base_player_image.left = sprite.rect.right
+                        self.hitbox_rect.left = sprite.rect.right
                 
                 if direction == "vertical":
                     if self.velocity_y < 0:
-                        self.base_player_image.top = sprite.rect.bottom
+                        self.hitbox_rect.top = sprite.rect.bottom
                     if self.velocity_y > 0:
-                        self.base_player_image.bottom = sprite.rect.top
+                        self.hitbox_rect.bottom = sprite.rect.top
 
     def is_shooting(self): 
         if self.shoot_cooldown == 0:
@@ -437,13 +466,18 @@ class Player(pygame.sprite.Sprite): # player
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
             self.bulletLeft -= 1
-            sfx_handgunFire.play()
-        sfx_handgunFire.stop()
+            #sfx_handgunFire.play()
 
     def move(self):
-        self.pos += pygame.math.Vector2(self.velocity_x, self.velocity_y)
-        self.hitbox_rect.center = self.pos
-        self.rect.center = self.hitbox_rect.center
+        self.hitbox_rect.centerx += self.velocity_x
+        self.check_collision("horizontal")
+
+        self.hitbox_rect.centery += self.velocity_y
+        self.check_collision("vertical")
+
+        self.hitbox_rect.center = self.hitbox_rect.center 
+        
+        self.vec_pos = (self.hitbox_rect.centerx, self.hitbox_rect.centery)
         
     def update(self):
         self.user_input()
@@ -456,50 +490,41 @@ class Player(pygame.sprite.Sprite): # player
             self.shoot_cooldown -= 1
 
 class Bullet(pygame.sprite.Sprite):
-    def __init__(self, x, y, angle):
+    def __init__(self, x, y, angle): 
         super().__init__()
-        self.image = pygame.image.load('./src/img/animations/object/bullet/BulletProjectile.png').convert_alpha()
-        self.image = pygame.transform.rotozoom(self.image, 0, GameSetting.BULLET_VIEWSIZE)
+        self.image = entity_Bullet
+        self.image = pygame.transform.rotozoom(self.image, 0, 0.5)
         self.rect = self.image.get_rect()
         self.rect.center = (x, y)
         self.x = x
         self.y = y
+        self.speed = 50
         self.angle = angle
-        self.speed = GameSetting.BULLET_SPEED
         self.x_vel = math.cos(self.angle * (2*math.pi/360)) * self.speed
         self.y_vel = math.sin(self.angle * (2*math.pi/360)) * self.speed
-        self.bullet_lifetime = GameSetting.BULLET_LIFETIME
-        self.spawn_time = pygame.time.get_ticks() # gets the specific time that the bullet was created
+        self.bullet_lifetime = 750
+        self.spawn_time = pygame.time.get_ticks() # gets the specific time that the bullet was created, stays static
+        
 
-    def bullet_movement(self):  
+    def bullet_movement(self): 
         self.x += self.x_vel
         self.y += self.y_vel
 
         self.rect.x = int(self.x)
         self.rect.y = int(self.y)
 
-        if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime:
+        if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime: 
             self.kill()
 
-    #def checkColliedwithEnemy(self):
-    #    if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, False):
-    #        zombie.damage -= 1
-    #        if zombie.damage <= 0:
-    #            zombie.kill()
-    #            zombie.damage = 5
-
-    def checkIsSlowState(self):
-        keys = pygame.key.get_pressed()
-
-        if keys[pygame.K_f]:
-            pass
-        else:
-            pass
+    
+        
+    def bullet_collisions(self):         
+        if pygame.sprite.spritecollide(self, obstaclesGroup, False): # wall collisions
+            self.kill()
 
     def update(self):
         self.bullet_movement()
-        #self.checkIsSlowState()
-        #self.checkColliedwithEnemy()
+        self.bullet_collisions()
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, position):
@@ -568,8 +593,7 @@ class GameLevel(pygame.sprite.Group):
                    "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
                    "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
                    "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
-                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv"),
-                   "void": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_void.csv")
+                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv")
                   }
 
         for style, layout in layouts.items():
@@ -584,8 +608,6 @@ class GameLevel(pygame.sprite.Group):
                             Tile((x,y), [allSpritesGroup], "walls", col)  
                         if style == "enemies":
                             self.enemy_spawn_pos.append((x, y))
-                        if type == "void":
-                            Tile((x,y), [allSpritesGroup], "void", col)  
                         if style == "health potions":
                             self.health_spawn_pos.append((x, y))
 
@@ -642,8 +664,6 @@ class Tile(pygame.sprite.Sprite):
                 self.image = straightWall
             if unique_id == "5":
                 self.image = straightWall
-            if unique_id == "6":
-                self.image = backgroundWall
             if unique_id == "7":
                 self.image = straightWall
             if unique_id == "8":
@@ -671,7 +691,7 @@ class Tile(pygame.sprite.Sprite):
         
         self.rect = self.image.get_rect(topleft = pos) 
 
-player = Player()
+player = Player((100, 100))
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
@@ -713,6 +733,8 @@ def gameDemo(): # main game
                         print(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
                     sys.exit()
+
+            screen.blit(voidWall, (GameSetting.WIDTH, GameSetting.HEIGHT))
 
             demoLevel.custom_draw()
 
