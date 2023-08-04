@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, UserData
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -44,6 +44,7 @@ data = {
     'playerX': 0,
     'playerY': 0
 }
+
 
 flags = GameSetting.SCREEN_FLAGS
 
@@ -185,6 +186,7 @@ try:
     topLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile12.png').convert_alpha()
     leftNonRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile16.png').convert_alpha()
     nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
+    voidWall = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -566,7 +568,8 @@ class GameLevel(pygame.sprite.Group):
                    "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
                    "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
                    "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
-                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv")
+                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv"),
+                   "void": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_void.csv")
                   }
 
         for style, layout in layouts.items():
@@ -581,6 +584,8 @@ class GameLevel(pygame.sprite.Group):
                             Tile((x,y), [allSpritesGroup], "walls", col)  
                         if style == "enemies":
                             self.enemy_spawn_pos.append((x, y))
+                        if type == "void":
+                            Tile((x,y), [allSpritesGroup], "void", col)  
                         if style == "health potions":
                             self.health_spawn_pos.append((x, y))
 
@@ -657,6 +662,9 @@ class Tile(pygame.sprite.Sprite):
                 self.image = rightStraightWall
             if unique_id == "15":
                 self.image = leftNonRightWall
+        elif type == "void":
+            if unique_id == "4":
+                self.image = voidWall
 
         # if type == "props":
         #     self.image = torch_img
@@ -788,10 +796,6 @@ def mainMenu(): # main menu
             gameDemo()
                 
         if btnLoad.drawBtn(screen):
-            isMainGameScene = True
-            isMainMenuScene = False
-            isMainMenuToDemo = False
-                    
             with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
                 data = json.load(pSv)
                 print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
