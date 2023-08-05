@@ -1,5 +1,5 @@
-# 2023southkoreagamecoding
- 2023southkoreagamecoding codebase
+# time/bullet
+ time/bullet codebase
 
 ## 📚  |  프로젝트 정보
  - 사용한 파이썬 버전: Python 3.11.3 (64bit)
