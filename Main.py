@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, UserData, FadeInOut
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, FadeInOut
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -16,6 +16,7 @@ DARK_GRAY = (23, 23, 23)
 ORANGE = (252, 186, 3)
 PURPLE = (119, 3, 252)
 YELLOW = (252, 252, 3)
+RED = (255, 0, 0)
 
 # bool
 isMainGameScene = False
@@ -355,7 +356,7 @@ class Player(pygame.sprite.Sprite): # player
         self.rect = self.hitbox_rect.copy()
         self.lastTick = pygame.time.get_ticks()
         self.speed = GameSetting.PLAYER_SPEED
-        self.playerDashSpeed = GameSetting.PLAYER_DASH_SPEED
+        self.DashSpeed = GameSetting.PLAYER_DASH_SPEED
         self.shoot = False
         self.isDashing = False
         self.shoot_cooldown = 0
@@ -466,7 +467,7 @@ class Player(pygame.sprite.Sprite): # player
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
             self.bulletLeft -= 1
-            sfx_handgunFire.play(1)
+            sfx_handgunFire.play(0)
 
     def move(self):
         self.hitbox_rect.centerx += self.velocity_x
@@ -515,9 +516,8 @@ class Bullet(pygame.sprite.Sprite):
 
         if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime: 
             self.kill()
+            sfx_handgunFire.stop()
 
-    
-        
     def bullet_collisions(self):         
         if pygame.sprite.spritecollide(self, obstaclesGroup, False): # wall collisions
             self.kill()
@@ -610,6 +610,8 @@ class GameLevel(pygame.sprite.Group):
                             self.enemy_spawn_pos.append((x, y))
                         if style == "health potions":
                             self.health_spawn_pos.append((x, y))
+                    #else:
+                    #    Tile((0, 0), [allSpritesGroup], "void", '-1')
 
     def import_csv_layout(self, path):
         terrain_map = []
@@ -649,7 +651,9 @@ class GameLevel(pygame.sprite.Group):
 class Tile(pygame.sprite.Sprite): 
     def __init__(self, pos, groups, type, unique_id):
         super().__init__(groups)
-        if type == "boundary":
+        if type == "void":
+            self.image = voidWall
+        elif type == "boundary":
             self.image = backgroundWall
         elif type == "walls":
             if unique_id == "0":
@@ -691,11 +695,12 @@ class Tile(pygame.sprite.Sprite):
         
         self.rect = self.image.get_rect(topleft = pos) 
 
-player = Player((100, 100))
+player = Player((400, 400))
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
 obstaclesGroup = pygame.sprite.Group()
+floorGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
 demoLevel = GameLevel()
 #zombie = Enemy((0, 0))
@@ -744,11 +749,18 @@ def gameDemo(): # main game
 
             # debug info update
             hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
-            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨)', True, WHITE)
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨)', True, WHITE)
+            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
             hud_debugMapInfoScreen = defaultBulletFont.render('현재 "dev_test.csv" 불러와짐', True, WHITE)
             hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
+
+            if clock.get_fps() <= 30:
+                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
+            elif clock.get_fps() <= 20:
+                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
+            elif clock.get_fps() <= 10:
+                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
