@@ -190,6 +190,8 @@ try:
     voidWall = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
 
     entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
+
+    img_overlayDeadScreenBlack = pygame.image.load('.\\src\\img\\hud\\overlay\\transparentBlack.png').convert_alpha()
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -722,6 +724,10 @@ else:
     isMainGameScene = False
     isMainMenuScene = True
 
+def drawDeadScreen():
+        sfx_handgunFire.stop()
+        screen.blit(img_overlayDeadScreenBlack, (0, 0))
+
 def gameDemo(): # main game
         print('INFO: Starting..')
         while True: # replay scene
@@ -734,7 +740,7 @@ def gameDemo(): # main game
                         svFile.close()
                         print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
                     except:
-                        print(f"{bcolors.FAIL}ERROR: Fai5led to save file to {svFile}.\nERROR: Is file even exist?")
+                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
                         print(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
                     sys.exit()
@@ -785,20 +791,6 @@ def gameDemo(): # main game
                     screen.blit(hud_debugVerInfoScreen, [30, 195])
             else:
                 pass
-
-            if player.health >= 3:
-                screen.blit(hud_HealthFull, [30, 20])
-                screen.blit(hud_HealthFull, [65, 20])
-                screen.blit(hud_HealthFull, [100, 20])
-            elif player.health <= 2:
-                screen.blit(hud_HealthFull, [30, 20])
-                screen.blit(hud_HealthFull, [65, 20])
-                screen.blit(hud_HealthEmpty, [100, 20])
-            elif player.health <= 0:
-                screen.blit(hud_HealthEmpty, [30, 20])
-                screen.blit(hud_HealthEmpty, [65, 20])
-                screen.blit(hud_HealthEmpty, [100, 20])
-        
 
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
