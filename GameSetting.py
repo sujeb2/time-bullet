@@ -4,7 +4,7 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '1.3'
+VER = '1.5.3'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',
@@ -18,7 +18,7 @@ MOTD = {
     f'여전히 {VER} 버전을 사용하고 있으시네요!',
     '혹시 지금 쓰는 버전이 데모버전이라는건 알고게시나요?',
     '데모!',
-    'PYRO GAMING',
+    '이 게임은 원래 도전과제가 있다는걸 알고게시나요?',
     '이 메세지가 반복될수도 있을수도..',
     '이러한 메세지를 MOTD(Message Of The Day)이라고 불리는걸 아시나요?'
 }
@@ -50,7 +50,7 @@ DRAW_GREYBACKGROUND_ASVOID = True
 YES_THIS_IS_DEBUGGER_IDC = False
 SHOW_DEBUGINFO_TOSCREEN = True
 SHOW_COLLISION_BOXES = True
-ISPRODUCTMODE = True
+ISPRODUCTMODE = False
 
 # Bullet
 BULLET_COOLDOWN = 15

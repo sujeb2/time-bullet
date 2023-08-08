@@ -8,6 +8,7 @@
     ],
     "exportAsImage.drawTileGrid": false,
     "exportAsImage.useCurrentScale": true,
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "C:/Users/sdbb2/Downloads/Map.tmx": {
             "scale": 0.125,
@@ -34,8 +35,8 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 294,
-                "y": 185
+                "x": 292,
+                "y": 183
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tuto_01.tmx": {
@@ -50,8 +51,8 @@
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 960,
-                "y": 918
+                "x": 956,
+                "y": 916
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx": {
@@ -126,11 +127,11 @@
     "project": "hacknslash.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx",
         "C:/Users/sdbb2/Downloads/Map.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
@@ -139,6 +140,7 @@
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/Block.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tuto_01.tmx"
     ],
+    "textEdit.monospace": false,
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

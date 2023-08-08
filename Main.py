@@ -113,7 +113,6 @@ try:
     running = True
     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
     tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
-    #print(f'INFO: GameSetting: {GameSetting.PLAYER_START_X},\n{GameSetting.PLAYER_START_Y},\n{GameSetting.PLAYER_VIEW_SIZE},\n{GameSetting.PLAYER_SPEED},\n{GameSetting.BULLET_COOLDOWN},\n{GameSetting.BULLET_LIFETIME},\n{GameSetting.BULLET_SPEED},\n{GameSetting.BULLET_VIEWSIZE},\n{GameSetting.SHOW_CURRENTFPS}')
     
     if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
@@ -182,11 +181,11 @@ try:
     toprightDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile4.png').convert_alpha()
     straightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile6.png').convert_alpha()
     straightNonDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile9.png').convert_alpha()
-    topRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile1.png').convert_alpha()
+    topRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
     rightNonLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile14.png').convert_alpha()
     topLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile12.png').convert_alpha()
     leftNonRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile16.png').convert_alpha()
-    nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
+    nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile13.png').convert_alpha()
     voidWall = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
 
     entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
@@ -469,7 +468,7 @@ class Player(pygame.sprite.Sprite): # player
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
             self.bulletLeft -= 1
-            sfx_handgunFire.play(0)
+            #sfx_handgunFire.play(0)
 
     def move(self):
         self.hitbox_rect.centerx += self.velocity_x
@@ -546,25 +545,57 @@ class Enemy(pygame.sprite.Sprite):
         self.isPlayerAlive = True
 
         self.damage = 5
+        self.direction_list = [(1,1), (1,-1), (-1,1), (-1,-1)]
+
+    def getNewPathTrace(self):
+        self.direction_index = random.randint(0, len(self.direction_list)-1)
+        self.steps = random.randint(3, 6) * GameSetting.TILESIZE
+
+    def check_collision(self, direction, move_state):
+        for sprite in obstaclesGroup:
+            if sprite.rect.colliderect(self.rect):
+                self.collide = True
+                if direction == "horizontal":
+                    if self.velocity.x > 0:
+                        self.rect.right = sprite.rect.left
+                    if self.velocity.x < 0:
+                        self.rect.left = sprite.rect.right 
+                if direction == "vertical":
+                    if self.velocity.y < 0:
+                        self.rect.top = sprite.rect.bottom
+                    if self.velocity.y > 0:
+                        self.rect.bottom = sprite.rect.top
+                if move_state == "roam":
+                    self.getNewPathTrace()
+
 
     def pathTracePlayer(self): # path tracing
-        if self.isPlayerAlive:
-            player_vector = pygame.math.Vector2(player.hitbox_rect.center)
-            enemy_vector = pygame.math.Vector2(self.rect.center)
-            distance = self.getVectorDistance(player_vector, enemy_vector)
-
-            if distance > 0:
-                self.direction = (player_vector - enemy_vector).normalize()
-            else:
-                self.direction = pygame.math.Vector2()
-            
-            self.velocity = self.direction * self.speed
-            self.position += self.velocity
-
-            self.rect.centerx = self.position.x
-            self.rect.centery = self.position.y
+        if self.velocity.x > 0:
+            self.current_movement_sprite = 0
         else:
-            pass
+            self.current_movement_sprite = 1
+        
+        player_vector = pygame.math.Vector2(player.rect.center)
+        enemy_vector = pygame.math.Vector2(self.rect.center)
+        distance = self.getVectorDistance(player_vector, enemy_vector)
+
+        if distance > 0:
+            self.direction = (player_vector - enemy_vector).normalize()
+        else:
+            self.direction = pygame.math.Vector2()
+
+        self.velocity = self.direction * self.speed
+        self.position += self.velocity
+
+        self.rect.centerx = self.position.x
+        self.checkCollision("horizontal", "hunt")
+
+        self.rect.centery = self.position.y
+        self.check_collision("vertical", "hunt")
+
+        self.rect.center = self.rect.center
+
+        self.position = (self.rec.centerx, self.rect.centery)
 
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
@@ -725,8 +756,11 @@ else:
     isMainMenuScene = True
 
 def drawDeadScreen():
-        sfx_handgunFire.stop()
-        screen.blit(img_overlayDeadScreenBlack, (0, 0))
+    if not player.alive:
+        game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
+        game_over_screen_fade.fill((0, 0, 0))
+        game_over_screen_fade.set_alpha(160)
+        screen.blit(game_over_screen_fade, (0, 0))
 
 def gameDemo(): # main game
         print('INFO: Starting..')
@@ -758,8 +792,9 @@ def gameDemo(): # main game
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
-            hud_debugMapInfoScreen = defaultBulletFont.render('현재 "dev_test.csv" 불러와짐', True, WHITE)
+            hud_debugMapInfoScreen = defaultBulletFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csvm dev_test_Walls.csv" 불러와짐', True, WHITE)
             hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
+            hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
 
             if clock.get_fps() <= 30:
                 hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
@@ -788,7 +823,8 @@ def gameDemo(): # main game
                     screen.blit(hud_debugMilliTickScreen, [30, 120])
                     screen.blit(hud_playerMana, [30, 145])
                     screen.blit(hud_debugMapInfoScreen, [30, 170])
-                    screen.blit(hud_debugVerInfoScreen, [30, 195])
+                    screen.blit(hud_debugVerInfoScreen, [30, 215])
+                    screen.blit(hud_debugScreenResInfoScreen, [30, 195])
             else:
                 pass
 
@@ -809,12 +845,35 @@ def mainMenu(): # main menu
         screen.blit(text_copyrightTeamName, [985, 650])
         screen.blit(text_mainMenuMotd, [32, 83])
 
+        # debug info update
+        hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
+        hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
+        hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
+        hud_debugMapInfoScreen = defaultBulletFont.render('불러온 맵이 없음', True, WHITE)
+        hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
+
+        if clock.get_fps() <= 30:
+            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
+        elif clock.get_fps() <= 20:
+            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
+        elif clock.get_fps() <= 10:
+            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
+            
         if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-            screen.blit(showIfDebugging, [985, 630])
+            screen.blit(showIfDebugging, [30, 67])
+            if GameSetting.ISPRODUCTMODE == False:
+                screen.blit(showIfNonProductMode, [30, 640])
+
             if GameSetting.SHOW_CURRENTFPS == True:
-                pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
             else:
                 pass
+            if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
+                screen.blit(hud_debugFpsScreen, [30, 97])
+                screen.blit(hud_debugMilliTickScreen, [30, 120])
+                screen.blit(hud_playerMana, [30, 145])
+                screen.blit(hud_debugMapInfoScreen, [30, 170])
+                screen.blit(hud_debugVerInfoScreen, [30, 195])
         else:
             pass
 
