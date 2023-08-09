@@ -191,6 +191,8 @@ try:
     entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
 
     img_overlayDeadScreenBlack = pygame.image.load('.\\src\\img\\hud\\overlay\\transparentBlack.png').convert_alpha()
+    img_blackVoid = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
+    img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
     print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
 except:
     print(f"{traceback.format_exc}")
@@ -401,7 +403,7 @@ class Player(pygame.sprite.Sprite): # player
 
         if pygame.mouse.get_pressed() == (1, 0, 0):
             self.shoot = True
-            self.is_shooting()
+            self.checkShooting()
         else:
             self.shoot = False
 
@@ -445,7 +447,7 @@ class Player(pygame.sprite.Sprite): # player
                 self.kill()
                 self.health = 3
 
-    def check_collision(self, direction):
+    def checkCollisionWithWall(self, direction):
         for sprite in obstaclesGroup:
             if sprite.rect.colliderect(self.hitbox_rect):
                 if direction == "horizontal":
@@ -460,22 +462,20 @@ class Player(pygame.sprite.Sprite): # player
                     if self.velocity_y > 0:
                         self.hitbox_rect.bottom = sprite.rect.top
 
-    def is_shooting(self): 
+    def checkShooting(self): 
         if self.shoot_cooldown == 0:
-            self.shoot_cooldown = GameSetting.BULLET_COOLDOWN
-            spawnBulletPos = self.pos + self.gunBarrelOffset.rotate(self.angle)
+            spawnBulletPos = self.vec_pos + self.gunBarrelOffset.rotate(self.angle)
             self.bullet = Bullet(spawnBulletPos[0], spawnBulletPos[1], self.angle)
+            self.shoot_cooldown = GameSetting.BULLET_COOLDOWN
             bulletGroup.add(self.bullet)
             allSpritesGroup.add(self.bullet)
-            self.bulletLeft -= 1
-            #sfx_handgunFire.play(0)
 
     def move(self):
         self.hitbox_rect.centerx += self.velocity_x
-        self.check_collision("horizontal")
+        self.checkCollisionWithWall("horizontal")
 
         self.hitbox_rect.centery += self.velocity_y
-        self.check_collision("vertical")
+        self.checkCollisionWithWall("vertical")
 
         self.hitbox_rect.center = self.hitbox_rect.center 
         
@@ -500,7 +500,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.center = (x, y)
         self.x = x
         self.y = y
-        self.speed = 50
+        self.speed = GameSetting.BULLET_SPEED
         self.angle = angle
         self.x_vel = math.cos(self.angle * (2*math.pi/360)) * self.speed
         self.y_vel = math.sin(self.angle * (2*math.pi/360)) * self.speed
@@ -508,7 +508,7 @@ class Bullet(pygame.sprite.Sprite):
         self.spawn_time = pygame.time.get_ticks() # gets the specific time that the bullet was created, stays static
         
 
-    def bullet_movement(self): 
+    def bulletMovement(self): 
         self.x += self.x_vel
         self.y += self.y_vel
 
@@ -519,13 +519,13 @@ class Bullet(pygame.sprite.Sprite):
             self.kill()
             sfx_handgunFire.stop()
 
-    def bullet_collisions(self):         
+    def checkCollisionWithWall(self):         
         if pygame.sprite.spritecollide(self, obstaclesGroup, False): # wall collisions
             self.kill()
 
     def update(self):
-        self.bullet_movement()
-        self.bullet_collisions()
+        self.bulletMovement()
+        self.checkCollisionWithWall()
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, position):
@@ -588,7 +588,7 @@ class Enemy(pygame.sprite.Sprite):
         self.position += self.velocity
 
         self.rect.centerx = self.position.x
-        self.checkCollision("horizontal", "hunt")
+        self.check_collision("horizontal", "hunt")
 
         self.rect.centery = self.position.y
         self.check_collision("vertical", "hunt")
@@ -660,6 +660,8 @@ class GameLevel(pygame.sprite.Group):
 
         #draw the floor
         floor_offset_pos = self.floor_rect.topleft - self.offset
+
+        screen.blit(img_blackVoid, [0, 0])
         screen.blit(img_demoMapBackground, floor_offset_pos)
 
         # draw the PLAYER'S rectangles for demonstration purposes
@@ -790,9 +792,9 @@ def gameDemo(): # main game
             # debug info update
             hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
-            hud_debugMapInfoScreen = defaultBulletFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csvm dev_test_Walls.csv" 불러와짐', True, WHITE)
+            hud_debugMapInfoScreen = defaultBulletFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
             hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
             hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
 
@@ -802,6 +804,13 @@ def gameDemo(): # main game
                 hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
             elif clock.get_fps() <= 10:
                 hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
+
+            if math.ceil(clock.get_rawtime()) >= 5:
+                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
+            elif math.ceil(clock.get_rawtime()) >= 15:
+                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
+            elif math.ceil(clock.get_rawtime()) >= 45:
+                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
@@ -830,7 +839,6 @@ def gameDemo(): # main game
 
             pygame.display.update()
             dt = clock.tick(GameSetting.DEF_FPS)
-        sys.exit()
 
 def mainMenu(): # main menu
     while True:
@@ -902,8 +910,8 @@ while running:
 
         while isMainMenuScene:
             mainMenu()
-    except:
-        print(f"{traceback.format_exc}")
+    except Exception:
+        print(f"{traceback.format_exc()}")
         messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
         print(f"{bcolors.FAIL}ERROR: Error occurred while replaying scene.")
         print(f'{traceback.format_exc()}{bcolors.ENDC}')
