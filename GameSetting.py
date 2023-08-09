@@ -1,8 +1,8 @@
 from pygame.locals import *
 
 # Setup
-WIDTH = 1280
-HEIGHT = 720
+WIDTH = 1600
+HEIGHT = 900
 DEF_FPS = 60
 VER = '1.5.3'
 MOTD = {

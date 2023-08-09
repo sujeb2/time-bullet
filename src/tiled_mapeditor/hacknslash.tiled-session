@@ -32,11 +32,11 @@
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx": {
-            "scale": 1,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 292,
-                "y": 183
+                "x": 568,
+                "y": 409.33333333333337
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tuto_01.tmx": {
@@ -117,22 +117,17 @@
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx"
     ],
     "project": "hacknslash.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapSetupTileSet.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Light.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Interior.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/Tileset.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/tutorial.tmx",
-        "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx",
         "C:/Users/sdbb2/Downloads/Map.tmx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/MapLoadSaveSetup.tsx",
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/tileset/easteregg.tsx",
