@@ -1,10 +1,10 @@
 from pygame.locals import *
 
 # Setup
-WIDTH = 1600
-HEIGHT = 900
+WIDTH = 1280
+HEIGHT = 720
 DEF_FPS = 60
-VER = '1.5.3'
+VER = '1.6'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',
@@ -43,6 +43,7 @@ SHOW_CURRENTFPS = True
 DEBUG_FPSWARNING_VALUE = 15
 SHOW_PLAYERMANA_CONSOLE = False
 SCREEN_FLAGS = DOUBLEBUF
+VSYNC = 1
 RUN_GAME_BEFORE_MENU = True
 RUN_FULLSCREEN = False
 SHOW_TRIGGERS = False
@@ -51,6 +52,7 @@ YES_THIS_IS_DEBUGGER_IDC = False
 SHOW_DEBUGINFO_TOSCREEN = True
 SHOW_COLLISION_BOXES = True
 ISPRODUCTMODE = False
+LOGLEVEL = 'INFO'
 
 # Bullet
 BULLET_COOLDOWN = 15

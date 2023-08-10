@@ -1,12 +1,31 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, FadeInOut
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, FadeInOut, logging
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
 from ButtonManager import Button
 from csv import reader
 
-print('INFO: Loading..')
+print(' Initalizing logger..')
+log = logging.getLogger()
+if GameSetting.LOGLEVEL == 'INFO':
+    log.setLevel(logging.INFO)
+elif GameSetting.LOGLEVEL == 'WARN':
+    log.setLevel(logging.WARN)
+elif GameSetting.LOGLEVEL == 'CRITICAL':
+    log.setLevel(logging.CRITICAL)
+elif GameSetting.LOGLEVEL == 'DEBUG':
+    log.setLevel(logging.DEBUG)
+
+format = logging.Formatter('%(asctime)s - %(name)s / %(levelname)s: %(message)s')
+streamHandle = logging.StreamHandler()
+streamHandle.setFormatter(format)
+log.addHandler(streamHandle)
+fileHandle = logging.FileHandler('./src/debug/debug-log.log')
+fileHandle.setFormatter(format)
+log.addHandler(fileHandle)
+
+log.info(' Loading..')
 
 # Color
 WHITE = (255, 255, 255)
@@ -64,49 +83,49 @@ def validateJson(jsonData): # validate save file
     try:
         jsonschema.validate(instance=jsonData, schema=data)
     except jsonschema.ErrorTree.errors:
-        print(f"{bcolors.FAIL}ERROR: Failed to validate player save data, is File even exists?\nTraceBack: {traceback.format_exc()}{bcolors.ENDC}")
+        log.fatal(f"{bcolors.FAIL} Failed to validate player save data, is File even exists?\nTraceBack: {traceback.format_exc()}{bcolors.ENDC}")
         return False
     return True
 
-print("INFO: Reading save file..")
+log.info(" Reading save file..")
 try:
     with open('.\\src\\save\\0\\playerSaveData.json', 'r+', encoding='utf-8') as svFile:
         data = json.load(svFile)
-        print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+        log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
-    print(f"{bcolors.FAIL}ERROR: Error occurred while loading 'save/0/playeSaveData.json' file.")
-    print(f"ERROR: This might happen when player changed some data.{bcolors.ENDC}")
-    print(f'{bcolors.WARNING}WARN: Returning Traceback:\n{traceback.format_exc()}{bcolors.ENDC}')
+    log.critical(f"{bcolors.FAIL} Error occurred while loading 'save/0/playeSaveData.json' file.")
+    log.critical(f" This might happen when player changed some data.{bcolors.ENDC}")
+    log.warning(f'{bcolors.WARNING}WARN: Returning Traceback:\n{traceback.format_exc()}{bcolors.ENDC}')
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print('INFO: Writting default save file...')
+    log.info(' Writting default save file...')
     with open('./src/save/0/playerSaveData.json', 'w') as writeSvFile:
         writeSvFile.write('{"mxHandgunBullet": 255, "crtHandgunBullet": 20000, "crtScene": "", "playerX": 0, "playerY": 0}')
 
-print("INFO: Checking save file requirements..")
+log.info(" Checking save file requirements..")
 try:
     with open('.\\src\\save\\0\\playerSaveData.json', 'r') as pSv:
         mainData = str(json.load(pSv))
         isFileVaild = validateJson(mainData)
 
         if isFileVaild:
-            print(f"{bcolors.OKCYAN}SUCCESS: playerSaveData is vaild.{bcolors.ENDC}")
+            log.info(f"{bcolors.OKCYAN} playerSaveData is vaild.{bcolors.ENDC}")
         else:
-            print(f"{bcolors.WARNING}WARN: playerSaveData isn't vaild as default state.{bcolors.ENDC}")
+            log.warning(f"{bcolors.WARNING}WARN: playerSaveData isn't vaild as default state.{bcolors.ENDC}")
 except FileNotFoundError:
-    print(f"{bcolors.FAIL}ERROR: Failed to read playerSaveData, is File even exists?\nTraceback: {traceback.format_exc()}{bcolors.ENDC}")
+    log.fatal(f"{bcolors.FAIL} Failed to read playerSaveData, is File even exists?\nTraceback: {traceback.format_exc()}{bcolors.ENDC}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     pygame.quit()
     sys.exit()
 
 def quitGame():
-    print("INFO: Exiting..")
+    log.info(" Exiting..")
     pygame.quit()
 
 # game init
-print("INFO: Initallizing..")
+log.info(" Initallizing..")
 try:
     pygame.init()
-    screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT), flags)
+    screen = pygame.display.set_mode((GameSetting.WIDTH, GameSetting.HEIGHT), flags, vsync=GameSetting.VSYNC)
     clock = pygame.time.Clock()
     dt = 0
     display = pygame.display
@@ -116,21 +135,21 @@ try:
     
     if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
-            print(f'{bcolors.WARNING}WARNING: Too many debug updates! it may slow down performance.{bcolors.ENDC}')
+            log.debug(f'{bcolors.WARNING}Too many debug updates! it may slow down performance.{bcolors.ENDC}')
         else:
             pass
     else:
         pass
 
-    print(f"{bcolors.OKGREEN}SUCCESS: Initallized.{bcolors.ENDC}")
+    log.info(f"{bcolors.OKGREEN}Initallized.{bcolors.ENDC}")
 except:
-    print(f"{traceback.format_exc}")
+    log.fatal(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}ERROR: Error occurred while initallizing game.")
-    print(f"ERROR: May occurrs because of weird pygame bug lol{bcolors.ENDC}")
+    log.fatal(f"{bcolors.FAIL}Error occurred while initallizing game.")
+    log.fatal(f"May occurrs because of weird pygame bug lol{bcolors.ENDC}")
 
 # Image
-print("INFO: Reading Images..")
+log.info(" Reading Images..")
 try:
     # background / Favicon
     img_backgroundLoop = pygame.image.load('./src/img/background/game_default_background.png').convert_alpha()
@@ -193,16 +212,16 @@ try:
     img_overlayDeadScreenBlack = pygame.image.load('.\\src\\img\\hud\\overlay\\transparentBlack.png').convert_alpha()
     img_blackVoid = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
     img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+    log.info(f"{bcolors.OKGREEN}Loaded.{bcolors.ENDC}")
 except:
-    print(f"{traceback.format_exc}")
+    log.critical(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Images.")
-    print(f"ERROR: Is file even exists?{bcolors.ENDC}")
+    log.critical(f"{bcolors.FAIL} Error occurred while loading Images.")
+    log.critical(f" Is file even exists?{bcolors.ENDC}")
     quitGame()
 
 # SFX / OST
-print("INFO: Loading Sounds..")
+log.info(" Loading Sounds..")
 try:
     # sfx
     sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
@@ -215,33 +234,33 @@ try:
     # ost
     ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
     ost_MainMenu = pygame.mixer.music.set_volume(GameSetting.MUSIC_VOL)
-    print(f'INFO: Volume set to {GameSetting.MUSIC_VOL}%')
+    log.info(f' Volume set to {GameSetting.MUSIC_VOL}%')
     if isMainMenuScene == True and isMainGameScene == False:
         #pygame.mixer.music.play(-1)
         pass
     elif isMainGameScene == True and isMainMenuScene == False:
         pass
 
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+    log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
-    print(f"{traceback.format_exc()}")
+    log.critical(f"{traceback.format_exc()}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}ERROR: Error occurred while loading Sound.")
-    print(f"ERROR: Is file even exists?{bcolors.ENDC}") # over 100!
+    log.critical(f"{bcolors.FAIL} Error occurred while loading Sound.")
+    log.critical(f" Is file even exists?{bcolors.ENDC}") # over 100!
     quitGame()
 
-print("INFO: Reading Video..")
+log.info(" Reading Video..")
 try:
     start_std = Video('.\\src\\mp4\\std_start.mp4')
     start_std.set_size((GameSetting.WIDTH, GameSetting.HEIGHT))
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+    log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except FileNotFoundError:
-    print(f'{bcolors.FAIL}ERROR: Failed to load video file, is File even exist?\nReturning Traceback: {traceback.format_exc()}{bcolors.ENDC}')
+    log.critical(f'{bcolors.FAIL}Failed to load video file, is File even exist?\nReturning Traceback: {traceback.format_exc()}{bcolors.ENDC}')
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     quitGame()
 
 # font setup
-print("INFO: Resetting Font/Title..")
+log.info(" Resetting Font/Title..")
 try:
     display.set_caption(f'TIME / BULLET - {GameSetting.VER}')
     display.set_icon(img_gameFavicon)
@@ -253,18 +272,18 @@ try:
     mainTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 25)
     subTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 15)
 
-    print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+    log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
-    print(f"{traceback.format_exc}")
+    log.fatal(f"{traceback.format_exc}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-    print(f"{bcolors.FAIL}ERROR: Error occurred while reseting font/title.")
-    print(f"ERROR: May occurrs because of weird pygame bug lol{bcolors.ENDC}")
+    log.fatal(f"{bcolors.FAIL} Error occurred while reseting font/title.")
+    log.fatal(f" May occurrs because of weird pygame bug lol{bcolors.ENDC}")
 finally: 
     if display.get_caption == '':
         display.set_caption('Caption not set.')
 
 # font reset
-print("INFO: Resetting text object..")
+log.info(" Resetting text object..")
 text_MainLogoTitle = defaultFont.render('TIME \ BULLET', True, WHITE)
 text_copyrightTeamName = defaultCopyrightFont.render('MADEBY. SONGRO STUDIO_', True, GRAY)
 if list(GameSetting.MOTD) == '':
@@ -287,17 +306,17 @@ def checkFps():
     if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
         pass
     else:
-        print(f"{bcolors.WARNING}WARNING: FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
-        print(f"WARNING: This may cause 'unplayable' for certain players.{bcolors.ENDC}")
+        log.warning(f"{bcolors.WARNING} FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
+        log.warning(f" This may cause 'unplayable' for certain players.{bcolors.ENDC}")
         #killPlayer()
 
 def autoSave():
-    print("INFO: AutoSaving..")
+    log.info(" AutoSaving..")
     Saving = 5
     try:
         with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
             json.dump(data, svFile)
-            print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+            log.info(f"{bcolors.OKGREEN} Saved.{bcolors.ENDC}")
         
         while Saving > 0:
             screen.blit(text_autoSave, [30, 650])
@@ -306,8 +325,8 @@ def autoSave():
         if Saving == 0:
             Saving = 5
     except:
-        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-        print(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
+        log.fatal(f"{bcolors.FAIL} Failed to save file to {svFile}.\n Is file even exist?")
+        log.fatal(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
 
 def generateGlowEffect(glow, rad):
     lightSurface = pygame.Surface((rad * 2, rad * 2), pygame.SRCALPHA)
@@ -323,7 +342,7 @@ def generateGlowEffect(glow, rad):
     return lightSurface
 
 def createTitle(title, subtitle, x, y):
-    print("[TITLE MANAGER] Creating Title..")
+    log.info("[TITLE MANAGER] Creating Title..")
     try:
         lastTick = pygame.time.get_ticks()
         fadeOutValue = 350
@@ -344,8 +363,8 @@ def createTitle(title, subtitle, x, y):
             FadeInOut.FadeManager.fadeOut(subtitleText)
 
     except:
-        print("[TITLE MANAGER] Error occurred while creating title.")
-        print(f"[TITLE MANAGER] Traceback: {traceback.print_exc}")
+        log.critical("[TITLE MANAGER] Error occurred while creating title.")
+        log.critical(f"[TITLE MANAGER] Traceback: {traceback.print_exc}")
 
 
 class Player(pygame.sprite.Sprite): # player
@@ -419,7 +438,7 @@ class Player(pygame.sprite.Sprite): # player
             self.speed = 3
 
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True:
-            print(self.playerMana)
+            log.info(self.playerMana)
         else:
             pass
 
@@ -428,7 +447,7 @@ class Player(pygame.sprite.Sprite): # player
             if self.playerManaCooldown > 0:
                 self.playerManaCooldown -= self.lastTick
             else:
-                print("INFO: ReAdding Mana..")
+                log.info(" ReAdding Mana..")
                 self.playerMana = 100
                 self.playerManaCooldown = 500
         else:
@@ -664,19 +683,14 @@ class GameLevel(pygame.sprite.Group):
         screen.blit(img_blackVoid, [0, 0])
         screen.blit(img_demoMapBackground, floor_offset_pos)
 
-        # draw the PLAYER'S rectangles for demonstration purposes
-        # base_rect = player.base_player_rect.copy().move(-self.offset.x, -self.offset.y)
-        # pygame.draw.rect(screen, "red", base_rect, width=2)
-        # rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
-        # pygame.draw.rect(screen, "yellow", rect, width=2)
+        # draw the PLAYER'S rectangles for debug
+        if GameSetting.SHOW_COLLISION_BOXES:
+            base_rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
+            pygame.draw.rect(screen, "red", base_rect, width=2)
+            rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
+            pygame.draw.rect(screen, "yellow", rect, width=2)
 
-        # # draw the ZOMBIE'S rectangles for demonstration purposes
-        # base_rect = necromancer.base_zombie_rect.copy().move(-self.offset.x, -self.offset.y)
-        # pygame.draw.rect(screen, "red", base_rect, width=2)
-        # rect = necromancer.rect.copy().move(-self.offset.x, -self.offset.y)
-        # pygame.draw.rect(screen, "yellow", rect, width=2)   
-
-        # print(base_rect.x, base_rect.y)
+            log.debug(f'{base_rect.x}, {base_rect.y}')
 
 
         for sprite in allSpritesGroup: 
@@ -765,19 +779,19 @@ def drawDeadScreen():
         screen.blit(game_over_screen_fade, (0, 0))
 
 def gameDemo(): # main game
-        print('INFO: Starting..')
+        log.info(' Starting..')
         while True: # replay scene
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    print("INFO: Saving..")
+                    log.info("Saving..")
                     try:
                         with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
                             json.dump(data, svFile)
                         svFile.close()
-                        print(f"{bcolors.OKGREEN}SUCCESS: Saved.{bcolors.ENDC}")
+                        log.info(f"{bcolors.OKGREEN} Saved.{bcolors.ENDC}")
                     except:
-                        print(f"{bcolors.FAIL}ERROR: Failed to save file to {svFile}.\nERROR: Is file even exist?")
-                        print(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
+                        log.fatal(f"{bcolors.FAIL} Failed to save file to {svFile}.\n Is file even exist?")
+                        log.fatal(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
                     sys.exit()
 
@@ -795,7 +809,7 @@ def gameDemo(): # main game
             hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
             hud_debugMapInfoScreen = defaultBulletFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
-            hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
+            hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
             hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
 
             if clock.get_fps() <= 30:
@@ -805,11 +819,11 @@ def gameDemo(): # main game
             elif clock.get_fps() <= 10:
                 hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
 
-            if math.ceil(clock.get_rawtime()) >= 5:
+            if math.ceil(clock.get_rawtime()) >= 10:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
-            elif math.ceil(clock.get_rawtime()) >= 15:
+            elif math.ceil(clock.get_rawtime()) >= 25:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
-            elif math.ceil(clock.get_rawtime()) >= 45:
+            elif math.ceil(clock.get_rawtime()) >= 35:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
@@ -818,7 +832,7 @@ def gameDemo(): # main game
             screen.blit(hud_bulletMax, [115, 670])
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-                screen.blit(showIfDebugging, [30, 67])
+                screen.blit(showIfDebugging, [30, 52])
 
                 if GameSetting.ISPRODUCTMODE == False:
                     screen.blit(showIfNonProductMode, [30, 640])
@@ -829,11 +843,11 @@ def gameDemo(): # main game
                     pass
                 if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
                     screen.blit(hud_debugFpsScreen, [30, 97])
-                    screen.blit(hud_debugMilliTickScreen, [30, 120])
-                    screen.blit(hud_playerMana, [30, 145])
-                    screen.blit(hud_debugMapInfoScreen, [30, 170])
-                    screen.blit(hud_debugVerInfoScreen, [30, 215])
-                    screen.blit(hud_debugScreenResInfoScreen, [30, 195])
+                    screen.blit(hud_debugMilliTickScreen, [30, 125])
+                    screen.blit(hud_playerMana, [30, 150])
+                    screen.blit(hud_debugMapInfoScreen, [30, 175])
+                    screen.blit(hud_debugVerInfoScreen, [30, 225])
+                    screen.blit(hud_debugScreenResInfoScreen, [30, 200])
             else:
                 pass
 
@@ -858,7 +872,8 @@ def mainMenu(): # main menu
         hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
         hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
         hud_debugMapInfoScreen = defaultBulletFont.render('불러온 맵이 없음', True, WHITE)
-        hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0', True, WHITE)
+        hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
+        hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
 
         if clock.get_fps() <= 30:
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
@@ -866,22 +881,36 @@ def mainMenu(): # main menu
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
         elif clock.get_fps() <= 10:
             hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
+
+        if math.ceil(clock.get_rawtime()) >= 10:
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
+        elif math.ceil(clock.get_rawtime()) >= 25:
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
+        elif math.ceil(clock.get_rawtime()) >= 35:
+            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
+
+        screen.blit(icn_GunSelect_handGun, [30, 670])
+        screen.blit(hud_bulletLeft, [75, 670])
+        screen.blit(hud_bulletSlash, [103, 670])
+        screen.blit(hud_bulletMax, [115, 670])
             
         if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-            screen.blit(showIfDebugging, [30, 67])
-            if GameSetting.ISPRODUCTMODE == False:
-                screen.blit(showIfNonProductMode, [30, 640])
+            screen.blit(showIfDebugging, [30, 52])
 
-            if GameSetting.SHOW_CURRENTFPS == True:
-                    pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-            else:
-                pass
-            if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
-                screen.blit(hud_debugFpsScreen, [30, 97])
-                screen.blit(hud_debugMilliTickScreen, [30, 120])
-                screen.blit(hud_playerMana, [30, 145])
-                screen.blit(hud_debugMapInfoScreen, [30, 170])
-                screen.blit(hud_debugVerInfoScreen, [30, 195])
+        if GameSetting.ISPRODUCTMODE == False:
+            screen.blit(showIfNonProductMode, [30, 640])
+
+        if GameSetting.SHOW_CURRENTFPS == True:
+            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+        else:
+            pass
+        if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
+            screen.blit(hud_debugFpsScreen, [30, 97])
+            screen.blit(hud_debugMilliTickScreen, [30, 125])
+            screen.blit(hud_playerMana, [30, 150])
+            screen.blit(hud_debugMapInfoScreen, [30, 175])
+            screen.blit(hud_debugVerInfoScreen, [30, 225])
+            screen.blit(hud_debugScreenResInfoScreen, [30, 200])
         else:
             pass
 
@@ -891,7 +920,7 @@ def mainMenu(): # main menu
         if btnLoad.drawBtn(screen):
             with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
                 data = json.load(pSv)
-                print(f"{bcolors.OKGREEN}SUCCESS: Loaded.{bcolors.ENDC}")
+                log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 
         btnSetting.drawBtn(screen)
 
@@ -911,10 +940,10 @@ while running:
         while isMainMenuScene:
             mainMenu()
     except Exception:
-        print(f"{traceback.format_exc()}")
+        log.fatal(f"{traceback.format_exc()}")
         messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
-        print(f"{bcolors.FAIL}ERROR: Error occurred while replaying scene.")
-        print(f'{traceback.format_exc()}{bcolors.ENDC}')
+        log.fatal(f"{bcolors.FAIL} Error occurred while replaying scene.")
+        log.fatal(f'{traceback.format_exc()}{bcolors.ENDC}')
         pygame.quit()
 
 pygame.quit()
