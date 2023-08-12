@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, FadeInOut, logging
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, time, logging, spsroLightEngine
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -41,6 +41,7 @@ RED = (255, 0, 0)
 isMainGameScene = False
 isMainMenuScene = True
 isMainMenuToDemo = False
+paused = True
 
 # int
 MaxHandgunBullet = 255
@@ -140,6 +141,9 @@ try:
             pass
     else:
         pass
+
+    playerDefaultLightSystem = spsroLightEngine.Light(1280, spsroLightEngine.pixel_shader(1280, (255, 255, 255), 1, False))
+    playerDefaultLightShowObjects = [pygame.Rect(200, 200, 100 ,100)]
 
     log.info(f"{bcolors.OKGREEN}Initallized.{bcolors.ENDC}")
 except:
@@ -290,7 +294,7 @@ if list(GameSetting.MOTD) == '':
     text_mainMenuMotd = defaultCopyrightFont.render('지정되지 않은 메세지 입니다.', True, WHITE)
 else:
     text_mainMenuMotd = defaultCopyrightFont.render(random.choice(list(GameSetting.MOTD)), True, WHITE)
-text_autoSave = defaultFont.render('자동 저장중..', False, DARK_GRAY)
+text_autoSave = defaultFont.render('자동 저장중..', True, DARK_GRAY)
 text_version = mainTitleFont.render(f'v {GameSetting.VER}', True, WHITE)
 
 hud_bulletLeft = defaultBulletFont.render(str_MaxHandgunLoadBullet, True, WHITE)
@@ -298,9 +302,11 @@ hud_bulletMax = defaultBulletFont.render(str_MaxHandgunBullet, True, WHITE)
 hud_bulletSlash = defaultBulletFont.render('/', True, WHITE)
 hud_playerMana = defaultBulletFont.render('100%', True, WHITE)
 
-debug_showFps = defaultFont.render('', False, WHITE)
+debug_showFps = defaultFont.render('', True, WHITE)
 showIfDebugging = defaultBulletFont.render('DEBUG MODE', True, ORANGE)
 showIfNonProductMode = defaultBulletFont.render('완성된 제품이 아님', True, YELLOW)
+
+pausedUI_text = defaultFont.render('일시중지됨', True, WHITE)
 
 def autoSave():
     log.info(" AutoSaving..")
@@ -776,6 +782,7 @@ btnLoad = Button(32, 560, btn_Load, 1)
 btnSetting = Button(31, 590, btn_Setting, 1)
 btnCopyright = Button(29, 620, btn_Copyright, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
+btnUnpause = Button(29, 620, btn_Copyright, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -798,6 +805,16 @@ def drawDeadScreen():
 def gameDemo(): # main game
         log.info(' Starting..')
         while True: # replay scene
+            # lighting setup
+            mouseX, mouseY = pygame.mouse.get_pos()
+
+            lightDisplay = pygame.Surface((screen.get_size()))
+            lightDisplay.blit(spsroLightEngine.global_light(screen.get_size(), 25), [0, 0])
+            playerDefaultLightSystem.main(playerDefaultLightShowObjects, lightDisplay, mouseX, mouseY)
+            screen.blit(lightDisplay, [0, 0], special_flags=BLEND_RGB_MULT)
+
+            pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     log.info("Saving..")
