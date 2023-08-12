@@ -302,14 +302,6 @@ debug_showFps = defaultFont.render('', False, WHITE)
 showIfDebugging = defaultBulletFont.render('DEBUG MODE', True, ORANGE)
 showIfNonProductMode = defaultBulletFont.render('완성된 제품이 아님', True, YELLOW)
 
-def checkFps():
-    if clock.get_fps() > GameSetting.DEBUG_FPSWARNING_VALUE:
-        pass
-    else:
-        log.warning(f"{bcolors.WARNING} FPS is lower than {GameSetting.DEBUG_FPSWARNING_VALUE}fps!")
-        log.warning(f" This may cause 'unplayable' for certain players.{bcolors.ENDC}")
-        #killPlayer()
-
 def autoSave():
     log.info(" AutoSaving..")
     Saving = 5
@@ -327,45 +319,6 @@ def autoSave():
     except:
         log.fatal(f"{bcolors.FAIL} Failed to save file to {svFile}.\n Is file even exist?")
         log.fatal(f"Traceback: {traceback.print_exc}{bcolors.ENDC}")
-
-def generateGlowEffect(glow, rad):
-    lightSurface = pygame.Surface((rad * 2, rad * 2), pygame.SRCALPHA)
-    layers = 25
-    glow = pygame.math.clamp(glow, 0, 255)
-
-    for i in range(layers):
-        k = i * glow
-        k = pygame.math.clamp(k, 0, 255)
-
-        pygame.draw.circle(lightSurface, (k, k, k), lightSurface.get_rect().center, rad - i * 3)
-
-    return lightSurface
-
-def createTitle(title, subtitle, x, y):
-    log.info("[TITLE MANAGER] Creating Title..")
-    try:
-        lastTick = pygame.time.get_ticks()
-        fadeOutValue = 350
-
-        titleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
-        subtitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 20)
-
-        titleText = titleFont.render(title, True, (255, 255, 255))
-        subtitleText = subtitleFont.render(subtitle, (255, 255, 255))
-
-        screen.blit(titleText, [x, y])
-        screen.blit(subtitleText, [x, y+10])
-
-        fadeOutValue -= lastTick
-
-        if fadeOutValue <= 0:
-            FadeInOut.FadeManager.fadeOut(titleText)
-            FadeInOut.FadeManager.fadeOut(subtitleText)
-
-    except:
-        log.critical("[TITLE MANAGER] Error occurred while creating title.")
-        log.critical(f"[TITLE MANAGER] Traceback: {traceback.print_exc}")
-
 
 class Player(pygame.sprite.Sprite): # player
     def __init__(self, pos):
@@ -431,7 +384,7 @@ class Player(pygame.sprite.Sprite): # player
         else:
             self.speed = 3
     
-        if keys[pygame.K_f]: # player slow
+        if keys[pygame.K_LCTRL]: # player slow
             self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
             self.speed = 1
         else:
@@ -551,9 +504,12 @@ class Enemy(pygame.sprite.Sprite):
         super().__init__(enemyGroup, allSpritesGroup)
         self.image = pygame.image.load('.\\src\\img\\animations\\entity\\enemy\\indiv_animation\\zombie_frame1.png').convert_alpha()
         self.image = pygame.transform.rotozoom(self.image, 0, GameSetting.ENEMY_VIEWSIZE)
+        self.steps = random.randint(3, 6) * GameSetting.TILESIZE
 
         self.rect = self.image.get_rect()
         self.rect.center = position
+
+        self.direction_index = random.randint(0, 3)
 
         self.direction = pygame.math.Vector2()
         self.velocity = pygame.math.Vector2()
@@ -562,13 +518,36 @@ class Enemy(pygame.sprite.Sprite):
         self.position = pygame.math.Vector2(position)
 
         self.isPlayerAlive = True
+        self.isEnemyAlive = True
 
         self.damage = 5
         self.direction_list = [(1,1), (1,-1), (-1,1), (-1,-1)]
 
+        self.enemyRadius = GameSetting.ENEMY_RADIUS
+        self.roaming_speed = GameSetting.ENEMY_ROAMING_SPEED
+
     def getNewPathTrace(self):
         self.direction_index = random.randint(0, len(self.direction_list)-1)
         self.steps = random.randint(3, 6) * GameSetting.TILESIZE
+
+    def roam(self):
+        self.direction.x, self.direction.y = self.direction_list[self.direction_index] # gets a random direction
+        self.velocity = self.direction * self.roaming_speed
+        self.position += self.velocity
+        
+        self.rect.centerx = self.position.x
+        self.check_collision("horizontal", "roam")
+
+        self.rect.centery = self.position.y
+        self.check_collision("vertical", "roam")
+        
+        self.rect.center = self.rect.center
+        self.position = (self.rect.centerx, self.rect.centery)
+
+        self.steps -= 1
+
+        if self.steps == 0:
+            self.getNewPathTrace()
 
     def check_collision(self, direction, move_state):
         for sprite in obstaclesGroup:
@@ -587,6 +566,8 @@ class Enemy(pygame.sprite.Sprite):
                 if move_state == "roam":
                     self.getNewPathTrace()
 
+    def getVectorDistance(self, vector_1, vector_2):
+        return (vector_1 - vector_2).magnitude()
 
     def pathTracePlayer(self): # path tracing
         if self.velocity.x > 0:
@@ -614,11 +595,39 @@ class Enemy(pygame.sprite.Sprite):
 
         self.rect.center = self.rect.center
 
-        self.position = (self.rec.centerx, self.rect.centery)
+        self.position = (self.rect.centerx, self.rect.centery)
 
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
-    
+
+    def hunt_player(self):  
+        if self.velocity.x > 0:
+            self.current_movement_sprite = 0
+        else:
+            self.current_movement_sprite = 1
+        
+        player_vector = pygame.math.Vector2(player.rect.center)
+        enemy_vector = pygame.math.Vector2(self.rect.center)
+        distance = self.getVectorDistance(player_vector, enemy_vector)
+
+        if distance > 0:
+            self.direction = (player_vector - enemy_vector).normalize()
+        else:
+            self.direction = pygame.math.Vector2()
+
+        self.velocity = self.direction * self.speed
+        self.position += self.velocity
+
+        self.rect.centerx = self.position.x
+        self.check_collision("horizontal", "hunt")
+
+        self.rect.centery = self.position.y
+        self.check_collision("vertical", "hunt")
+
+        self.rect.center = self.rect.center
+
+        self.position = (self.rect.centerx, self.rect.centery)
+
     def checkIsSlowState(self):
         keys = pygame.key.get_pressed()
 
@@ -628,8 +637,13 @@ class Enemy(pygame.sprite.Sprite):
             pass
     
     def update(self):
-        self.pathTracePlayer()
-        self.checkIsSlowState()
+        if self.isEnemyAlive:
+            if self.getVectorDistance(pygame.math.Vector2(player.rect.center), pygame.math.Vector2(self.rect.center)) < self.enemyRadius:    # default = 400
+                self.hunt_player()
+            else:
+                self.roam()
+        else:
+            self.kill
 
 class GameLevel(pygame.sprite.Group): 
     def __init__(self):
@@ -662,8 +676,8 @@ class GameLevel(pygame.sprite.Group):
                             self.enemy_spawn_pos.append((x, y))
                         if style == "health potions":
                             self.health_spawn_pos.append((x, y))
-                    #else:
-                    #    Tile((0, 0), [allSpritesGroup], "void", '-1')
+
+        self.spawnEnemy()
 
     def import_csv_layout(self, path):
         terrain_map = []
@@ -673,6 +687,9 @@ class GameLevel(pygame.sprite.Group):
                 terrain_map.append(list(row))
             return terrain_map
     
+    def spawnEnemy(self):
+        Enemy(random.choice(self.enemy_spawn_pos))
+
     def custom_draw(self): 
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
         self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
@@ -795,8 +812,6 @@ def gameDemo(): # main game
                     pygame.quit()
                     sys.exit()
 
-            screen.blit(voidWall, (GameSetting.WIDTH, GameSetting.HEIGHT))
-
             demoLevel.custom_draw()
 
             # render
@@ -856,6 +871,7 @@ def gameDemo(): # main game
 
 def mainMenu(): # main menu
     while True:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
