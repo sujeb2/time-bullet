@@ -640,7 +640,7 @@ class Enemy(pygame.sprite.Sprite):
         if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, True):
             self.hurt += 1
 
-        if self.hurt == GameSetting.ENEMY_DEAD_BULLET:
+        if self.hurt > GameSetting.ENEMY_DEAD_BULLET:
             self.kill()
             self.hurt = 0
 
