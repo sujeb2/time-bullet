@@ -855,9 +855,9 @@ def gameDemo(): # main game
 
             if math.ceil(clock.get_rawtime()) >= 10:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
-            elif math.ceil(clock.get_rawtime()) >= 25:
+            elif math.ceil(clock.get_rawtime()) >= 19:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
-            elif math.ceil(clock.get_rawtime()) >= 35:
+            elif math.ceil(clock.get_rawtime()) >= 29:
                 hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
