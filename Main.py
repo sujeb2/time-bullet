@@ -634,20 +634,23 @@ class Enemy(pygame.sprite.Sprite):
 
         self.position = (self.rect.centerx, self.rect.centery)
 
-    def checkIsSlowState(self):
-        keys = pygame.key.get_pressed()
+    def checkCollisionWithBullet(self):
+        self.hurt = 0
 
-        if keys[pygame.K_f]:
-            self.speed = self.speed / 1
-        else:
-            pass
-    
+        if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, True):
+            self.hurt += 1
+
+        if self.hurt == GameSetting.ENEMY_DEAD_BULLET:
+            self.kill()
+            self.hurt = 0
+
     def update(self):
         if self.isEnemyAlive:
             if self.getVectorDistance(pygame.math.Vector2(player.rect.center), pygame.math.Vector2(self.rect.center)) < self.enemyRadius:    # default = 400
                 self.hunt_player()
             else:
                 self.roam()
+            self.checkCollisionWithBullet()
         else:
             self.kill
 
@@ -694,7 +697,8 @@ class GameLevel(pygame.sprite.Group):
             return terrain_map
     
     def spawnEnemy(self):
-        Enemy(random.choice(self.enemy_spawn_pos))
+        for i in range(0, 33, 1):
+            Enemy(random.choice(self.enemy_spawn_pos))
 
     def custom_draw(self): 
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
