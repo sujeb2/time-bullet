@@ -637,7 +637,7 @@ class Enemy(pygame.sprite.Sprite):
     def checkCollisionWithBullet(self):
         self.hurt = 0
 
-        if pygame.sprite.groupcollide(bulletGroup, enemyGroup, True, True):
+        if pygame.sprite.groupcollide(bulletGroup, enemyGroup, False, True):
             self.hurt += 1
 
         if self.hurt > GameSetting.ENEMY_DEAD_BULLET:
@@ -838,27 +838,28 @@ def gameDemo(): # main game
             playerGroup.update()
 
             # debug info update
-            hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
-            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
+            hud_playerMana = subTitleFont.render(f'{str(player.playerMana)}%', True, WHITE)
+            hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
+            hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
-            hud_debugMapInfoScreen = defaultBulletFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
-            hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
-            hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
+            hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
+            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
+            hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
+            hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVELA}', True, WHITE)
 
             if clock.get_fps() <= 30:
-                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
+                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
             elif clock.get_fps() <= 20:
-                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
+                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
             elif clock.get_fps() <= 10:
-                hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
+                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
 
             if math.ceil(clock.get_rawtime()) >= 10:
-                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
+                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
             elif math.ceil(clock.get_rawtime()) >= 19:
-                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
+                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
             elif math.ceil(clock.get_rawtime()) >= 29:
-                hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
+                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
 
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
@@ -877,11 +878,12 @@ def gameDemo(): # main game
                     pass
                 if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
                     screen.blit(hud_debugFpsScreen, [30, 97])
-                    screen.blit(hud_debugMilliTickScreen, [30, 125])
-                    screen.blit(hud_playerMana, [30, 150])
-                    screen.blit(hud_debugMapInfoScreen, [30, 175])
-                    screen.blit(hud_debugVerInfoScreen, [30, 225])
-                    screen.blit(hud_debugScreenResInfoScreen, [30, 200])
+                    screen.blit(hud_debugMilliTickScreen, [30, 117])
+                    screen.blit(hud_playerMana, [30, 135])
+                    screen.blit(hud_debugMapInfoScreen, [30, 155])
+                    screen.blit(hud_debugVerInfoScreen, [30, 215])
+                    screen.blit(hud_debugScreenResInfoScreen, [30, 175])
+                    screen.blit(hud_debugGameSettingInfoScreen, [30, 195])
             else:
                 pass
 
