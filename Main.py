@@ -697,7 +697,7 @@ class GameLevel(pygame.sprite.Group):
             return terrain_map
     
     def spawnEnemy(self):
-        for i in range(0, 33, 1):
+        for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
             Enemy(random.choice(self.enemy_spawn_pos))
 
     def custom_draw(self): 
@@ -845,7 +845,7 @@ def gameDemo(): # main game
             hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
             hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
             hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
-            hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVELA}', True, WHITE)
+            hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVEL}', True, WHITE)
 
             if clock.get_fps() <= 30:
                 hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
