@@ -810,6 +810,7 @@ def gameDemo(): # main game
         log.info(' Starting..')
         while True: # replay scene
             # lighting setup
+            # 빛 고치기 (빛 데모로는 잘됨)
             lightDisplay = pygame.Surface((screen.get_size()))
             lightDisplay.blit(spsroLightEngine.global_light(screen.get_size(), 25), [0, 0])
             playerDefaultLightSystem.main(playerDefaultLightShowObjects, lightDisplay, player.rect.x, player.rect.y)
