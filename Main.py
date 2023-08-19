@@ -807,6 +807,14 @@ def drawDeadScreen():
 def gameDemo(): # main game
         log.info(' Starting..')
         while True: # replay scene
+            # lighting setup
+            lightDisplay = pygame.Surface((screen.get_size()))
+            lightDisplay.blit(spsroLightEngine.global_light(screen.get_size(), 25), [0, 0])
+            playerDefaultLightSystem.main(playerDefaultLightShowObjects, lightDisplay, player.rect.x, player.rect.y)
+            screen.blit(lightDisplay, [0, 0], special_flags=BLEND_RGB_MULT)
+
+            pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     log.info("Saving..")
