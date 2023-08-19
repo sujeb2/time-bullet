@@ -32,11 +32,11 @@
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx": {
-            "scale": 1,
-            "selectedLayer": 2,
+            "scale": 8,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 899.5,
-                "y": 455
+                "x": 394.0625,
+                "y": 175.625
             }
         },
         "C:/Users/sdbb2/OneDrive/바탕 화면/2023southkoreagamecoding/src/maps/dev_test.tmx#Interior": {

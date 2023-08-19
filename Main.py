@@ -422,8 +422,8 @@ class Player(pygame.sprite.Sprite): # player
                 self.hurtCooldown == 100
 
             if self.health <= 0:
-                self.kill()
-                self.health = 3
+                self.pos = (400, 400)
+                Enemy.kill()
 
     def checkCollisionWithWall(self, direction):
         for sprite in obstaclesGroup:
@@ -699,6 +699,7 @@ class GameLevel(pygame.sprite.Group):
     def spawnEnemy(self):
         for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
             Enemy(random.choice(self.enemy_spawn_pos))
+            log.info(f'Spawned Enemy: {i}')
 
     def custom_draw(self): 
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
@@ -718,7 +719,6 @@ class GameLevel(pygame.sprite.Group):
             pygame.draw.rect(screen, "yellow", rect, width=2)
 
             log.debug(f'{base_rect.x}, {base_rect.y}')
-
 
         for sprite in allSpritesGroup: 
             offset_pos = sprite.rect.topleft - self.offset
@@ -779,8 +779,6 @@ obstaclesGroup = pygame.sprite.Group()
 floorGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
 demoLevel = GameLevel()
-#zombie = Enemy((0, 0))
-
 btnStart = Button(32, 530, btn_Start, 1)
 btnLoad = Button(32, 560, btn_Load, 1)
 btnSetting = Button(31, 590, btn_Setting, 1)
@@ -809,14 +807,6 @@ def drawDeadScreen():
 def gameDemo(): # main game
         log.info(' Starting..')
         while True: # replay scene
-            # lighting setup
-            lightDisplay = pygame.Surface((screen.get_size()))
-            lightDisplay.blit(spsroLightEngine.global_light(screen.get_size(), 25), [0, 0])
-            playerDefaultLightSystem.main(playerDefaultLightShowObjects, lightDisplay, player.rect.x, player.rect.y)
-            screen.blit(lightDisplay, [0, 0], special_flags=BLEND_RGB_MULT)
-
-            pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     log.info("Saving..")
