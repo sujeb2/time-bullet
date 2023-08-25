@@ -6,6 +6,17 @@ from pygame.locals import *
 from ButtonManager import Button
 from csv import reader
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 print(' Initalizing logger..')
 log = logging.getLogger()
 if GameSetting.LOGLEVEL == 'INFO':
@@ -16,6 +27,7 @@ elif GameSetting.LOGLEVEL == 'CRITICAL':
     log.setLevel(logging.CRITICAL)
 elif GameSetting.LOGLEVEL == 'DEBUG':
     log.setLevel(logging.DEBUG)
+    print(f"{bcolors.WARNING}WARN: You're Currently using debug logging mode, it may contains debug messages.{bcolors.ENDC}")
 
 format = logging.Formatter('%(asctime)s - %(name)s / %(levelname)s: %(message)s')
 streamHandle = logging.StreamHandler()
@@ -36,6 +48,7 @@ ORANGE = (252, 186, 3)
 PURPLE = (119, 3, 252)
 YELLOW = (252, 252, 3)
 RED = (255, 0, 0)
+BLUE = (0, 0, 255)
 
 # bool
 isMainGameScene = False
@@ -68,17 +81,6 @@ data = {
 
 
 flags = GameSetting.SCREEN_FLAGS
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
 
 def validateJson(jsonData): # validate save file
     try:
@@ -213,9 +215,12 @@ try:
 
     entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
 
+    # overlay / etc
     img_overlayDeadScreenBlack = pygame.image.load('.\\src\\img\\hud\\overlay\\transparentBlack.png').convert_alpha()
     img_blackVoid = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
     img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
+    img_overlayViggnete = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
+    img_overlayViggnete = pygame.transform.scale(img_overlayViggnete, (1280, 1280))
     log.info(f"{bcolors.OKGREEN}Loaded.{bcolors.ENDC}")
 except:
     log.critical(f"{traceback.format_exc}")
@@ -358,6 +363,9 @@ class Player(pygame.sprite.Sprite): # player
         self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
         self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
         self.rect = self.image.get_rect(center = self.hitbox_rect.center)
+
+    def drawPlayerMana(self):
+        pygame.draw.rect(screen, BLUE, [30, 640, self.playerMana, 25])
        
     def user_input(self):
         self.velocity_x = 0
@@ -465,6 +473,7 @@ class Player(pygame.sprite.Sprite): # player
         self.player_rotation()
         self.checkMana()
         self.checkColliedWithEnemy()
+        self.drawPlayerMana()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -531,6 +540,9 @@ class Enemy(pygame.sprite.Sprite):
 
         self.enemyRadius = GameSetting.ENEMY_RADIUS
         self.roaming_speed = GameSetting.ENEMY_ROAMING_SPEED
+
+        self.hurt = 0
+        self.killed = 0
 
     def getNewPathTrace(self):
         self.direction_index = random.randint(0, len(self.direction_list)-1)
@@ -635,12 +647,13 @@ class Enemy(pygame.sprite.Sprite):
         self.position = (self.rect.centerx, self.rect.centery)
 
     def checkCollisionWithBullet(self):
-        self.hurt = 0
-
         if pygame.sprite.groupcollide(bulletGroup, enemyGroup, False, True):
             self.hurt += 1
+            self.killed += 1
 
-        if self.hurt > GameSetting.ENEMY_DEAD_BULLET:
+            log.debug(f'Killed Enemy: {self.killed}, {self.hurt}')
+
+        if self.hurt > 5:
             self.kill()
             self.hurt = 0
 
@@ -826,6 +839,7 @@ def gameDemo(): # main game
 
             demoLevel.custom_draw()
 
+            screen.blit(img_overlayDeadScreenBlack, [0, 0])
             # render
             allSpritesGroup.update()
             playerGroup.update()
@@ -854,6 +868,7 @@ def gameDemo(): # main game
             elif math.ceil(clock.get_rawtime()) >= 29:
                 hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
 
+            screen.blit(img_overlayViggnete, [0, -293])
             screen.blit(icn_GunSelect_handGun, [30, 670])
             screen.blit(hud_bulletLeft, [75, 670])
             screen.blit(hud_bulletSlash, [103, 670])
@@ -877,6 +892,8 @@ def gameDemo(): # main game
                     screen.blit(hud_debugVerInfoScreen, [30, 215])
                     screen.blit(hud_debugScreenResInfoScreen, [30, 175])
                     screen.blit(hud_debugGameSettingInfoScreen, [30, 195])
+                else:
+                    pass
             else:
                 pass
 
@@ -896,53 +913,6 @@ def mainMenu(): # main menu
         screen.blit(text_MainLogoTitle, [30, 20])
         screen.blit(text_copyrightTeamName, [985, 650])
         screen.blit(text_mainMenuMotd, [32, 83])
-
-        # debug info update
-        hud_playerMana = defaultBulletFont.render(f'{str(player.playerMana)}%', True, WHITE)
-        hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
-        hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}TICK (반올림됨, 낮을수록 좋음)', True, WHITE)
-        hud_debugMapInfoScreen = defaultBulletFont.render('불러온 맵이 없음', True, WHITE)
-        hud_debugScreenResInfoScreen = defaultBulletFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
-        hud_debugVerInfoScreen = defaultCopyrightFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
-
-        if clock.get_fps() <= 30:
-            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
-        elif clock.get_fps() <= 20:
-            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
-        elif clock.get_fps() <= 10:
-            hud_debugFpsScreen = defaultBulletFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
-
-        if math.ceil(clock.get_rawtime()) >= 10:
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
-        elif math.ceil(clock.get_rawtime()) >= 25:
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
-        elif math.ceil(clock.get_rawtime()) >= 35:
-            hud_debugMilliTickScreen = defaultBulletFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
-
-        screen.blit(icn_GunSelect_handGun, [30, 670])
-        screen.blit(hud_bulletLeft, [75, 670])
-        screen.blit(hud_bulletSlash, [103, 670])
-        screen.blit(hud_bulletMax, [115, 670])
-            
-        if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-            screen.blit(showIfDebugging, [30, 52])
-
-        if GameSetting.ISPRODUCTMODE == False:
-            screen.blit(showIfNonProductMode, [30, 640])
-
-        if GameSetting.SHOW_CURRENTFPS == True:
-            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
-        else:
-            pass
-        if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
-            screen.blit(hud_debugFpsScreen, [30, 97])
-            screen.blit(hud_debugMilliTickScreen, [30, 125])
-            screen.blit(hud_playerMana, [30, 150])
-            screen.blit(hud_debugMapInfoScreen, [30, 175])
-            screen.blit(hud_debugVerInfoScreen, [30, 225])
-            screen.blit(hud_debugScreenResInfoScreen, [30, 200])
-        else:
-            pass
 
         if btnStart.drawBtn(screen):
             gameDemo()
