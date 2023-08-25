@@ -375,7 +375,6 @@ class Player(pygame.sprite.Sprite): # player
 
         if keys[pygame.K_w]:
             self.velocity_y = -self.speed
-            self.playerVignette.blit(screen, self.pos)
         if keys[pygame.K_s]:
             self.velocity_y = self.speed
         if keys[pygame.K_d]:
@@ -681,7 +680,6 @@ class GameLevel(pygame.sprite.Group):
                    "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
                    "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
                    "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
-                   "health potions": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Health.csv")
                   }
 
         for style, layout in layouts.items():
@@ -696,8 +694,6 @@ class GameLevel(pygame.sprite.Group):
                             Tile((x,y), [allSpritesGroup], "walls", col)  
                         if style == "enemies":
                             self.enemy_spawn_pos.append((x, y))
-                        if style == "health potions":
-                            self.health_spawn_pos.append((x, y))
 
         self.spawnEnemy()
 
