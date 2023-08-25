@@ -835,7 +835,6 @@ def gameDemo(): # main game
                         log.fatal(f"{bcolors.FAIL} Failed to save file to {svFile}.\n Is file even exist?")
                         log.fatal(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
-                    sys.exit()
 
             demoLevel.custom_draw()
 
@@ -897,7 +896,7 @@ def gameDemo(): # main game
             else:
                 pass
 
-            pygame.display.update()
+            pygame.display.flip()
             dt = clock.tick(GameSetting.DEF_FPS)
 
 def mainMenu(): # main menu
@@ -927,7 +926,7 @@ def mainMenu(): # main menu
         btnCopyright.drawBtn(screen)
 
         if btnExit.drawBtn(screen):
-            pygame.quit()
+            sys.exit()
 
         pygame.display.update()
         dt = clock.tick(GameSetting.DEF_FPS)
