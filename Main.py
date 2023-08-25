@@ -1,5 +1,5 @@
 # default imports
-import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, time, logging, spsroLightEngine
+import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, logging, spsroLightEngine
 from tkinter import messagebox
 from videoplayer import Video
 from pygame.locals import *
@@ -835,6 +835,7 @@ def gameDemo(): # main game
                         log.fatal(f"{bcolors.FAIL} Failed to save file to {svFile}.\n Is file even exist?")
                         log.fatal(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
+                    sys.exit()
 
             demoLevel.custom_draw()
 
@@ -944,5 +945,6 @@ while running:
         log.fatal(f"{bcolors.FAIL} Error occurred while replaying scene.")
         log.fatal(f'{traceback.format_exc()}{bcolors.ENDC}')
         pygame.quit()
+        sys.exit()
 
 pygame.quit()
