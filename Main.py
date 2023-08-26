@@ -48,7 +48,7 @@ ORANGE = (252, 186, 3)
 PURPLE = (119, 3, 252)
 YELLOW = (252, 252, 3)
 RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+BLUE = (66, 152, 245)
 
 # bool
 isMainGameScene = False
@@ -241,14 +241,7 @@ try:
     sfx_playerRadiation = pygame.mixer.Sound('./src/sound/sfx/player/radiation.wav')
 
     # ost
-    ost_MainMenu = pygame.mixer.music.load('./src/sound/ost/background_ambient1.wav')
-    ost_MainMenu = pygame.mixer.music.set_volume(GameSetting.MUSIC_VOL)
-    log.info(f' Volume set to {GameSetting.MUSIC_VOL}%')
-    if isMainMenuScene == True and isMainGameScene == False:
-        #pygame.mixer.music.play(-1)
-        pass
-    elif isMainGameScene == True and isMainMenuScene == False:
-        pass
+    ost_MainMenu = pygame.mixer.Sound('./src/sound/ost/background_ambient1.wav')
 
     log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
@@ -433,19 +426,20 @@ class Player(pygame.sprite.Sprite): # player
                 Enemy.kill()
 
     def checkCollisionWithWall(self, direction):
-        for sprite in obstaclesGroup:
-            if sprite.rect.colliderect(self.hitbox_rect):
-                if direction == "horizontal":
-                    if self.velocity_x > 0:
-                        self.hitbox_rect.right = sprite.rect.left
-                    if self.velocity_x < 0:
-                        self.hitbox_rect.left = sprite.rect.right
-                
-                if direction == "vertical":
-                    if self.velocity_y < 0:
-                        self.hitbox_rect.top = sprite.rect.bottom
-                    if self.velocity_y > 0:
-                        self.hitbox_rect.bottom = sprite.rect.top
+        if not GameSetting.NOCLIP:
+            for sprite in obstaclesGroup:
+                if sprite.rect.colliderect(self.hitbox_rect):
+                    if direction == "horizontal":
+                        if self.velocity_x > 0:
+                            self.hitbox_rect.right = sprite.rect.left
+                        if self.velocity_x < 0:
+                            self.hitbox_rect.left = sprite.rect.right
+                    
+                    if direction == "vertical":
+                        if self.velocity_y < 0:
+                            self.hitbox_rect.top = sprite.rect.bottom
+                        if self.velocity_y > 0:
+                            self.hitbox_rect.bottom = sprite.rect.top
 
     def checkShooting(self): 
         if self.shoot_cooldown == 0:
@@ -815,6 +809,7 @@ def drawDeadScreen():
 
 def gameDemo(): # main game
         log.info(' Starting..')
+        ost_MainMenu.play()
         while True: # replay scene
 
             pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
@@ -836,6 +831,7 @@ def gameDemo(): # main game
             demoLevel.custom_draw()
 
             screen.blit(img_overlayDeadScreenBlack, [0, 0])
+            screen.blit(img_overlayViggnete, [0, -293])
             # render
             allSpritesGroup.update()
             playerGroup.update()
@@ -845,8 +841,8 @@ def gameDemo(): # main game
             hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
             hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
-            hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Health.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
-            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.0 (SDL2)', True, WHITE)
+            hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
+            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
             hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
             hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVEL}', True, WHITE)
 
@@ -863,12 +859,7 @@ def gameDemo(): # main game
                 hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
             elif math.ceil(clock.get_rawtime()) >= 29:
                 hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
-
-            screen.blit(img_overlayViggnete, [0, -293])
             screen.blit(icn_GunSelect_handGun, [30, 670])
-            screen.blit(hud_bulletLeft, [75, 670])
-            screen.blit(hud_bulletSlash, [103, 670])
-            screen.blit(hud_bulletMax, [115, 670])
             
             if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
                 screen.blit(showIfDebugging, [30, 52])
