@@ -708,7 +708,7 @@ class GameLevel(pygame.sprite.Group):
     def spawnEnemy(self):
         for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
             Enemy(random.choice(self.enemy_spawn_pos))
-            log.info(f'Spawned Enemy: {i}')
+            log.debug(f'Spawned Enemy: {i}')
 
     def custom_draw(self): 
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
