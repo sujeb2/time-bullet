@@ -1,12 +1,12 @@
 {
     "player": {
         "handgun": {
-            "frame1" : ".\\src\\img\\animations\\player\\placeholder\\indiv_animation\\player_handgun_frame1.png",
-            "frame2" : ".\\src\\img\\animations\\player\\placeholder\\indiv_animation\\player_handgun_frame1.png"
+            "frame1" : "./src/img/animations/player/placeholder/indiv_animation/player_handgun_frame1.png",
+            "frame2" : "./src/img/animations/player/placeholder/indiv_animation/player_handgun_frame1.png"
         },
         "machinegun": {
-            "frame1" : ".\\src\\img\\animations\\player\\placeholder\\indiv_animation\\player_machinegun_frame1.png",
-            "frame2" : ".\\src\\img\\animations\\player\\placeholder\\indiv_animation\\player_machinegun_frame2.png"
+            "frame1" : "./src/img/animations/player/placeholder/indiv_animation/player_machinegun_frame1.png",
+            "frame2" : "./src/img/animations/player/placeholder/indiv_animation/player_machinegun_frame2.png"
         }
     },
 

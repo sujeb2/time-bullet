@@ -1,7 +1,6 @@
 # default imports
 import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, logging, spsroLightEngine
 from tkinter import messagebox
-from videoplayer import Video
 from pygame.locals import *
 from ButtonManager import Button
 from csv import reader
@@ -92,7 +91,7 @@ def validateJson(jsonData): # validate save file
 
 log.info(" Reading save file..")
 try:
-    with open('.\\src\\save\\0\\playerSaveData.json', 'r+', encoding='utf-8') as svFile:
+    with open('./src/save/0/playerSaveData.json', 'r+', encoding='utf-8') as svFile:
         data = json.load(svFile)
         log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
@@ -106,7 +105,7 @@ except:
 
 log.info(" Checking save file requirements..")
 try:
-    with open('.\\src\\save\\0\\playerSaveData.json', 'r') as pSv:
+    with open('./src/save/0/playerSaveData.json', 'r') as pSv:
         mainData = str(json.load(pSv))
         isFileVaild = validateJson(mainData)
 
@@ -134,7 +133,7 @@ try:
     display = pygame.display
     running = True
     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_CROSSHAIR)
-    tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert(), [1280, 720])
+    tile_mapDefaultBackground = pygame.transform.scale(pygame.image.load('./src/img/map_tile/indiv_tile/Tile7.png').convert(), [1280, 720])
     
     if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True and GameSetting.SHOW_CURRENTFPS == True:
@@ -192,32 +191,32 @@ try:
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
 
     # background
-    tile_mapDefaultBackground = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert_alpha()
-    mainMenu_backgruond = pygame.image.load('.\\src\\img\\background\\menu_background.png').convert_alpha()
+    tile_mapDefaultBackground = pygame.image.load('./src/img/map_tile/indiv_tile/Tile7.png').convert_alpha()
+    mainMenu_backgruond = pygame.image.load('./src/img/background/menu_background.png').convert_alpha()
     img_demoMapBackground = pygame.image.load('./src/maps/png/dev_test.png').convert_alpha()
 
     map_devTest = pygame.image.load('./src/maps/png/dev_test.png').convert_alpha()
 
     # map wall
-    backgroundWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile7.png').convert_alpha()
-    topWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile1.png').convert_alpha()
-    topLeftDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile2.png').convert_alpha()
-    rightStraightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile3.png').convert_alpha()
-    toprightDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile4.png').convert_alpha()
-    straightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile6.png').convert_alpha()
-    straightNonDownWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile9.png').convert_alpha()
-    topRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile10.png').convert_alpha()
-    rightNonLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile14.png').convert_alpha()
-    topLeftWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile12.png').convert_alpha()
-    leftNonRightWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile16.png').convert_alpha()
-    nonWall = pygame.image.load('.\\src\\img\\map_tile\\indiv_tile\\Tile13.png').convert_alpha()
-    voidWall = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
+    backgroundWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile7.png').convert_alpha()
+    topWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile1.png').convert_alpha()
+    topLeftDownWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile2.png').convert_alpha()
+    rightStraightWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile3.png').convert_alpha()
+    toprightDownWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile4.png').convert_alpha()
+    straightWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile6.png').convert_alpha()
+    straightNonDownWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile9.png').convert_alpha()
+    topRightWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile10.png').convert_alpha()
+    rightNonLeftWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile14.png').convert_alpha()
+    topLeftWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile12.png').convert_alpha()
+    leftNonRightWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile16.png').convert_alpha()
+    nonWall = pygame.image.load('./src/img/map_tile/indiv_tile/Tile13.png').convert_alpha()
+    voidWall = pygame.image.load('./src/img/map_tile/void.png').convert_alpha()
 
-    entity_Bullet = pygame.image.load('.\\src\\img\\animations\\object\\bullet\\BulletProjectile.png').convert_alpha()
+    entity_Bullet = pygame.image.load('./src/img/animations/object/bullet/BulletProjectile.png').convert_alpha()
 
     # overlay / etc
-    img_overlayDeadScreenBlack = pygame.image.load('.\\src\\img\\hud\\overlay\\transparentBlack.png').convert_alpha()
-    img_blackVoid = pygame.image.load('.\\src\\img\\map_tile\\void.png').convert_alpha()
+    img_overlayDeadScreenBlack = pygame.image.load('./src/img/hud/overlay/transparentBlack.png').convert_alpha()
+    img_blackVoid = pygame.image.load('./src/img/map_tile/void.png').convert_alpha()
     img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
     img_overlayViggnete = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
     img_overlayViggnete = pygame.transform.scale(img_overlayViggnete, (1280, 1280))
@@ -249,16 +248,6 @@ except:
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     log.critical(f"{bcolors.FAIL} Error occurred while loading Sound.")
     log.critical(f" Is file even exists?{bcolors.ENDC}") # over 100!
-    quitGame()
-
-log.info(" Reading Video..")
-try:
-    start_std = Video('.\\src\\mp4\\std_start.mp4')
-    start_std.set_size((GameSetting.WIDTH, GameSetting.HEIGHT))
-    log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
-except FileNotFoundError:
-    log.critical(f'{bcolors.FAIL}Failed to load video file, is File even exist?\nReturning Traceback: {traceback.format_exc()}{bcolors.ENDC}')
-    messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     quitGame()
 
 # font setup
@@ -310,7 +299,7 @@ def autoSave():
     log.info(" AutoSaving..")
     Saving = 5
     try:
-        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+        with open('./src/save/0/playerSaveData.json', 'w+') as svFile:
             json.dump(data, svFile)
             log.info(f"{bcolors.OKGREEN} Saved.{bcolors.ENDC}")
         
@@ -510,7 +499,7 @@ class Bullet(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, position):
         super().__init__(enemyGroup, allSpritesGroup)
-        self.image = pygame.image.load('.\\src\\img\\animations\\entity\\enemy\\indiv_animation\\zombie_frame1.png').convert_alpha()
+        self.image = pygame.image.load('./src/img/animations/entity/enemy/indiv_animation/zombie_frame1.png').convert_alpha()
         self.image = pygame.transform.rotozoom(self.image, 0, GameSetting.ENEMY_VIEWSIZE)
         self.steps = random.randint(3, 6) * GameSetting.TILESIZE
 
@@ -818,7 +807,7 @@ def gameDemo(): # main game
                 if event.type == pygame.QUIT:
                     log.info("Saving..")
                     try:
-                        with open('.\\src\\save\\0\\playerSaveData.json', 'w+') as svFile:
+                        with open('./src/save/0/playerSaveData.json', 'w+') as svFile:
                             json.dump(data, svFile)
                         svFile.close()
                         log.info(f"{bcolors.OKGREEN} Saved.{bcolors.ENDC}")
