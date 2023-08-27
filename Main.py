@@ -801,11 +801,15 @@ else:
     isMainMenuScene = True
 
 def drawDeadScreen():
-    if not player.alive:
-        game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
-        game_over_screen_fade.fill((0, 0, 0))
-        game_over_screen_fade.set_alpha(160)
-        screen.blit(game_over_screen_fade, (0, 0))
+    game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
+    game_over_screen_fade.fill((0, 0, 0))
+    game_over_screen_fade.set_alpha(160)
+    screen.blit(game_over_screen_fade, (0, 0))
+
+    ui_Dead = defaultFont.render('You Died!', True, WHITE)
+    ui_SurvivedTime = defaultCopyrightFont.render('Survived', True, WHITE)
+
+    screen.blit(ui_Dead, (400, 200))
 
 def gameDemo(): # main game
         log.info(' Starting..')
@@ -883,6 +887,9 @@ def gameDemo(): # main game
                     pass
             else:
                 pass
+
+            if not playerGroup.has(player):
+                drawDeadScreen()
 
             pygame.display.flip()
             dt = clock.tick(GameSetting.DEF_FPS)
