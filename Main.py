@@ -401,6 +401,16 @@ class Player(pygame.sprite.Sprite): # player
         else:
             pass
 
+    def ui_playerStopWatch(self):
+        ticks=pygame.time.get_ticks()
+        millis=ticks%1000
+        seconds=int(ticks/1000 % 60)
+        minutes=int(ticks/60000 % 24)
+        out=f'{minutes:02d}:{seconds:02d}:{millis}'.format(minutes=minutes, millis=millis, seconds=seconds)
+
+        playerUIStopWatch = defaultFont.render(out, True, GRAY)
+        screen.blit(playerUIStopWatch, (30, 30))
+
     def checkColliedWithEnemy(self):
         if pygame.sprite.groupcollide(playerGroup, enemyGroup, True, False):
             self.hurtCooldown -= self.lastTick
@@ -456,6 +466,7 @@ class Player(pygame.sprite.Sprite): # player
         self.checkMana()
         self.checkColliedWithEnemy()
         self.drawPlayerMana()
+        self.ui_playerStopWatch()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1

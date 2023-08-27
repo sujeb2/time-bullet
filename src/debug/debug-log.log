@@ -1,0 +1,442 @@
+2023-08-27 09:02:17,475 - root / INFO:  Loading..
+2023-08-27 09:02:17,475 - root / INFO:  Reading save file..
+2023-08-27 09:02:17,476 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:17,477 - root / INFO:  Checking save file requirements..
+2023-08-27 09:02:17,478 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:02:17,478 - root / INFO:  Initallizing..
+2023-08-27 09:02:17,621 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:02:17,622 - root / INFO:  Reading Images..
+2023-08-27 09:02:17,711 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:02:17,711 - root / INFO:  Loading Sounds..
+2023-08-27 09:02:18,118 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:18,119 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:02:18,123 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:18,124 - root / INFO:  Resetting text object..
+2023-08-27 09:02:18,161 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:02:18,161 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:02:18,162 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:02:18,163 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:02:18,163 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:02:18,164 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:02:18,164 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:02:18,164 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:02:18,165 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:02:18,166 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:02:18,166 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:02:18,167 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:02:18,167 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:02:18,168 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:02:18,168 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:02:18,168 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:02:18,169 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:02:18,169 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:02:18,170 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:02:18,170 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:02:18,170 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:02:18,171 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:02:18,171 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:02:18,171 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:02:18,171 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:02:18,173 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:02:18,173 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:02:18,174 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:02:18,174 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:02:18,175 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:02:18,175 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:02:18,175 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:02:18,176 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:02:18,176 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:02:18,177 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:02:18,177 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:02:18,177 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:02:18,178 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:02:18,178 - root / INFO:  Starting..
+2023-08-27 09:02:34,274 - root / INFO:  Loading..
+2023-08-27 09:02:34,274 - root / INFO:  Reading save file..
+2023-08-27 09:02:34,275 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:34,276 - root / INFO:  Checking save file requirements..
+2023-08-27 09:02:34,277 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:02:34,278 - root / INFO:  Initallizing..
+2023-08-27 09:02:34,408 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:02:34,409 - root / INFO:  Reading Images..
+2023-08-27 09:02:34,501 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:02:34,502 - root / INFO:  Loading Sounds..
+2023-08-27 09:02:34,902 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:34,902 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:02:34,908 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:02:34,908 - root / INFO:  Resetting text object..
+2023-08-27 09:02:34,942 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:02:34,944 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:02:34,944 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:02:34,945 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:02:34,945 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:02:34,946 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:02:34,946 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:02:34,947 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:02:34,947 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:02:34,948 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:02:34,948 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:02:34,948 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:02:34,949 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:02:34,949 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:02:34,950 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:02:34,950 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:02:34,951 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:02:34,951 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:02:34,951 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:02:34,952 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:02:34,952 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:02:34,953 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:02:34,953 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:02:34,954 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:02:34,954 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:02:34,954 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:02:34,955 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:02:34,955 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:02:34,956 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:02:34,956 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:02:34,957 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:02:34,957 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:02:34,958 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:02:34,958 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:02:34,959 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:02:34,959 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:02:34,959 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:02:34,960 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:02:34,960 - root / INFO:  Starting..
+2023-08-27 09:02:36,269 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:03:08,580 - root / INFO:  Loading..
+2023-08-27 09:03:08,581 - root / INFO:  Reading save file..
+2023-08-27 09:03:08,582 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:08,582 - root / INFO:  Checking save file requirements..
+2023-08-27 09:03:08,584 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:03:08,584 - root / INFO:  Initallizing..
+2023-08-27 09:03:08,728 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:03:08,728 - root / INFO:  Reading Images..
+2023-08-27 09:03:08,814 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:03:08,815 - root / INFO:  Loading Sounds..
+2023-08-27 09:03:09,212 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:09,212 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:03:09,216 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:09,216 - root / INFO:  Resetting text object..
+2023-08-27 09:03:09,253 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:03:09,253 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:03:09,254 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:03:09,255 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:03:09,255 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:03:09,256 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:03:09,256 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:03:09,257 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:03:09,258 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:03:09,258 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:03:09,259 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:03:09,259 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:03:09,260 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:03:09,261 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:03:09,261 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:03:09,262 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:03:09,262 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:03:09,263 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:03:09,263 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:03:09,264 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:03:09,264 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:03:09,265 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:03:09,265 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:03:09,266 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:03:09,266 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:03:09,267 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:03:09,267 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:03:09,268 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:03:09,268 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:03:09,269 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:03:09,269 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:03:09,270 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:03:09,270 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:03:09,270 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:03:09,271 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:03:09,271 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:03:09,272 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:03:09,272 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:03:09,273 - root / INFO:  Starting..
+2023-08-27 09:03:11,492 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:03:18,619 - root / INFO:  Loading..
+2023-08-27 09:03:18,619 - root / INFO:  Reading save file..
+2023-08-27 09:03:18,619 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:18,621 - root / INFO:  Checking save file requirements..
+2023-08-27 09:03:18,623 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:03:18,623 - root / INFO:  Initallizing..
+2023-08-27 09:03:18,760 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:03:18,760 - root / INFO:  Reading Images..
+2023-08-27 09:03:18,849 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:03:18,849 - root / INFO:  Loading Sounds..
+2023-08-27 09:03:19,245 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:19,246 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:03:19,250 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:19,250 - root / INFO:  Resetting text object..
+2023-08-27 09:03:19,284 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:03:19,285 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:03:19,285 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:03:19,286 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:03:19,286 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:03:19,287 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:03:19,287 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:03:19,288 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:03:19,289 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:03:19,289 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:03:19,289 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:03:19,291 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:03:19,291 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:03:19,292 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:03:19,292 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:03:19,293 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:03:19,293 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:03:19,294 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:03:19,294 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:03:19,294 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:03:19,295 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:03:19,295 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:03:19,295 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:03:19,296 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:03:19,296 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:03:19,296 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:03:19,297 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:03:19,297 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:03:19,297 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:03:19,298 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:03:19,298 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:03:19,299 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:03:19,299 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:03:19,299 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:03:19,299 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:03:19,299 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:03:19,301 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:03:19,301 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:03:19,301 - root / INFO:  Starting..
+2023-08-27 09:03:21,873 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:03:39,738 - root / INFO:  Loading..
+2023-08-27 09:03:39,739 - root / INFO:  Reading save file..
+2023-08-27 09:03:39,740 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:39,740 - root / INFO:  Checking save file requirements..
+2023-08-27 09:03:39,742 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:03:39,742 - root / INFO:  Initallizing..
+2023-08-27 09:03:39,870 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:03:39,871 - root / INFO:  Reading Images..
+2023-08-27 09:03:39,961 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:03:39,961 - root / INFO:  Loading Sounds..
+2023-08-27 09:03:40,351 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:40,352 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:03:40,356 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:40,356 - root / INFO:  Resetting text object..
+2023-08-27 09:03:40,389 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:03:40,390 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:03:40,391 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:03:40,391 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:03:40,392 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:03:40,393 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:03:40,393 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:03:40,394 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:03:40,394 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:03:40,395 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:03:40,395 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:03:40,396 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:03:40,396 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:03:40,396 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:03:40,398 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:03:40,398 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:03:40,399 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:03:40,399 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:03:40,400 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:03:40,400 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:03:40,401 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:03:40,401 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:03:40,402 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:03:40,402 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:03:40,403 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:03:40,403 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:03:40,404 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:03:40,404 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:03:40,404 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:03:40,405 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:03:40,405 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:03:40,406 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:03:40,406 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:03:40,407 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:03:40,408 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:03:40,408 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:03:40,408 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:03:40,409 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:03:40,409 - root / INFO:  Starting..
+2023-08-27 09:03:45,225 - root / INFO:  Loading..
+2023-08-27 09:03:45,226 - root / INFO:  Reading save file..
+2023-08-27 09:03:45,226 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:45,226 - root / INFO:  Checking save file requirements..
+2023-08-27 09:03:45,228 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:03:45,228 - root / INFO:  Initallizing..
+2023-08-27 09:03:45,359 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:03:45,359 - root / INFO:  Reading Images..
+2023-08-27 09:03:45,448 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:03:45,448 - root / INFO:  Loading Sounds..
+2023-08-27 09:03:45,844 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:45,845 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:03:45,849 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:45,850 - root / INFO:  Resetting text object..
+2023-08-27 09:03:45,884 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:03:45,884 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:03:45,885 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:03:45,885 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:03:45,887 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:03:45,888 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:03:45,888 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:03:45,889 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:03:45,889 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:03:45,890 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:03:45,891 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:03:45,891 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:03:45,892 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:03:45,892 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:03:45,893 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:03:45,893 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:03:45,894 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:03:45,894 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:03:45,894 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:03:45,895 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:03:45,895 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:03:45,896 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:03:45,896 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:03:45,897 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:03:45,897 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:03:45,898 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:03:45,898 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:03:45,899 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:03:45,899 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:03:45,900 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:03:45,900 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:03:45,900 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:03:45,901 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:03:45,901 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:03:45,902 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:03:45,902 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:03:45,903 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:03:45,903 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:03:45,904 - root / INFO:  Starting..
+2023-08-27 09:03:49,977 - root / INFO:  Loading..
+2023-08-27 09:03:49,978 - root / INFO:  Reading save file..
+2023-08-27 09:03:49,978 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:49,978 - root / INFO:  Checking save file requirements..
+2023-08-27 09:03:49,980 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:03:49,980 - root / INFO:  Initallizing..
+2023-08-27 09:03:50,131 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:03:50,131 - root / INFO:  Reading Images..
+2023-08-27 09:03:50,219 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:03:50,220 - root / INFO:  Loading Sounds..
+2023-08-27 09:03:50,612 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:50,613 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:03:50,616 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:03:50,616 - root / INFO:  Resetting text object..
+2023-08-27 09:03:50,652 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:03:50,652 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:03:50,653 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:03:50,653 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:03:50,654 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:03:50,654 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:03:50,655 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:03:50,656 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:03:50,656 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:03:50,657 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:03:50,658 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:03:50,658 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:03:50,659 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:03:50,660 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:03:50,660 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:03:50,661 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:03:50,661 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:03:50,662 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:03:50,662 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:03:50,663 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:03:50,663 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:03:50,664 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:03:50,664 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:03:50,664 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:03:50,665 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:03:50,665 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:03:50,666 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:03:50,666 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:03:50,666 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:03:50,667 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:03:50,667 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:03:50,667 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:03:50,669 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:03:50,669 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:03:50,669 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:03:50,670 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:03:50,670 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:03:50,670 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:03:50,671 - root / INFO:  Starting..
+2023-08-27 09:03:53,546 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:03:54,425 - root / DEBUG: Killed Enemy: 2, 2
+2023-08-27 09:03:56,780 - root / DEBUG: Killed Enemy: 3, 3
+2023-08-27 09:03:57,455 - root / DEBUG: Killed Enemy: 4, 4
+2023-08-27 09:03:57,569 - root / DEBUG: Killed Enemy: 5, 5
+2023-08-27 09:03:58,763 - root / DEBUG: Killed Enemy: 6, 6
+2023-08-27 09:04:00,688 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:04:00,705 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:04:02,185 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:04:03,013 - root / DEBUG: Killed Enemy: 2, 2
+2023-08-27 09:04:03,131 - root / DEBUG: Killed Enemy: 3, 3
+2023-08-27 09:04:08,669 - root / DEBUG: Killed Enemy: 4, 4
+2023-08-27 09:04:08,716 - root / DEBUG: Killed Enemy: 5, 5
+2023-08-27 09:04:09,798 - root / DEBUG: Killed Enemy: 6, 6
+2023-08-27 09:04:12,552 - root / DEBUG: Killed Enemy: 1, 1
+2023-08-27 09:05:08,153 - root / INFO:  Loading..
+2023-08-27 09:05:08,154 - root / INFO:  Reading save file..
+2023-08-27 09:05:08,154 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:05:08,155 - root / INFO:  Checking save file requirements..
+2023-08-27 09:05:08,157 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-27 09:05:08,157 - root / INFO:  Initallizing..
+2023-08-27 09:05:08,302 - root / INFO: [92mInitallized.[0m
+2023-08-27 09:05:08,302 - root / INFO:  Reading Images..
+2023-08-27 09:05:08,409 - root / INFO: [92mLoaded.[0m
+2023-08-27 09:05:08,410 - root / INFO:  Loading Sounds..
+2023-08-27 09:05:08,804 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:05:08,805 - root / INFO:  Resetting Font/Title..
+2023-08-27 09:05:08,809 - root / INFO: [92m Loaded.[0m
+2023-08-27 09:05:08,810 - root / INFO:  Resetting text object..
+2023-08-27 09:05:08,845 - root / DEBUG: Spawned Enemy: 0
+2023-08-27 09:05:08,845 - root / DEBUG: Spawned Enemy: 1
+2023-08-27 09:05:08,846 - root / DEBUG: Spawned Enemy: 2
+2023-08-27 09:05:08,846 - root / DEBUG: Spawned Enemy: 3
+2023-08-27 09:05:08,847 - root / DEBUG: Spawned Enemy: 4
+2023-08-27 09:05:08,848 - root / DEBUG: Spawned Enemy: 5
+2023-08-27 09:05:08,848 - root / DEBUG: Spawned Enemy: 6
+2023-08-27 09:05:08,848 - root / DEBUG: Spawned Enemy: 7
+2023-08-27 09:05:08,849 - root / DEBUG: Spawned Enemy: 8
+2023-08-27 09:05:08,849 - root / DEBUG: Spawned Enemy: 9
+2023-08-27 09:05:08,850 - root / DEBUG: Spawned Enemy: 10
+2023-08-27 09:05:08,850 - root / DEBUG: Spawned Enemy: 11
+2023-08-27 09:05:08,851 - root / DEBUG: Spawned Enemy: 12
+2023-08-27 09:05:08,851 - root / DEBUG: Spawned Enemy: 13
+2023-08-27 09:05:08,851 - root / DEBUG: Spawned Enemy: 14
+2023-08-27 09:05:08,853 - root / DEBUG: Spawned Enemy: 15
+2023-08-27 09:05:08,853 - root / DEBUG: Spawned Enemy: 16
+2023-08-27 09:05:08,854 - root / DEBUG: Spawned Enemy: 17
+2023-08-27 09:05:08,854 - root / DEBUG: Spawned Enemy: 18
+2023-08-27 09:05:08,855 - root / DEBUG: Spawned Enemy: 19
+2023-08-27 09:05:08,855 - root / DEBUG: Spawned Enemy: 20
+2023-08-27 09:05:08,856 - root / DEBUG: Spawned Enemy: 21
+2023-08-27 09:05:08,856 - root / DEBUG: Spawned Enemy: 22
+2023-08-27 09:05:08,857 - root / DEBUG: Spawned Enemy: 23
+2023-08-27 09:05:08,857 - root / DEBUG: Spawned Enemy: 24
+2023-08-27 09:05:08,858 - root / DEBUG: Spawned Enemy: 25
+2023-08-27 09:05:08,858 - root / DEBUG: Spawned Enemy: 26
+2023-08-27 09:05:08,859 - root / DEBUG: Spawned Enemy: 27
+2023-08-27 09:05:08,859 - root / DEBUG: Spawned Enemy: 28
+2023-08-27 09:05:08,860 - root / DEBUG: Spawned Enemy: 29
+2023-08-27 09:05:08,860 - root / DEBUG: Spawned Enemy: 30
+2023-08-27 09:05:08,861 - root / DEBUG: Spawned Enemy: 31
+2023-08-27 09:05:08,861 - root / DEBUG: Spawned Enemy: 32
+2023-08-27 09:05:08,862 - root / DEBUG: Spawned Enemy: 33
+2023-08-27 09:05:08,862 - root / DEBUG: Spawned Enemy: 34
+2023-08-27 09:05:08,863 - root / DEBUG: Spawned Enemy: 35
+2023-08-27 09:05:08,863 - root / DEBUG: Spawned Enemy: 36
+2023-08-27 09:05:08,863 - root / DEBUG: Spawned Enemy: 37
+2023-08-27 09:05:08,864 - root / INFO:  Starting..
