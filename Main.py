@@ -466,6 +466,10 @@ class Player(pygame.sprite.Sprite): # player
         self.hitbox_rect.center = self.hitbox_rect.center 
         
         self.vec_pos = (self.hitbox_rect.centerx, self.hitbox_rect.centery)
+
+    def checkLastMob(self):
+        if demoLevel.lastMob == 0:
+            drawDeadScreen()
         
     def update(self):
         self.user_input()
@@ -475,6 +479,7 @@ class Player(pygame.sprite.Sprite): # player
         self.checkColliedWithEnemy()
         self.drawPlayerMana()
         self.ui_playerStopWatch()
+        self.checkLastMob()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -677,7 +682,7 @@ class GameLevel(pygame.sprite.Group):
         self.health_spawn_pos = []
         self.create_map()
         self.killedMob = 0
-        self.lastMob = 38
+        self.lastMob = 31
 
     def create_map(self):
         layouts = {
@@ -816,10 +821,17 @@ def drawDeadScreen():
     game_over_screen_fade.set_alpha(160)
     screen.blit(game_over_screen_fade, (0, 0))
 
-    ui_Dead = defaultBigFont.render('죽었습니다!', True, WHITE)
+    if not demoLevel.lastMob == 0:
+        ui_Dead = defaultBigFont.render('죽었습니다!', True, RED)
+    elif demoLevel.lastMob == 0:
+        ui_Dead = defaultBigFont.render('살아남았습니다!', True, BLUE)
     ui_SurvivedTime = mainTitleFont.render(f'00분 00초 동안 살아남았습니다!', True, WHITE)
     ui_KilledMob = mainTitleFont.render(f'{demoLevel.killedMob}마리의 좀비를 죽였습니다!', True, WHITE)
-    ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+
+    if demoLevel.lastMob > 0:
+        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+    else:
+        ui_LastMob = mainTitleFont.render(f'모든 좀비를 처치하였습니다! 축하해요!!!', True, WHITE)
 
     screen.blit(ui_Dead, (400, 150))
     screen.blit(ui_SurvivedTime, (400, 200))
