@@ -8,4 +8,6 @@
  - 빌드된 환경: Visual Studio Code (July 2023 1.81 Update), Python 3.11.3 (64bit)
 
 ## ❓ 게임 실행에 관해서
- - startgame.bat을 실행하시면 게임이 실행됩니다.
+ - 자동 실행: startgame.bat을 실행하시면 게임이 실행됩니다.
+ - 수동 실행: python Main.py
+ - 수동으로 게임 설정 조정: GameSetting.py 파일 조정
