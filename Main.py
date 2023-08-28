@@ -345,6 +345,9 @@ class Player(pygame.sprite.Sprite): # player
         self.hurtCooldown = 100
         self.bulletLeft = LoadedHandgunBullet
         self.vecPos = pygame.math.Vector2(pos)
+        self.playerTimeMilli = 0
+        self.playerTimeMin = 0
+        self.playerTimeSec = 0
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -415,6 +418,10 @@ class Player(pygame.sprite.Sprite): # player
         seconds=int(ticks/1000 % 60)
         minutes=int(ticks/60000 % 24)
         out=f'{minutes:02d}:{seconds:02d}:{millis}'.format(minutes=minutes, millis=millis, seconds=seconds)
+
+        self.playerTimeMilli = millis
+        self.playerTimeMin = minutes
+        self.playerTimeSec = seconds
 
         playerUIStopWatch = defaultFont.render(out, True, GRAY)
         screen.blit(playerUIStopWatch, (30, 30))
@@ -825,7 +832,7 @@ def drawDeadScreen():
         ui_Dead = defaultBigFont.render('죽었습니다!', True, RED)
     elif demoLevel.lastMob == 0:
         ui_Dead = defaultBigFont.render('살아남았습니다!', True, BLUE)
-    ui_SurvivedTime = mainTitleFont.render(f'00분 00초 동안 살아남았습니다!', True, WHITE)
+    ui_SurvivedTime = mainTitleFont.render(f'{player.playerTimeMin}분 {player.playerTimeSec}초 동안 살아남았습니다!', True, WHITE)
     ui_KilledMob = mainTitleFont.render(f'{demoLevel.killedMob}마리의 좀비를 죽였습니다!', True, WHITE)
 
     if demoLevel.lastMob > 0:
