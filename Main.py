@@ -220,6 +220,13 @@ try:
     img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
     img_overlayViggnete = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
     img_overlayViggnete = pygame.transform.scale(img_overlayViggnete, (1280, 1280))
+
+    ui_rankS = pygame.image.load('./src/img/rank/s.png').convert_alpha()
+    ui_rankA = pygame.image.load('./src/img/rank/a.png').convert_alpha()
+    ui_rankB = pygame.image.load('./src/img/rank/b.png').convert_alpha()
+    ui_rankC = pygame.image.load('./src/img/rank/c.png').convert_alpha()
+    ui_rankD = pygame.image.load('./src/img/rank/d.png').convert_alpha()
+    ui_rankF = pygame.image.load('./src/img/rank/f.png').convert_alpha()
     log.info(f"{bcolors.OKGREEN}Loaded.{bcolors.ENDC}")
 except:
     log.critical(f"{traceback.format_exc}")
@@ -262,6 +269,7 @@ try:
     defaultBulletFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 24)
     mainTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 25)
     subTitleFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 15)
+    defaultBigFont = pygame.font.Font('./src/font/PretendardVariable.ttf', 40)
 
     log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
@@ -641,10 +649,10 @@ class Enemy(pygame.sprite.Sprite):
 
     def checkCollisionWithBullet(self):
         if pygame.sprite.groupcollide(bulletGroup, enemyGroup, False, True):
-            self.hurt += 1
-            self.killed += 1
+            demoLevel.killedMob += 1
+            demoLevel.lastMob -= 1
 
-            log.debug(f'Killed Enemy: {self.killed}, {self.hurt}')
+            log.debug(f'Killed Enemy: {demoLevel.killedMob}, {demoLevel.lastMob}')
 
         if self.hurt > 5:
             self.kill()
@@ -668,6 +676,8 @@ class GameLevel(pygame.sprite.Group):
         self.enemy_spawn_pos = []
         self.health_spawn_pos = []
         self.create_map()
+        self.killedMob = 0
+        self.lastMob = 38
 
     def create_map(self):
         layouts = {
@@ -708,13 +718,13 @@ class GameLevel(pygame.sprite.Group):
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
         self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
 
-        #draw the floor
+        # draw floor
         floor_offset_pos = self.floor_rect.topleft - self.offset
 
         screen.blit(img_blackVoid, [0, 0])
         screen.blit(img_demoMapBackground, floor_offset_pos)
 
-        # draw the PLAYER'S rectangles for debug
+        # draw player hitbox for debug
         if GameSetting.SHOW_COLLISION_BOXES:
             base_rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
             pygame.draw.rect(screen, "red", base_rect, width=2)
@@ -806,10 +816,15 @@ def drawDeadScreen():
     game_over_screen_fade.set_alpha(160)
     screen.blit(game_over_screen_fade, (0, 0))
 
-    ui_Dead = defaultFont.render('You Died!', True, WHITE)
-    ui_SurvivedTime = defaultCopyrightFont.render('Survived', True, WHITE)
+    ui_Dead = defaultBigFont.render('죽었습니다!', True, WHITE)
+    ui_SurvivedTime = mainTitleFont.render(f'00분 00초 동안 살아남았습니다!', True, WHITE)
+    ui_KilledMob = mainTitleFont.render(f'{demoLevel.killedMob}마리의 좀비를 죽였습니다!', True, WHITE)
+    ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
 
-    screen.blit(ui_Dead, (400, 200))
+    screen.blit(ui_Dead, (400, 150))
+    screen.blit(ui_SurvivedTime, (400, 200))
+    screen.blit(ui_KilledMob, (400, 300))
+    screen.blit(ui_LastMob, (400, 340))
 
 def gameDemo(): # main game
         log.info(' Starting..')
