@@ -281,3 +281,102 @@
 2023-08-29 18:47:06,837 - root / INFO:  Resetting text object..
 2023-08-29 18:47:10,602 - root / INFO: [92m Loaded.[0m
 2023-08-29 18:47:11,430 - root / INFO:  Starting..
+2023-08-29 18:48:17,960 - root / INFO:  Loading..
+2023-08-29 18:48:17,960 - root / INFO:  Reading save file..
+2023-08-29 18:48:17,961 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:48:17,961 - root / INFO:  Checking save file requirements..
+2023-08-29 18:48:17,963 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:48:17,963 - root / INFO:  Initallizing..
+2023-08-29 18:48:18,099 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:48:18,100 - root / INFO:  Reading Images..
+2023-08-29 18:48:18,201 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:48:18,202 - root / INFO:  Loading Sounds..
+2023-08-29 18:48:18,245 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:48:18,245 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:48:18,250 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:48:18,251 - root / INFO:  Resetting text object..
+2023-08-29 18:49:06,103 - root / INFO:  Loading..
+2023-08-29 18:49:06,104 - root / INFO:  Reading save file..
+2023-08-29 18:49:06,104 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:06,105 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:06,106 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:06,107 - root / INFO:  Initallizing..
+2023-08-29 18:49:06,267 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:06,268 - root / INFO:  Reading Images..
+2023-08-29 18:49:06,375 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:06,375 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:06,423 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:06,423 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:06,426 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:06,426 - root / INFO:  Resetting text object..
+2023-08-29 18:49:10,230 - root / INFO:  Loading..
+2023-08-29 18:49:10,230 - root / INFO:  Reading save file..
+2023-08-29 18:49:10,231 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:10,231 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:10,233 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:10,233 - root / INFO:  Initallizing..
+2023-08-29 18:49:10,366 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:10,366 - root / INFO:  Reading Images..
+2023-08-29 18:49:10,464 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:10,465 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:10,510 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:10,511 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:10,514 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:10,515 - root / INFO:  Resetting text object..
+2023-08-29 18:49:12,607 - root / INFO:  Loading..
+2023-08-29 18:49:12,608 - root / INFO:  Reading save file..
+2023-08-29 18:49:12,608 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:12,608 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:12,610 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:12,610 - root / INFO:  Initallizing..
+2023-08-29 18:49:12,741 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:12,741 - root / INFO:  Reading Images..
+2023-08-29 18:49:12,839 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:12,840 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:12,883 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:12,884 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:12,889 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:12,889 - root / INFO:  Resetting text object..
+2023-08-29 18:49:15,321 - root / INFO:  Loading..
+2023-08-29 18:49:15,321 - root / INFO:  Reading save file..
+2023-08-29 18:49:15,321 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:15,322 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:15,324 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:15,324 - root / INFO:  Initallizing..
+2023-08-29 18:49:15,457 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:15,457 - root / INFO:  Reading Images..
+2023-08-29 18:49:15,556 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:15,556 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:15,599 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:15,600 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:15,603 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:15,604 - root / INFO:  Resetting text object..
+2023-08-29 18:49:17,854 - root / INFO:  Loading..
+2023-08-29 18:49:17,854 - root / INFO:  Reading save file..
+2023-08-29 18:49:17,854 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:17,855 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:17,856 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:17,857 - root / INFO:  Initallizing..
+2023-08-29 18:49:17,991 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:17,991 - root / INFO:  Reading Images..
+2023-08-29 18:49:18,088 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:18,089 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:18,140 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:18,140 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:18,145 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:18,146 - root / INFO:  Resetting text object..
+2023-08-29 18:49:32,340 - root / INFO:  Loading..
+2023-08-29 18:49:32,340 - root / INFO:  Reading save file..
+2023-08-29 18:49:32,341 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:32,341 - root / INFO:  Checking save file requirements..
+2023-08-29 18:49:32,343 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-29 18:49:32,343 - root / INFO:  Initallizing..
+2023-08-29 18:49:32,489 - root / INFO: [92mInitallized.[0m
+2023-08-29 18:49:32,489 - root / INFO:  Reading Images..
+2023-08-29 18:49:32,588 - root / INFO: [92mLoaded.[0m
+2023-08-29 18:49:32,588 - root / INFO:  Loading Sounds..
+2023-08-29 18:49:32,634 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:32,634 - root / INFO:  Resetting Font/Title..
+2023-08-29 18:49:32,638 - root / INFO: [92m Loaded.[0m
+2023-08-29 18:49:32,639 - root / INFO:  Resetting text object..
+2023-08-29 18:49:39,338 - root / INFO:  Starting..
