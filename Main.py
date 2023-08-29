@@ -1,3 +1,10 @@
+############################
+#  TIME / BULLET           #
+#  FINAL DEMO VERSION      # DO NOT CONTRIBUTE IF YOU DONT HAVE PERMISSION
+#  MADE BY. SONGRO STUDIO_ # 권한이 없으면 마음대로 수정및, 배포를 하지 마세요
+############################
+
+
 # default imports
 import pygame, sys, math, GameSetting, traceback, json, jsonschema, random, logging, spsroLightEngine
 from tkinter import messagebox
