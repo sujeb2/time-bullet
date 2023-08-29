@@ -1,7 +1,7 @@
 ############################
 #  TIME / BULLET           #
 #  FINAL DEMO VERSION      # DO NOT CONTRIBUTE IF YOU DONT HAVE PERMISSION
-#  MADE BY. SONGRO STUDIO_ # 권한이 없으면 마음대로 수정및, 배포를 하지 마세요
+#  MADE BY. SONGRO STUDIO_ #
 ############################
 
 
@@ -826,6 +826,7 @@ btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
 btnSetting = Button(29, 620, btn_Setting, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
+btnRestart = Button(400, 400, btn_Setting, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -876,6 +877,8 @@ def drawDeadScreen():
     screen.blit(ui_SurvivedTime, (400, 200))
     screen.blit(ui_KilledMob, (400, 300))
     screen.blit(ui_LastMob, (400, 340))
+
+    btnRestart.drawBtn(screen)
 
 def drawSettingScreen():
     settingUISurface = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
