@@ -502,7 +502,7 @@ class Player(pygame.sprite.Sprite): # player
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
 
-class Bullet(pygame.sprite.Sprite):
+class Bullet(pygame.sprite.Sprite): # bullet
     def __init__(self, x, y, angle): 
         super().__init__()
         self.image = entity_Bullet
@@ -538,7 +538,7 @@ class Bullet(pygame.sprite.Sprite):
         self.bulletMovement()
         self.checkCollisionWithWall()
 
-class Enemy(pygame.sprite.Sprite):
+class Enemy(pygame.sprite.Sprite): # enemy
     def __init__(self, position):
         super().__init__(enemyGroup, allSpritesGroup)
         self.image = pygame.image.load('./src/img/animations/entity/enemy/indiv_animation/zombie_frame1.png').convert_alpha()
@@ -691,7 +691,7 @@ class Enemy(pygame.sprite.Sprite):
         else:
             self.kill
 
-class GameLevel(pygame.sprite.Group): 
+class GameLevel(pygame.sprite.Group): # load level
     def __init__(self):
         super().__init__()
         self.offset = pygame.math.Vector2()
@@ -760,7 +760,7 @@ class GameLevel(pygame.sprite.Group):
             offset_pos = sprite.rect.topleft - self.offset
             screen.blit(sprite.image, offset_pos)
 
-class Tile(pygame.sprite.Sprite): 
+class Tile(pygame.sprite.Sprite): # load tile
     def __init__(self, pos, groups, type, unique_id):
         super().__init__(groups)
         if type == "void":
