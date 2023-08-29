@@ -222,11 +222,17 @@ try:
     img_overlayViggnete = pygame.transform.scale(img_overlayViggnete, (1280, 1280))
 
     ui_rankS = pygame.image.load('./src/img/rank/s.png').convert_alpha()
+    ui_rankS = pygame.transform.scale(ui_rankS, (128, 128))
     ui_rankA = pygame.image.load('./src/img/rank/a.png').convert_alpha()
+    ui_rankA = pygame.transform.scale(ui_rankA, (128, 128))
     ui_rankB = pygame.image.load('./src/img/rank/b.png').convert_alpha()
+    ui_rankB = pygame.transform.scale(ui_rankB, (128, 128))
     ui_rankC = pygame.image.load('./src/img/rank/c.png').convert_alpha()
+    ui_rankC = pygame.transform.scale(ui_rankC, (128, 128))
     ui_rankD = pygame.image.load('./src/img/rank/d.png').convert_alpha()
+    ui_rankD = pygame.transform.scale(ui_rankD, (128, 128))
     ui_rankF = pygame.image.load('./src/img/rank/f.png').convert_alpha()
+    ui_rankF = pygame.transform.scale(ui_rankF, (128, 128))
     log.info(f"{bcolors.OKGREEN}Loaded.{bcolors.ENDC}")
 except:
     log.critical(f"{traceback.format_exc}")
@@ -837,11 +843,27 @@ def drawDeadScreen():
         ui_Dead = defaultBigFont.render('살아남았습니다!', True, BLUE)
     ui_SurvivedTime = mainTitleFont.render(f'{player.playerTimeMin}분 {player.playerTimeSec}초 동안 살아남았습니다!', True, WHITE)
     ui_KilledMob = mainTitleFont.render(f'{demoLevel.killedMob}마리의 좀비를 죽였습니다!', True, WHITE)
+    ui_Rank = ui_rankS
 
     if demoLevel.lastMob > 0:
         ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
-    else:
+        ui_Rank = ui_rankA
+    if demoLevel.lastMob >= 10:
+        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+        ui_Rank = ui_rankB
+    if demoLevel.lastMob >= 20:
+        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+        ui_Rank = ui_rankC
+    if demoLevel.lastMob >= 25:
+        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+        ui_Rank = ui_rankD
+    if demoLevel.lastMob >= GameSetting.ENEMEY_SPAWN_RATE:
+        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+        ui_Rank = ui_rankF
+    elif demoLevel.lastMob == 0:
         ui_LastMob = mainTitleFont.render(f'모든 좀비를 처치하였습니다! 축하해요!!!', True, WHITE)
+    
+    screen.blit(ui_Rank, (250, 150))
 
     screen.blit(ui_Dead, (400, 150))
     screen.blit(ui_SurvivedTime, (400, 200))
@@ -896,7 +918,6 @@ def gameDemo(): # main game
             hud_playerMana = subTitleFont.render(f'{str(player.playerMana)}%', True, WHITE)
             hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
             hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
-            hud_bulletLeft = defaultBulletFont.render(str(LoadedHandgunBullet), True, WHITE)
             hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
             hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
             hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
@@ -944,7 +965,6 @@ def gameDemo(): # main game
                 drawDeadScreen()
 
             pygame.display.flip()
-            dt = clock.tick(GameSetting.DEF_FPS)
 
 def mainMenu(): # main menu
     while True:
