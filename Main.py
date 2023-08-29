@@ -184,7 +184,6 @@ try:
     btn_Start = pygame.image.load('./src/img/button/menu/start_btn.png').convert_alpha()
     btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
-    btn_Copyright = pygame.image.load('./src/img/button/menu/copyright_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
 
     # crosshair
@@ -216,6 +215,7 @@ try:
 
     # overlay / etc
     img_overlayDeadScreenBlack = pygame.image.load('./src/img/hud/overlay/transparentBlack.png').convert_alpha()
+    img_overlayBlackGradient = pygame.image.load('./src/img/hud/overlay/transparentGradient.png').convert_alpha()
     img_blackVoid = pygame.image.load('./src/img/map_tile/void.png').convert_alpha()
     img_blackVoid = pygame.transform.scale(img_blackVoid, (GameSetting.WIDTH, GameSetting.HEIGHT))
     img_overlayViggnete = pygame.image.load('./src/img/player_deco/vignette.png').convert_alpha()
@@ -348,6 +348,11 @@ class Player(pygame.sprite.Sprite): # player
         self.playerTimeMilli = 0
         self.playerTimeMin = 0
         self.playerTimeSec = 0
+        self.mouse_coords = pygame.mouse.get_pos()
+        self.x_change_mouse_player = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
+        self.y_change_mouse_player = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
+        self.vec_pos = (self.hitbox_rect.centerx, self.hitbox_rect.centery)
+        self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -689,7 +694,7 @@ class GameLevel(pygame.sprite.Group):
         self.health_spawn_pos = []
         self.create_map()
         self.killedMob = 0
-        self.lastMob = 31
+        self.lastMob = GameSetting.ENEMEY_SPAWN_RATE
 
     def create_map(self):
         layouts = {
@@ -804,12 +809,10 @@ obstaclesGroup = pygame.sprite.Group()
 floorGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
 demoLevel = GameLevel()
-btnStart = Button(32, 530, btn_Start, 1)
-btnLoad = Button(32, 560, btn_Load, 1)
-btnSetting = Button(31, 590, btn_Setting, 1)
-btnCopyright = Button(29, 620, btn_Copyright, 1)
+btnStart = Button(30, 560, btn_Start, 1)
+btnLoad = Button(30, 590, btn_Load, 1)
+btnSetting = Button(29, 620, btn_Setting, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
-btnUnpause = Button(29, 620, btn_Copyright, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -844,6 +847,21 @@ def drawDeadScreen():
     screen.blit(ui_SurvivedTime, (400, 200))
     screen.blit(ui_KilledMob, (400, 300))
     screen.blit(ui_LastMob, (400, 340))
+
+def drawSettingScreen():
+    settingUISurface = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
+    settingUISurface.blit(img_overlayBlackGradient, [0, 0])
+
+    settingUI_title = defaultBigFont.render('설정', True, WHITE)
+    settingUI_debugTitle = mainTitleFont.render('디버그', True, WHITE)
+    settingUI_debugShowFPS = mainTitleFont.render('FPS 표시', True, WHITE)
+    settingUI_debugVsync = mainTitleFont.render('VSYNC', True, WHITE)
+    settingUI_debugFullScreen = mainTitleFont.render('전체화면', True, WHITE)
+    settingUI_debugShowAllDebugInfo = mainTitleFont.render('모든 디버그 정보 표시', True, WHITE)
+    
+    settingUISurface.blit(settingUI_title, [400, 400])
+
+    pygame.display.flip()
 
 def gameDemo(): # main game
         log.info(' Starting..')
@@ -950,9 +968,8 @@ def mainMenu(): # main menu
                 data = json.load(pSv)
                 log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 
-        btnSetting.drawBtn(screen)
-
-        btnCopyright.drawBtn(screen)
+        if btnSetting.drawBtn(screen):
+            drawSettingScreen()
 
         if btnExit.drawBtn(screen):
             sys.exit()
