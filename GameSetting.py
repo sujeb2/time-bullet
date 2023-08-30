@@ -4,7 +4,7 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '2.2.3' + '==DEMO'
+VER = '2.3' + '==DEMO'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',

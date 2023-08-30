@@ -339,10 +339,10 @@ class Player(pygame.sprite.Sprite): # player
         super().__init__()
         self.pos = pos
         self.image = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame1.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
-        self.base_player_image = self.image
+        self.basePlayerImage = self.image
         self.playerShootFrame = pygame.transform.rotozoom(pygame.image.load('./src/img/animations/entity/player/placeholder/indiv_animation/player_handgun_frame2.png').convert_alpha(), 0, GameSetting.PLAYER_VIEW_SIZE)
-        self.hitbox_rect = self.base_player_image.get_rect(center = pos)
-        self.rect = self.hitbox_rect.copy()
+        self.hitboxRect = self.basePlayerImage.get_rect(center = pos)
+        self.rect = self.hitboxRect.copy()
         self.lastTick = pygame.time.get_ticks()
         self.speed = GameSetting.PLAYER_SPEED
         self.DashSpeed = GameSetting.PLAYER_DASH_SPEED
@@ -362,18 +362,18 @@ class Player(pygame.sprite.Sprite): # player
         self.playerTimeMin = 0
         self.playerTimeSec = 0
         self.mouse_coords = pygame.mouse.get_pos()
-        self.x_change_mouse_player = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
-        self.y_change_mouse_player = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
-        self.vec_pos = (self.hitbox_rect.centerx, self.hitbox_rect.centery)
-        self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
+        self.xMouse = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
+        self.yMouse = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
+        self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
+        self.angle = math.degrees(math.atan2(self.yMouse, self.xMouse))
 
     def player_rotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
-        self.x_change_mouse_player = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
-        self.y_change_mouse_player = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
-        self.angle = math.degrees(math.atan2(self.y_change_mouse_player, self.x_change_mouse_player))
-        self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
-        self.rect = self.image.get_rect(center = self.hitbox_rect.center)
+        self.xMouse = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
+        self.yMouse = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
+        self.angle = math.degrees(math.atan2(self.yMouse, self.xMouse))
+        self.image = pygame.transform.rotate(self.basePlayerImage, -self.angle)
+        self.rect = self.image.get_rect(center = self.hitboxRect.center)
 
     def drawPlayerMana(self):
         pygame.draw.rect(screen, BLUE, [30, 640, self.playerMana, 25])
@@ -402,11 +402,6 @@ class Player(pygame.sprite.Sprite): # player
             self.checkShooting()
         else:
             self.shoot = False
-
-        if keys[pygame.K_SPACE]: # player dash
-            self.speed = 5
-        else:
-            self.speed = 3
     
         if keys[pygame.K_LCTRL]: # player slow
             self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
@@ -460,18 +455,18 @@ class Player(pygame.sprite.Sprite): # player
     def checkCollisionWithWall(self, direction):
         if not GameSetting.NOCLIP:
             for sprite in obstaclesGroup:
-                if sprite.rect.colliderect(self.hitbox_rect):
+                if sprite.rect.colliderect(self.hitboxRect):
                     if direction == "horizontal":
                         if self.velocity_x > 0:
-                            self.hitbox_rect.right = sprite.rect.left
+                            self.hitboxRect.right = sprite.rect.left
                         if self.velocity_x < 0:
-                            self.hitbox_rect.left = sprite.rect.right
+                            self.hitboxRect.left = sprite.rect.right
                     
                     if direction == "vertical":
                         if self.velocity_y < 0:
-                            self.hitbox_rect.top = sprite.rect.bottom
+                            self.hitboxRect.top = sprite.rect.bottom
                         if self.velocity_y > 0:
-                            self.hitbox_rect.bottom = sprite.rect.top
+                            self.hitboxRect.bottom = sprite.rect.top
 
     def checkShooting(self): 
         if self.shoot_cooldown == 0:
@@ -482,15 +477,15 @@ class Player(pygame.sprite.Sprite): # player
             allSpritesGroup.add(self.bullet)
 
     def move(self):
-        self.hitbox_rect.centerx += self.velocity_x
+        self.hitboxRect.centerx += self.velocity_x
         self.checkCollisionWithWall("horizontal")
 
-        self.hitbox_rect.centery += self.velocity_y
+        self.hitboxRect.centery += self.velocity_y
         self.checkCollisionWithWall("vertical")
 
-        self.hitbox_rect.center = self.hitbox_rect.center 
+        self.hitboxRect.center = self.hitboxRect.center 
         
-        self.vec_pos = (self.hitbox_rect.centerx, self.hitbox_rect.centery)
+        self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
 
     def checkLastMob(self):
         if demoLevel.lastMob == 0:
@@ -522,8 +517,8 @@ class Bullet(pygame.sprite.Sprite): # bullet
         self.angle = angle
         self.x_vel = math.cos(self.angle * (2*math.pi/360)) * self.speed
         self.y_vel = math.sin(self.angle * (2*math.pi/360)) * self.speed
-        self.bullet_lifetime = GameSetting.BULLET_LIFETIME
-        self.spawn_time = pygame.time.get_ticks() # gets the specific time that the bullet was created, stays static
+        self.bulletLifeTime = GameSetting.BULLET_LIFETIME
+        self.spawnTime = pygame.time.get_ticks()
         
 
     def bulletMovement(self): 
@@ -533,7 +528,7 @@ class Bullet(pygame.sprite.Sprite): # bullet
         self.rect.x = int(self.x)
         self.rect.y = int(self.y)
 
-        if pygame.time.get_ticks() - self.spawn_time > self.bullet_lifetime: 
+        if pygame.time.get_ticks() - self.spawnTime > self.bulletLifeTime: 
             self.kill()
             sfx_handgunFire.stop()
 
@@ -581,7 +576,7 @@ class Enemy(pygame.sprite.Sprite): # enemy
 
     def roam(self):
         self.direction.x, self.direction.y = self.directionList[self.directionIndex] # gets a random direction
-        self.velocity = self.direction * self.roaming_speed
+        self.velocity = self.direction * self.roamingSpeed
         self.position += self.velocity
         
         self.rect.centerx = self.position.x
@@ -702,7 +697,7 @@ class GameLevel(pygame.sprite.Group): # load level
     def __init__(self):
         super().__init__()
         self.offset = pygame.math.Vector2()
-        self.floor_rect = img_demoMapBackground.get_rect(topleft = (0,0))
+        self.floorRect = img_demoMapBackground.get_rect(topleft = (0,0))
         self.enemySpawnPos = []
         self.create_map()
         self.killedMob = 0
@@ -748,7 +743,7 @@ class GameLevel(pygame.sprite.Group): # load level
         self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
 
         # draw floor
-        floor_offset_pos = self.floor_rect.topleft - self.offset
+        floor_offset_pos = self.floorRect.topleft - self.offset
 
         screen.blit(img_blackVoid, [0, 0])
         screen.blit(img_demoMapBackground, floor_offset_pos)
@@ -808,9 +803,6 @@ class Tile(pygame.sprite.Sprite): # load tile
             if unique_id == "4":
                 self.image = voidWall
 
-        # if type == "props":
-        #     self.image = torch_img
-        
         self.rect = self.image.get_rect(topleft = pos) 
 
 player = Player((400, 400))

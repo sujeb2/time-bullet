@@ -566,3 +566,167 @@
 2023-08-29 20:27:34,351 - root / INFO:  Starting..
 2023-08-29 20:27:55,860 - root / INFO: Saving..
 2023-08-29 20:27:55,862 - root / INFO: [92m Saved.[0m
+2023-08-30 16:22:39,236 - root / INFO:  Loading..
+2023-08-30 16:22:39,237 - root / INFO:  Reading save file..
+2023-08-30 16:22:39,241 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:22:39,241 - root / INFO:  Checking save file requirements..
+2023-08-30 16:22:39,243 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:22:39,244 - root / INFO:  Initallizing..
+2023-08-30 16:22:39,430 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:22:39,430 - root / INFO:  Reading Images..
+2023-08-30 16:22:39,556 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:22:39,556 - root / INFO:  Loading Sounds..
+2023-08-30 16:22:39,661 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:22:39,661 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:22:39,670 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:22:39,670 - root / INFO:  Resetting text object..
+2023-08-30 16:22:40,768 - root / INFO:  Starting..
+2023-08-30 16:22:40,787 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1015, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 993, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 696, in update
+    self.roam()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 584, in roam
+    self.velocity = self.direction * self.roaming_speed
+                                     ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Enemy' object has no attribute 'roaming_speed'
+
+2023-08-30 16:25:19,556 - root / INFO:  Loading..
+2023-08-30 16:25:19,556 - root / INFO:  Reading save file..
+2023-08-30 16:25:19,557 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:19,558 - root / INFO:  Checking save file requirements..
+2023-08-30 16:25:19,559 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:25:19,560 - root / INFO:  Initallizing..
+2023-08-30 16:25:19,691 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:25:19,692 - root / INFO:  Reading Images..
+2023-08-30 16:25:19,790 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:25:19,790 - root / INFO:  Loading Sounds..
+2023-08-30 16:25:19,832 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:19,832 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:25:19,836 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:19,837 - root / INFO:  Resetting text object..
+2023-08-30 16:25:21,320 - root / INFO:  Starting..
+2023-08-30 16:25:21,333 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1012, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 990, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 920, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 502, in update
+    self.player_rotation()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 375, in player_rotation
+    self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
+                                         ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Player' object has no attribute 'base_player_image'
+
+2023-08-30 16:25:23,141 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-08-30 16:25:23,143 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1012, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 990, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 920, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 502, in update
+    self.player_rotation()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 375, in player_rotation
+    self.image = pygame.transform.rotate(self.base_player_image, -self.angle)
+                                         ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Player' object has no attribute 'base_player_image'
+[0m
+2023-08-30 16:25:29,796 - root / INFO:  Loading..
+2023-08-30 16:25:29,798 - root / INFO:  Reading save file..
+2023-08-30 16:25:29,798 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:29,799 - root / INFO:  Checking save file requirements..
+2023-08-30 16:25:29,800 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:25:29,801 - root / INFO:  Initallizing..
+2023-08-30 16:25:29,943 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:25:29,944 - root / INFO:  Reading Images..
+2023-08-30 16:25:30,045 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:25:30,045 - root / INFO:  Loading Sounds..
+2023-08-30 16:25:30,088 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:30,089 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:25:30,091 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:25:30,092 - root / INFO:  Resetting text object..
+2023-08-30 16:25:31,100 - root / INFO:  Starting..
+2023-08-30 16:25:41,643 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:42,188 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:42,705 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:43,195 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:43,695 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:44,256 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:44,805 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:45,346 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:45,839 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:46,295 - root / INFO:  ReAdding Mana..
+2023-08-30 16:25:46,736 - root / INFO:  ReAdding Mana..
+2023-08-30 16:26:04,691 - root / INFO:  Loading..
+2023-08-30 16:26:04,692 - root / INFO:  Reading save file..
+2023-08-30 16:26:04,692 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:26:04,693 - root / INFO:  Checking save file requirements..
+2023-08-30 16:26:04,695 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:26:04,695 - root / INFO:  Initallizing..
+2023-08-30 16:26:04,829 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:26:04,830 - root / INFO:  Reading Images..
+2023-08-30 16:26:04,930 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:26:04,930 - root / INFO:  Loading Sounds..
+2023-08-30 16:26:04,973 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:26:04,974 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:26:04,976 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:26:04,977 - root / INFO:  Resetting text object..
+2023-08-30 16:26:06,090 - root / INFO:  Starting..
+2023-08-30 16:27:28,565 - root / INFO:  Loading..
+2023-08-30 16:27:28,566 - root / INFO:  Reading save file..
+2023-08-30 16:27:28,566 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:28,566 - root / INFO:  Checking save file requirements..
+2023-08-30 16:27:28,569 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:27:28,570 - root / INFO:  Initallizing..
+2023-08-30 16:27:28,722 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:27:28,723 - root / INFO:  Reading Images..
+2023-08-30 16:27:28,823 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:27:28,824 - root / INFO:  Loading Sounds..
+2023-08-30 16:27:28,866 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:28,867 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:27:28,869 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:28,870 - root / INFO:  Resetting text object..
+2023-08-30 16:27:50,737 - root / INFO:  Loading..
+2023-08-30 16:27:50,739 - root / INFO:  Reading save file..
+2023-08-30 16:27:50,739 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:50,739 - root / INFO:  Checking save file requirements..
+2023-08-30 16:27:50,741 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:27:50,741 - root / INFO:  Initallizing..
+2023-08-30 16:27:50,881 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:27:50,881 - root / INFO:  Reading Images..
+2023-08-30 16:27:50,978 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:27:50,979 - root / INFO:  Loading Sounds..
+2023-08-30 16:27:51,021 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:51,022 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:27:51,024 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:51,025 - root / INFO:  Resetting text object..
+2023-08-30 16:27:52,603 - root / INFO:  Starting..
+2023-08-30 16:27:59,966 - root / INFO:  Loading..
+2023-08-30 16:27:59,968 - root / INFO:  Reading save file..
+2023-08-30 16:27:59,969 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:27:59,969 - root / INFO:  Checking save file requirements..
+2023-08-30 16:27:59,971 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-08-30 16:27:59,971 - root / INFO:  Initallizing..
+2023-08-30 16:28:00,110 - root / INFO: [92mInitallized.[0m
+2023-08-30 16:28:00,110 - root / INFO:  Reading Images..
+2023-08-30 16:28:00,209 - root / INFO: [92mLoaded.[0m
+2023-08-30 16:28:00,209 - root / INFO:  Loading Sounds..
+2023-08-30 16:28:00,251 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:28:00,252 - root / INFO:  Resetting Font/Title..
+2023-08-30 16:28:00,255 - root / INFO: [92m Loaded.[0m
+2023-08-30 16:28:00,256 - root / INFO:  Resetting text object..
+2023-08-30 16:28:01,806 - root / INFO:  Starting..
