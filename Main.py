@@ -555,7 +555,7 @@ class Enemy(pygame.sprite.Sprite): # enemy
         self.rect = self.image.get_rect()
         self.rect.center = position
 
-        self.direction_index = random.randint(0, 3)
+        self.directionIndex = random.randint(0, 3)
 
         self.direction = pygame.math.Vector2()
         self.velocity = pygame.math.Vector2()
@@ -567,28 +567,28 @@ class Enemy(pygame.sprite.Sprite): # enemy
         self.isEnemyAlive = True
 
         self.damage = 5
-        self.direction_list = [(1,1), (1,-1), (-1,1), (-1,-1)]
+        self.directionList = [(1,1), (1,-1), (-1,1), (-1,-1)]
 
         self.enemyRadius = GameSetting.ENEMY_RADIUS
-        self.roaming_speed = GameSetting.ENEMY_ROAMING_SPEED
+        self.roamingSpeed = GameSetting.ENEMY_ROAMING_SPEED
 
         self.hurt = 0
         self.killed = 0
 
     def getNewPathTrace(self):
-        self.direction_index = random.randint(0, len(self.direction_list)-1)
+        self.directionIndex = random.randint(0, len(self.directionList)-1)
         self.steps = random.randint(3, 6) * GameSetting.TILESIZE
 
     def roam(self):
-        self.direction.x, self.direction.y = self.direction_list[self.direction_index] # gets a random direction
+        self.direction.x, self.direction.y = self.directionList[self.directionIndex] # gets a random direction
         self.velocity = self.direction * self.roaming_speed
         self.position += self.velocity
         
         self.rect.centerx = self.position.x
-        self.check_collision("horizontal", "roam")
+        self.checkCollision("horizontal", "roam")
 
         self.rect.centery = self.position.y
-        self.check_collision("vertical", "roam")
+        self.checkCollision("vertical", "roam")
         
         self.rect.center = self.rect.center
         self.position = (self.rect.centerx, self.rect.centery)
@@ -598,7 +598,7 @@ class Enemy(pygame.sprite.Sprite): # enemy
         if self.steps == 0:
             self.getNewPathTrace()
 
-    def check_collision(self, direction, move_state):
+    def checkCollision(self, direction, move_state):
         for sprite in obstaclesGroup:
             if sprite.rect.colliderect(self.rect):
                 self.collide = True
@@ -668,10 +668,10 @@ class Enemy(pygame.sprite.Sprite): # enemy
         self.position += self.velocity
 
         self.rect.centerx = self.position.x
-        self.check_collision("horizontal", "hunt")
+        self.checkCollision("horizontal", "hunt")
 
         self.rect.centery = self.position.y
-        self.check_collision("vertical", "hunt")
+        self.checkCollision("vertical", "hunt")
 
         self.rect.center = self.rect.center
 
@@ -703,8 +703,7 @@ class GameLevel(pygame.sprite.Group): # load level
         super().__init__()
         self.offset = pygame.math.Vector2()
         self.floor_rect = img_demoMapBackground.get_rect(topleft = (0,0))
-        self.enemy_spawn_pos = []
-        self.health_spawn_pos = []
+        self.enemySpawnPos = []
         self.create_map()
         self.killedMob = 0
         self.lastMob = GameSetting.ENEMEY_SPAWN_RATE
@@ -727,7 +726,7 @@ class GameLevel(pygame.sprite.Group): # load level
                         if style == "walls":
                             Tile((x,y), [allSpritesGroup], "walls", col)  
                         if style == "enemies":
-                            self.enemy_spawn_pos.append((x, y))
+                            self.enemySpawnPos.append((x, y))
 
         self.spawnEnemy()
 
@@ -741,7 +740,7 @@ class GameLevel(pygame.sprite.Group): # load level
     
     def spawnEnemy(self):
         for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
-            Enemy(random.choice(self.enemy_spawn_pos))
+            Enemy(random.choice(self.enemySpawnPos))
             log.debug(f'Spawned Enemy: {i}')
 
     def custom_draw(self): 
