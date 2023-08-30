@@ -699,11 +699,11 @@ class GameLevel(pygame.sprite.Group): # load level
         self.offset = pygame.math.Vector2()
         self.floorRect = img_demoMapBackground.get_rect(topleft = (0,0))
         self.enemySpawnPos = []
-        self.create_map()
+        self.createMap()
         self.killedMob = 0
         self.lastMob = GameSetting.ENEMEY_SPAWN_RATE
 
-    def create_map(self):
+    def createMap(self):
         layouts = {
                    "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
                    "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
@@ -876,15 +876,18 @@ def drawSettingScreen():
     settingUISurface.blit(img_overlayBlackGradient, [0, 0])
 
     settingUI_title = defaultBigFont.render('설정', True, WHITE)
-    settingUI_debugTitle = mainTitleFont.render('디버그', True, WHITE)
+    settingUI_debugTitle = mainTitleFont.render('비디오', True, WHITE)
     settingUI_debugShowFPS = mainTitleFont.render('FPS 표시', True, WHITE)
     settingUI_debugVsync = mainTitleFont.render('VSYNC', True, WHITE)
     settingUI_debugFullScreen = mainTitleFont.render('전체화면', True, WHITE)
-    settingUI_debugShowAllDebugInfo = mainTitleFont.render('모든 디버그 정보 표시', True, WHITE)
     
     settingUISurface.blit(settingUI_title, [400, 400])
+    settingUISurface.blit(settingUI_debugTitle, [400, 500])
+    settingUISurface.blit(settingUI_debugShowFPS, [400, 565])
+    settingUISurface.blit(settingUI_debugFullScreen, [400, 600])
+    settingUISurface.blit(settingUI_debugVsync, [400, 665])
 
-    pygame.display.flip()
+    
 
 def gameDemo(): # main game
         log.info(' Starting..')
