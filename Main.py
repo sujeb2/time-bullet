@@ -192,6 +192,7 @@ try:
     btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
+    btn_Restart = pygame.image.load('./src/img/button/game/return_menu.btn.png').convert_alpha()
 
     # crosshair
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
@@ -817,7 +818,7 @@ btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
 btnSetting = Button(29, 620, btn_Setting, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
-btnRestart = Button(400, 400, btn_Setting, 1)
+btnRestart = Button(400, 400, btn_Restart, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
