@@ -4,7 +4,8 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '2.3' + '==DEMO'
+VER = '2.4.1' + '==DEMO'
+ENGINE_VER = '2.0'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',
@@ -22,7 +23,7 @@ MOTD = {
     '이 메세지가 반복될수도 있을수도..',
     '이러한 메세지를 MOTD(Message Of The Day)이라고 불리는걸 아시나요?',
     '디버그!',
-    '개발자는 현재 너무나 지루해요',
+    '에러!',
     '이 대회가 완벽하길..!'
 }
 # Player Setting
@@ -39,11 +40,11 @@ GUN_OFFSET_Y = 5
 # Setting
 GAME_DEFAULTSOUND_PLAY = True
 MUSIC_VOL = 20
-LEVEL =['EASY', 'HARD']
+LEVEL = ['EASY', 'HARD']
 
 # Debug
-IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG = False
-SHOW_CURRENTFPS = True
+IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG = True
+SHOW_CURRENTFPS = False
 DEBUG_FPSWARNING_VALUE = 15
 SHOW_PLAYERMANA_CONSOLE = False
 SCREEN_FLAGS = DOUBLEBUF
@@ -68,7 +69,7 @@ FIST_LIFETIME = 100
 
 # Enemy
 ENEMY_SPEED = 2
-ENEMY_VIEWSIZE = 1.25
+ENEMY_VIEWSIZE = 1.1
 ENEMY_RADIUS = 500
 ENEMY_ROAMING_SPEED = 10
 ENEMY_NUMBER = 5

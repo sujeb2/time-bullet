@@ -192,7 +192,7 @@ try:
     btn_Load = pygame.image.load('./src/img/button/menu/load_btn.png').convert_alpha()
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
-    btn_Restart = pygame.image.load('./src/img/button/game/return_menu.btn.png').convert_alpha()
+    btn_Restart = pygame.image.load('./src/img/button/game/return_menu_btn.png').convert_alpha()
 
     # crosshair
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
@@ -818,7 +818,8 @@ btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
 btnSetting = Button(29, 620, btn_Setting, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
-btnRestart = Button(400, 400, btn_Restart, 1)
+btnRestart = Button(600, 400, btn_Restart, 1)
+btnGameRestart = Button(400, 400, btn_Restart, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -870,7 +871,15 @@ def drawDeadScreen():
     screen.blit(ui_KilledMob, (400, 300))
     screen.blit(ui_LastMob, (400, 340))
 
-    btnRestart.drawBtn(screen)
+    if btnRestart.drawBtn(screen):
+        mainMenu()
+        game_over_screen_fade.fill((255, 255, 255))
+
+    if btnGameRestart.drawBtn(screen):
+        gameDemo()
+        game_over_screen_fade.fill((255, 255, 255))
+
+    
 
 def drawSettingScreen():
     settingUISurface = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
@@ -893,8 +902,8 @@ def drawSettingScreen():
 def gameDemo(): # main game
         log.info(' Starting..')
         ost_MainMenu.play()
+        screen.fill((0, 0, 0))
         while True: # replay scene
-
             pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
 
             for event in pygame.event.get():
@@ -924,7 +933,7 @@ def gameDemo(): # main game
             hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
             hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
             hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
-            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
+            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.ENGINE_VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
             hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
             hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVEL}', True, WHITE)
 
@@ -972,8 +981,9 @@ def gameDemo(): # main game
             pygame.display.flip()
 
 def mainMenu(): # main menu
+    screen.fill((255, 255, 255))
     while True:
-
+        pygame.mixer.stop()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
