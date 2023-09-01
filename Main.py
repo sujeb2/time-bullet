@@ -241,6 +241,10 @@ try:
     ui_rankD = pygame.transform.scale(ui_rankD, (128, 128))
     ui_rankF = pygame.image.load('./src/img/rank/f.png').convert_alpha()
     ui_rankF = pygame.transform.scale(ui_rankF, (128, 128))
+    ui_rankP = pygame.image.load('./src/img/rank/p.png').convert_alpha()
+    ui_rankP = pygame.transform.scale(ui_rankP, (128, 128))
+    ui_rankX = pygame.image.load('./src/img/rank/x.png').convert_alpha()
+    ui_rankX = pygame.transform.scale(ui_rankX, (128, 128))
     log.info(f"{bcolors.OKGREEN}Loaded.{bcolors.ENDC}")
 except:
     log.critical(f"{traceback.format_exc}")
@@ -368,7 +372,7 @@ class Player(pygame.sprite.Sprite): # player
         self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
         self.angle = math.degrees(math.atan2(self.yMouse, self.xMouse))
 
-    def player_rotation(self):
+    def playerRotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
         self.xMouse = (self.mouse_coords[0] - GameSetting.WIDTH // 2)
         self.yMouse = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
@@ -495,7 +499,7 @@ class Player(pygame.sprite.Sprite): # player
     def update(self):
         self.user_input()
         self.move()
-        self.player_rotation()
+        self.playerRotation()
         self.checkMana()
         self.checkColliedWithEnemy()
         self.drawPlayerMana()
@@ -611,6 +615,12 @@ class Enemy(pygame.sprite.Sprite): # enemy
                 if move_state == "roam":
                     self.getNewPathTrace()
 
+    def getCollisionBox(self):
+        baseEnemyRect = self.rect.move(-demoLevel.offset.x, -demoLevel.offset.y)
+        pygame.draw.rect(screen, 'red', baseEnemyRect, width=2)
+        baseEnemyRect = self.rect.move(-demoLevel.offset.x, -demoLevel.offset.y)
+        pygame.draw.rect(screen, 'yellow', baseEnemyRect, width=2)
+
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
 
@@ -691,6 +701,9 @@ class Enemy(pygame.sprite.Sprite): # enemy
             else:
                 self.roam()
             self.checkCollisionWithBullet()
+
+            if GameSetting.SHOW_COLLISION_BOXES:
+                self.getCollisionBox()
         else:
             self.kill
 
@@ -740,7 +753,7 @@ class GameLevel(pygame.sprite.Group): # load level
             log.debug(f'Spawned Enemy: {i}')
 
     def custom_draw(self): 
-        self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2) # gotta blit the player rect not base rect
+        self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2)
         self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
 
         # draw floor
@@ -755,8 +768,6 @@ class GameLevel(pygame.sprite.Group): # load level
             pygame.draw.rect(screen, "red", base_rect, width=2)
             rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
             pygame.draw.rect(screen, "yellow", rect, width=2)
-
-            log.debug(f'{base_rect.x}, {base_rect.y}')
 
         for sprite in allSpritesGroup: 
             offset_pos = sprite.rect.topleft - self.offset
@@ -832,6 +843,15 @@ else:
     isMainGameScene = False
     isMainMenuScene = True
 
+def restartGame():
+    playerGroup.empty()
+    playerGroup.add(player)
+    allSpritesGroup.add(player)
+    bulletGroup.empty()
+    enemyGroup.empty()
+    Enemy(demoLevel.enemySpawnPos).kill()
+    demoLevel.spawnEnemy()
+
 def drawDeadScreen():
     game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
     game_over_screen_fade.fill((0, 0, 0))
@@ -844,25 +864,29 @@ def drawDeadScreen():
         ui_Dead = defaultBigFont.render('살아남았습니다!', True, BLUE)
     ui_SurvivedTime = mainTitleFont.render(f'{player.playerTimeMin}분 {player.playerTimeSec}초 동안 살아남았습니다!', True, WHITE)
     ui_KilledMob = mainTitleFont.render(f'{demoLevel.killedMob}마리의 좀비를 죽였습니다!', True, WHITE)
+    ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
     ui_Rank = ui_rankS
 
-    if demoLevel.lastMob > 0:
-        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+    if demoLevel.lastMob > 0 and player.playerTimeMin <= 1 and player.playerTimeSec <= 0:
         ui_Rank = ui_rankA
-    if demoLevel.lastMob >= 10:
-        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+    if demoLevel.lastMob >= 10 and player.playerTimeMin <= 1 and player.playerTimeSec <= 30:
         ui_Rank = ui_rankB
-    if demoLevel.lastMob >= 20:
-        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+    if demoLevel.lastMob >= 20 and player.playerTimeMin <= 2 and player.playerTimeSec <= 0:
         ui_Rank = ui_rankC
-    if demoLevel.lastMob >= 25:
-        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
+    if demoLevel.lastMob >= 25 and player.playerTimeMin <= 2 and player.playerTimeSec <= 30:
         ui_Rank = ui_rankD
     if demoLevel.lastMob >= GameSetting.ENEMEY_SPAWN_RATE:
-        ui_LastMob = mainTitleFont.render(f'여전히 {demoLevel.lastMob}마리의 좀비가 남아있습니다.', True, WHITE)
         ui_Rank = ui_rankF
-    elif demoLevel.lastMob == 0:
+    elif demoLevel.lastMob == 0 and player.playerTimeMin == 0 and player.playerTimeSec <= 30:
         ui_LastMob = mainTitleFont.render(f'모든 좀비를 처치하였습니다! 축하해요!!!', True, WHITE)
+    if demoLevel.lastMob == 0 and player.playerTimeMin <= 0 and player.playerTimeSec <= 1:
+        ui_Rank = ui_rankX
+        ui_LastMob = mainTitleFont.render(f'이럴수가... 어떻게 이런 기록을 낼수 있죠???', True, WHITE)
+    if demoLevel.lastMob == 0 and player.playerTimeMin == 0 and player.playerTimeSec <= 20:
+        ui_Rank = ui_rankP
+        ui_LastMob = mainTitleFont.render(f'PERFECT.', True, WHITE)
+    if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+        ui_Rank = ui_rankX
     
     screen.blit(ui_Rank, (250, 150))
 
@@ -876,7 +900,7 @@ def drawDeadScreen():
         game_over_screen_fade.fill((255, 255, 255))
 
     if btnGameRestart.drawBtn(screen):
-        gameDemo()
+        restartGame()
         game_over_screen_fade.fill((255, 255, 255))
 
     
@@ -904,8 +928,6 @@ def gameDemo(): # main game
         ost_MainMenu.play()
         screen.fill((0, 0, 0))
         while True: # replay scene
-            pygame.draw.rect(screen, (255, 255, 255), playerDefaultLightShowObjects[0])
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     log.info("Saving..")

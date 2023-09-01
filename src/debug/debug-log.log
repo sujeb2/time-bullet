@@ -200,3 +200,952 @@
 2023-08-31 18:15:09,109 - root / INFO:  Starting..
 2023-08-31 18:15:09,374 - root / INFO:  Starting..
 2023-08-31 18:15:10,546 - root / INFO:  Starting..
+2023-09-01 15:17:34,103 - root / INFO:  Loading..
+2023-09-01 15:17:34,104 - root / INFO:  Reading save file..
+2023-09-01 15:17:34,109 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:17:34,109 - root / INFO:  Checking save file requirements..
+2023-09-01 15:17:34,111 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:17:34,111 - root / INFO:  Initallizing..
+2023-09-01 15:17:34,263 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:17:34,264 - root / INFO:  Reading Images..
+2023-09-01 15:17:34,395 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:17:34,395 - root / INFO:  Loading Sounds..
+2023-09-01 15:17:34,495 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:17:34,495 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:17:34,506 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:17:34,506 - root / INFO:  Resetting text object..
+2023-09-01 15:17:37,133 - root / INFO:  Starting..
+2023-09-01 15:26:33,811 - root / INFO:  Loading..
+2023-09-01 15:26:33,811 - root / INFO:  Reading save file..
+2023-09-01 15:26:33,815 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:33,816 - root / INFO:  Checking save file requirements..
+2023-09-01 15:26:33,818 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:26:33,818 - root / INFO:  Initallizing..
+2023-09-01 15:26:33,973 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:26:33,974 - root / INFO:  Reading Images..
+2023-09-01 15:26:34,097 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:26:34,098 - root / INFO:  Loading Sounds..
+2023-09-01 15:26:34,169 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:34,170 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:26:34,176 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:34,177 - root / INFO:  Resetting text object..
+2023-09-01 15:26:34,922 - root / INFO:  Starting..
+2023-09-01 15:26:35,614 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,642 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,681 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,709 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,749 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,777 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,817 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,844 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,886 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,912 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,952 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:35,979 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:36,021 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:50,303 - root / INFO:  Loading..
+2023-09-01 15:26:50,303 - root / INFO:  Reading save file..
+2023-09-01 15:26:50,304 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:50,305 - root / INFO:  Checking save file requirements..
+2023-09-01 15:26:50,306 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:26:50,307 - root / INFO:  Initallizing..
+2023-09-01 15:26:50,450 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:26:50,451 - root / INFO:  Reading Images..
+2023-09-01 15:26:50,554 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:26:50,555 - root / INFO:  Loading Sounds..
+2023-09-01 15:26:50,596 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:50,597 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:26:50,600 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:26:50,601 - root / INFO:  Resetting text object..
+2023-09-01 15:26:51,760 - root / INFO:  Starting..
+2023-09-01 15:26:52,358 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:52,399 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:52,441 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,067 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,108 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,150 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,193 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,234 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,275 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,318 - root / INFO:  ReAdding Mana..
+2023-09-01 15:26:53,364 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:25,799 - root / INFO:  Loading..
+2023-09-01 15:27:25,800 - root / INFO:  Reading save file..
+2023-09-01 15:27:25,801 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:25,801 - root / INFO:  Checking save file requirements..
+2023-09-01 15:27:25,803 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:27:25,803 - root / INFO:  Initallizing..
+2023-09-01 15:27:25,950 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:27:25,950 - root / INFO:  Reading Images..
+2023-09-01 15:27:26,062 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:27:26,063 - root / INFO:  Loading Sounds..
+2023-09-01 15:27:26,109 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:26,110 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:27:26,113 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:26,113 - root / INFO:  Resetting text object..
+2023-09-01 15:27:26,996 - root / INFO:  Starting..
+2023-09-01 15:27:27,348 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,399 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,441 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,482 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,523 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,562 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,602 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,642 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,681 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,722 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,763 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,807 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,848 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,892 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,933 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:27,978 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,026 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,068 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,110 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,154 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,196 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,243 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,287 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,328 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,374 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,419 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,462 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,507 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,549 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,593 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,637 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,680 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,725 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,768 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,810 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,853 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,895 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,941 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:28,984 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,028 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,074 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,115 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,161 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,203 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,245 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,289 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,332 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:29,380 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:40,174 - root / INFO:  Loading..
+2023-09-01 15:27:40,174 - root / INFO:  Reading save file..
+2023-09-01 15:27:40,175 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:40,175 - root / INFO:  Checking save file requirements..
+2023-09-01 15:27:40,176 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:27:40,177 - root / INFO:  Initallizing..
+2023-09-01 15:27:40,363 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:27:40,364 - root / INFO:  Reading Images..
+2023-09-01 15:27:40,471 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:27:40,472 - root / INFO:  Loading Sounds..
+2023-09-01 15:27:40,516 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:40,517 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:27:40,520 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:40,520 - root / INFO:  Resetting text object..
+2023-09-01 15:27:41,402 - root / INFO:  Starting..
+2023-09-01 15:27:41,823 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:41,864 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:41,905 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:41,945 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:41,985 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,028 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,068 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,109 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,150 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,191 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,232 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,275 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,314 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,356 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,395 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,439 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,479 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,519 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,559 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,601 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,645 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,690 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,732 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,777 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,818 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,860 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,905 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,947 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:42,993 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,032 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,073 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,114 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,156 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,197 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,239 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,281 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,325 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,368 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,411 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,458 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,501 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,545 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,594 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,640 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,685 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,729 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,775 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,822 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,863 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,908 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,947 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:43,991 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,029 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,071 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,111 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,152 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,192 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,233 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,274 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,314 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,354 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,394 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,435 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,476 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,516 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,556 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,595 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,637 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,679 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,725 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,770 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,813 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,856 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,898 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,945 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:44,993 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,036 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,077 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,120 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,161 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,204 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,245 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,286 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,329 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,372 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,413 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,458 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,500 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,543 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,587 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,634 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,683 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,734 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,783 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,835 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,880 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:45,931 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:53,438 - root / INFO:  Loading..
+2023-09-01 15:27:53,439 - root / INFO:  Reading save file..
+2023-09-01 15:27:53,439 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:53,440 - root / INFO:  Checking save file requirements..
+2023-09-01 15:27:53,441 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:27:53,441 - root / INFO:  Initallizing..
+2023-09-01 15:27:53,579 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:27:53,580 - root / INFO:  Reading Images..
+2023-09-01 15:27:53,683 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:27:53,683 - root / INFO:  Loading Sounds..
+2023-09-01 15:27:53,726 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:53,727 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:27:53,729 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:27:53,730 - root / INFO:  Resetting text object..
+2023-09-01 15:27:54,480 - root / INFO:  Starting..
+2023-09-01 15:27:54,861 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:54,903 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:54,945 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:54,990 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,031 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,076 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,118 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,161 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,204 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,250 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,295 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,344 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,390 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,435 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,480 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,528 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,578 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,627 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,677 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,728 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:55,777 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,149 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,193 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,238 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,283 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,329 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,375 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,419 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,467 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,514 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,560 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,614 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,664 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:56,711 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,045 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,093 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,140 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,186 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,230 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,275 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,320 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,619 - root / INFO:  ReAdding Mana..
+2023-09-01 15:27:57,662 - root / INFO:  ReAdding Mana..
+2023-09-01 15:28:31,951 - root / INFO:  Loading..
+2023-09-01 15:28:31,951 - root / INFO:  Reading save file..
+2023-09-01 15:28:31,952 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:31,952 - root / INFO:  Checking save file requirements..
+2023-09-01 15:28:31,953 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:28:31,954 - root / INFO:  Initallizing..
+2023-09-01 15:28:32,106 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:28:32,107 - root / INFO:  Reading Images..
+2023-09-01 15:28:32,208 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:28:32,208 - root / INFO:  Loading Sounds..
+2023-09-01 15:28:32,259 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:32,260 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:28:32,263 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:32,263 - root / INFO:  Resetting text object..
+2023-09-01 15:28:36,408 - root / INFO:  Loading..
+2023-09-01 15:28:36,409 - root / INFO:  Reading save file..
+2023-09-01 15:28:36,409 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:36,410 - root / INFO:  Checking save file requirements..
+2023-09-01 15:28:36,411 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:28:36,412 - root / INFO:  Initallizing..
+2023-09-01 15:28:36,535 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:28:36,536 - root / INFO:  Reading Images..
+2023-09-01 15:28:36,659 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:28:36,660 - root / INFO:  Loading Sounds..
+2023-09-01 15:28:36,711 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:36,712 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:28:36,714 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:36,716 - root / INFO:  Resetting text object..
+2023-09-01 15:28:48,403 - root / INFO:  Loading..
+2023-09-01 15:28:48,403 - root / INFO:  Reading save file..
+2023-09-01 15:28:48,404 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:48,404 - root / INFO:  Checking save file requirements..
+2023-09-01 15:28:48,405 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:28:48,406 - root / INFO:  Initallizing..
+2023-09-01 15:28:48,559 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:28:48,560 - root / INFO:  Reading Images..
+2023-09-01 15:28:48,662 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:28:48,662 - root / INFO:  Loading Sounds..
+2023-09-01 15:28:48,708 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:48,708 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:28:48,711 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:48,711 - root / INFO:  Resetting text object..
+2023-09-01 15:28:57,277 - root / INFO:  Loading..
+2023-09-01 15:28:57,278 - root / INFO:  Reading save file..
+2023-09-01 15:28:57,278 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:57,278 - root / INFO:  Checking save file requirements..
+2023-09-01 15:28:57,280 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:28:57,280 - root / INFO:  Initallizing..
+2023-09-01 15:28:57,444 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:28:57,445 - root / INFO:  Reading Images..
+2023-09-01 15:28:57,548 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:28:57,548 - root / INFO:  Loading Sounds..
+2023-09-01 15:28:57,592 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:57,593 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:28:57,596 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:28:57,597 - root / INFO:  Resetting text object..
+2023-09-01 15:28:58,629 - root / INFO:  Starting..
+2023-09-01 15:29:43,040 - root / INFO:  Loading..
+2023-09-01 15:29:43,040 - root / INFO:  Reading save file..
+2023-09-01 15:29:43,041 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:29:43,041 - root / INFO:  Checking save file requirements..
+2023-09-01 15:29:43,043 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:29:43,043 - root / INFO:  Initallizing..
+2023-09-01 15:29:43,198 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:29:43,199 - root / INFO:  Reading Images..
+2023-09-01 15:29:43,307 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:29:43,307 - root / INFO:  Loading Sounds..
+2023-09-01 15:29:43,354 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:29:43,355 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:29:43,359 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:29:43,359 - root / INFO:  Resetting text object..
+2023-09-01 15:29:45,421 - root / INFO:  Starting..
+2023-09-01 15:29:53,208 - root / INFO:  Starting..
+2023-09-01 15:31:15,881 - root / INFO:  Loading..
+2023-09-01 15:31:15,882 - root / INFO:  Reading save file..
+2023-09-01 15:31:15,883 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:15,883 - root / INFO:  Checking save file requirements..
+2023-09-01 15:31:15,886 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:31:15,886 - root / INFO:  Initallizing..
+2023-09-01 15:31:16,046 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:31:16,047 - root / INFO:  Reading Images..
+2023-09-01 15:31:16,150 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:31:16,151 - root / INFO:  Loading Sounds..
+2023-09-01 15:31:16,195 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:16,195 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:31:16,198 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:16,198 - root / INFO:  Resetting text object..
+2023-09-01 15:31:24,880 - root / INFO:  Loading..
+2023-09-01 15:31:24,880 - root / INFO:  Reading save file..
+2023-09-01 15:31:24,881 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:24,881 - root / INFO:  Checking save file requirements..
+2023-09-01 15:31:24,883 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:31:24,883 - root / INFO:  Initallizing..
+2023-09-01 15:31:25,039 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:31:25,040 - root / INFO:  Reading Images..
+2023-09-01 15:31:25,145 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:31:25,145 - root / INFO:  Loading Sounds..
+2023-09-01 15:31:25,190 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:25,190 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:31:25,194 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:31:25,194 - root / INFO:  Resetting text object..
+2023-09-01 15:31:26,746 - root / INFO:  Starting..
+2023-09-01 15:32:38,881 - root / INFO:  Loading..
+2023-09-01 15:32:38,881 - root / INFO:  Reading save file..
+2023-09-01 15:32:38,882 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:32:38,882 - root / INFO:  Checking save file requirements..
+2023-09-01 15:32:38,884 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:32:38,884 - root / INFO:  Initallizing..
+2023-09-01 15:32:39,041 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:32:39,043 - root / INFO:  Reading Images..
+2023-09-01 15:32:39,145 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:32:39,145 - root / INFO:  Loading Sounds..
+2023-09-01 15:32:39,189 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:32:39,190 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:32:39,193 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:32:39,193 - root / INFO:  Resetting text object..
+2023-09-01 15:32:40,702 - root / INFO:  Starting..
+2023-09-01 15:36:37,028 - root / INFO:  Loading..
+2023-09-01 15:36:37,029 - root / INFO:  Reading save file..
+2023-09-01 15:36:37,033 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:37,034 - root / INFO:  Checking save file requirements..
+2023-09-01 15:36:37,035 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:36:37,036 - root / INFO:  Initallizing..
+2023-09-01 15:36:37,196 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:36:37,197 - root / INFO:  Reading Images..
+2023-09-01 15:36:37,306 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:36:37,306 - root / INFO:  Loading Sounds..
+2023-09-01 15:36:37,379 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:37,379 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:36:37,387 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:37,387 - root / INFO:  Resetting text object..
+2023-09-01 15:36:37,994 - root / INFO:  Starting..
+2023-09-01 15:36:52,319 - root / INFO:  Loading..
+2023-09-01 15:36:52,319 - root / INFO:  Reading save file..
+2023-09-01 15:36:52,320 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:52,320 - root / INFO:  Checking save file requirements..
+2023-09-01 15:36:52,321 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:36:52,322 - root / INFO:  Initallizing..
+2023-09-01 15:36:52,461 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:36:52,462 - root / INFO:  Reading Images..
+2023-09-01 15:36:52,564 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:36:52,564 - root / INFO:  Loading Sounds..
+2023-09-01 15:36:52,610 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:52,611 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:36:52,613 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:36:52,613 - root / INFO:  Resetting text object..
+2023-09-01 15:36:53,667 - root / INFO:  Starting..
+2023-09-01 15:37:07,304 - root / INFO:  Starting..
+2023-09-01 15:38:36,385 - root / INFO:  Loading..
+2023-09-01 15:38:36,385 - root / INFO:  Reading save file..
+2023-09-01 15:38:36,386 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:38:36,386 - root / INFO:  Checking save file requirements..
+2023-09-01 15:38:36,388 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:38:36,388 - root / INFO:  Initallizing..
+2023-09-01 15:38:36,543 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:38:36,544 - root / INFO:  Reading Images..
+2023-09-01 15:38:36,648 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:38:36,649 - root / INFO:  Loading Sounds..
+2023-09-01 15:38:36,692 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:38:36,693 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:38:36,696 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:38:36,696 - root / INFO:  Resetting text object..
+2023-09-01 15:38:37,775 - root / INFO:  Starting..
+2023-09-01 15:38:43,715 - root / INFO:  ReAdding Mana..
+2023-09-01 15:38:44,551 - root / INFO:  ReAdding Mana..
+2023-09-01 15:38:45,364 - root / INFO:  ReAdding Mana..
+2023-09-01 15:38:46,198 - root / INFO:  ReAdding Mana..
+2023-09-01 15:38:50,089 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+
+2023-09-01 15:39:00,770 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:39:00,771 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+[0m
+2023-09-01 15:39:19,445 - root / INFO:  Loading..
+2023-09-01 15:39:19,445 - root / INFO:  Reading save file..
+2023-09-01 15:39:19,446 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:19,446 - root / INFO:  Checking save file requirements..
+2023-09-01 15:39:19,448 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:39:19,448 - root / INFO:  Initallizing..
+2023-09-01 15:39:19,613 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:39:19,614 - root / INFO:  Reading Images..
+2023-09-01 15:39:19,718 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:39:19,719 - root / INFO:  Loading Sounds..
+2023-09-01 15:39:19,762 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:19,762 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:39:19,766 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:19,766 - root / INFO:  Resetting text object..
+2023-09-01 15:39:21,496 - root / INFO:  Starting..
+2023-09-01 15:39:22,858 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-01 15:39:25,236 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:39:25,238 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-01 15:39:38,688 - root / INFO:  Loading..
+2023-09-01 15:39:38,688 - root / INFO:  Reading save file..
+2023-09-01 15:39:38,689 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:38,689 - root / INFO:  Checking save file requirements..
+2023-09-01 15:39:38,690 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:39:38,691 - root / INFO:  Initallizing..
+2023-09-01 15:39:38,839 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:39:38,840 - root / INFO:  Reading Images..
+2023-09-01 15:39:38,943 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:39:38,944 - root / INFO:  Loading Sounds..
+2023-09-01 15:39:38,989 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:38,990 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:39:38,992 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:38,993 - root / INFO:  Resetting text object..
+2023-09-01 15:39:39,449 - root / INFO:  Starting..
+2023-09-01 15:39:40,920 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill(self=Enemy)
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 195, in kill
+    for group in self.__g:
+                 ^^^^^^^^
+AttributeError: type object 'Enemy' has no attribute '_Sprite__g'
+
+2023-09-01 15:39:42,417 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:39:42,419 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill(self=Enemy)
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 195, in kill
+    for group in self.__g:
+                 ^^^^^^^^
+AttributeError: type object 'Enemy' has no attribute '_Sprite__g'
+[0m
+2023-09-01 15:39:53,183 - root / INFO:  Loading..
+2023-09-01 15:39:53,184 - root / INFO:  Reading save file..
+2023-09-01 15:39:53,185 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:53,185 - root / INFO:  Checking save file requirements..
+2023-09-01 15:39:53,187 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:39:53,187 - root / INFO:  Initallizing..
+2023-09-01 15:39:53,343 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:39:53,345 - root / INFO:  Reading Images..
+2023-09-01 15:39:53,445 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:39:53,446 - root / INFO:  Loading Sounds..
+2023-09-01 15:39:53,490 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:53,490 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:39:53,493 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:39:53,493 - root / INFO:  Resetting text object..
+2023-09-01 15:39:54,485 - root / INFO:  Starting..
+2023-09-01 15:39:57,390 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill(self=enemyGroup)
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 195, in kill
+    for group in self.__g:
+                 ^^^^^^^^
+AttributeError: 'Group' object has no attribute '_Sprite__g'
+
+2023-09-01 15:39:59,243 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:39:59,245 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1000, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 902, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 851, in restartGame
+    Enemy.kill(self=enemyGroup)
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 195, in kill
+    for group in self.__g:
+                 ^^^^^^^^
+AttributeError: 'Group' object has no attribute '_Sprite__g'
+[0m
+2023-09-01 15:40:21,856 - root / INFO:  Loading..
+2023-09-01 15:40:21,857 - root / INFO:  Reading save file..
+2023-09-01 15:40:21,857 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:40:21,858 - root / INFO:  Checking save file requirements..
+2023-09-01 15:40:21,859 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:40:21,859 - root / INFO:  Initallizing..
+2023-09-01 15:40:22,046 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:40:22,046 - root / INFO:  Reading Images..
+2023-09-01 15:40:22,152 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:40:22,152 - root / INFO:  Loading Sounds..
+2023-09-01 15:40:22,194 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:40:22,194 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:40:22,197 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:40:22,197 - root / INFO:  Resetting text object..
+2023-09-01 15:40:22,902 - root / INFO:  Starting..
+2023-09-01 15:40:34,797 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1019, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 948, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 504, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 458, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-01 15:40:35,998 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:40:36,000 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1019, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 948, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 504, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 458, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-01 15:41:02,859 - root / INFO:  Loading..
+2023-09-01 15:41:02,860 - root / INFO:  Reading save file..
+2023-09-01 15:41:02,860 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:02,860 - root / INFO:  Checking save file requirements..
+2023-09-01 15:41:02,862 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:41:02,862 - root / INFO:  Initallizing..
+2023-09-01 15:41:03,006 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:41:03,007 - root / INFO:  Reading Images..
+2023-09-01 15:41:03,105 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:41:03,106 - root / INFO:  Loading Sounds..
+2023-09-01 15:41:03,147 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:03,148 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:41:03,150 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:03,151 - root / INFO:  Resetting text object..
+2023-09-01 15:41:04,301 - root / INFO:  Starting..
+2023-09-01 15:41:07,331 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 848, in restartGame
+    allSpritesGroup.clear()
+TypeError: AbstractGroup.clear() missing 2 required positional arguments: 'surface' and 'bgd'
+
+2023-09-01 15:41:09,222 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:41:09,224 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 848, in restartGame
+    allSpritesGroup.clear()
+TypeError: AbstractGroup.clear() missing 2 required positional arguments: 'surface' and 'bgd'
+[0m
+2023-09-01 15:41:23,934 - root / INFO:  Loading..
+2023-09-01 15:41:23,934 - root / INFO:  Reading save file..
+2023-09-01 15:41:23,936 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:23,936 - root / INFO:  Checking save file requirements..
+2023-09-01 15:41:23,938 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:41:23,938 - root / INFO:  Initallizing..
+2023-09-01 15:41:24,099 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:41:24,100 - root / INFO:  Reading Images..
+2023-09-01 15:41:24,202 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:41:24,203 - root / INFO:  Loading Sounds..
+2023-09-01 15:41:24,245 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:24,246 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:41:24,248 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:41:24,249 - root / INFO:  Resetting text object..
+2023-09-01 15:41:24,975 - root / INFO:  Starting..
+2023-09-01 15:41:26,333 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 848, in restartGame
+    allSpritesGroup.clear(screen)
+TypeError: AbstractGroup.clear() missing 1 required positional argument: 'bgd'
+
+2023-09-01 15:41:27,930 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:41:27,931 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 848, in restartGame
+    allSpritesGroup.clear(screen)
+TypeError: AbstractGroup.clear() missing 1 required positional argument: 'bgd'
+[0m
+2023-09-01 15:42:06,841 - root / INFO:  Loading..
+2023-09-01 15:42:06,841 - root / INFO:  Reading save file..
+2023-09-01 15:42:06,841 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:06,841 - root / INFO:  Checking save file requirements..
+2023-09-01 15:42:06,844 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:42:06,844 - root / INFO:  Initallizing..
+2023-09-01 15:42:06,987 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:42:06,988 - root / INFO:  Reading Images..
+2023-09-01 15:42:07,088 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:42:07,089 - root / INFO:  Loading Sounds..
+2023-09-01 15:42:07,133 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:07,134 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:42:07,137 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:07,137 - root / INFO:  Resetting text object..
+2023-09-01 15:42:10,135 - root / INFO:  Starting..
+2023-09-01 15:42:12,921 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1044, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1022, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1002, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 904, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 847, in restartGame
+    player.kill()
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'player' where it is not associated with a value
+
+2023-09-01 15:42:15,009 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:42:15,010 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1044, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1022, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1002, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 904, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 847, in restartGame
+    player.kill()
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'player' where it is not associated with a value
+[0m
+2023-09-01 15:42:20,655 - root / INFO:  Loading..
+2023-09-01 15:42:20,655 - root / INFO:  Reading save file..
+2023-09-01 15:42:20,657 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:20,657 - root / INFO:  Checking save file requirements..
+2023-09-01 15:42:20,659 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:42:20,659 - root / INFO:  Initallizing..
+2023-09-01 15:42:20,801 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:42:20,802 - root / INFO:  Reading Images..
+2023-09-01 15:42:20,903 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:42:20,904 - root / INFO:  Loading Sounds..
+2023-09-01 15:42:20,946 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:20,947 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:42:20,950 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:20,951 - root / INFO:  Resetting text object..
+2023-09-01 15:42:21,802 - root / INFO:  Starting..
+2023-09-01 15:42:50,586 - root / INFO:  Loading..
+2023-09-01 15:42:50,587 - root / INFO:  Reading save file..
+2023-09-01 15:42:50,587 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:50,588 - root / INFO:  Checking save file requirements..
+2023-09-01 15:42:50,589 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:42:50,590 - root / INFO:  Initallizing..
+2023-09-01 15:42:50,736 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:42:50,738 - root / INFO:  Reading Images..
+2023-09-01 15:42:50,844 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:42:50,845 - root / INFO:  Loading Sounds..
+2023-09-01 15:42:50,888 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:50,888 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:42:50,892 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:42:50,892 - root / INFO:  Resetting text object..
+2023-09-01 15:42:51,625 - root / INFO:  Starting..
+2023-09-01 15:43:07,261 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1042, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1020, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 950, in gameDemo
+    playerGroup.update()
+  File "C:\Users\sdbb2\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 504, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 458, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-01 15:43:26,571 - root / INFO:  Loading..
+2023-09-01 15:43:26,571 - root / INFO:  Reading save file..
+2023-09-01 15:43:26,573 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:26,573 - root / INFO:  Checking save file requirements..
+2023-09-01 15:43:26,574 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:43:26,575 - root / INFO:  Initallizing..
+2023-09-01 15:43:26,725 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:43:26,726 - root / INFO:  Reading Images..
+2023-09-01 15:43:26,825 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:43:26,826 - root / INFO:  Loading Sounds..
+2023-09-01 15:43:26,866 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:26,868 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:43:26,870 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:26,870 - root / INFO:  Resetting text object..
+2023-09-01 15:43:27,350 - root / INFO:  Starting..
+2023-09-01 15:43:29,384 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 852, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+
+2023-09-01 15:43:30,510 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:43:30,512 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 852, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+[0m
+2023-09-01 15:43:45,533 - root / INFO:  Loading..
+2023-09-01 15:43:45,535 - root / INFO:  Reading save file..
+2023-09-01 15:43:45,535 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:45,536 - root / INFO:  Checking save file requirements..
+2023-09-01 15:43:45,537 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-01 15:43:45,538 - root / INFO:  Initallizing..
+2023-09-01 15:43:45,676 - root / INFO: [92mInitallized.[0m
+2023-09-01 15:43:45,677 - root / INFO:  Reading Images..
+2023-09-01 15:43:45,776 - root / INFO: [92mLoaded.[0m
+2023-09-01 15:43:45,777 - root / INFO:  Loading Sounds..
+2023-09-01 15:43:45,822 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:45,823 - root / INFO:  Resetting Font/Title..
+2023-09-01 15:43:45,826 - root / INFO: [92m Loaded.[0m
+2023-09-01 15:43:45,827 - root / INFO:  Resetting text object..
+2023-09-01 15:43:46,617 - root / INFO:  Starting..
+2023-09-01 15:43:49,685 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 852, in restartGame
+    Enemy(demoLevel.enemySpawnPos).kill()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 556, in __init__
+    self.rect.center = position
+    ^^^^^^^^^^^^^^^^
+TypeError: invalid rect assignment
+
+2023-09-01 15:43:57,837 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-01 15:43:57,838 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1043, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1001, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 903, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 852, in restartGame
+    Enemy(demoLevel.enemySpawnPos).kill()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 556, in __init__
+    self.rect.center = position
+    ^^^^^^^^^^^^^^^^
+TypeError: invalid rect assignment
+[0m
