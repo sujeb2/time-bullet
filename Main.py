@@ -719,9 +719,9 @@ class GameLevel(pygame.sprite.Group): # load level
 
     def createMap(self):
         layouts = {
-                   "boundary": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
-                   "walls": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Walls.csv"),
-                   "enemies": self.import_csv_layout("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
+                   "boundary": self.importCsv("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
+                   "walls": self.importCsv("./src/maps/csv/dev_test/dev_test_Walls.csv"),
+                   "enemies": self.importCsv("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
                   }
 
         for style, layout in layouts.items():
@@ -739,7 +739,7 @@ class GameLevel(pygame.sprite.Group): # load level
 
         self.spawnEnemy()
 
-    def import_csv_layout(self, path):
+    def importCsv(self, path):
         terrain_map = []
         with open(path) as level_map:
             layout = reader(level_map, delimiter=",")
