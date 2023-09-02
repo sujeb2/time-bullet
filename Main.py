@@ -967,7 +967,7 @@ def gameDemo(): # main game
 
             demoLevel.custom_draw()
 
-            if demoLevel.lastMob < 1:
+            if demoLevel.killedMob > GameSetting.ENEMEY_SPAWN_RATE:
                 drawDeadScreen()
 
             screen.blit(img_overlayDeadScreenBlack, [0, 0])
