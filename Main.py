@@ -439,6 +439,10 @@ class Player(pygame.sprite.Sprite): # player
                 self.playerManaCooldown = 500
         else:
             pass
+    
+    def checkMobStatus(self):
+        if demoLevel.lastMob < 1:
+            drawDeadScreen()
 
     def ui_playerStopWatch(self):
         ticks=pygame.time.get_ticks()
@@ -501,10 +505,6 @@ class Player(pygame.sprite.Sprite): # player
         self.hitboxRect.center = self.hitboxRect.center 
         
         self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
-
-    def checkLastMob(self):
-        if demoLevel.lastMob == 0:
-            drawDeadScreen()
         
     def update(self):
         self.user_input()
@@ -514,7 +514,7 @@ class Player(pygame.sprite.Sprite): # player
         self.checkColliedWithEnemy()
         self.drawPlayerMana()
         self.ui_playerStopWatch()
-        self.checkLastMob()
+        self.checkMobStatus()
 
         if self.shoot_cooldown > 0:
             self.shoot_cooldown -= 1
@@ -788,6 +788,9 @@ class GameLevel(pygame.sprite.Group): # load level
             offset_pos = sprite.rect.topleft - self.offset
             screen.blit(sprite.image, offset_pos)
 
+    def update(self):
+        self.checkMobStatus()
+
 class Tile(pygame.sprite.Sprite): # load tile
     def __init__(self, pos, groups, type, unique_id):
         super().__init__(groups)
@@ -963,6 +966,9 @@ def gameDemo(): # main game
                     sys.exit()
 
             demoLevel.custom_draw()
+
+            if demoLevel.lastMob < 1:
+                drawDeadScreen()
 
             screen.blit(img_overlayDeadScreenBlack, [0, 0])
             screen.blit(img_overlayViggnete, [0, -293])
