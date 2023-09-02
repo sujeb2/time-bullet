@@ -193,6 +193,7 @@ try:
     btn_Setting = pygame.image.load('./src/img/button/menu/setting_btn.png').convert_alpha()
     btn_Exit = pygame.image.load('./src/img/button/menu/exit_btn.png').convert_alpha()
     btn_Restart = pygame.image.load('./src/img/button/game/return_menu_btn.png').convert_alpha()
+    btn_RestartBtn = pygame.image.load('./src/img/button/game/restart_btn.png').convert_alpha()
 
     # crosshair
     csrImg_Crosshair = pygame.image.load('./src/img/cursor/default-crosshair.png').convert_alpha()
@@ -371,6 +372,7 @@ class Player(pygame.sprite.Sprite): # player
         self.yMouse = (self.mouse_coords[1] - GameSetting.HEIGHT // 2)
         self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
         self.angle = math.degrees(math.atan2(self.yMouse, self.xMouse))
+        self.isCheating = False
 
     def playerRotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -414,10 +416,18 @@ class Player(pygame.sprite.Sprite): # player
         else:
             self.speed = 3
 
+        if keys[pygame.K_LCTRL] and keys[pygame.K_RCTRL] and keys[pygame.K_LALT] and keys[pygame.K_RALT] and keys[pygame.K_LSHIFT] and keys[pygame.K_F3] and keys[pygame.K_SPACE] and keys[pygame.K_RSHIFT]:
+            log.info('Cheat Mode activated.')
+            self.shoot_cooldown = 0
+            self.isCheating = True
+
         if GameSetting.SHOW_PLAYERMANA_CONSOLE == True:
             log.info(self.playerMana)
         else:
             pass
+
+        if self.isCheating:
+            self.shoot_cooldown = 0
 
     def checkMana(self):
         if self.playerMana < 0:
@@ -643,10 +653,10 @@ class Enemy(pygame.sprite.Sprite): # enemy
         self.position += self.velocity
 
         self.rect.centerx = self.position.x
-        self.check_collision("horizontal", "hunt")
+        self.checkCollision("horizontal", "hunt")
 
         self.rect.centery = self.position.y
-        self.check_collision("vertical", "hunt")
+        self.checkCollision("vertical", "hunt")
 
         self.rect.center = self.rect.center
 
@@ -654,6 +664,11 @@ class Enemy(pygame.sprite.Sprite): # enemy
 
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
+
+    def suicideRestart(self):
+        for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
+            log.debug(f'Suicided Enemy : {i}')
+            self.kill()
 
     def hunt_player(self):  
         if self.velocity.x > 0:
@@ -762,7 +777,7 @@ class GameLevel(pygame.sprite.Group): # load level
         screen.blit(img_blackVoid, [0, 0])
         screen.blit(img_demoMapBackground, floor_offset_pos)
 
-        # draw player hitbox for debug
+        # draw player hitbox for debug perpose
         if GameSetting.SHOW_COLLISION_BOXES:
             base_rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
             pygame.draw.rect(screen, "red", base_rect, width=2)
@@ -818,19 +833,22 @@ class Tile(pygame.sprite.Sprite): # load tile
         self.rect = self.image.get_rect(topleft = pos) 
 
 player = Player((400, 400))
+
 allSpritesGroup = pygame.sprite.Group()
 bulletGroup = pygame.sprite.Group()
 enemyGroup = pygame.sprite.Group()
 obstaclesGroup = pygame.sprite.Group()
 floorGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
+itemGroup = pygame.sprite.Group()
+
 demoLevel = GameLevel()
 btnStart = Button(30, 560, btn_Start, 1)
 btnLoad = Button(30, 590, btn_Load, 1)
 btnSetting = Button(29, 620, btn_Setting, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
-btnRestart = Button(600, 400, btn_Restart, 1)
-btnGameRestart = Button(400, 400, btn_Restart, 1)
+btnRestart = Button(550, 400, btn_Restart, 1)
+btnGameRestart = Button(400, 400, btn_RestartBtn, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -848,8 +866,8 @@ def restartGame():
     playerGroup.add(player)
     allSpritesGroup.add(player)
     bulletGroup.empty()
+    Enemy(demoLevel.enemySpawnPos).suicideRestart() # 이거 고쳐야함
     enemyGroup.empty()
-    Enemy(demoLevel.enemySpawnPos).kill()
     demoLevel.spawnEnemy()
 
 def drawDeadScreen():
@@ -868,6 +886,8 @@ def drawDeadScreen():
     ui_Rank = ui_rankS
 
     if demoLevel.lastMob > 0 and player.playerTimeMin <= 1 and player.playerTimeSec <= 0:
+        ui_Rank = ui_rankA
+    if demoLevel.lastMob == 0:
         ui_Rank = ui_rankA
     if demoLevel.lastMob >= 10 and player.playerTimeMin <= 1 and player.playerTimeSec <= 30:
         ui_Rank = ui_rankB
