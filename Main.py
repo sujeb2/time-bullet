@@ -60,7 +60,8 @@ BLUE = (66, 152, 245)
 isMainGameScene = False
 isMainMenuScene = True
 isMainMenuToDemo = False
-paused = True
+paused = False
+menuState = "mainmenu"
 
 # int
 MaxHandgunBullet = 255
@@ -373,6 +374,7 @@ class Player(pygame.sprite.Sprite): # player
         self.vec_pos = (self.hitboxRect.centerx, self.hitboxRect.centery)
         self.angle = math.degrees(math.atan2(self.yMouse, self.xMouse))
         self.isCheating = False
+        self.gunList = ['default', 'shotgun', 'dev']
 
     def playerRotation(self):
         self.mouse_coords = pygame.mouse.get_pos()
@@ -414,7 +416,7 @@ class Player(pygame.sprite.Sprite): # player
             self.playerMana -= GameSetting.PLAYERMANA_REMOVE_VAL
             self.speed = 1
         else:
-            self.speed = 3
+            self.speed = 2
 
         if keys[pygame.K_LCTRL] and keys[pygame.K_RCTRL] and keys[pygame.K_LALT] and keys[pygame.K_RALT] and keys[pygame.K_LSHIFT] and keys[pygame.K_F3] and keys[pygame.K_SPACE] and keys[pygame.K_RSHIFT]:
             log.info('Cheat Mode activated.')
@@ -717,42 +719,45 @@ class Enemy(pygame.sprite.Sprite): # enemy
                 self.roam()
             self.checkCollisionWithBullet()
 
-            if GameSetting.SHOW_COLLISION_BOXES:
-                self.getCollisionBox()
+            if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+                if GameSetting.SHOW_COLLISION_BOXES:
+                    self.getCollisionBox()
         else:
             self.kill
 
 class GameLevel(pygame.sprite.Group): # load level
-    def __init__(self):
+    def __init__(self, map):
         super().__init__()
         self.offset = pygame.math.Vector2()
         self.floorRect = img_demoMapBackground.get_rect(topleft = (0,0))
         self.enemySpawnPos = []
+        self.mapSelection = map
         self.createMap()
         self.killedMob = 0
         self.lastMob = GameSetting.ENEMEY_SPAWN_RATE
 
     def createMap(self):
-        layouts = {
-                   "boundary": self.importCsv("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
-                   "walls": self.importCsv("./src/maps/csv/dev_test/dev_test_Walls.csv"),
-                   "enemies": self.importCsv("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
-                  }
+        if self.mapSelection == 'demo':
+            layouts = {
+                    "boundary": self.importCsv("./src/maps/csv/dev_test/dev_test_Boundary.csv"),
+                    "walls": self.importCsv("./src/maps/csv/dev_test/dev_test_Walls.csv"),
+                    "enemies": self.importCsv("./src/maps/csv/dev_test/dev_test_Enemy.csv"),
+                    }
 
-        for style, layout in layouts.items():
-            for row_index, row in enumerate(layout):
-                for col_index, col in enumerate(row):
-                    if col != "-1":
-                        x = col_index * GameSetting.TILESIZE
-                        y = row_index * GameSetting.TILESIZE
-                        if style == "boundary":
-                            Tile((x,y), [obstaclesGroup], "boundary", col)
-                        if style == "walls":
-                            Tile((x,y), [allSpritesGroup], "walls", col)  
-                        if style == "enemies":
-                            self.enemySpawnPos.append((x, y))
+            for style, layout in layouts.items():
+                for row_index, row in enumerate(layout):
+                    for col_index, col in enumerate(row):
+                        if col != "-1":
+                            x = col_index * GameSetting.TILESIZE
+                            y = row_index * GameSetting.TILESIZE
+                            if style == "boundary":
+                                Tile((x,y), [obstaclesGroup], "boundary", col)
+                            if style == "walls":
+                                Tile((x,y), [allSpritesGroup], "walls", col)  
+                            if style == "enemies":
+                                self.enemySpawnPos.append((x, y))
 
-        self.spawnEnemy()
+            self.spawnEnemy()
 
     def importCsv(self, path):
         terrain_map = []
@@ -787,9 +792,6 @@ class GameLevel(pygame.sprite.Group): # load level
         for sprite in allSpritesGroup: 
             offset_pos = sprite.rect.topleft - self.offset
             screen.blit(sprite.image, offset_pos)
-
-    def update(self):
-        self.checkMobStatus()
 
 class Tile(pygame.sprite.Sprite): # load tile
     def __init__(self, pos, groups, type, unique_id):
@@ -845,10 +847,8 @@ floorGroup = pygame.sprite.Group()
 playerGroup = pygame.sprite.Group()
 itemGroup = pygame.sprite.Group()
 
-demoLevel = GameLevel()
-btnStart = Button(30, 560, btn_Start, 1)
-btnLoad = Button(30, 590, btn_Load, 1)
-btnSetting = Button(29, 620, btn_Setting, 1)
+demoLevel = GameLevel('demo')
+btnStart = Button(30, 620, btn_Start, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
 btnRestart = Button(550, 400, btn_Restart, 1)
 btnGameRestart = Button(400, 400, btn_RestartBtn, 1)
@@ -869,8 +869,12 @@ def restartGame():
     playerGroup.add(player)
     allSpritesGroup.add(player)
     bulletGroup.empty()
-    Enemy(demoLevel.enemySpawnPos).suicideRestart() # 이거 고쳐야함
     enemyGroup.empty()
+    
+    for sprite in enemyGroup:
+        if isinstance(sprite, Enemy):
+            sprite.kill()
+
     demoLevel.spawnEnemy()
 
 def drawDeadScreen():
@@ -926,32 +930,16 @@ def drawDeadScreen():
         restartGame()
         game_over_screen_fade.fill((255, 255, 255))
 
-    
-
-def drawSettingScreen():
-    settingUISurface = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
-    settingUISurface.blit(img_overlayBlackGradient, [0, 0])
-
-    settingUI_title = defaultBigFont.render('설정', True, WHITE)
-    settingUI_debugTitle = mainTitleFont.render('비디오', True, WHITE)
-    settingUI_debugShowFPS = mainTitleFont.render('FPS 표시', True, WHITE)
-    settingUI_debugVsync = mainTitleFont.render('VSYNC', True, WHITE)
-    settingUI_debugFullScreen = mainTitleFont.render('전체화면', True, WHITE)
-    
-    settingUISurface.blit(settingUI_title, [400, 400])
-    settingUISurface.blit(settingUI_debugTitle, [400, 500])
-    settingUISurface.blit(settingUI_debugShowFPS, [400, 565])
-    settingUISurface.blit(settingUI_debugFullScreen, [400, 600])
-    settingUISurface.blit(settingUI_debugVsync, [400, 665])
-
-    
-
 def gameDemo(): # main game
         log.info(' Starting..')
         ost_MainMenu.play()
         screen.fill((0, 0, 0))
+        state = "game"
+
+        #restartGame()
         while True: # replay scene
-            for event in pygame.event.get():
+            eventList = pygame.event.get()
+            for event in eventList:
                 if event.type == pygame.QUIT:
                     log.info("Saving..")
                     try:
@@ -964,67 +952,81 @@ def gameDemo(): # main game
                         log.fatal(f"Traceback: {traceback.print_exc()}{bcolors.ENDC}")
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE: 
+                        state = "pause"
+                    if event.key == pygame.K_l:
+                        state = "game"
 
-            demoLevel.custom_draw()
+            if state == "game":
+                demoLevel.custom_draw()
 
-            if demoLevel.killedMob > GameSetting.ENEMEY_SPAWN_RATE:
-                drawDeadScreen()
+                if demoLevel.killedMob > GameSetting.ENEMEY_SPAWN_RATE:
+                    drawDeadScreen()
 
-            screen.blit(img_overlayDeadScreenBlack, [0, 0])
-            screen.blit(img_overlayViggnete, [0, -293])
-            # render
-            allSpritesGroup.update()
-            playerGroup.update()
+                screen.blit(img_overlayDeadScreenBlack, [0, 0])
+                screen.blit(img_overlayViggnete, [0, -293])
+                # render
+                allSpritesGroup.update()
+                playerGroup.update()
 
-            # debug info update
-            hud_playerMana = subTitleFont.render(f'{str(player.playerMana)}%', True, WHITE)
-            hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
-            hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
-            hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
-            hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.ENGINE_VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
-            hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
-            hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVEL}', True, WHITE)
+                # debug info update
+                hud_playerMana = subTitleFont.render(f'{str(player.playerMana)}%', True, WHITE)
+                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, WHITE)
+                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음)', True, WHITE)
+                hud_debugMapInfoScreen = subTitleFont.render(f'현재 "dev_test_Boundary.csv, dev_test_Enemy.csv, dev_test_Walls.csv" 불러와짐', True, WHITE)
+                hud_debugVerInfoScreen = subTitleFont.render(f'spsro Engine ver {GameSetting.ENGINE_VER}, using some files from pygame 2.5.1 (SDL2)', True, WHITE)
+                hud_debugScreenResInfoScreen = subTitleFont.render(f'{GameSetting.WIDTH} x {GameSetting.HEIGHT} 해당도로 플레이중 (최대 {GameSetting.DEF_FPS}FPS)', True, WHITE)
+                hud_debugGameSettingInfoScreen = subTitleFont.render(f'{GameSetting.MUSIC_VOL}, {GameSetting.PLAYER_VIEW_SIZE}, {GameSetting.PLAYER_DASH_REMOVE_MANA_VAL}, {GameSetting.PLAYER_SPEED}, {GameSetting.PLAYER_DASH_SPEED}, {GameSetting.PLAYERMANA_COOLDOWN}, {GameSetting.PLAYERMANA_REMOVE_VAL}, {GameSetting.GUN_OFFSET_X}, {GameSetting.GUN_OFFSET_Y}, {GameSetting.GAME_DEFAULTSOUND_PLAY}, {GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG}, {GameSetting.SHOW_CURRENTFPS}, {GameSetting.DEBUG_FPSWARNING_VALUE}, {GameSetting.SHOW_PLAYERMANA_CONSOLE}, {GameSetting.SCREEN_FLAGS}, {GameSetting.VSYNC}, {GameSetting.RUN_GAME_BEFORE_MENU}, {GameSetting.RUN_FULLSCREEN}, {GameSetting.SHOW_TRIGGERS}, {GameSetting.DRAW_GREYBACKGROUND_ASVOID}, {GameSetting.YES_THIS_IS_DEBUGGER_IDC}, {GameSetting.SHOW_DEBUGINFO_TOSCREEN}, {GameSetting.SHOW_COLLISION_BOXES}, {GameSetting.ISPRODUCTMODE}, {GameSetting.LOGLEVEL}', True, WHITE)
 
-            if clock.get_fps() <= 30:
-                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
-            elif clock.get_fps() <= 20:
-                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
-            elif clock.get_fps() <= 10:
-                hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
+                if clock.get_fps() <= 30:
+                    hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, ORANGE)
+                elif clock.get_fps() <= 20:
+                    hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, (235, 232, 52))
+                elif clock.get_fps() <= 10:
+                    hud_debugFpsScreen = subTitleFont.render(f'{math.ceil(clock.get_fps())}FPS (반올림됨, 높을수록 좋음)', True, RED)
 
-            if math.ceil(clock.get_rawtime()) >= 10:
-                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
-            elif math.ceil(clock.get_rawtime()) >= 19:
-                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
-            elif math.ceil(clock.get_rawtime()) >= 29:
-                hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
-            screen.blit(icn_GunSelect_handGun, [30, 670])
-            
-            if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
-                screen.blit(showIfDebugging, [30, 52])
+                if math.ceil(clock.get_rawtime()) >= 10:
+                    hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 주의: 처리한 틱 갯수가 일반적인 상황보다 많음', True, ORANGE)
+                elif math.ceil(clock.get_rawtime()) >= 19:
+                    hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 많음', True, (235, 232, 52))
+                elif math.ceil(clock.get_rawtime()) >= 29:
+                    hud_debugMilliTickScreen = subTitleFont.render(f'{math.ceil(clock.get_rawtime())}틱 처리중 (반올림됨, 낮을수록 좋음) 경고: 처리한 틱 갯수가 정상적인 상황보다 많음, 최적화 필요', True, RED)
+                screen.blit(icn_GunSelect_handGun, [30, 670])
+                
+                if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+                    screen.blit(showIfDebugging, [30, 52])
 
-                if GameSetting.ISPRODUCTMODE == False:
-                    screen.blit(showIfNonProductMode, [30, 640])
+                    if GameSetting.ISPRODUCTMODE == False:
+                        screen.blit(showIfNonProductMode, [30, 640])
 
-                if GameSetting.SHOW_CURRENTFPS == True:
-                        pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                    if GameSetting.SHOW_CURRENTFPS == True:
+                            pygame.display.set_caption(f"FPS: {clock.get_fps()}")
+                    else:
+                        pass
+                    if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
+                        screen.blit(hud_debugFpsScreen, [30, 97])
+                        screen.blit(hud_debugMilliTickScreen, [30, 117])
+                        screen.blit(hud_playerMana, [30, 135])
+                        screen.blit(hud_debugMapInfoScreen, [30, 155])
+                        screen.blit(hud_debugVerInfoScreen, [30, 215])
+                        screen.blit(hud_debugScreenResInfoScreen, [30, 175])
+                        screen.blit(hud_debugGameSettingInfoScreen, [30, 195])
+                    else:
+                        pass
                 else:
                     pass
-                if GameSetting.SHOW_DEBUGINFO_TOSCREEN == True:
-                    screen.blit(hud_debugFpsScreen, [30, 97])
-                    screen.blit(hud_debugMilliTickScreen, [30, 117])
-                    screen.blit(hud_playerMana, [30, 135])
-                    screen.blit(hud_debugMapInfoScreen, [30, 155])
-                    screen.blit(hud_debugVerInfoScreen, [30, 215])
-                    screen.blit(hud_debugScreenResInfoScreen, [30, 175])
-                    screen.blit(hud_debugGameSettingInfoScreen, [30, 195])
-                else:
-                    pass
-            else:
-                pass
 
-            if not playerGroup.has(player):
-                drawDeadScreen()
+                if not playerGroup.has(player):
+                    drawDeadScreen()
+
+            if state == "pause":
+                ui_pausedTxt = defaultBigFont.render('일시중지됨', True, WHITE)
+                ui_unpauseTxt = defaultFont.render('[L] 키를 눌러 일시중지 풀기', True, WHITE)
+
+                screen.blit(img_overlayDeadScreenBlack, [0, 0])
+                screen.blit(ui_pausedTxt, [400, 400])
+                screen.blit(ui_unpauseTxt, [400, 550])
 
             pygame.display.flip()
 
@@ -1045,14 +1047,6 @@ def mainMenu(): # main menu
 
         if btnStart.drawBtn(screen):
             gameDemo()
-                
-        if btnLoad.drawBtn(screen):
-            with open('./src/save/0/playerSaveData.json', 'r+') as pSv:
-                data = json.load(pSv)
-                log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
-
-        if btnSetting.drawBtn(screen):
-            drawSettingScreen()
 
         if btnExit.drawBtn(screen):
             sys.exit()
