@@ -250,3 +250,239 @@ TypeError: invalid rect assignment
     ^^^^^^^^^^^^^^^^
 TypeError: invalid rect assignment
 [0m
+2023-09-03 14:41:54,679 - root / INFO:  Loading..
+2023-09-03 14:41:54,679 - root / INFO:  Reading save file..
+2023-09-03 14:41:54,680 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:41:54,680 - root / INFO:  Checking save file requirements..
+2023-09-03 14:41:54,681 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:41:54,681 - root / INFO:  Initallizing..
+2023-09-03 14:41:55,026 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:41:55,026 - root / INFO:  Reading Images..
+2023-09-03 14:41:55,114 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:41:55,114 - root / INFO:  Loading Sounds..
+2023-09-03 14:41:55,115 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:42:01,117 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:42:01,117 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:42:01,117 - root / INFO:  Exiting..
+2023-09-03 14:42:01,187 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:42:01,203 - root / CRITICAL: <function format_exc at 0x7f6c46f76050>
+2023-09-03 14:42:46,645 - root / INFO:  Loading..
+2023-09-03 14:42:46,645 - root / INFO:  Reading save file..
+2023-09-03 14:42:46,645 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:42:46,646 - root / INFO:  Checking save file requirements..
+2023-09-03 14:42:46,646 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:42:46,646 - root / INFO:  Initallizing..
+2023-09-03 14:42:46,910 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:42:46,910 - root / INFO:  Reading Images..
+2023-09-03 14:42:46,998 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:42:46,998 - root / INFO:  Loading Sounds..
+2023-09-03 14:42:46,999 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:42:48,392 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:42:48,392 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:42:48,392 - root / INFO:  Exiting..
+2023-09-03 14:42:48,434 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:42:48,449 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:42:55,872 - root / INFO:  Loading..
+2023-09-03 14:42:55,872 - root / INFO:  Reading save file..
+2023-09-03 14:42:55,873 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:42:55,873 - root / INFO:  Checking save file requirements..
+2023-09-03 14:42:55,874 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:42:55,874 - root / INFO:  Initallizing..
+2023-09-03 14:42:56,160 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:42:56,160 - root / INFO:  Reading Images..
+2023-09-03 14:42:56,249 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:42:56,249 - root / INFO:  Loading Sounds..
+2023-09-03 14:42:56,250 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:43:46,332 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:43:46,332 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:43:46,332 - root / INFO:  Exiting..
+2023-09-03 14:43:46,362 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:43:46,378 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:44:14,468 - root / INFO:  Loading..
+2023-09-03 14:44:14,468 - root / INFO:  Reading save file..
+2023-09-03 14:44:14,468 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:44:14,468 - root / INFO:  Checking save file requirements..
+2023-09-03 14:44:14,469 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:44:14,469 - root / INFO:  Initallizing..
+2023-09-03 14:44:14,760 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:44:14,761 - root / INFO:  Reading Images..
+2023-09-03 14:44:14,851 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:44:14,851 - root / INFO:  Loading Sounds..
+2023-09-03 14:44:14,852 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:46:29,304 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:46:29,304 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:46:29,304 - root / INFO:  Exiting..
+2023-09-03 14:46:29,397 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:46:29,413 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:48:07,996 - root / INFO:  Loading..
+2023-09-03 14:48:07,996 - root / INFO:  Reading save file..
+2023-09-03 14:48:07,996 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:48:07,996 - root / INFO:  Checking save file requirements..
+2023-09-03 14:48:07,997 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:48:07,997 - root / INFO:  Initallizing..
+2023-09-03 14:48:08,299 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:48:08,299 - root / INFO:  Reading Images..
+2023-09-03 14:48:08,389 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:48:08,389 - root / INFO:  Loading Sounds..
+2023-09-03 14:48:08,390 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:48:10,149 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:48:10,149 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:48:10,149 - root / INFO:  Exiting..
+2023-09-03 14:48:10,186 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:48:10,203 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:51:13,768 - root / INFO:  Loading..
+2023-09-03 14:51:13,768 - root / INFO:  Reading save file..
+2023-09-03 14:51:13,768 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:51:13,768 - root / INFO:  Checking save file requirements..
+2023-09-03 14:51:13,769 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:51:13,769 - root / INFO:  Initallizing..
+2023-09-03 14:51:14,147 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:51:14,147 - root / INFO:  Reading Images..
+2023-09-03 14:51:14,243 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:51:14,243 - root / INFO:  Loading Sounds..
+2023-09-03 14:51:14,244 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:51:16,281 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:51:16,281 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:51:16,281 - root / INFO:  Exiting..
+2023-09-03 14:51:16,316 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:51:16,339 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 17:50:57,973 - root / INFO:  Loading..
+2023-09-04 17:50:57,973 - root / INFO:  Reading save file..
+2023-09-04 17:50:57,974 - root / INFO: [92m Loaded.[0m
+2023-09-04 17:50:57,974 - root / INFO:  Checking save file requirements..
+2023-09-04 17:50:57,974 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 17:50:57,974 - root / INFO:  Initallizing..
+2023-09-04 17:50:58,325 - root / INFO: [92mInitallized.[0m
+2023-09-04 17:50:58,325 - root / INFO:  Reading Images..
+2023-09-04 17:50:58,420 - root / INFO: [92mLoaded.[0m
+2023-09-04 17:50:58,420 - root / INFO:  Loading Sounds..
+2023-09-04 17:50:58,421 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-04 17:51:01,274 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 17:51:01,274 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 17:51:01,274 - root / INFO:  Exiting..
+2023-09-04 17:51:01,314 - root / INFO:  Resetting Font/Title..
+2023-09-04 17:51:01,331 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 17:51:21,756 - root / INFO:  Loading..
+2023-09-04 17:51:21,756 - root / INFO:  Reading save file..
+2023-09-04 17:51:21,756 - root / INFO: [92m Loaded.[0m
+2023-09-04 17:51:21,757 - root / INFO:  Checking save file requirements..
+2023-09-04 17:51:21,757 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 17:51:21,757 - root / INFO:  Initallizing..
+2023-09-04 17:51:22,049 - root / INFO: [92mInitallized.[0m
+2023-09-04 17:51:22,050 - root / INFO:  Reading Images..
+2023-09-04 17:51:22,139 - root / INFO: [92mLoaded.[0m
+2023-09-04 17:51:22,139 - root / INFO:  Loading Sounds..
+2023-09-04 17:51:22,140 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-04 17:51:23,550 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 17:51:23,550 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 17:51:23,550 - root / INFO:  Exiting..
+2023-09-04 17:51:23,585 - root / INFO:  Resetting Font/Title..
+2023-09-04 17:51:23,602 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 18:10:13,097 - root / INFO:  Loading..
+2023-09-04 18:10:13,097 - root / INFO:  Reading save file..
+2023-09-04 18:10:13,097 - root / INFO: [92m Loaded.[0m
+2023-09-04 18:10:13,097 - root / INFO:  Checking save file requirements..
+2023-09-04 18:10:13,098 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 18:10:13,098 - root / INFO:  Initallizing..
+2023-09-04 18:10:13,336 - root / INFO: [92mInitallized.[0m
+2023-09-04 18:10:13,336 - root / INFO:  Reading Images..
+2023-09-04 18:10:13,427 - root / INFO: [92mLoaded.[0m
+2023-09-04 18:10:13,427 - root / INFO:  Loading Sounds..
+2023-09-04 18:10:13,428 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-04 18:10:15,345 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 18:10:15,345 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 18:10:15,345 - root / INFO:  Exiting..
+2023-09-04 18:10:15,393 - root / INFO:  Resetting Font/Title..
+2023-09-04 18:10:15,410 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-06 20:33:10,380 - root / INFO:  Loading..
+2023-09-06 20:33:10,381 - root / INFO:  Reading save file..
+2023-09-06 20:33:10,381 - root / INFO: [92m Loaded.[0m
+2023-09-06 20:33:10,381 - root / INFO:  Checking save file requirements..
+2023-09-06 20:33:10,382 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-06 20:33:10,382 - root / INFO:  Initallizing..
+2023-09-06 20:33:10,912 - root / INFO: [92mInitallized.[0m
+2023-09-06 20:33:10,912 - root / INFO:  Reading Images..
+2023-09-06 20:33:11,004 - root / INFO: [92mLoaded.[0m
+2023-09-06 20:33:11,005 - root / INFO:  Loading Sounds..
+2023-09-06 20:33:11,007 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-06 20:33:42,907 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-06 20:33:42,907 - root / CRITICAL:  Is file even exists?[0m
+2023-09-06 20:33:42,907 - root / INFO:  Exiting..
+2023-09-06 20:33:43,018 - root / INFO:  Resetting Font/Title..
+2023-09-06 20:33:43,034 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/바탕화면/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+

@@ -156,7 +156,7 @@ try:
 
     log.info(f"{bcolors.OKGREEN}Initallized.{bcolors.ENDC}")
 except:
-    log.fatal(f"{traceback.format_exc}")
+    log.fatal(f"{traceback.format_exc()}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     log.fatal(f"{bcolors.FAIL}Error occurred while initallizing game.")
     log.fatal(f"May occurrs because of weird pygame bug lol{bcolors.ENDC}")
@@ -293,7 +293,7 @@ try:
 
     log.info(f"{bcolors.OKGREEN} Loaded.{bcolors.ENDC}")
 except:
-    log.fatal(f"{traceback.format_exc}")
+    log.fatal(f"{traceback.format_exc()}")
     messagebox.showerror(title='Error occurred', message=f'{traceback.format_exc()}')
     log.fatal(f"{bcolors.FAIL} Error occurred while reseting font/title.")
     log.fatal(f" May occurrs because of weird pygame bug lol{bcolors.ENDC}")
@@ -870,10 +870,9 @@ def restartGame():
     allSpritesGroup.add(player)
     bulletGroup.empty()
     enemyGroup.empty()
-    
-    for sprite in enemyGroup:
-        if isinstance(sprite, Enemy):
-            sprite.kill()
+
+    for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
+        Enemy([0, 0]).kill()
 
     demoLevel.spawnEnemy()
 
