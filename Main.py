@@ -431,6 +431,9 @@ class Player(pygame.sprite.Sprite): # player
         if self.isCheating:
             self.shoot_cooldown = 0
 
+        if keys[pygame.K_p]:
+            log.debug(f'Enemy: {enemyGroup.sprites()}')
+
     def checkMana(self):
         if self.playerMana < 0:
             if self.playerManaCooldown > 0:
@@ -443,7 +446,7 @@ class Player(pygame.sprite.Sprite): # player
             pass
     
     def checkMobStatus(self):
-        if demoLevel.lastMob < 1:
+        if demoLevel.killedMob > 29:
             drawDeadScreen()
 
     def ui_playerStopWatch(self):
@@ -666,11 +669,6 @@ class Enemy(pygame.sprite.Sprite): # enemy
     def getVectorDistance(self, vector_1, vector_2):
         return (vector_1 - vector_2).magnitude()
 
-    def suicideRestart(self):
-        for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
-            log.debug(f'Suicided Enemy : {i}')
-            self.kill()
-
     def hunt_player(self):  
         if self.velocity.x > 0:
             self.current_movement_sprite = 0
@@ -776,12 +774,6 @@ class GameLevel(pygame.sprite.Group): # load level
         playerGroup.add(player)
         allSpritesGroup.add(player)
         bulletGroup.empty()
-        enemyGroup.empty()
-
-        for i in enemyGroup:
-            if isinstance(sprite, Enemy):
-                sprite.kill()
-                log.info(f'Killing Enemy.. {i}')
 
         self.spawnEnemy()
 
@@ -879,6 +871,7 @@ else:
     isMainMenuScene = True
 
 def drawDeadScreen():
+    log.info('Player Killed.')
     game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
     game_over_screen_fade.fill((0, 0, 0))
     game_over_screen_fade.set_alpha(160)
@@ -936,6 +929,7 @@ def gameDemo(): # main game
         ost_MainMenu.play()
         screen.fill((0, 0, 0))
         state = "game"
+        pausedmotd = random.choice(list(GameSetting.PAUSED_MOTD))
 
         #restartGame()
         while True: # replay scene
@@ -1022,12 +1016,15 @@ def gameDemo(): # main game
                     drawDeadScreen()
 
             if state == "pause":
+                ost_MainMenu.stop()
                 ui_pausedTxt = defaultBigFont.render('일시중지됨', True, WHITE)
-                ui_unpauseTxt = defaultFont.render('[L] 키를 눌러 일시중지 풀기', True, WHITE)
+                ui_unpauseTxt = defaultBulletFont.render('[L] 키를 눌러 일시중지 풀기', True, WHITE)
+                ui_pasuedTxtEaster = defaultBulletFont.render(pausedmotd, True, WHITE)
 
                 screen.blit(img_overlayDeadScreenBlack, [0, 0])
-                screen.blit(ui_pausedTxt, [400, 400])
-                screen.blit(ui_unpauseTxt, [400, 550])
+                screen.blit(ui_pausedTxt, [400, 300])
+                screen.blit(ui_unpauseTxt, [400, 400])
+                screen.blit(ui_pasuedTxtEaster, [400, 350])
 
             pygame.display.flip()
 

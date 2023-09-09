@@ -4,8 +4,8 @@ from pygame.locals import *
 WIDTH = 1280
 HEIGHT = 720
 DEF_FPS = 60
-VER = '2.5.1' + '==DEMO'
-ENGINE_VER = '2.1'
+VER = '2.6.3' + '==DEMO'
+ENGINE_VER = '169.9'
 MOTD = {
     '버그가 있거나, 피드백을 주고 싶으세요? 저희 디스코드에 들어와보세요!',
     '여전히 플레이 하고 있으시네요!',
@@ -26,6 +26,14 @@ MOTD = {
     '에러!',
     '이 대회가 완벽하길..!'
 }
+PAUSED_MOTD = {
+    '혹시 무서워서 일시 중지하신건 아니죠?',
+    '이것도 역시 랜덤으로 나오는 메세지에요!',
+    '개발자는 이거 때문에 1주일을 시간 낭비했어요.',
+    '이거 보시나요?',
+    '재미있는? 사실: 버그가 엄청나게 많아요'
+}
+
 # Player Setting
 PLAYER_VIEW_SIZE = 1
 PLAYER_SPEED = 0.5
@@ -57,7 +65,7 @@ YES_THIS_IS_DEBUGGER_IDC = True
 SHOW_DEBUGINFO_TOSCREEN = True
 SHOW_COLLISION_BOXES = True
 ISPRODUCTMODE = True
-LOGLEVEL = 'INFO'
+LOGLEVEL = 'DEBUG'
 NOCLIP = False
 
 # Bullet

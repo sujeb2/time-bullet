@@ -1,0 +1,2312 @@
+2023-09-02 09:14:44,443 - root / INFO:  Loading..
+2023-09-02 09:14:44,444 - root / INFO:  Reading save file..
+2023-09-02 09:14:44,448 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:14:44,449 - root / INFO:  Checking save file requirements..
+2023-09-02 09:14:44,451 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:14:44,451 - root / INFO:  Initallizing..
+2023-09-02 09:14:44,610 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:14:44,610 - root / INFO:  Reading Images..
+2023-09-02 09:14:44,732 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:14:44,733 - root / INFO:  Loading Sounds..
+2023-09-02 09:14:44,838 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:14:44,838 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:14:44,849 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:14:44,849 - root / INFO:  Resetting text object..
+2023-09-02 09:14:45,637 - root / INFO:  Starting..
+2023-09-02 09:14:47,569 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1058, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 918, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 865, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+
+2023-09-02 09:14:48,959 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-02 09:14:48,960 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1058, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 918, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 865, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+[0m
+2023-09-02 09:15:15,751 - root / INFO:  Loading..
+2023-09-02 09:15:15,752 - root / INFO:  Reading save file..
+2023-09-02 09:15:15,752 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:15,753 - root / INFO:  Checking save file requirements..
+2023-09-02 09:15:15,754 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:15:15,754 - root / INFO:  Initallizing..
+2023-09-02 09:15:15,905 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:15:15,906 - root / INFO:  Reading Images..
+2023-09-02 09:15:16,023 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:15:16,024 - root / INFO:  Loading Sounds..
+2023-09-02 09:15:16,068 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:16,069 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:15:16,072 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:16,072 - root / INFO:  Resetting text object..
+2023-09-02 09:15:16,752 - root / INFO:  Starting..
+2023-09-02 09:15:21,337 - root / INFO:  Starting..
+2023-09-02 09:15:22,156 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1058, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 914, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 918, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 865, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+
+2023-09-02 09:15:23,182 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-02 09:15:23,184 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1058, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 914, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1036, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1016, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 918, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 865, in restartGame
+    Enemy().kill()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+[0m
+2023-09-02 09:15:30,970 - root / INFO:  Loading..
+2023-09-02 09:15:30,970 - root / INFO:  Reading save file..
+2023-09-02 09:15:30,970 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:30,970 - root / INFO:  Checking save file requirements..
+2023-09-02 09:15:30,972 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:15:30,972 - root / INFO:  Initallizing..
+2023-09-02 09:15:31,122 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:15:31,122 - root / INFO:  Reading Images..
+2023-09-02 09:15:31,230 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:15:31,231 - root / INFO:  Loading Sounds..
+2023-09-02 09:15:31,277 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:31,278 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:15:31,281 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:15:31,282 - root / INFO:  Resetting text object..
+2023-09-02 09:15:32,230 - root / INFO:  Starting..
+2023-09-02 09:16:59,428 - root / INFO:  Loading..
+2023-09-02 09:16:59,428 - root / INFO:  Reading save file..
+2023-09-02 09:16:59,429 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:16:59,429 - root / INFO:  Checking save file requirements..
+2023-09-02 09:16:59,431 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:16:59,431 - root / INFO:  Initallizing..
+2023-09-02 09:16:59,594 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:16:59,595 - root / INFO:  Reading Images..
+2023-09-02 09:16:59,699 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:16:59,699 - root / INFO:  Loading Sounds..
+2023-09-02 09:16:59,744 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:16:59,744 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:16:59,746 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:16:59,747 - root / INFO:  Resetting text object..
+2023-09-02 09:17:01,158 - root / INFO:  Starting..
+2023-09-02 09:17:02,373 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy.suicideRestart()
+TypeError: Enemy.suicideRestart() missing 1 required positional argument: 'self'
+
+2023-09-02 09:17:05,258 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-02 09:17:05,260 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy.suicideRestart()
+TypeError: Enemy.suicideRestart() missing 1 required positional argument: 'self'
+[0m
+2023-09-02 09:17:09,777 - root / INFO:  Loading..
+2023-09-02 09:17:09,777 - root / INFO:  Reading save file..
+2023-09-02 09:17:09,778 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:09,778 - root / INFO:  Checking save file requirements..
+2023-09-02 09:17:09,780 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:17:09,780 - root / INFO:  Initallizing..
+2023-09-02 09:17:09,911 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:17:09,911 - root / INFO:  Reading Images..
+2023-09-02 09:17:10,048 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:17:10,049 - root / INFO:  Loading Sounds..
+2023-09-02 09:17:10,098 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:10,099 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:17:10,101 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:10,102 - root / INFO:  Resetting text object..
+2023-09-02 09:17:13,240 - root / INFO:  Starting..
+2023-09-02 09:17:16,591 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy().suicideRestart()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+
+2023-09-02 09:17:17,967 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-02 09:17:17,968 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy().suicideRestart()
+    ^^^^^^^
+TypeError: Enemy.__init__() missing 1 required positional argument: 'position'
+[0m
+2023-09-02 09:17:25,885 - root / INFO:  Loading..
+2023-09-02 09:17:25,886 - root / INFO:  Reading save file..
+2023-09-02 09:17:25,886 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:25,887 - root / INFO:  Checking save file requirements..
+2023-09-02 09:17:25,888 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-02 09:17:25,888 - root / INFO:  Initallizing..
+2023-09-02 09:17:26,035 - root / INFO: [92mInitallized.[0m
+2023-09-02 09:17:26,036 - root / INFO:  Reading Images..
+2023-09-02 09:17:26,143 - root / INFO: [92mLoaded.[0m
+2023-09-02 09:17:26,143 - root / INFO:  Loading Sounds..
+2023-09-02 09:17:26,190 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:26,191 - root / INFO:  Resetting Font/Title..
+2023-09-02 09:17:26,194 - root / INFO: [92m Loaded.[0m
+2023-09-02 09:17:26,194 - root / INFO:  Resetting text object..
+2023-09-02 09:17:27,544 - root / INFO:  Starting..
+2023-09-02 09:17:29,303 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy(demoLevel.enemySpawnPos).suicideRestart()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 566, in __init__
+    self.rect.center = position
+    ^^^^^^^^^^^^^^^^
+TypeError: invalid rect assignment
+
+2023-09-02 09:17:34,479 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-02 09:17:34,480 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1063, in <module>
+    mainMenu()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1041, in mainMenu
+    gameDemo()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 1021, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 923, in drawDeadScreen
+    restartGame()
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 869, in restartGame
+    Enemy(demoLevel.enemySpawnPos).suicideRestart()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sdbb2\OneDrive\πŸ≈¡ »≠∏È\2023southkoreagamecoding\Main.py", line 566, in __init__
+    self.rect.center = position
+    ^^^^^^^^^^^^^^^^
+TypeError: invalid rect assignment
+[0m
+2023-09-03 14:41:54,679 - root / INFO:  Loading..
+2023-09-03 14:41:54,679 - root / INFO:  Reading save file..
+2023-09-03 14:41:54,680 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:41:54,680 - root / INFO:  Checking save file requirements..
+2023-09-03 14:41:54,681 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:41:54,681 - root / INFO:  Initallizing..
+2023-09-03 14:41:55,026 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:41:55,026 - root / INFO:  Reading Images..
+2023-09-03 14:41:55,114 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:41:55,114 - root / INFO:  Loading Sounds..
+2023-09-03 14:41:55,115 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:42:01,117 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:42:01,117 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:42:01,117 - root / INFO:  Exiting..
+2023-09-03 14:42:01,187 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:42:01,203 - root / CRITICAL: <function format_exc at 0x7f6c46f76050>
+2023-09-03 14:42:46,645 - root / INFO:  Loading..
+2023-09-03 14:42:46,645 - root / INFO:  Reading save file..
+2023-09-03 14:42:46,645 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:42:46,646 - root / INFO:  Checking save file requirements..
+2023-09-03 14:42:46,646 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:42:46,646 - root / INFO:  Initallizing..
+2023-09-03 14:42:46,910 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:42:46,910 - root / INFO:  Reading Images..
+2023-09-03 14:42:46,998 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:42:46,998 - root / INFO:  Loading Sounds..
+2023-09-03 14:42:46,999 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:42:48,392 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:42:48,392 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:42:48,392 - root / INFO:  Exiting..
+2023-09-03 14:42:48,434 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:42:48,449 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:42:55,872 - root / INFO:  Loading..
+2023-09-03 14:42:55,872 - root / INFO:  Reading save file..
+2023-09-03 14:42:55,873 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:42:55,873 - root / INFO:  Checking save file requirements..
+2023-09-03 14:42:55,874 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:42:55,874 - root / INFO:  Initallizing..
+2023-09-03 14:42:56,160 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:42:56,160 - root / INFO:  Reading Images..
+2023-09-03 14:42:56,249 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:42:56,249 - root / INFO:  Loading Sounds..
+2023-09-03 14:42:56,250 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:43:46,332 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:43:46,332 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:43:46,332 - root / INFO:  Exiting..
+2023-09-03 14:43:46,362 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:43:46,378 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:44:14,468 - root / INFO:  Loading..
+2023-09-03 14:44:14,468 - root / INFO:  Reading save file..
+2023-09-03 14:44:14,468 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:44:14,468 - root / INFO:  Checking save file requirements..
+2023-09-03 14:44:14,469 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:44:14,469 - root / INFO:  Initallizing..
+2023-09-03 14:44:14,760 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:44:14,761 - root / INFO:  Reading Images..
+2023-09-03 14:44:14,851 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:44:14,851 - root / INFO:  Loading Sounds..
+2023-09-03 14:44:14,852 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:46:29,304 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:46:29,304 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:46:29,304 - root / INFO:  Exiting..
+2023-09-03 14:46:29,397 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:46:29,413 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:48:07,996 - root / INFO:  Loading..
+2023-09-03 14:48:07,996 - root / INFO:  Reading save file..
+2023-09-03 14:48:07,996 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:48:07,996 - root / INFO:  Checking save file requirements..
+2023-09-03 14:48:07,997 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:48:07,997 - root / INFO:  Initallizing..
+2023-09-03 14:48:08,299 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:48:08,299 - root / INFO:  Reading Images..
+2023-09-03 14:48:08,389 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:48:08,389 - root / INFO:  Loading Sounds..
+2023-09-03 14:48:08,390 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:48:10,149 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:48:10,149 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:48:10,149 - root / INFO:  Exiting..
+2023-09-03 14:48:10,186 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:48:10,203 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-03 14:51:13,768 - root / INFO:  Loading..
+2023-09-03 14:51:13,768 - root / INFO:  Reading save file..
+2023-09-03 14:51:13,768 - root / INFO: [92m Loaded.[0m
+2023-09-03 14:51:13,768 - root / INFO:  Checking save file requirements..
+2023-09-03 14:51:13,769 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-03 14:51:13,769 - root / INFO:  Initallizing..
+2023-09-03 14:51:14,147 - root / INFO: [92mInitallized.[0m
+2023-09-03 14:51:14,147 - root / INFO:  Reading Images..
+2023-09-03 14:51:14,243 - root / INFO: [92mLoaded.[0m
+2023-09-03 14:51:14,243 - root / INFO:  Loading Sounds..
+2023-09-03 14:51:14,244 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-03 14:51:16,281 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-03 14:51:16,281 - root / CRITICAL:  Is file even exists?[0m
+2023-09-03 14:51:16,281 - root / INFO:  Exiting..
+2023-09-03 14:51:16,316 - root / INFO:  Resetting Font/Title..
+2023-09-03 14:51:16,339 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 17:50:57,973 - root / INFO:  Loading..
+2023-09-04 17:50:57,973 - root / INFO:  Reading save file..
+2023-09-04 17:50:57,974 - root / INFO: [92m Loaded.[0m
+2023-09-04 17:50:57,974 - root / INFO:  Checking save file requirements..
+2023-09-04 17:50:57,974 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 17:50:57,974 - root / INFO:  Initallizing..
+2023-09-04 17:50:58,325 - root / INFO: [92mInitallized.[0m
+2023-09-04 17:50:58,325 - root / INFO:  Reading Images..
+2023-09-04 17:50:58,420 - root / INFO: [92mLoaded.[0m
+2023-09-04 17:50:58,420 - root / INFO:  Loading Sounds..
+2023-09-04 17:50:58,421 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Failed loading libmodplug.so.1: libmodplug.so.1: cannot open shared object file: No such file or directory
+
+2023-09-04 17:51:01,274 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 17:51:01,274 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 17:51:01,274 - root / INFO:  Exiting..
+2023-09-04 17:51:01,314 - root / INFO:  Resetting Font/Title..
+2023-09-04 17:51:01,331 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 17:51:21,756 - root / INFO:  Loading..
+2023-09-04 17:51:21,756 - root / INFO:  Reading save file..
+2023-09-04 17:51:21,756 - root / INFO: [92m Loaded.[0m
+2023-09-04 17:51:21,757 - root / INFO:  Checking save file requirements..
+2023-09-04 17:51:21,757 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 17:51:21,757 - root / INFO:  Initallizing..
+2023-09-04 17:51:22,049 - root / INFO: [92mInitallized.[0m
+2023-09-04 17:51:22,050 - root / INFO:  Reading Images..
+2023-09-04 17:51:22,139 - root / INFO: [92mLoaded.[0m
+2023-09-04 17:51:22,139 - root / INFO:  Loading Sounds..
+2023-09-04 17:51:22,140 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-04 17:51:23,550 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 17:51:23,550 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 17:51:23,550 - root / INFO:  Exiting..
+2023-09-04 17:51:23,585 - root / INFO:  Resetting Font/Title..
+2023-09-04 17:51:23,602 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-04 18:10:13,097 - root / INFO:  Loading..
+2023-09-04 18:10:13,097 - root / INFO:  Reading save file..
+2023-09-04 18:10:13,097 - root / INFO: [92m Loaded.[0m
+2023-09-04 18:10:13,097 - root / INFO:  Checking save file requirements..
+2023-09-04 18:10:13,098 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-04 18:10:13,098 - root / INFO:  Initallizing..
+2023-09-04 18:10:13,336 - root / INFO: [92mInitallized.[0m
+2023-09-04 18:10:13,336 - root / INFO:  Reading Images..
+2023-09-04 18:10:13,427 - root / INFO: [92mLoaded.[0m
+2023-09-04 18:10:13,427 - root / INFO:  Loading Sounds..
+2023-09-04 18:10:13,428 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-04 18:10:15,345 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-04 18:10:15,345 - root / CRITICAL:  Is file even exists?[0m
+2023-09-04 18:10:15,345 - root / INFO:  Exiting..
+2023-09-04 18:10:15,393 - root / INFO:  Resetting Font/Title..
+2023-09-04 18:10:15,410 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-06 20:33:10,380 - root / INFO:  Loading..
+2023-09-06 20:33:10,381 - root / INFO:  Reading save file..
+2023-09-06 20:33:10,381 - root / INFO: [92m Loaded.[0m
+2023-09-06 20:33:10,381 - root / INFO:  Checking save file requirements..
+2023-09-06 20:33:10,382 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-06 20:33:10,382 - root / INFO:  Initallizing..
+2023-09-06 20:33:10,912 - root / INFO: [92mInitallized.[0m
+2023-09-06 20:33:10,912 - root / INFO:  Reading Images..
+2023-09-06 20:33:11,004 - root / INFO: [92mLoaded.[0m
+2023-09-06 20:33:11,005 - root / INFO:  Loading Sounds..
+2023-09-06 20:33:11,007 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 262, in <module>
+    sfx_handgunFire = pygame.mixer.Sound("./src/sound/sfx/handgun/handgun_fire.wav")
+pygame.error: Unrecognized audio format
+
+2023-09-06 20:33:42,907 - root / CRITICAL: [91m Error occurred while loading Sound.
+2023-09-06 20:33:42,907 - root / CRITICAL:  Is file even exists?[0m
+2023-09-06 20:33:42,907 - root / INFO:  Exiting..
+2023-09-06 20:33:43,018 - root / INFO:  Resetting Font/Title..
+2023-09-06 20:33:43,034 - root / CRITICAL: Traceback (most recent call last):
+  File "/home/songro/Î∞îÌÉï?îÎ©¥/time-bullet/Main.py", line 287, in <module>
+    defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
+pygame.error: font not initialized
+
+2023-09-08 17:09:09,565 - root / INFO:  Loading..
+2023-09-08 17:09:09,565 - root / INFO:  Reading save file..
+2023-09-08 17:09:09,570 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,570 - root / INFO:  Checking save file requirements..
+2023-09-08 17:09:09,574 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:09:09,575 - root / INFO:  Initallizing..
+2023-09-08 17:09:09,722 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:09:09,722 - root / INFO:  Reading Images..
+2023-09-08 17:09:09,869 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:09:09,869 - root / INFO:  Loading Sounds..
+2023-09-08 17:09:09,973 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,974 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:09:09,986 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,987 - root / INFO:  Resetting text object..
+2023-09-08 17:09:12,727 - root / INFO:  Starting..
+2023-09-08 17:09:21,605 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:22,052 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:22,509 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:32,704 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,122 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,509 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,900 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:34,288 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:34,689 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,069 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,466 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,849 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:46,123 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1062, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1048, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 970, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-08 17:09:49,527 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-08 17:09:49,528 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1062, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1048, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 970, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-08 17:12:49,694 - root / INFO:  Loading..
+2023-09-08 17:12:49,695 - root / INFO:  Reading save file..
+2023-09-08 17:12:49,697 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:49,703 - root / INFO:  Checking save file requirements..
+2023-09-08 17:12:49,705 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:12:49,707 - root / INFO:  Initallizing..
+2023-09-08 17:12:49,855 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:12:49,859 - root / INFO:  Reading Images..
+2023-09-08 17:12:49,963 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:12:49,983 - root / INFO:  Loading Sounds..
+2023-09-08 17:12:50,051 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:50,107 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:12:50,111 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:50,113 - root / INFO:  Resetting text object..
+2023-09-08 17:12:52,281 - root / INFO:  Starting..
+2023-09-08 17:12:59,493 - root / INFO: Saving..
+2023-09-08 17:12:59,503 - root / INFO: [92m Saved.[0m
+2023-09-08 17:16:07,015 - root / INFO:  Loading..
+2023-09-08 17:16:07,017 - root / INFO:  Reading save file..
+2023-09-08 17:16:07,025 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:07,037 - root / INFO:  Checking save file requirements..
+2023-09-08 17:16:07,041 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:16:07,044 - root / INFO:  Initallizing..
+2023-09-08 17:16:07,431 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:16:07,434 - root / INFO:  Reading Images..
+2023-09-08 17:16:07,910 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:16:07,912 - root / INFO:  Loading Sounds..
+2023-09-08 17:16:08,112 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:08,161 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:16:08,175 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:08,177 - root / INFO:  Resetting text object..
+2023-09-08 17:16:13,822 - root / INFO:  Starting..
+2023-09-08 17:16:20,038 - root / INFO:  Starting..
+2023-09-08 17:16:34,683 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 927, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-08 17:16:37,146 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-08 17:16:37,173 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 927, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-08 17:17:52,162 - root / INFO:  Loading..
+2023-09-08 17:17:52,164 - root / INFO:  Reading save file..
+2023-09-08 17:17:52,169 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,171 - root / INFO:  Checking save file requirements..
+2023-09-08 17:17:52,173 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:17:52,175 - root / INFO:  Initallizing..
+2023-09-08 17:17:52,306 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:17:52,307 - root / INFO:  Reading Images..
+2023-09-08 17:17:52,441 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:17:52,444 - root / INFO:  Loading Sounds..
+2023-09-08 17:17:52,524 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,568 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:17:52,576 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,578 - root / INFO:  Resetting text object..
+2023-09-09 08:37:01,731 - root / INFO:  Loading..
+2023-09-09 08:37:01,733 - root / INFO:  Reading save file..
+2023-09-09 08:37:01,739 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:01,746 - root / INFO:  Checking save file requirements..
+2023-09-09 08:37:01,747 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:37:01,749 - root / INFO:  Initallizing..
+2023-09-09 08:37:02,149 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:37:02,151 - root / INFO:  Reading Images..
+2023-09-09 08:37:02,284 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:37:02,287 - root / INFO:  Loading Sounds..
+2023-09-09 08:37:02,821 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:02,823 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:37:02,838 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:02,840 - root / INFO:  Resetting text object..
+2023-09-09 08:37:38,889 - root / INFO:  Loading..
+2023-09-09 08:37:38,896 - root / INFO:  Reading save file..
+2023-09-09 08:37:38,910 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:38,914 - root / INFO:  Checking save file requirements..
+2023-09-09 08:37:38,919 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:37:38,922 - root / INFO:  Initallizing..
+2023-09-09 08:37:39,051 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:37:39,054 - root / INFO:  Reading Images..
+2023-09-09 08:37:39,160 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:37:39,180 - root / INFO:  Loading Sounds..
+2023-09-09 08:37:39,250 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:39,311 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:37:39,337 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:39,343 - root / INFO:  Resetting text object..
+2023-09-09 08:37:43,197 - root / INFO:  Starting..
+2023-09-09 08:37:45,841 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 931, in drawDeadScreen
+    restartGame()
+    ^^^^^^^^^^^
+NameError: name 'restartGame' is not defined
+
+2023-09-09 08:37:48,031 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:37:48,054 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 931, in drawDeadScreen
+    restartGame()
+    ^^^^^^^^^^^
+NameError: name 'restartGame' is not defined
+[0m
+2023-09-09 08:38:09,454 - root / INFO:  Loading..
+2023-09-09 08:38:09,466 - root / INFO:  Reading save file..
+2023-09-09 08:38:09,479 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,491 - root / INFO:  Checking save file requirements..
+2023-09-09 08:38:09,501 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:38:09,513 - root / INFO:  Initallizing..
+2023-09-09 08:38:09,646 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:38:09,657 - root / INFO:  Reading Images..
+2023-09-09 08:38:09,768 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:38:09,799 - root / INFO:  Loading Sounds..
+2023-09-09 08:38:09,850 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,861 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:38:09,873 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,883 - root / INFO:  Resetting text object..
+2023-09-09 08:38:10,710 - root / INFO:  Starting..
+2023-09-09 08:38:23,798 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 08:38:25,100 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:38:25,138 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 08:40:38,792 - root / INFO:  Loading..
+2023-09-09 08:40:38,807 - root / INFO:  Reading save file..
+2023-09-09 08:40:38,818 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:38,831 - root / INFO:  Checking save file requirements..
+2023-09-09 08:40:38,845 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:40:38,855 - root / INFO:  Initallizing..
+2023-09-09 08:40:39,003 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:40:39,017 - root / INFO:  Reading Images..
+2023-09-09 08:40:39,130 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:40:39,167 - root / INFO:  Loading Sounds..
+2023-09-09 08:40:39,223 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:39,236 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:40:39,253 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:39,263 - root / INFO:  Resetting text object..
+2023-09-09 08:40:40,782 - root / INFO:  Starting..
+2023-09-09 08:40:55,353 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 973, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 08:41:03,401 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:41:03,428 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 973, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 09:37:29,613 - root / INFO:  Loading..
+2023-09-09 09:37:29,615 - root / INFO:  Reading save file..
+2023-09-09 09:37:29,617 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:29,627 - root / INFO:  Checking save file requirements..
+2023-09-09 09:37:29,630 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:37:29,634 - root / INFO:  Initallizing..
+2023-09-09 09:37:29,860 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:37:29,886 - root / INFO:  Reading Images..
+2023-09-09 09:37:30,050 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:37:30,054 - root / INFO:  Loading Sounds..
+2023-09-09 09:37:30,252 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:30,304 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:37:30,312 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:30,315 - root / INFO:  Resetting text object..
+2023-09-09 09:37:32,019 - root / INFO:  Starting..
+2023-09-09 09:37:58,405 - root / INFO:  Starting..
+2023-09-09 09:38:01,241 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1023, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 928, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 972, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 09:38:08,162 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 09:38:08,195 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1023, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 928, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 972, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 09:39:04,141 - root / INFO:  Loading..
+2023-09-09 09:39:04,165 - root / INFO:  Reading save file..
+2023-09-09 09:39:04,184 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,203 - root / INFO:  Checking save file requirements..
+2023-09-09 09:39:04,220 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:39:04,235 - root / INFO:  Initallizing..
+2023-09-09 09:39:04,458 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:39:04,511 - root / INFO:  Reading Images..
+2023-09-09 09:39:04,674 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:39:04,689 - root / INFO:  Loading Sounds..
+2023-09-09 09:39:04,757 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,769 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:39:04,787 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,799 - root / INFO:  Resetting text object..
+2023-09-09 09:39:05,318 - root / INFO:  Starting..
+2023-09-09 09:48:09,693 - root / INFO:  Loading..
+2023-09-09 09:48:09,697 - root / INFO:  Reading save file..
+2023-09-09 09:48:09,699 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:48:09,717 - root / INFO:  Checking save file requirements..
+2023-09-09 09:48:09,719 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:48:09,720 - root / INFO:  Initallizing..
+2023-09-09 09:48:10,042 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:48:10,107 - root / INFO:  Reading Images..
+2023-09-09 09:48:10,248 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:48:10,251 - root / INFO:  Loading Sounds..
+2023-09-09 09:48:10,304 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:48:10,307 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:48:10,312 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:48:10,315 - root / INFO:  Resetting text object..
+2023-09-09 09:48:18,052 - root / INFO:  Starting..
+2023-09-09 09:49:26,112 - root / INFO:  Loading..
+2023-09-09 09:49:26,115 - root / INFO:  Reading save file..
+2023-09-09 09:49:26,117 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:49:26,120 - root / INFO:  Checking save file requirements..
+2023-09-09 09:49:26,123 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:49:26,127 - root / INFO:  Initallizing..
+2023-09-09 09:49:26,342 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:49:26,384 - root / INFO:  Reading Images..
+2023-09-09 09:49:26,531 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:49:26,534 - root / INFO:  Loading Sounds..
+2023-09-09 09:49:26,592 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:49:26,596 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:49:26,603 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:49:26,612 - root / INFO:  Resetting text object..
+2023-09-09 09:49:27,870 - root / INFO:  Starting..
+2023-09-09 09:49:31,669 - root / INFO: Player Killed.
+2023-09-09 09:49:31,728 - root / INFO: Player Killed.
+2023-09-09 09:49:31,756 - root / INFO: Player Killed.
+2023-09-09 09:49:31,782 - root / INFO: Player Killed.
+2023-09-09 09:49:31,812 - root / INFO: Player Killed.
+2023-09-09 09:49:31,838 - root / INFO: Player Killed.
+2023-09-09 09:49:31,867 - root / INFO: Player Killed.
+2023-09-09 09:49:31,893 - root / INFO: Player Killed.
+2023-09-09 09:49:31,919 - root / INFO: Player Killed.
+2023-09-09 09:49:31,942 - root / INFO: Player Killed.
+2023-09-09 09:49:31,971 - root / INFO: Player Killed.
+2023-09-09 09:49:31,993 - root / INFO: Player Killed.
+2023-09-09 09:49:32,021 - root / INFO: Player Killed.
+2023-09-09 09:49:32,053 - root / INFO: Player Killed.
+2023-09-09 09:49:32,084 - root / INFO: Player Killed.
+2023-09-09 09:49:32,110 - root / INFO: Player Killed.
+2023-09-09 09:49:32,135 - root / INFO: Player Killed.
+2023-09-09 09:49:32,164 - root / INFO: Player Killed.
+2023-09-09 09:49:32,184 - root / INFO: Player Killed.
+2023-09-09 09:49:32,206 - root / INFO: Player Killed.
+2023-09-09 09:49:32,230 - root / INFO: Player Killed.
+2023-09-09 09:49:32,251 - root / INFO: Player Killed.
+2023-09-09 09:49:32,272 - root / INFO: Player Killed.
+2023-09-09 09:49:32,294 - root / INFO: Player Killed.
+2023-09-09 09:49:32,317 - root / INFO: Player Killed.
+2023-09-09 09:49:32,339 - root / INFO: Player Killed.
+2023-09-09 09:49:32,363 - root / INFO: Player Killed.
+2023-09-09 09:49:32,387 - root / INFO: Player Killed.
+2023-09-09 09:49:32,415 - root / INFO: Player Killed.
+2023-09-09 09:49:32,436 - root / INFO: Player Killed.
+2023-09-09 09:49:32,460 - root / INFO: Player Killed.
+2023-09-09 09:49:32,484 - root / INFO: Player Killed.
+2023-09-09 09:49:32,506 - root / INFO: Player Killed.
+2023-09-09 09:49:32,527 - root / INFO: Player Killed.
+2023-09-09 09:49:32,552 - root / INFO: Player Killed.
+2023-09-09 09:49:32,572 - root / INFO: Player Killed.
+2023-09-09 09:49:32,593 - root / INFO: Player Killed.
+2023-09-09 09:49:32,613 - root / INFO: Player Killed.
+2023-09-09 09:49:32,634 - root / INFO: Player Killed.
+2023-09-09 09:49:32,662 - root / INFO: Player Killed.
+2023-09-09 09:49:32,683 - root / INFO: Player Killed.
+2023-09-09 09:49:32,708 - root / INFO: Player Killed.
+2023-09-09 09:49:32,732 - root / INFO: Player Killed.
+2023-09-09 09:49:32,759 - root / INFO: Player Killed.
+2023-09-09 09:49:32,779 - root / INFO: Player Killed.
+2023-09-09 09:49:32,804 - root / INFO: Player Killed.
+2023-09-09 09:49:32,826 - root / INFO: Player Killed.
+2023-09-09 09:49:32,844 - root / INFO: Player Killed.
+2023-09-09 09:49:32,868 - root / INFO: Player Killed.
+2023-09-09 09:49:32,889 - root / INFO: Player Killed.
+2023-09-09 09:49:32,909 - root / INFO: Player Killed.
+2023-09-09 09:49:32,931 - root / INFO: Player Killed.
+2023-09-09 09:49:32,954 - root / INFO: Player Killed.
+2023-09-09 09:49:32,975 - root / INFO: Player Killed.
+2023-09-09 09:49:32,996 - root / INFO: Player Killed.
+2023-09-09 09:49:33,017 - root / INFO: Player Killed.
+2023-09-09 09:49:33,040 - root / INFO: Player Killed.
+2023-09-09 09:49:33,059 - root / INFO: Player Killed.
+2023-09-09 09:49:33,079 - root / INFO: Player Killed.
+2023-09-09 09:49:33,101 - root / INFO: Player Killed.
+2023-09-09 09:49:33,124 - root / INFO: Player Killed.
+2023-09-09 09:49:33,145 - root / INFO: Player Killed.
+2023-09-09 09:49:33,167 - root / INFO: Player Killed.
+2023-09-09 09:49:33,190 - root / INFO: Player Killed.
+2023-09-09 09:49:33,211 - root / INFO: Player Killed.
+2023-09-09 09:49:33,232 - root / INFO: Player Killed.
+2023-09-09 09:49:33,255 - root / INFO: Player Killed.
+2023-09-09 09:49:33,277 - root / INFO: Player Killed.
+2023-09-09 09:49:33,297 - root / INFO: Player Killed.
+2023-09-09 09:49:33,321 - root / INFO: Player Killed.
+2023-09-09 09:49:33,342 - root / INFO: Player Killed.
+2023-09-09 09:49:33,365 - root / INFO: Player Killed.
+2023-09-09 09:49:33,391 - root / INFO: Player Killed.
+2023-09-09 09:49:33,413 - root / INFO: Player Killed.
+2023-09-09 09:49:33,433 - root / INFO: Player Killed.
+2023-09-09 09:49:33,458 - root / INFO: Player Killed.
+2023-09-09 09:49:33,484 - root / INFO: Player Killed.
+2023-09-09 09:49:33,507 - root / INFO: Player Killed.
+2023-09-09 09:49:33,530 - root / INFO: Player Killed.
+2023-09-09 09:49:33,554 - root / INFO: Player Killed.
+2023-09-09 09:49:33,577 - root / INFO: Player Killed.
+2023-09-09 09:49:33,604 - root / INFO: Player Killed.
+2023-09-09 09:49:33,628 - root / INFO: Player Killed.
+2023-09-09 09:49:33,653 - root / INFO: Player Killed.
+2023-09-09 09:49:33,675 - root / INFO: Player Killed.
+2023-09-09 09:49:33,701 - root / INFO: Player Killed.
+2023-09-09 09:49:33,724 - root / INFO: Player Killed.
+2023-09-09 09:49:33,749 - root / INFO: Player Killed.
+2023-09-09 09:49:33,779 - root / INFO: Player Killed.
+2023-09-09 09:49:33,803 - root / INFO: Player Killed.
+2023-09-09 09:49:33,827 - root / INFO: Player Killed.
+2023-09-09 09:49:33,849 - root / INFO: Player Killed.
+2023-09-09 09:49:33,872 - root / INFO: Player Killed.
+2023-09-09 09:49:33,894 - root / INFO: Player Killed.
+2023-09-09 09:49:33,914 - root / INFO: Player Killed.
+2023-09-09 09:49:33,938 - root / INFO: Player Killed.
+2023-09-09 09:49:33,959 - root / INFO: Player Killed.
+2023-09-09 09:49:33,979 - root / INFO: Player Killed.
+2023-09-09 09:49:34,003 - root / INFO: Player Killed.
+2023-09-09 09:49:34,025 - root / INFO: Player Killed.
+2023-09-09 09:49:34,048 - root / INFO: Player Killed.
+2023-09-09 09:49:34,070 - root / INFO: Player Killed.
+2023-09-09 09:49:34,091 - root / INFO: Player Killed.
+2023-09-09 09:49:34,112 - root / INFO: Player Killed.
+2023-09-09 09:49:34,133 - root / INFO: Player Killed.
+2023-09-09 09:49:34,154 - root / INFO: Player Killed.
+2023-09-09 09:49:34,179 - root / INFO: Player Killed.
+2023-09-09 09:49:34,209 - root / INFO: Player Killed.
+2023-09-09 09:49:34,233 - root / INFO: Player Killed.
+2023-09-09 09:49:34,257 - root / INFO: Player Killed.
+2023-09-09 09:49:34,281 - root / INFO: Player Killed.
+2023-09-09 09:49:34,302 - root / INFO: Player Killed.
+2023-09-09 09:49:34,327 - root / INFO: Player Killed.
+2023-09-09 09:49:34,348 - root / INFO: Player Killed.
+2023-09-09 09:49:34,369 - root / INFO: Player Killed.
+2023-09-09 09:49:34,393 - root / INFO: Player Killed.
+2023-09-09 09:49:34,416 - root / INFO: Player Killed.
+2023-09-09 09:49:34,433 - root / INFO: Player Killed.
+2023-09-09 09:49:34,455 - root / INFO: Player Killed.
+2023-09-09 09:49:34,476 - root / INFO: Player Killed.
+2023-09-09 09:49:34,496 - root / INFO: Player Killed.
+2023-09-09 09:49:34,517 - root / INFO: Player Killed.
+2023-09-09 09:49:34,539 - root / INFO: Player Killed.
+2023-09-09 09:49:34,562 - root / INFO: Player Killed.
+2023-09-09 09:49:34,588 - root / INFO: Player Killed.
+2023-09-09 09:49:34,606 - root / INFO: Player Killed.
+2023-09-09 09:49:34,626 - root / INFO: Player Killed.
+2023-09-09 09:49:34,646 - root / INFO: Player Killed.
+2023-09-09 09:49:34,667 - root / INFO: Player Killed.
+2023-09-09 09:49:34,687 - root / INFO: Player Killed.
+2023-09-09 09:49:34,709 - root / INFO: Player Killed.
+2023-09-09 09:49:34,732 - root / INFO: Player Killed.
+2023-09-09 09:49:36,430 - root / INFO: Player Killed.
+2023-09-09 09:49:36,490 - root / INFO: Player Killed.
+2023-09-09 09:49:36,510 - root / INFO: Player Killed.
+2023-09-09 09:49:36,532 - root / INFO: Player Killed.
+2023-09-09 09:49:36,554 - root / INFO: Player Killed.
+2023-09-09 09:49:36,573 - root / INFO: Player Killed.
+2023-09-09 09:49:36,593 - root / INFO: Player Killed.
+2023-09-09 09:49:36,615 - root / INFO: Player Killed.
+2023-09-09 09:49:36,637 - root / INFO: Player Killed.
+2023-09-09 09:49:36,660 - root / INFO: Player Killed.
+2023-09-09 09:49:36,680 - root / INFO: Player Killed.
+2023-09-09 09:49:36,702 - root / INFO: Player Killed.
+2023-09-09 09:49:36,721 - root / INFO: Player Killed.
+2023-09-09 09:49:36,745 - root / INFO: Player Killed.
+2023-09-09 09:49:36,770 - root / INFO: Player Killed.
+2023-09-09 09:49:36,792 - root / INFO: Player Killed.
+2023-09-09 09:49:36,816 - root / INFO: Player Killed.
+2023-09-09 09:49:36,840 - root / INFO: Player Killed.
+2023-09-09 09:49:36,862 - root / INFO: Player Killed.
+2023-09-09 09:49:36,886 - root / INFO: Player Killed.
+2023-09-09 09:49:36,916 - root / INFO: Player Killed.
+2023-09-09 09:49:36,937 - root / INFO: Player Killed.
+2023-09-09 09:49:36,959 - root / INFO: Player Killed.
+2023-09-09 09:49:36,981 - root / INFO: Player Killed.
+2023-09-09 09:49:37,003 - root / INFO: Player Killed.
+2023-09-09 09:49:37,024 - root / INFO: Player Killed.
+2023-09-09 09:49:37,047 - root / INFO: Player Killed.
+2023-09-09 09:49:37,070 - root / INFO: Player Killed.
+2023-09-09 09:49:37,091 - root / INFO: Player Killed.
+2023-09-09 09:49:37,112 - root / INFO: Player Killed.
+2023-09-09 09:49:37,134 - root / INFO: Player Killed.
+2023-09-09 09:49:37,153 - root / INFO: Player Killed.
+2023-09-09 09:49:37,178 - root / INFO: Player Killed.
+2023-09-09 09:49:37,202 - root / INFO: Player Killed.
+2023-09-09 09:49:37,228 - root / INFO: Player Killed.
+2023-09-09 09:49:37,248 - root / INFO: Player Killed.
+2023-09-09 09:49:37,273 - root / INFO: Player Killed.
+2023-09-09 09:49:37,293 - root / INFO: Player Killed.
+2023-09-09 09:49:37,312 - root / INFO: Player Killed.
+2023-09-09 09:49:37,331 - root / INFO: Player Killed.
+2023-09-09 09:49:37,355 - root / INFO: Player Killed.
+2023-09-09 09:49:37,375 - root / INFO: Player Killed.
+2023-09-09 09:49:37,394 - root / INFO: Player Killed.
+2023-09-09 09:49:37,413 - root / INFO: Player Killed.
+2023-09-09 09:49:37,437 - root / INFO: Player Killed.
+2023-09-09 09:49:37,456 - root / INFO: Player Killed.
+2023-09-09 09:49:37,478 - root / INFO: Player Killed.
+2023-09-09 09:49:37,499 - root / INFO: Player Killed.
+2023-09-09 09:49:37,521 - root / INFO: Player Killed.
+2023-09-09 09:49:37,547 - root / INFO: Player Killed.
+2023-09-09 09:49:37,577 - root / INFO: Player Killed.
+2023-09-09 09:49:37,597 - root / INFO: Player Killed.
+2023-09-09 09:51:40,979 - root / INFO:  Loading..
+2023-09-09 09:51:40,980 - root / INFO:  Reading save file..
+2023-09-09 09:51:40,982 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:51:40,985 - root / INFO:  Checking save file requirements..
+2023-09-09 09:51:40,987 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:51:40,989 - root / INFO:  Initallizing..
+2023-09-09 09:51:41,138 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:51:41,141 - root / INFO:  Reading Images..
+2023-09-09 09:51:41,266 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:51:41,268 - root / INFO:  Loading Sounds..
+2023-09-09 09:51:41,319 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:51:41,323 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:51:41,328 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:51:41,330 - root / INFO:  Resetting text object..
+2023-09-09 09:51:43,645 - root / INFO:  Starting..
+2023-09-09 09:51:44,845 - root / INFO: Player Killed.
+2023-09-09 09:51:44,899 - root / INFO: Player Killed.
+2023-09-09 09:51:44,920 - root / INFO: Player Killed.
+2023-09-09 09:51:44,935 - root / INFO: Player Killed.
+2023-09-09 09:51:44,951 - root / INFO: Player Killed.
+2023-09-09 09:51:44,967 - root / INFO: Player Killed.
+2023-09-09 09:51:44,983 - root / INFO: Player Killed.
+2023-09-09 09:51:44,999 - root / INFO: Player Killed.
+2023-09-09 09:51:45,017 - root / INFO: Player Killed.
+2023-09-09 09:51:45,037 - root / INFO: Player Killed.
+2023-09-09 09:51:45,055 - root / INFO: Player Killed.
+2023-09-09 09:51:45,073 - root / INFO: Player Killed.
+2023-09-09 09:51:45,091 - root / INFO: Player Killed.
+2023-09-09 09:51:45,107 - root / INFO: Player Killed.
+2023-09-09 09:51:45,125 - root / INFO: Player Killed.
+2023-09-09 09:51:45,141 - root / INFO: Player Killed.
+2023-09-09 09:51:45,161 - root / INFO: Player Killed.
+2023-09-09 09:51:45,177 - root / INFO: Player Killed.
+2023-09-09 09:51:45,199 - root / INFO: Player Killed.
+2023-09-09 09:51:45,221 - root / INFO: Player Killed.
+2023-09-09 09:51:45,241 - root / INFO: Player Killed.
+2023-09-09 09:51:45,266 - root / INFO: Player Killed.
+2023-09-09 09:51:45,294 - root / INFO: Player Killed.
+2023-09-09 09:51:45,317 - root / INFO: Player Killed.
+2023-09-09 09:51:45,341 - root / INFO: Player Killed.
+2023-09-09 09:51:45,364 - root / INFO: Player Killed.
+2023-09-09 09:51:45,385 - root / INFO: Player Killed.
+2023-09-09 09:51:45,403 - root / INFO: Player Killed.
+2023-09-09 09:51:45,425 - root / INFO: Player Killed.
+2023-09-09 09:51:45,448 - root / INFO: Player Killed.
+2023-09-09 09:51:45,466 - root / INFO: Player Killed.
+2023-09-09 09:51:47,989 - root / INFO: Player Killed.
+2023-09-09 09:51:48,042 - root / INFO: Player Killed.
+2023-09-09 09:51:48,066 - root / INFO: Player Killed.
+2023-09-09 09:51:48,090 - root / INFO: Player Killed.
+2023-09-09 09:51:48,113 - root / INFO: Player Killed.
+2023-09-09 09:51:48,139 - root / INFO: Player Killed.
+2023-09-09 09:51:48,165 - root / INFO: Player Killed.
+2023-09-09 09:51:48,189 - root / INFO: Player Killed.
+2023-09-09 09:51:48,213 - root / INFO: Player Killed.
+2023-09-09 09:51:48,235 - root / INFO: Player Killed.
+2023-09-09 09:51:48,258 - root / INFO: Player Killed.
+2023-09-09 09:51:48,280 - root / INFO: Player Killed.
+2023-09-09 09:51:48,303 - root / INFO: Player Killed.
+2023-09-09 09:51:48,327 - root / INFO: Player Killed.
+2023-09-09 09:51:48,353 - root / INFO: Player Killed.
+2023-09-09 09:51:48,378 - root / INFO: Player Killed.
+2023-09-09 09:51:48,401 - root / INFO: Player Killed.
+2023-09-09 09:51:48,428 - root / INFO: Player Killed.
+2023-09-09 09:51:48,451 - root / INFO: Player Killed.
+2023-09-09 09:51:48,477 - root / INFO: Player Killed.
+2023-09-09 09:51:48,499 - root / INFO: Player Killed.
+2023-09-09 09:51:48,523 - root / INFO: Player Killed.
+2023-09-09 09:51:48,546 - root / INFO: Player Killed.
+2023-09-09 09:51:48,569 - root / INFO: Player Killed.
+2023-09-09 09:51:48,592 - root / INFO: Player Killed.
+2023-09-09 09:51:48,614 - root / INFO: Player Killed.
+2023-09-09 09:51:48,636 - root / INFO: Player Killed.
+2023-09-09 09:51:48,659 - root / INFO: Player Killed.
+2023-09-09 09:51:48,682 - root / INFO: Player Killed.
+2023-09-09 09:51:48,704 - root / INFO: Player Killed.
+2023-09-09 09:51:48,725 - root / INFO: Player Killed.
+2023-09-09 09:51:48,748 - root / INFO: Player Killed.
+2023-09-09 09:51:48,768 - root / INFO: Player Killed.
+2023-09-09 09:51:48,789 - root / INFO: Player Killed.
+2023-09-09 09:51:48,813 - root / INFO: Player Killed.
+2023-09-09 09:51:48,836 - root / INFO: Player Killed.
+2023-09-09 09:51:48,859 - root / INFO: Player Killed.
+2023-09-09 09:51:48,884 - root / INFO: Player Killed.
+2023-09-09 09:51:48,911 - root / INFO: Player Killed.
+2023-09-09 09:51:48,934 - root / INFO: Player Killed.
+2023-09-09 09:51:48,958 - root / INFO: Player Killed.
+2023-09-09 09:51:48,981 - root / INFO: Player Killed.
+2023-09-09 09:51:49,006 - root / INFO: Player Killed.
+2023-09-09 09:51:49,028 - root / INFO: Player Killed.
+2023-09-09 09:51:49,051 - root / INFO: Player Killed.
+2023-09-09 09:51:49,073 - root / INFO: Player Killed.
+2023-09-09 09:51:49,095 - root / INFO: Player Killed.
+2023-09-09 09:51:49,120 - root / INFO: Player Killed.
+2023-09-09 09:51:49,147 - root / INFO: Player Killed.
+2023-09-09 09:51:49,167 - root / INFO: Player Killed.
+2023-09-09 09:51:49,190 - root / INFO: Player Killed.
+2023-09-09 09:51:49,212 - root / INFO: Player Killed.
+2023-09-09 09:51:49,233 - root / INFO: Player Killed.
+2023-09-09 09:51:49,255 - root / INFO: Player Killed.
+2023-09-09 09:51:49,278 - root / INFO: Player Killed.
+2023-09-09 09:51:49,299 - root / INFO: Player Killed.
+2023-09-09 09:51:49,322 - root / INFO: Player Killed.
+2023-09-09 09:51:49,344 - root / INFO: Player Killed.
+2023-09-09 09:51:49,367 - root / INFO: Player Killed.
+2023-09-09 09:51:49,391 - root / INFO: Player Killed.
+2023-09-09 09:51:49,413 - root / INFO: Player Killed.
+2023-09-09 09:51:49,436 - root / INFO: Player Killed.
+2023-09-09 09:51:49,458 - root / INFO: Player Killed.
+2023-09-09 09:51:49,480 - root / INFO: Player Killed.
+2023-09-09 09:51:49,501 - root / INFO: Player Killed.
+2023-09-09 09:51:49,523 - root / INFO: Player Killed.
+2023-09-09 09:51:49,546 - root / INFO: Player Killed.
+2023-09-09 09:51:49,568 - root / INFO: Player Killed.
+2023-09-09 09:51:49,591 - root / INFO: Player Killed.
+2023-09-09 09:51:49,614 - root / INFO: Player Killed.
+2023-09-09 09:51:49,638 - root / INFO: Player Killed.
+2023-09-09 09:51:49,663 - root / INFO: Player Killed.
+2023-09-09 09:51:49,685 - root / INFO: Player Killed.
+2023-09-09 09:51:49,708 - root / INFO: Player Killed.
+2023-09-09 09:51:49,728 - root / INFO: Player Killed.
+2023-09-09 09:51:49,750 - root / INFO: Player Killed.
+2023-09-09 09:51:49,774 - root / INFO: Player Killed.
+2023-09-09 09:51:49,793 - root / INFO: Player Killed.
+2023-09-09 09:51:49,815 - root / INFO: Player Killed.
+2023-09-09 09:51:49,837 - root / INFO: Player Killed.
+2023-09-09 09:51:49,866 - root / INFO: Player Killed.
+2023-09-09 09:51:49,893 - root / INFO: Player Killed.
+2023-09-09 09:51:49,915 - root / INFO: Player Killed.
+2023-09-09 09:51:49,939 - root / INFO: Player Killed.
+2023-09-09 09:51:49,965 - root / INFO: Player Killed.
+2023-09-09 09:51:49,991 - root / INFO: Player Killed.
+2023-09-09 09:51:50,013 - root / INFO: Player Killed.
+2023-09-09 09:51:50,034 - root / INFO: Player Killed.
+2023-09-09 09:51:50,054 - root / INFO: Player Killed.
+2023-09-09 09:51:50,076 - root / INFO: Player Killed.
+2023-09-09 09:51:50,097 - root / INFO: Player Killed.
+2023-09-09 09:51:50,118 - root / INFO: Player Killed.
+2023-09-09 09:51:50,142 - root / INFO: Player Killed.
+2023-09-09 09:51:50,164 - root / INFO: Player Killed.
+2023-09-09 09:51:50,186 - root / INFO: Player Killed.
+2023-09-09 09:51:50,208 - root / INFO: Player Killed.
+2023-09-09 09:51:50,231 - root / INFO: Player Killed.
+2023-09-09 09:51:50,255 - root / INFO: Player Killed.
+2023-09-09 09:51:50,278 - root / INFO: Player Killed.
+2023-09-09 09:51:50,302 - root / INFO: Player Killed.
+2023-09-09 09:51:50,324 - root / INFO: Player Killed.
+2023-09-09 09:51:50,348 - root / INFO: Player Killed.
+2023-09-09 09:51:50,375 - root / INFO: Player Killed.
+2023-09-09 09:51:50,396 - root / INFO: Player Killed.
+2023-09-09 09:51:50,418 - root / INFO: Player Killed.
+2023-09-09 09:51:50,439 - root / INFO: Player Killed.
+2023-09-09 09:51:50,464 - root / INFO: Player Killed.
+2023-09-09 09:51:50,489 - root / INFO: Player Killed.
+2023-09-09 09:51:50,512 - root / INFO: Player Killed.
+2023-09-09 09:51:50,535 - root / INFO: Player Killed.
+2023-09-09 09:51:50,559 - root / INFO: Player Killed.
+2023-09-09 09:51:50,585 - root / INFO: Player Killed.
+2023-09-09 09:51:50,606 - root / INFO: Player Killed.
+2023-09-09 09:51:50,630 - root / INFO: Player Killed.
+2023-09-09 09:51:50,652 - root / INFO: Player Killed.
+2023-09-09 09:51:50,675 - root / INFO: Player Killed.
+2023-09-09 09:51:50,699 - root / INFO: Player Killed.
+2023-09-09 09:51:50,721 - root / INFO: Player Killed.
+2023-09-09 09:51:50,743 - root / INFO: Player Killed.
+2023-09-09 09:51:50,766 - root / INFO: Player Killed.
+2023-09-09 09:51:50,788 - root / INFO: Player Killed.
+2023-09-09 09:51:50,809 - root / INFO: Player Killed.
+2023-09-09 09:51:50,832 - root / INFO: Player Killed.
+2023-09-09 09:51:50,855 - root / INFO: Player Killed.
+2023-09-09 09:51:50,875 - root / INFO: Player Killed.
+2023-09-09 09:51:50,898 - root / INFO: Player Killed.
+2023-09-09 09:51:50,923 - root / INFO: Player Killed.
+2023-09-09 09:51:50,948 - root / INFO: Player Killed.
+2023-09-09 09:51:50,972 - root / INFO: Player Killed.
+2023-09-09 09:51:50,994 - root / INFO: Player Killed.
+2023-09-09 09:51:51,016 - root / INFO: Player Killed.
+2023-09-09 09:51:51,041 - root / INFO: Player Killed.
+2023-09-09 09:51:51,063 - root / INFO: Player Killed.
+2023-09-09 09:52:41,708 - root / INFO:  Loading..
+2023-09-09 09:52:41,710 - root / INFO:  Reading save file..
+2023-09-09 09:52:41,711 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:52:41,713 - root / INFO:  Checking save file requirements..
+2023-09-09 09:52:41,715 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:52:41,717 - root / INFO:  Initallizing..
+2023-09-09 09:52:41,892 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:52:41,896 - root / INFO:  Reading Images..
+2023-09-09 09:52:42,034 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:52:42,040 - root / INFO:  Loading Sounds..
+2023-09-09 09:52:42,105 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:52:42,165 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:52:42,172 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:52:42,176 - root / INFO:  Resetting text object..
+2023-09-09 09:52:43,609 - root / INFO:  Starting..
+2023-09-09 09:52:45,319 - root / INFO: Player Killed.
+2023-09-09 09:52:45,344 - root / INFO: Player Killed.
+2023-09-09 09:52:45,363 - root / INFO: Player Killed.
+2023-09-09 09:52:45,383 - root / INFO: Player Killed.
+2023-09-09 09:52:45,401 - root / INFO: Player Killed.
+2023-09-09 09:52:45,420 - root / INFO: Player Killed.
+2023-09-09 09:52:45,439 - root / INFO: Player Killed.
+2023-09-09 09:52:45,457 - root / INFO: Player Killed.
+2023-09-09 09:52:45,479 - root / INFO: Player Killed.
+2023-09-09 09:52:45,497 - root / INFO: Player Killed.
+2023-09-09 09:52:45,515 - root / INFO: Player Killed.
+2023-09-09 09:52:45,532 - root / INFO: Player Killed.
+2023-09-09 09:52:45,549 - root / INFO: Player Killed.
+2023-09-09 09:52:45,565 - root / INFO: Player Killed.
+2023-09-09 09:52:45,583 - root / INFO: Player Killed.
+2023-09-09 09:52:45,600 - root / INFO: Player Killed.
+2023-09-09 09:52:45,617 - root / INFO: Player Killed.
+2023-09-09 09:52:45,636 - root / INFO: Player Killed.
+2023-09-09 09:52:45,660 - root / INFO: Player Killed.
+2023-09-09 09:52:45,682 - root / INFO: Player Killed.
+2023-09-09 09:52:45,703 - root / INFO: Player Killed.
+2023-09-09 09:52:45,724 - root / INFO: Player Killed.
+2023-09-09 09:52:45,743 - root / INFO: Player Killed.
+2023-09-09 09:52:45,765 - root / INFO: Player Killed.
+2023-09-09 09:52:45,786 - root / INFO: Player Killed.
+2023-09-09 09:52:45,808 - root / INFO: Player Killed.
+2023-09-09 09:52:45,829 - root / INFO: Player Killed.
+2023-09-09 09:52:45,850 - root / INFO: Player Killed.
+2023-09-09 09:52:45,869 - root / INFO: Player Killed.
+2023-09-09 09:52:45,892 - root / INFO: Player Killed.
+2023-09-09 09:52:45,913 - root / INFO: Player Killed.
+2023-09-09 09:52:45,933 - root / INFO: Player Killed.
+2023-09-09 09:52:45,954 - root / INFO: Player Killed.
+2023-09-09 09:52:45,974 - root / INFO: Player Killed.
+2023-09-09 09:52:45,995 - root / INFO: Player Killed.
+2023-09-09 09:52:46,015 - root / INFO: Player Killed.
+2023-09-09 09:52:46,036 - root / INFO: Player Killed.
+2023-09-09 09:52:46,056 - root / INFO: Player Killed.
+2023-09-09 09:52:46,077 - root / INFO: Player Killed.
+2023-09-09 09:52:46,095 - root / INFO: Player Killed.
+2023-09-09 09:52:46,114 - root / INFO: Player Killed.
+2023-09-09 09:52:46,132 - root / INFO: Player Killed.
+2023-09-09 09:52:46,151 - root / INFO: Player Killed.
+2023-09-09 09:52:46,170 - root / INFO: Player Killed.
+2023-09-09 09:52:46,188 - root / INFO: Player Killed.
+2023-09-09 09:52:46,206 - root / INFO: Player Killed.
+2023-09-09 09:52:46,225 - root / INFO: Player Killed.
+2023-09-09 09:52:46,245 - root / INFO: Player Killed.
+2023-09-09 09:52:46,267 - root / INFO: Player Killed.
+2023-09-09 09:52:46,285 - root / INFO: Player Killed.
+2023-09-09 09:52:46,303 - root / INFO: Player Killed.
+2023-09-09 09:52:46,324 - root / INFO: Player Killed.
+2023-09-09 09:52:46,344 - root / INFO: Player Killed.
+2023-09-09 09:52:46,363 - root / INFO: Player Killed.
+2023-09-09 09:52:46,382 - root / INFO: Player Killed.
+2023-09-09 09:52:46,398 - root / INFO: Player Killed.
+2023-09-09 09:52:46,415 - root / INFO: Player Killed.
+2023-09-09 09:52:46,434 - root / INFO: Player Killed.
+2023-09-09 09:52:46,451 - root / INFO: Player Killed.
+2023-09-09 09:52:46,471 - root / INFO: Player Killed.
+2023-09-09 09:52:46,490 - root / INFO: Player Killed.
+2023-09-09 09:52:46,511 - root / INFO: Player Killed.
+2023-09-09 09:52:46,528 - root / INFO: Player Killed.
+2023-09-09 09:52:46,545 - root / INFO: Player Killed.
+2023-09-09 09:52:46,563 - root / INFO: Player Killed.
+2023-09-09 09:52:46,581 - root / INFO: Player Killed.
+2023-09-09 09:52:46,600 - root / INFO: Player Killed.
+2023-09-09 09:52:46,619 - root / INFO: Player Killed.
+2023-09-09 09:52:46,641 - root / INFO: Player Killed.
+2023-09-09 09:52:46,661 - root / INFO: Player Killed.
+2023-09-09 09:52:46,682 - root / INFO: Player Killed.
+2023-09-09 09:52:46,699 - root / INFO: Player Killed.
+2023-09-09 09:52:46,717 - root / INFO: Player Killed.
+2023-09-09 09:52:46,735 - root / INFO: Player Killed.
+2023-09-09 09:52:46,753 - root / INFO: Player Killed.
+2023-09-09 09:52:46,771 - root / INFO: Player Killed.
+2023-09-09 09:52:46,791 - root / INFO: Player Killed.
+2023-09-09 09:52:46,810 - root / INFO: Player Killed.
+2023-09-09 09:52:46,829 - root / INFO: Player Killed.
+2023-09-09 09:52:46,849 - root / INFO: Player Killed.
+2023-09-09 09:52:46,868 - root / INFO: Player Killed.
+2023-09-09 09:52:46,886 - root / INFO: Player Killed.
+2023-09-09 09:52:46,904 - root / INFO: Player Killed.
+2023-09-09 09:52:46,924 - root / INFO: Player Killed.
+2023-09-09 09:52:46,943 - root / INFO: Player Killed.
+2023-09-09 09:52:46,962 - root / INFO: Player Killed.
+2023-09-09 09:52:46,985 - root / INFO: Player Killed.
+2023-09-09 09:52:47,005 - root / INFO: Player Killed.
+2023-09-09 09:52:47,025 - root / INFO: Player Killed.
+2023-09-09 09:52:47,049 - root / INFO: Player Killed.
+2023-09-09 09:52:47,069 - root / INFO: Player Killed.
+2023-09-09 09:52:47,089 - root / INFO: Player Killed.
+2023-09-09 09:52:47,110 - root / INFO: Player Killed.
+2023-09-09 09:52:47,131 - root / INFO: Player Killed.
+2023-09-09 09:52:47,149 - root / INFO: Player Killed.
+2023-09-09 09:52:47,170 - root / INFO: Player Killed.
+2023-09-09 09:52:47,188 - root / INFO: Player Killed.
+2023-09-09 09:52:47,209 - root / INFO: Player Killed.
+2023-09-09 09:52:47,228 - root / INFO: Player Killed.
+2023-09-09 09:52:47,250 - root / INFO: Player Killed.
+2023-09-09 09:52:47,266 - root / INFO: Player Killed.
+2023-09-09 09:52:47,285 - root / INFO: Player Killed.
+2023-09-09 09:52:47,302 - root / INFO: Player Killed.
+2023-09-09 09:52:47,322 - root / INFO: Player Killed.
+2023-09-09 09:52:47,342 - root / INFO: Player Killed.
+2023-09-09 09:52:47,362 - root / INFO: Player Killed.
+2023-09-09 09:52:47,383 - root / INFO: Player Killed.
+2023-09-09 09:52:47,403 - root / INFO: Player Killed.
+2023-09-09 09:52:47,423 - root / INFO: Player Killed.
+2023-09-09 09:52:47,441 - root / INFO: Player Killed.
+2023-09-09 09:52:47,460 - root / INFO: Player Killed.
+2023-09-09 09:52:47,478 - root / INFO: Player Killed.
+2023-09-09 09:52:47,499 - root / INFO: Player Killed.
+2023-09-09 09:52:47,521 - root / INFO: Player Killed.
+2023-09-09 09:52:47,541 - root / INFO: Player Killed.
+2023-09-09 09:52:47,562 - root / INFO: Player Killed.
+2023-09-09 09:52:47,582 - root / INFO: Player Killed.
+2023-09-09 09:52:47,603 - root / INFO: Player Killed.
+2023-09-09 09:52:47,625 - root / INFO: Player Killed.
+2023-09-09 09:52:47,646 - root / INFO: Player Killed.
+2023-09-09 09:52:47,667 - root / INFO: Player Killed.
+2023-09-09 09:52:47,688 - root / INFO: Player Killed.
+2023-09-09 09:52:47,709 - root / INFO: Player Killed.
+2023-09-09 09:52:48,198 - root / INFO: Player Killed.
+2023-09-09 09:52:48,250 - root / INFO: Player Killed.
+2023-09-09 09:52:48,272 - root / INFO: Player Killed.
+2023-09-09 09:52:48,291 - root / INFO: Player Killed.
+2023-09-09 09:52:48,311 - root / INFO: Player Killed.
+2023-09-09 09:52:48,332 - root / INFO: Player Killed.
+2023-09-09 09:52:48,351 - root / INFO: Player Killed.
+2023-09-09 09:52:48,370 - root / INFO: Player Killed.
+2023-09-09 09:52:48,393 - root / INFO: Player Killed.
+2023-09-09 09:52:48,413 - root / INFO: Player Killed.
+2023-09-09 09:52:48,432 - root / INFO: Player Killed.
+2023-09-09 09:52:48,450 - root / INFO: Player Killed.
+2023-09-09 09:52:48,471 - root / INFO: Player Killed.
+2023-09-09 09:52:48,490 - root / INFO: Player Killed.
+2023-09-09 09:52:48,510 - root / INFO: Player Killed.
+2023-09-09 09:52:48,529 - root / INFO: Player Killed.
+2023-09-09 09:52:48,548 - root / INFO: Player Killed.
+2023-09-09 09:52:48,567 - root / INFO: Player Killed.
+2023-09-09 09:52:48,588 - root / INFO: Player Killed.
+2023-09-09 09:52:48,607 - root / INFO: Player Killed.
+2023-09-09 09:52:48,628 - root / INFO: Player Killed.
+2023-09-09 09:52:48,645 - root / INFO: Player Killed.
+2023-09-09 09:52:48,665 - root / INFO: Player Killed.
+2023-09-09 09:52:48,684 - root / INFO: Player Killed.
+2023-09-09 09:52:48,705 - root / INFO: Player Killed.
+2023-09-09 09:52:48,727 - root / INFO: Player Killed.
+2023-09-09 09:52:48,745 - root / INFO: Player Killed.
+2023-09-09 09:52:48,766 - root / INFO: Player Killed.
+2023-09-09 09:52:48,786 - root / INFO: Player Killed.
+2023-09-09 09:52:48,806 - root / INFO: Player Killed.
+2023-09-09 09:52:48,824 - root / INFO: Player Killed.
+2023-09-09 09:52:48,845 - root / INFO: Player Killed.
+2023-09-09 09:52:48,866 - root / INFO: Player Killed.
+2023-09-09 09:52:48,884 - root / INFO: Player Killed.
+2023-09-09 09:52:48,904 - root / INFO: Player Killed.
+2023-09-09 09:52:48,921 - root / INFO: Player Killed.
+2023-09-09 09:52:48,939 - root / INFO: Player Killed.
+2023-09-09 09:52:48,958 - root / INFO: Player Killed.
+2023-09-09 09:52:48,980 - root / INFO: Player Killed.
+2023-09-09 09:52:49,001 - root / INFO: Player Killed.
+2023-09-09 09:52:49,023 - root / INFO: Player Killed.
+2023-09-09 09:52:49,044 - root / INFO: Player Killed.
+2023-09-09 09:52:49,063 - root / INFO: Player Killed.
+2023-09-09 09:52:49,088 - root / INFO: Player Killed.
+2023-09-09 09:52:49,109 - root / INFO: Player Killed.
+2023-09-09 09:52:49,131 - root / INFO: Player Killed.
+2023-09-09 09:52:49,152 - root / INFO: Player Killed.
+2023-09-09 09:52:49,173 - root / INFO: Player Killed.
+2023-09-09 09:52:49,193 - root / INFO: Player Killed.
+2023-09-09 09:52:49,215 - root / INFO: Player Killed.
+2023-09-09 09:52:49,235 - root / INFO: Player Killed.
+2023-09-09 09:52:49,254 - root / INFO: Player Killed.
+2023-09-09 09:52:49,274 - root / INFO: Player Killed.
+2023-09-09 09:52:49,294 - root / INFO: Player Killed.
+2023-09-09 09:52:49,313 - root / INFO: Player Killed.
+2023-09-09 09:52:49,333 - root / INFO: Player Killed.
+2023-09-09 09:52:49,351 - root / INFO: Player Killed.
+2023-09-09 09:52:49,372 - root / INFO: Player Killed.
+2023-09-09 09:52:49,392 - root / INFO: Player Killed.
+2023-09-09 09:52:49,411 - root / INFO: Player Killed.
+2023-09-09 09:52:49,430 - root / INFO: Player Killed.
+2023-09-09 09:52:49,451 - root / INFO: Player Killed.
+2023-09-09 09:52:49,471 - root / INFO: Player Killed.
+2023-09-09 09:52:49,492 - root / INFO: Player Killed.
+2023-09-09 09:52:49,514 - root / INFO: Player Killed.
+2023-09-09 09:52:49,535 - root / INFO: Player Killed.
+2023-09-09 09:52:49,555 - root / INFO: Player Killed.
+2023-09-09 09:52:49,576 - root / INFO: Player Killed.
+2023-09-09 09:52:49,601 - root / INFO: Player Killed.
+2023-09-09 09:52:49,622 - root / INFO: Player Killed.
+2023-09-09 09:52:49,641 - root / INFO: Player Killed.
+2023-09-09 09:52:49,663 - root / INFO: Player Killed.
+2023-09-09 09:52:49,685 - root / INFO: Player Killed.
+2023-09-09 09:52:49,707 - root / INFO: Player Killed.
+2023-09-09 09:52:49,727 - root / INFO: Player Killed.
+2023-09-09 09:52:49,749 - root / INFO: Player Killed.
+2023-09-09 09:52:49,771 - root / INFO: Player Killed.
+2023-09-09 09:52:49,791 - root / INFO: Player Killed.
+2023-09-09 09:52:49,812 - root / INFO: Player Killed.
+2023-09-09 09:52:49,832 - root / INFO: Player Killed.
+2023-09-09 09:52:49,850 - root / INFO: Player Killed.
+2023-09-09 09:52:49,868 - root / INFO: Player Killed.
+2023-09-09 09:52:49,888 - root / INFO: Player Killed.
+2023-09-09 09:52:49,908 - root / INFO: Player Killed.
+2023-09-09 09:52:49,929 - root / INFO: Player Killed.
+2023-09-09 09:52:49,951 - root / INFO: Player Killed.
+2023-09-09 09:52:49,971 - root / INFO: Player Killed.
+2023-09-09 09:52:49,992 - root / INFO: Player Killed.
+2023-09-09 09:52:50,012 - root / INFO: Player Killed.
+2023-09-09 09:52:50,032 - root / INFO: Player Killed.
+2023-09-09 09:52:50,051 - root / INFO: Player Killed.
+2023-09-09 09:52:50,071 - root / INFO: Player Killed.
+2023-09-09 09:52:50,089 - root / INFO: Player Killed.
+2023-09-09 09:52:50,106 - root / INFO: Player Killed.
+2023-09-09 09:52:50,124 - root / INFO: Player Killed.
+2023-09-09 09:52:50,143 - root / INFO: Player Killed.
+2023-09-09 09:52:50,163 - root / INFO: Player Killed.
+2023-09-09 09:52:50,182 - root / INFO: Player Killed.
+2023-09-09 09:52:50,201 - root / INFO: Player Killed.
+2023-09-09 09:52:50,220 - root / INFO: Player Killed.
+2023-09-09 09:52:50,240 - root / INFO: Player Killed.
+2023-09-09 09:52:50,262 - root / INFO: Player Killed.
+2023-09-09 09:52:50,281 - root / INFO: Player Killed.
+2023-09-09 09:52:50,300 - root / INFO: Player Killed.
+2023-09-09 09:52:50,318 - root / INFO: Player Killed.
+2023-09-09 09:52:50,337 - root / INFO: Player Killed.
+2023-09-09 09:52:50,356 - root / INFO: Player Killed.
+2023-09-09 09:52:50,375 - root / INFO: Player Killed.
+2023-09-09 09:52:50,394 - root / INFO: Player Killed.
+2023-09-09 09:52:50,414 - root / INFO: Player Killed.
+2023-09-09 09:52:50,434 - root / INFO: Player Killed.
+2023-09-09 09:52:50,455 - root / INFO: Player Killed.
+2023-09-09 09:52:50,474 - root / INFO: Player Killed.
+2023-09-09 09:52:50,491 - root / INFO: Player Killed.
+2023-09-09 09:52:50,510 - root / INFO: Player Killed.
+2023-09-09 09:52:50,528 - root / INFO: Player Killed.
+2023-09-09 09:52:50,548 - root / INFO: Player Killed.
+2023-09-09 09:52:50,567 - root / INFO: Player Killed.
+2023-09-09 09:52:50,587 - root / INFO: Player Killed.
+2023-09-09 09:52:50,608 - root / INFO: Player Killed.
+2023-09-09 09:52:50,629 - root / INFO: Player Killed.
+2023-09-09 09:52:50,649 - root / INFO: Player Killed.
+2023-09-09 09:52:50,671 - root / INFO: Player Killed.
+2023-09-09 09:52:50,692 - root / INFO: Player Killed.
+2023-09-09 09:52:50,713 - root / INFO: Player Killed.
+2023-09-09 09:52:50,732 - root / INFO: Player Killed.
+2023-09-09 09:52:50,753 - root / INFO: Player Killed.
+2023-09-09 09:52:50,773 - root / INFO: Player Killed.
+2023-09-09 09:52:50,793 - root / INFO: Player Killed.
+2023-09-09 09:52:50,812 - root / INFO: Player Killed.
+2023-09-09 09:52:50,835 - root / INFO: Player Killed.
+2023-09-09 09:52:50,856 - root / INFO: Player Killed.
+2023-09-09 09:52:50,876 - root / INFO: Player Killed.
+2023-09-09 09:52:50,894 - root / INFO: Player Killed.
+2023-09-09 09:52:50,914 - root / INFO: Player Killed.
+2023-09-09 09:52:50,936 - root / INFO: Player Killed.
+2023-09-09 09:52:50,957 - root / INFO: Player Killed.
+2023-09-09 09:52:50,978 - root / INFO: Player Killed.
+2023-09-09 09:52:50,997 - root / INFO: Player Killed.
+2023-09-09 09:52:51,019 - root / INFO: Player Killed.
+2023-09-09 09:52:51,038 - root / INFO: Player Killed.
+2023-09-09 09:52:51,058 - root / INFO: Player Killed.
+2023-09-09 09:52:51,077 - root / INFO: Player Killed.
+2023-09-09 09:52:51,097 - root / INFO: Player Killed.
+2023-09-09 09:52:51,119 - root / INFO: Player Killed.
+2023-09-09 09:52:51,137 - root / INFO: Player Killed.
+2023-09-09 09:52:51,156 - root / INFO: Player Killed.
+2023-09-09 09:52:51,176 - root / INFO: Player Killed.
+2023-09-09 09:52:51,195 - root / INFO: Player Killed.
+2023-09-09 09:52:51,213 - root / INFO: Player Killed.
+2023-09-09 09:52:51,234 - root / INFO: Player Killed.
+2023-09-09 09:52:51,256 - root / INFO: Player Killed.
+2023-09-09 09:52:51,278 - root / INFO: Player Killed.
+2023-09-09 09:52:51,300 - root / INFO: Player Killed.
+2023-09-09 09:52:51,321 - root / INFO: Player Killed.
+2023-09-09 09:52:51,342 - root / INFO: Player Killed.
+2023-09-09 09:52:51,366 - root / INFO: Player Killed.
+2023-09-09 09:52:51,390 - root / INFO: Player Killed.
+2023-09-09 09:52:51,409 - root / INFO: Player Killed.
+2023-09-09 09:52:51,431 - root / INFO: Player Killed.
+2023-09-09 09:52:51,451 - root / INFO: Player Killed.
+2023-09-09 09:52:51,471 - root / INFO: Player Killed.
+2023-09-09 09:52:51,495 - root / INFO: Player Killed.
+2023-09-09 09:52:51,517 - root / INFO: Player Killed.
+2023-09-09 09:52:51,538 - root / INFO: Player Killed.
+2023-09-09 09:52:51,558 - root / INFO: Player Killed.
+2023-09-09 09:52:51,579 - root / INFO: Player Killed.
+2023-09-09 09:52:51,599 - root / INFO: Player Killed.
+2023-09-09 09:52:51,619 - root / INFO: Player Killed.
+2023-09-09 09:52:51,642 - root / INFO: Player Killed.
+2023-09-09 09:52:51,662 - root / INFO: Player Killed.
+2023-09-09 09:52:51,685 - root / INFO: Player Killed.
+2023-09-09 09:52:51,705 - root / INFO: Player Killed.
+2023-09-09 09:52:51,727 - root / INFO: Player Killed.
+2023-09-09 09:52:51,748 - root / INFO: Player Killed.
+2023-09-09 09:52:51,767 - root / INFO: Player Killed.
+2023-09-09 09:52:51,790 - root / INFO: Player Killed.
+2023-09-09 09:52:51,812 - root / INFO: Player Killed.
+2023-09-09 09:52:51,831 - root / INFO: Player Killed.
+2023-09-09 09:52:51,850 - root / INFO: Player Killed.
+2023-09-09 09:52:51,870 - root / INFO: Player Killed.
+2023-09-09 09:52:51,891 - root / INFO: Player Killed.
+2023-09-09 09:52:51,908 - root / INFO: Player Killed.
+2023-09-09 09:52:51,927 - root / INFO: Player Killed.
+2023-09-09 09:52:51,945 - root / INFO: Player Killed.
+2023-09-09 09:52:51,964 - root / INFO: Player Killed.
+2023-09-09 09:52:51,983 - root / INFO: Player Killed.
+2023-09-09 09:52:52,001 - root / INFO: Player Killed.
+2023-09-09 09:52:52,019 - root / INFO: Player Killed.
+2023-09-09 09:52:52,037 - root / INFO: Player Killed.
+2023-09-09 09:52:52,057 - root / INFO: Player Killed.
+2023-09-09 09:52:52,077 - root / INFO: Player Killed.
+2023-09-09 09:52:52,098 - root / INFO: Player Killed.
+2023-09-09 09:52:52,117 - root / INFO: Player Killed.
+2023-09-09 09:52:52,137 - root / INFO: Player Killed.
+2023-09-09 09:52:52,156 - root / INFO: Player Killed.
+2023-09-09 09:52:52,178 - root / INFO: Player Killed.
+2023-09-09 09:52:52,199 - root / INFO: Player Killed.
+2023-09-09 09:52:52,218 - root / INFO: Player Killed.
+2023-09-09 09:52:52,237 - root / INFO: Player Killed.
+2023-09-09 09:52:52,261 - root / INFO: Player Killed.
+2023-09-09 09:52:52,284 - root / INFO: Player Killed.
+2023-09-09 09:52:52,304 - root / INFO: Player Killed.
+2023-09-09 09:52:52,322 - root / INFO: Player Killed.
+2023-09-09 09:52:52,340 - root / INFO: Player Killed.
+2023-09-09 09:52:52,359 - root / INFO: Player Killed.
+2023-09-09 09:52:52,385 - root / INFO: Player Killed.
+2023-09-09 09:52:52,406 - root / INFO: Player Killed.
+2023-09-09 09:52:52,428 - root / INFO: Player Killed.
+2023-09-09 09:52:52,449 - root / INFO: Player Killed.
+2023-09-09 09:52:52,476 - root / INFO: Player Killed.
+2023-09-09 09:52:52,509 - root / INFO: Player Killed.
+2023-09-09 09:52:52,533 - root / INFO: Player Killed.
+2023-09-09 09:52:52,564 - root / INFO: Player Killed.
+2023-09-09 09:52:52,593 - root / INFO: Player Killed.
+2023-09-09 09:52:52,657 - root / INFO: Player Killed.
+2023-09-09 09:52:52,727 - root / INFO: Player Killed.
+2023-09-09 09:52:52,747 - root / INFO: Player Killed.
+2023-09-09 09:52:52,769 - root / INFO: Player Killed.
+2023-09-09 09:52:52,791 - root / INFO: Player Killed.
+2023-09-09 09:52:52,819 - root / INFO: Player Killed.
+2023-09-09 09:52:52,841 - root / INFO: Player Killed.
+2023-09-09 09:52:52,865 - root / INFO: Player Killed.
+2023-09-09 09:52:52,890 - root / INFO: Player Killed.
+2023-09-09 09:52:52,914 - root / INFO: Player Killed.
+2023-09-09 09:52:52,934 - root / INFO: Player Killed.
+2023-09-09 09:52:52,958 - root / INFO: Player Killed.
+2023-09-09 09:52:52,979 - root / INFO: Player Killed.
+2023-09-09 09:52:53,002 - root / INFO: Player Killed.
+2023-09-09 09:52:53,022 - root / INFO: Player Killed.
+2023-09-09 09:52:53,043 - root / INFO: Player Killed.
+2023-09-09 09:52:53,062 - root / INFO: Player Killed.
+2023-09-09 09:52:53,084 - root / INFO: Player Killed.
+2023-09-09 09:52:53,107 - root / INFO: Player Killed.
+2023-09-09 09:52:53,156 - root / INFO: Player Killed.
+2023-09-09 09:52:53,179 - root / INFO: Player Killed.
+2023-09-09 09:52:53,201 - root / INFO: Player Killed.
+2023-09-09 09:52:53,223 - root / INFO: Player Killed.
+2023-09-09 09:52:53,246 - root / INFO: Player Killed.
+2023-09-09 09:52:53,267 - root / INFO: Player Killed.
+2023-09-09 09:52:53,289 - root / INFO: Player Killed.
+2023-09-09 09:52:53,312 - root / INFO: Player Killed.
+2023-09-09 09:52:53,337 - root / INFO: Player Killed.
+2023-09-09 09:52:53,357 - root / INFO: Player Killed.
+2023-09-09 09:52:53,377 - root / INFO: Player Killed.
+2023-09-09 09:52:53,400 - root / INFO: Player Killed.
+2023-09-09 09:52:53,422 - root / INFO: Player Killed.
+2023-09-09 09:52:53,442 - root / INFO: Player Killed.
+2023-09-09 09:52:53,464 - root / INFO: Player Killed.
+2023-09-09 09:52:53,487 - root / INFO: Player Killed.
+2023-09-09 09:52:53,507 - root / INFO: Player Killed.
+2023-09-09 09:52:53,527 - root / INFO: Player Killed.
+2023-09-09 09:52:53,545 - root / INFO: Player Killed.
+2023-09-09 09:52:53,566 - root / INFO: Player Killed.
+2023-09-09 09:52:53,587 - root / INFO: Player Killed.
+2023-09-09 09:52:53,607 - root / INFO: Player Killed.
+2023-09-09 09:52:53,626 - root / INFO: Player Killed.
+2023-09-09 09:52:53,647 - root / INFO: Player Killed.
+2023-09-09 09:52:53,665 - root / INFO: Player Killed.
+2023-09-09 09:52:53,686 - root / INFO: Player Killed.
+2023-09-09 09:52:53,703 - root / INFO: Player Killed.
+2023-09-09 09:52:53,723 - root / INFO: Player Killed.
+2023-09-09 09:52:53,742 - root / INFO: Player Killed.
+2023-09-09 09:52:53,763 - root / INFO: Player Killed.
+2023-09-09 09:52:53,782 - root / INFO: Player Killed.
+2023-09-09 09:52:53,803 - root / INFO: Player Killed.
+2023-09-09 09:52:53,824 - root / INFO: Player Killed.
+2023-09-09 09:52:53,844 - root / INFO: Player Killed.
+2023-09-09 09:52:53,864 - root / INFO: Player Killed.
+2023-09-09 09:52:53,882 - root / INFO: Player Killed.
+2023-09-09 09:52:53,904 - root / INFO: Player Killed.
+2023-09-09 09:52:53,924 - root / INFO: Player Killed.
+2023-09-09 09:52:53,942 - root / INFO: Player Killed.
+2023-09-09 09:52:53,961 - root / INFO: Player Killed.
+2023-09-09 09:52:53,983 - root / INFO: Player Killed.
+2023-09-09 09:52:54,006 - root / INFO: Player Killed.
+2023-09-09 09:52:54,024 - root / INFO: Player Killed.
+2023-09-09 09:52:54,044 - root / INFO: Player Killed.
+2023-09-09 09:52:54,064 - root / INFO: Player Killed.
+2023-09-09 09:52:54,083 - root / INFO: Player Killed.
+2023-09-09 09:52:54,103 - root / INFO: Player Killed.
+2023-09-09 09:52:54,119 - root / INFO: Player Killed.
+2023-09-09 09:52:54,137 - root / INFO: Player Killed.
+2023-09-09 09:52:54,158 - root / INFO: Player Killed.
+2023-09-09 09:52:54,178 - root / INFO: Player Killed.
+2023-09-09 09:52:54,198 - root / INFO: Player Killed.
+2023-09-09 09:52:54,219 - root / INFO: Player Killed.
+2023-09-09 09:52:54,239 - root / INFO: Player Killed.
+2023-09-09 09:52:54,259 - root / INFO: Player Killed.
+2023-09-09 09:52:54,279 - root / INFO: Player Killed.
+2023-09-09 09:52:54,299 - root / INFO: Player Killed.
+2023-09-09 09:52:54,318 - root / INFO: Player Killed.
+2023-09-09 09:52:54,337 - root / INFO: Player Killed.
+2023-09-09 09:52:54,357 - root / INFO: Player Killed.
+2023-09-09 09:52:54,370 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1057, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1043, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1015, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 924, in drawDeadScreen
+    demoLevel.restartGame()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 775, in restartGame
+    for enemySprite in spriteGroup:
+                       ^^^^^^^^^^^
+NameError: name 'spriteGroup' is not defined
+
+2023-09-09 09:52:56,896 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 09:52:56,904 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1057, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1043, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1015, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 924, in drawDeadScreen
+    demoLevel.restartGame()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 775, in restartGame
+    for enemySprite in spriteGroup:
+                       ^^^^^^^^^^^
+NameError: name 'spriteGroup' is not defined
+[0m
+2023-09-09 09:53:03,487 - root / INFO:  Loading..
+2023-09-09 09:53:03,492 - root / INFO:  Reading save file..
+2023-09-09 09:53:03,499 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:53:03,504 - root / INFO:  Checking save file requirements..
+2023-09-09 09:53:03,510 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:53:03,518 - root / INFO:  Initallizing..
+2023-09-09 09:53:03,689 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:53:03,699 - root / INFO:  Reading Images..
+2023-09-09 09:53:03,833 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:53:03,842 - root / INFO:  Loading Sounds..
+2023-09-09 09:53:03,896 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:53:03,904 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:53:03,916 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:53:03,925 - root / INFO:  Resetting text object..
+2023-09-09 09:53:05,057 - root / INFO:  Starting..
+2023-09-09 09:53:06,546 - root / INFO: Player Killed.
+2023-09-09 09:53:06,573 - root / INFO: Player Killed.
+2023-09-09 09:53:06,600 - root / INFO: Player Killed.
+2023-09-09 09:53:06,623 - root / INFO: Player Killed.
+2023-09-09 09:53:06,647 - root / INFO: Player Killed.
+2023-09-09 09:53:06,672 - root / INFO: Player Killed.
+2023-09-09 09:53:06,697 - root / INFO: Player Killed.
+2023-09-09 09:53:06,720 - root / INFO: Player Killed.
+2023-09-09 09:53:06,746 - root / INFO: Player Killed.
+2023-09-09 09:53:06,769 - root / INFO: Player Killed.
+2023-09-09 09:53:06,792 - root / INFO: Player Killed.
+2023-09-09 09:53:06,815 - root / INFO: Player Killed.
+2023-09-09 09:53:06,837 - root / INFO: Player Killed.
+2023-09-09 09:53:06,858 - root / INFO: Player Killed.
+2023-09-09 09:53:06,881 - root / INFO: Player Killed.
+2023-09-09 09:53:06,905 - root / INFO: Player Killed.
+2023-09-09 09:53:06,928 - root / INFO: Player Killed.
+2023-09-09 09:53:06,954 - root / INFO: Player Killed.
+2023-09-09 09:53:06,984 - root / INFO: Player Killed.
+2023-09-09 09:53:07,007 - root / INFO: Player Killed.
+2023-09-09 09:53:07,028 - root / INFO: Player Killed.
+2023-09-09 09:53:07,052 - root / INFO: Player Killed.
+2023-09-09 09:53:07,071 - root / INFO: Player Killed.
+2023-09-09 09:53:07,097 - root / INFO: Player Killed.
+2023-09-09 09:53:07,118 - root / INFO: Player Killed.
+2023-09-09 09:53:07,145 - root / INFO: Player Killed.
+2023-09-09 09:53:07,168 - root / INFO: Player Killed.
+2023-09-09 09:53:07,193 - root / INFO: Player Killed.
+2023-09-09 09:53:07,215 - root / INFO: Player Killed.
+2023-09-09 09:53:07,239 - root / INFO: Player Killed.
+2023-09-09 09:53:07,276 - root / INFO: Player Killed.
+2023-09-09 09:53:07,298 - root / INFO: Player Killed.
+2023-09-09 09:53:07,321 - root / INFO: Player Killed.
+2023-09-09 09:53:07,344 - root / INFO: Player Killed.
+2023-09-09 09:53:07,367 - root / INFO: Player Killed.
+2023-09-09 09:53:07,393 - root / INFO: Player Killed.
+2023-09-09 09:53:07,416 - root / INFO: Player Killed.
+2023-09-09 09:53:07,437 - root / INFO: Player Killed.
+2023-09-09 09:53:07,460 - root / INFO: Player Killed.
+2023-09-09 09:53:07,482 - root / INFO: Player Killed.
+2023-09-09 09:53:07,505 - root / INFO: Player Killed.
+2023-09-09 09:53:07,525 - root / INFO: Player Killed.
+2023-09-09 09:53:07,548 - root / INFO: Player Killed.
+2023-09-09 09:53:07,573 - root / INFO: Player Killed.
+2023-09-09 09:53:07,596 - root / INFO: Player Killed.
+2023-09-09 09:53:07,618 - root / INFO: Player Killed.
+2023-09-09 09:53:07,642 - root / INFO: Player Killed.
+2023-09-09 09:53:07,667 - root / INFO: Player Killed.
+2023-09-09 09:53:07,688 - root / INFO: Player Killed.
+2023-09-09 09:53:07,711 - root / INFO: Player Killed.
+2023-09-09 09:53:07,734 - root / INFO: Player Killed.
+2023-09-09 09:53:07,754 - root / INFO: Player Killed.
+2023-09-09 09:53:07,780 - root / INFO: Player Killed.
+2023-09-09 09:53:07,801 - root / INFO: Player Killed.
+2023-09-09 09:53:07,822 - root / INFO: Player Killed.
+2023-09-09 09:53:07,844 - root / INFO: Player Killed.
+2023-09-09 09:53:07,867 - root / INFO: Player Killed.
+2023-09-09 09:53:07,893 - root / INFO: Player Killed.
+2023-09-09 09:53:07,917 - root / INFO: Player Killed.
+2023-09-09 09:53:07,941 - root / INFO: Player Killed.
+2023-09-09 09:53:07,966 - root / INFO: Player Killed.
+2023-09-09 09:53:07,991 - root / INFO: Player Killed.
+2023-09-09 09:53:08,015 - root / INFO: Player Killed.
+2023-09-09 09:53:08,036 - root / INFO: Player Killed.
+2023-09-09 09:53:08,059 - root / INFO: Player Killed.
+2023-09-09 09:53:08,083 - root / INFO: Player Killed.
+2023-09-09 09:53:08,108 - root / INFO: Player Killed.
+2023-09-09 09:53:08,133 - root / INFO: Player Killed.
+2023-09-09 09:53:08,159 - root / INFO: Player Killed.
+2023-09-09 09:53:08,184 - root / INFO: Player Killed.
+2023-09-09 09:53:08,208 - root / INFO: Player Killed.
+2023-09-09 09:53:08,231 - root / INFO: Player Killed.
+2023-09-09 09:53:08,251 - root / INFO: Player Killed.
+2023-09-09 09:53:08,273 - root / INFO: Player Killed.
+2023-09-09 09:53:08,293 - root / INFO: Player Killed.
+2023-09-09 09:53:08,313 - root / INFO: Player Killed.
+2023-09-09 09:53:08,333 - root / INFO: Player Killed.
+2023-09-09 09:53:08,355 - root / INFO: Player Killed.
+2023-09-09 09:53:08,377 - root / INFO: Player Killed.
+2023-09-09 09:53:08,399 - root / INFO: Player Killed.
+2023-09-09 09:53:08,421 - root / INFO: Player Killed.
+2023-09-09 09:53:08,445 - root / INFO: Player Killed.
+2023-09-09 09:53:08,468 - root / INFO: Player Killed.
+2023-09-09 09:53:08,490 - root / INFO: Player Killed.
+2023-09-09 09:53:08,511 - root / INFO: Player Killed.
+2023-09-09 09:53:08,533 - root / INFO: Player Killed.
+2023-09-09 09:53:08,552 - root / INFO: Player Killed.
+2023-09-09 09:53:08,577 - root / INFO: Player Killed.
+2023-09-09 09:53:08,600 - root / INFO: Player Killed.
+2023-09-09 09:53:08,621 - root / INFO: Player Killed.
+2023-09-09 09:53:08,642 - root / INFO: Player Killed.
+2023-09-09 09:53:08,664 - root / INFO: Player Killed.
+2023-09-09 09:53:08,685 - root / INFO: Player Killed.
+2023-09-09 09:53:08,706 - root / INFO: Player Killed.
+2023-09-09 09:53:08,726 - root / INFO: Player Killed.
+2023-09-09 09:53:08,746 - root / INFO: Player Killed.
+2023-09-09 09:53:08,769 - root / INFO: Player Killed.
+2023-09-09 09:53:08,792 - root / INFO: Player Killed.
+2023-09-09 09:53:08,819 - root / INFO: Player Killed.
+2023-09-09 09:53:08,845 - root / INFO: Player Killed.
+2023-09-09 09:53:08,869 - root / INFO: Player Killed.
+2023-09-09 09:53:08,894 - root / INFO: Player Killed.
+2023-09-09 09:53:08,918 - root / INFO: Player Killed.
+2023-09-09 09:53:08,939 - root / INFO: Player Killed.
+2023-09-09 09:53:08,962 - root / INFO: Player Killed.
+2023-09-09 09:53:08,984 - root / INFO: Player Killed.
+2023-09-09 09:53:09,008 - root / INFO: Player Killed.
+2023-09-09 09:53:09,031 - root / INFO: Player Killed.
+2023-09-09 09:53:09,056 - root / INFO: Player Killed.
+2023-09-09 09:53:09,085 - root / INFO: Player Killed.
+2023-09-09 09:53:09,108 - root / INFO: Player Killed.
+2023-09-09 09:53:09,132 - root / INFO: Player Killed.
+2023-09-09 09:53:09,156 - root / INFO: Player Killed.
+2023-09-09 09:53:09,179 - root / INFO: Player Killed.
+2023-09-09 09:53:09,203 - root / INFO: Player Killed.
+2023-09-09 09:53:09,227 - root / INFO: Player Killed.
+2023-09-09 09:53:09,251 - root / INFO: Player Killed.
+2023-09-09 09:53:09,274 - root / INFO: Player Killed.
+2023-09-09 09:53:09,300 - root / INFO: Player Killed.
+2023-09-09 09:53:09,322 - root / INFO: Player Killed.
+2023-09-09 09:53:09,352 - root / INFO: Player Killed.
+2023-09-09 09:53:09,378 - root / INFO: Player Killed.
+2023-09-09 09:53:09,402 - root / INFO: Player Killed.
+2023-09-09 09:53:09,425 - root / INFO: Player Killed.
+2023-09-09 09:53:09,449 - root / INFO: Player Killed.
+2023-09-09 09:53:09,471 - root / INFO: Player Killed.
+2023-09-09 09:53:09,495 - root / INFO: Player Killed.
+2023-09-09 09:53:09,518 - root / INFO: Player Killed.
+2023-09-09 09:53:09,541 - root / INFO: Player Killed.
+2023-09-09 09:53:09,563 - root / INFO: Player Killed.
+2023-09-09 09:53:09,587 - root / INFO: Player Killed.
+2023-09-09 09:53:09,611 - root / INFO: Player Killed.
+2023-09-09 09:53:09,635 - root / INFO: Player Killed.
+2023-09-09 09:53:09,659 - root / INFO: Player Killed.
+2023-09-09 09:53:09,684 - root / INFO: Player Killed.
+2023-09-09 09:53:09,708 - root / INFO: Player Killed.
+2023-09-09 09:53:09,732 - root / INFO: Player Killed.
+2023-09-09 09:53:09,755 - root / INFO: Player Killed.
+2023-09-09 09:53:09,776 - root / INFO: Player Killed.
+2023-09-09 09:53:09,798 - root / INFO: Player Killed.
+2023-09-09 09:53:09,823 - root / INFO: Player Killed.
+2023-09-09 09:53:09,846 - root / INFO: Player Killed.
+2023-09-09 09:53:09,869 - root / INFO: Player Killed.
+2023-09-09 09:53:09,893 - root / INFO: Player Killed.
+2023-09-09 09:53:09,915 - root / INFO: Player Killed.
+2023-09-09 09:53:09,941 - root / INFO: Player Killed.
+2023-09-09 09:53:09,962 - root / INFO: Player Killed.
+2023-09-09 09:53:09,985 - root / INFO: Player Killed.
+2023-09-09 09:53:10,006 - root / INFO: Player Killed.
+2023-09-09 09:53:10,028 - root / INFO: Player Killed.
+2023-09-09 09:53:10,048 - root / INFO: Player Killed.
+2023-09-09 09:53:10,069 - root / INFO: Player Killed.
+2023-09-09 09:53:10,091 - root / INFO: Player Killed.
+2023-09-09 09:53:10,112 - root / INFO: Player Killed.
+2023-09-09 09:53:10,133 - root / INFO: Player Killed.
+2023-09-09 09:53:10,154 - root / INFO: Player Killed.
+2023-09-09 09:53:10,173 - root / INFO: Player Killed.
+2023-09-09 09:53:10,194 - root / INFO: Player Killed.
+2023-09-09 09:53:10,216 - root / INFO: Player Killed.
+2023-09-09 09:53:10,237 - root / INFO: Player Killed.
+2023-09-09 09:53:10,258 - root / INFO: Player Killed.
+2023-09-09 09:53:10,279 - root / INFO: Player Killed.
+2023-09-09 09:53:10,302 - root / INFO: Player Killed.
+2023-09-09 09:53:10,324 - root / INFO: Player Killed.
+2023-09-09 09:53:10,345 - root / INFO: Player Killed.
+2023-09-09 09:53:10,366 - root / INFO: Player Killed.
+2023-09-09 09:53:10,391 - root / INFO: Player Killed.
+2023-09-09 09:53:10,412 - root / INFO: Player Killed.
+2023-09-09 09:53:10,433 - root / INFO: Player Killed.
+2023-09-09 09:53:10,454 - root / INFO: Player Killed.
+2023-09-09 09:53:10,475 - root / INFO: Player Killed.
+2023-09-09 09:53:10,498 - root / INFO: Player Killed.
+2023-09-09 09:53:10,520 - root / INFO: Player Killed.
+2023-09-09 09:53:10,543 - root / INFO: Player Killed.
+2023-09-09 09:53:10,567 - root / INFO: Player Killed.
+2023-09-09 09:53:10,592 - root / INFO: Player Killed.
+2023-09-09 09:53:10,614 - root / INFO: Player Killed.
+2023-09-09 09:53:10,635 - root / INFO: Player Killed.
+2023-09-09 09:53:10,657 - root / INFO: Player Killed.
+2023-09-09 09:53:10,681 - root / INFO: Player Killed.
+2023-09-09 09:53:10,703 - root / INFO: Player Killed.
+2023-09-09 09:53:10,725 - root / INFO: Player Killed.
+2023-09-09 09:53:10,748 - root / INFO: Player Killed.
+2023-09-09 09:53:10,771 - root / INFO: Player Killed.
+2023-09-09 09:53:10,792 - root / INFO: Player Killed.
+2023-09-09 09:53:10,815 - root / INFO: Player Killed.
+2023-09-09 09:53:10,835 - root / INFO: Player Killed.
+2023-09-09 09:53:10,855 - root / INFO: Player Killed.
+2023-09-09 09:53:10,876 - root / INFO: Player Killed.
+2023-09-09 09:53:10,899 - root / INFO: Player Killed.
+2023-09-09 09:53:10,919 - root / INFO: Player Killed.
+2023-09-09 09:53:10,939 - root / INFO: Player Killed.
+2023-09-09 09:53:10,961 - root / INFO: Player Killed.
+2023-09-09 09:53:10,981 - root / INFO: Player Killed.
+2023-09-09 09:53:11,002 - root / INFO: Player Killed.
+2023-09-09 09:53:11,024 - root / INFO: Player Killed.
+2023-09-09 09:53:11,046 - root / INFO: Player Killed.
+2023-09-09 09:53:11,066 - root / INFO: Player Killed.
+2023-09-09 09:53:11,089 - root / INFO: Player Killed.
+2023-09-09 09:53:11,119 - root / INFO: Player Killed.
+2023-09-09 09:53:11,142 - root / INFO: Player Killed.
+2023-09-09 09:53:11,163 - root / INFO: Player Killed.
+2023-09-09 09:53:11,184 - root / INFO: Player Killed.
+2023-09-09 09:53:11,206 - root / INFO: Player Killed.
+2023-09-09 09:53:11,227 - root / INFO: Player Killed.
+2023-09-09 09:53:11,249 - root / INFO: Player Killed.
+2023-09-09 09:53:11,273 - root / INFO: Player Killed.
+2023-09-09 09:53:11,293 - root / INFO: Player Killed.
+2023-09-09 09:53:11,314 - root / INFO: Player Killed.
+2023-09-09 09:53:11,336 - root / INFO: Player Killed.
+2023-09-09 09:53:11,357 - root / INFO: Player Killed.
+2023-09-09 09:53:11,379 - root / INFO: Player Killed.
+2023-09-09 09:56:54,191 - root / INFO:  Loading..
+2023-09-09 09:56:54,193 - root / INFO:  Reading save file..
+2023-09-09 09:56:54,195 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:56:54,198 - root / INFO:  Checking save file requirements..
+2023-09-09 09:56:54,201 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:56:54,204 - root / INFO:  Initallizing..
+2023-09-09 09:56:54,414 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:56:54,454 - root / INFO:  Reading Images..
+2023-09-09 09:56:54,577 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:56:54,583 - root / INFO:  Loading Sounds..
+2023-09-09 09:56:54,664 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:56:54,707 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:56:54,715 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:56:54,720 - root / INFO:  Resetting text object..
+2023-09-09 09:56:54,779 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 09:56:54,783 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 09:56:54,784 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 09:56:54,787 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 09:56:54,789 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 09:56:54,790 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 09:56:54,793 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 09:56:54,795 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 09:56:54,796 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 09:56:54,798 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 09:56:54,800 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 09:56:54,804 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 09:56:54,806 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 09:56:54,807 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 09:56:54,809 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 09:56:54,810 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 09:56:54,814 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 09:56:54,816 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 09:56:54,823 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 09:56:54,828 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 09:56:54,837 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 09:56:54,843 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 09:56:54,849 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 09:56:54,855 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 09:56:54,861 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 09:56:54,868 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 09:56:54,873 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 09:56:54,881 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 09:56:54,886 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 09:56:54,891 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 09:57:00,078 - root / INFO:  Starting..
+2023-09-09 09:57:01,986 - root / DEBUG: Killed Enemy: 1, 29
+2023-09-09 09:57:03,265 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:03,274 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:03,294 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:03,305 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:03,326 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:03,339 - root / DEBUG: Enemy: <bound method AbstractGroup.sprites of <Group(29 sprites)>>
+2023-09-09 09:57:04,066 - root / DEBUG: Killed Enemy: 2, 28
+2023-09-09 09:57:04,707 - root / INFO: Player Killed.
+2023-09-09 09:57:04,763 - root / DEBUG: Killed Enemy: 3, 27
+2023-09-09 09:57:04,781 - root / INFO: Player Killed.
+2023-09-09 09:57:04,814 - root / INFO: Player Killed.
+2023-09-09 09:57:04,846 - root / INFO: Player Killed.
+2023-09-09 09:57:04,875 - root / INFO: Player Killed.
+2023-09-09 09:57:04,902 - root / INFO: Player Killed.
+2023-09-09 09:57:04,929 - root / INFO: Player Killed.
+2023-09-09 09:57:04,955 - root / INFO: Player Killed.
+2023-09-09 09:57:04,982 - root / INFO: Player Killed.
+2023-09-09 09:57:05,008 - root / INFO: Player Killed.
+2023-09-09 09:57:05,032 - root / INFO: Player Killed.
+2023-09-09 09:57:05,057 - root / INFO: Player Killed.
+2023-09-09 09:57:05,081 - root / INFO: Player Killed.
+2023-09-09 09:57:05,109 - root / INFO: Player Killed.
+2023-09-09 09:57:05,138 - root / INFO: Player Killed.
+2023-09-09 09:57:05,168 - root / INFO: Player Killed.
+2023-09-09 09:57:05,199 - root / INFO: Player Killed.
+2023-09-09 09:57:05,229 - root / INFO: Player Killed.
+2023-09-09 09:57:05,254 - root / INFO: Player Killed.
+2023-09-09 09:57:05,282 - root / INFO: Player Killed.
+2023-09-09 09:57:05,309 - root / INFO: Player Killed.
+2023-09-09 09:57:05,335 - root / INFO: Player Killed.
+2023-09-09 09:57:05,367 - root / INFO: Player Killed.
+2023-09-09 09:57:05,397 - root / INFO: Player Killed.
+2023-09-09 09:57:05,427 - root / INFO: Player Killed.
+2023-09-09 09:57:05,456 - root / INFO: Player Killed.
+2023-09-09 09:57:05,486 - root / INFO: Player Killed.
+2023-09-09 09:57:05,513 - root / INFO: Player Killed.
+2023-09-09 09:57:05,544 - root / INFO: Player Killed.
+2023-09-09 09:57:05,569 - root / INFO: Player Killed.
+2023-09-09 09:57:05,594 - root / INFO: Player Killed.
+2023-09-09 09:57:05,619 - root / INFO: Player Killed.
+2023-09-09 09:57:05,647 - root / INFO: Player Killed.
+2023-09-09 09:57:05,670 - root / INFO: Player Killed.
+2023-09-09 09:57:05,696 - root / INFO: Player Killed.
+2023-09-09 09:57:05,722 - root / INFO: Player Killed.
+2023-09-09 09:57:05,750 - root / INFO: Player Killed.
+2023-09-09 09:57:05,779 - root / INFO: Player Killed.
+2023-09-09 09:57:05,807 - root / INFO: Player Killed.
+2023-09-09 09:57:05,832 - root / INFO: Player Killed.
+2023-09-09 09:57:05,858 - root / INFO: Player Killed.
+2023-09-09 09:57:05,883 - root / INFO: Player Killed.
+2023-09-09 09:57:05,910 - root / INFO: Player Killed.
+2023-09-09 09:57:05,936 - root / INFO: Player Killed.
+2023-09-09 09:57:05,961 - root / INFO: Player Killed.
+2023-09-09 09:57:05,981 - root / INFO: Player Killed.
+2023-09-09 09:57:06,003 - root / INFO: Player Killed.
+2023-09-09 09:57:06,026 - root / INFO: Player Killed.
+2023-09-09 09:57:06,049 - root / INFO: Player Killed.
+2023-09-09 09:57:06,072 - root / INFO: Player Killed.
+2023-09-09 09:57:06,094 - root / INFO: Player Killed.
+2023-09-09 09:57:06,118 - root / INFO: Player Killed.
+2023-09-09 09:57:06,140 - root / INFO: Player Killed.
+2023-09-09 09:57:06,170 - root / INFO: Player Killed.
+2023-09-09 09:57:06,192 - root / INFO: Player Killed.
+2023-09-09 09:57:06,216 - root / INFO: Player Killed.
+2023-09-09 09:57:06,243 - root / INFO: Player Killed.
+2023-09-09 09:57:06,269 - root / INFO: Player Killed.
+2023-09-09 09:57:06,292 - root / INFO: Player Killed.
+2023-09-09 09:57:06,319 - root / INFO: Player Killed.
+2023-09-09 09:57:06,343 - root / INFO: Player Killed.
+2023-09-09 09:57:06,368 - root / INFO: Player Killed.
+2023-09-09 09:57:06,391 - root / INFO: Player Killed.
+2023-09-09 09:57:06,416 - root / INFO: Player Killed.
+2023-09-09 09:57:06,439 - root / INFO: Player Killed.
+2023-09-09 09:57:06,466 - root / INFO: Player Killed.
+2023-09-09 09:57:06,488 - root / INFO: Player Killed.
+2023-09-09 09:57:06,510 - root / INFO: Player Killed.
+2023-09-09 09:57:06,533 - root / INFO: Player Killed.
+2023-09-09 09:57:06,554 - root / INFO: Player Killed.
+2023-09-09 09:57:06,580 - root / INFO: Player Killed.
+2023-09-09 09:57:06,603 - root / INFO: Player Killed.
+2023-09-09 09:57:06,624 - root / INFO: Player Killed.
+2023-09-09 09:57:06,647 - root / INFO: Player Killed.
+2023-09-09 09:57:06,672 - root / INFO: Player Killed.
+2023-09-09 09:57:06,697 - root / INFO: Player Killed.
+2023-09-09 09:57:06,722 - root / INFO: Player Killed.
+2023-09-09 09:57:06,746 - root / INFO: Player Killed.
+2023-09-09 09:57:06,768 - root / INFO: Player Killed.
+2023-09-09 09:57:06,794 - root / INFO: Player Killed.
+2023-09-09 09:57:06,819 - root / INFO: Player Killed.
+2023-09-09 09:57:06,840 - root / INFO: Player Killed.
+2023-09-09 09:57:06,860 - root / INFO: Player Killed.
+2023-09-09 09:57:06,884 - root / INFO: Player Killed.
+2023-09-09 09:57:06,905 - root / INFO: Player Killed.
+2023-09-09 09:57:06,928 - root / INFO: Player Killed.
+2023-09-09 09:57:06,955 - root / INFO: Player Killed.
+2023-09-09 09:57:06,980 - root / INFO: Player Killed.
+2023-09-09 09:57:07,006 - root / INFO: Player Killed.
+2023-09-09 09:57:07,035 - root / INFO: Player Killed.
+2023-09-09 09:57:07,060 - root / INFO: Player Killed.
+2023-09-09 09:57:07,083 - root / INFO: Player Killed.
+2023-09-09 09:57:07,111 - root / INFO: Player Killed.
+2023-09-09 09:57:07,145 - root / INFO: Player Killed.
+2023-09-09 09:57:07,174 - root / INFO: Player Killed.
+2023-09-09 09:57:07,197 - root / INFO: Player Killed.
+2023-09-09 09:57:07,219 - root / INFO: Player Killed.
+2023-09-09 09:57:07,240 - root / INFO: Player Killed.
+2023-09-09 09:57:07,262 - root / INFO: Player Killed.
+2023-09-09 09:57:07,291 - root / INFO: Player Killed.
+2023-09-09 09:57:07,323 - root / INFO: Player Killed.
+2023-09-09 09:57:07,348 - root / INFO: Player Killed.
+2023-09-09 09:57:07,372 - root / INFO: Player Killed.
+2023-09-09 09:57:07,394 - root / INFO: Player Killed.
+2023-09-09 09:57:07,416 - root / INFO: Player Killed.
+2023-09-09 09:57:07,437 - root / INFO: Player Killed.
+2023-09-09 09:57:07,459 - root / INFO: Player Killed.
+2023-09-09 09:57:07,483 - root / INFO: Player Killed.
+2023-09-09 09:57:07,505 - root / INFO: Player Killed.
+2023-09-09 09:57:07,531 - root / INFO: Player Killed.
+2023-09-09 09:57:07,555 - root / INFO: Player Killed.
+2023-09-09 09:57:07,579 - root / INFO: Player Killed.
+2023-09-09 09:57:07,674 - root / INFO: Saving..
+2023-09-09 09:57:07,695 - root / INFO: [92m Saved.[0m
+2023-09-09 09:57:51,256 - root / INFO:  Loading..
+2023-09-09 09:57:51,258 - root / INFO:  Reading save file..
+2023-09-09 09:57:51,260 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:57:51,262 - root / INFO:  Checking save file requirements..
+2023-09-09 09:57:51,266 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:57:51,269 - root / INFO:  Initallizing..
+2023-09-09 09:57:51,528 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:57:51,534 - root / INFO:  Reading Images..
+2023-09-09 09:57:51,689 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:57:51,691 - root / INFO:  Loading Sounds..
+2023-09-09 09:57:51,784 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:57:51,809 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:57:51,819 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:57:51,823 - root / INFO:  Resetting text object..
+2023-09-09 09:57:51,893 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 09:57:51,943 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 09:57:51,945 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 09:57:51,947 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 09:57:51,949 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 09:57:51,951 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 09:57:51,955 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 09:57:51,957 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 09:57:51,959 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 09:57:51,963 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 09:57:51,966 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 09:57:51,969 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 09:57:51,971 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 09:57:51,975 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 09:57:51,978 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 09:57:51,980 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 09:57:51,983 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 09:57:51,990 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 09:57:51,998 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 09:57:52,010 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 09:57:52,021 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 09:57:52,031 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 09:57:52,042 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 09:57:52,049 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 09:57:52,060 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 09:57:52,068 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 09:57:52,076 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 09:57:52,084 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 09:57:52,090 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 09:57:52,097 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 09:57:53,146 - root / INFO:  Starting..
+2023-09-09 09:57:54,086 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:54,176 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:54,223 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:54,263 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:54,320 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:54,376 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:57:55,224 - root / DEBUG: Killed Enemy: 1, 29
+2023-09-09 09:57:55,569 - root / DEBUG: Killed Enemy: 2, 28
+2023-09-09 09:57:56,909 - root / DEBUG: Killed Enemy: 3, 27
+2023-09-09 09:57:59,570 - root / DEBUG: Killed Enemy: 4, 26
+2023-09-09 09:58:00,090 - root / DEBUG: Killed Enemy: 5, 25
+2023-09-09 09:58:01,590 - root / DEBUG: Killed Enemy: 6, 24
+2023-09-09 09:58:31,833 - root / INFO: Player Killed.
+2023-09-09 09:58:33,625 - root / INFO: Player Killed.
+2023-09-09 09:58:33,683 - root / INFO: Player Killed.
+2023-09-09 09:58:33,744 - root / INFO: Player Killed.
+2023-09-09 09:58:33,801 - root / INFO: Player Killed.
+2023-09-09 09:58:33,859 - root / INFO: Player Killed.
+2023-09-09 09:58:33,907 - root / INFO: Player Killed.
+2023-09-09 09:58:33,946 - root / INFO: Player Killed.
+2023-09-09 09:58:33,984 - root / INFO: Player Killed.
+2023-09-09 09:58:34,021 - root / INFO: Player Killed.
+2023-09-09 09:58:34,066 - root / INFO: Player Killed.
+2023-09-09 09:58:34,108 - root / INFO: Player Killed.
+2023-09-09 09:58:34,151 - root / INFO: Player Killed.
+2023-09-09 09:58:34,194 - root / INFO: Player Killed.
+2023-09-09 09:58:34,238 - root / INFO: Player Killed.
+2023-09-09 09:58:34,267 - root / INFO: Player Killed.
+2023-09-09 09:58:34,301 - root / INFO: Player Killed.
+2023-09-09 09:58:34,337 - root / INFO: Player Killed.
+2023-09-09 09:58:34,379 - root / INFO: Player Killed.
+2023-09-09 09:58:34,415 - root / INFO: Player Killed.
+2023-09-09 09:58:34,449 - root / INFO: Player Killed.
+2023-09-09 09:58:34,487 - root / INFO: Player Killed.
+2023-09-09 09:58:34,528 - root / INFO: Player Killed.
+2023-09-09 09:58:34,568 - root / INFO: Player Killed.
+2023-09-09 09:58:34,597 - root / INFO: Player Killed.
+2023-09-09 09:58:34,626 - root / INFO: Player Killed.
+2023-09-09 09:58:34,656 - root / INFO: Player Killed.
+2023-09-09 09:58:34,689 - root / INFO: Player Killed.
+2023-09-09 09:58:34,722 - root / INFO: Player Killed.
+2023-09-09 09:58:34,757 - root / INFO: Player Killed.
+2023-09-09 09:58:34,793 - root / INFO: Player Killed.
+2023-09-09 09:58:34,828 - root / INFO: Player Killed.
+2023-09-09 09:58:34,860 - root / INFO: Player Killed.
+2023-09-09 09:58:34,880 - root / INFO: Player Killed.
+2023-09-09 09:58:34,902 - root / INFO: Player Killed.
+2023-09-09 09:58:34,924 - root / INFO: Player Killed.
+2023-09-09 09:58:34,945 - root / INFO: Player Killed.
+2023-09-09 09:58:34,969 - root / INFO: Player Killed.
+2023-09-09 09:58:34,990 - root / INFO: Player Killed.
+2023-09-09 09:58:35,011 - root / INFO: Player Killed.
+2023-09-09 09:58:35,033 - root / INFO: Player Killed.
+2023-09-09 09:58:35,054 - root / INFO: Player Killed.
+2023-09-09 09:58:35,079 - root / INFO: Player Killed.
+2023-09-09 09:58:35,102 - root / INFO: Player Killed.
+2023-09-09 09:58:35,123 - root / INFO: Player Killed.
+2023-09-09 09:58:35,144 - root / INFO: Player Killed.
+2023-09-09 09:58:35,163 - root / INFO: Player Killed.
+2023-09-09 09:58:35,188 - root / INFO: Player Killed.
+2023-09-09 09:58:35,209 - root / INFO: Player Killed.
+2023-09-09 09:58:35,232 - root / INFO: Player Killed.
+2023-09-09 09:59:14,658 - root / INFO:  Loading..
+2023-09-09 09:59:14,660 - root / INFO:  Reading save file..
+2023-09-09 09:59:14,662 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:14,666 - root / INFO:  Checking save file requirements..
+2023-09-09 09:59:14,670 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:59:14,674 - root / INFO:  Initallizing..
+2023-09-09 09:59:14,920 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:59:14,933 - root / INFO:  Reading Images..
+2023-09-09 09:59:15,088 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:59:15,091 - root / INFO:  Loading Sounds..
+2023-09-09 09:59:15,156 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:15,212 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:59:15,217 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:15,221 - root / INFO:  Resetting text object..
+2023-09-09 09:59:15,268 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 09:59:15,274 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 09:59:15,277 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 09:59:15,281 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 09:59:15,284 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 09:59:15,287 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 09:59:15,293 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 09:59:15,296 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 09:59:15,299 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 09:59:15,305 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 09:59:15,309 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 09:59:15,312 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 09:59:15,315 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 09:59:15,320 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 09:59:15,325 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 09:59:15,327 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 09:59:15,329 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 09:59:15,334 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 09:59:15,343 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 09:59:15,351 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 09:59:15,360 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 09:59:15,369 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 09:59:15,377 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 09:59:15,386 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 09:59:15,394 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 09:59:15,403 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 09:59:15,409 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 09:59:15,418 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 09:59:15,424 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 09:59:15,436 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 09:59:15,567 - root / INFO:  Starting..
+2023-09-09 09:59:16,649 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:16,717 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:16,772 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:16,821 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:21,818 - root / INFO: Saving..
+2023-09-09 09:59:21,874 - root / INFO: [92m Saved.[0m
+2023-09-09 09:59:38,253 - root / INFO:  Loading..
+2023-09-09 09:59:38,255 - root / INFO:  Reading save file..
+2023-09-09 09:59:38,257 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:38,259 - root / INFO:  Checking save file requirements..
+2023-09-09 09:59:38,263 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:59:38,265 - root / INFO:  Initallizing..
+2023-09-09 09:59:38,472 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:59:38,512 - root / INFO:  Reading Images..
+2023-09-09 09:59:38,656 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:59:38,658 - root / INFO:  Loading Sounds..
+2023-09-09 09:59:38,717 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:38,779 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:59:38,785 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:59:38,787 - root / INFO:  Resetting text object..
+2023-09-09 09:59:38,818 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 09:59:38,820 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 09:59:38,824 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 09:59:38,828 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 09:59:38,830 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 09:59:38,833 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 09:59:38,835 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 09:59:38,837 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 09:59:38,841 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 09:59:38,845 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 09:59:38,847 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 09:59:38,849 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 09:59:38,852 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 09:59:38,854 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 09:59:38,858 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 09:59:38,861 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 09:59:38,863 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 09:59:38,865 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 09:59:38,874 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 09:59:38,881 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 09:59:38,889 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 09:59:38,897 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 09:59:38,902 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 09:59:38,911 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 09:59:38,917 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 09:59:38,926 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 09:59:38,931 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 09:59:38,940 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 09:59:38,946 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 09:59:38,953 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 09:59:40,874 - root / INFO:  Starting..
+2023-09-09 09:59:41,775 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:41,804 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:41,857 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
+2023-09-09 09:59:41,911 - root / DEBUG: Enemy: [<Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>, <Enemy Sprite(in 2 groups)>]
