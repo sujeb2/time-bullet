@@ -3,7 +3,7 @@
 
 ## 📚  |  프로젝트 정보
  - 사용한 파이썬 버전: Python 3.11.3 (64bit)
- - 사용한 모듈: tkinter, pygame, pytmx, jsonschema, ffpyplayer, pymediainfo
+ - 사용한 모듈: tkinter, pygame, pytmx, jsonschema
  - For 2023 ERICA Game Jam
  - 빌드된 환경: Visual Studio Code (July 2023 1.81 Update), Python 3.11.3 (64bit)
 
