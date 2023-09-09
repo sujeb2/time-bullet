@@ -486,3 +486,371 @@ pygame.error: Unrecognized audio format
     defaultFont = pygame.font.Font("./src/font/PretendardVariable.ttf", 30)
 pygame.error: font not initialized
 
+2023-09-08 17:09:09,565 - root / INFO:  Loading..
+2023-09-08 17:09:09,565 - root / INFO:  Reading save file..
+2023-09-08 17:09:09,570 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,570 - root / INFO:  Checking save file requirements..
+2023-09-08 17:09:09,574 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:09:09,575 - root / INFO:  Initallizing..
+2023-09-08 17:09:09,722 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:09:09,722 - root / INFO:  Reading Images..
+2023-09-08 17:09:09,869 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:09:09,869 - root / INFO:  Loading Sounds..
+2023-09-08 17:09:09,973 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,974 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:09:09,986 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:09:09,987 - root / INFO:  Resetting text object..
+2023-09-08 17:09:12,727 - root / INFO:  Starting..
+2023-09-08 17:09:21,605 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:22,052 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:22,509 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:32,704 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,122 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,509 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:33,900 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:34,288 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:34,689 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,069 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,466 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:35,849 - root / INFO:  ReAdding Mana..
+2023-09-08 17:09:46,123 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1062, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1048, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 970, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-08 17:09:49,527 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-08 17:09:49,528 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1062, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1048, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 970, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-08 17:12:49,694 - root / INFO:  Loading..
+2023-09-08 17:12:49,695 - root / INFO:  Reading save file..
+2023-09-08 17:12:49,697 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:49,703 - root / INFO:  Checking save file requirements..
+2023-09-08 17:12:49,705 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:12:49,707 - root / INFO:  Initallizing..
+2023-09-08 17:12:49,855 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:12:49,859 - root / INFO:  Reading Images..
+2023-09-08 17:12:49,963 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:12:49,983 - root / INFO:  Loading Sounds..
+2023-09-08 17:12:50,051 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:50,107 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:12:50,111 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:12:50,113 - root / INFO:  Resetting text object..
+2023-09-08 17:12:52,281 - root / INFO:  Starting..
+2023-09-08 17:12:59,493 - root / INFO: Saving..
+2023-09-08 17:12:59,503 - root / INFO: [92m Saved.[0m
+2023-09-08 17:16:07,015 - root / INFO:  Loading..
+2023-09-08 17:16:07,017 - root / INFO:  Reading save file..
+2023-09-08 17:16:07,025 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:07,037 - root / INFO:  Checking save file requirements..
+2023-09-08 17:16:07,041 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:16:07,044 - root / INFO:  Initallizing..
+2023-09-08 17:16:07,431 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:16:07,434 - root / INFO:  Reading Images..
+2023-09-08 17:16:07,910 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:16:07,912 - root / INFO:  Loading Sounds..
+2023-09-08 17:16:08,112 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:08,161 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:16:08,175 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:16:08,177 - root / INFO:  Resetting text object..
+2023-09-08 17:16:13,822 - root / INFO:  Starting..
+2023-09-08 17:16:20,038 - root / INFO:  Starting..
+2023-09-08 17:16:34,683 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 927, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-08 17:16:37,146 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-08 17:16:37,173 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 927, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-08 17:17:52,162 - root / INFO:  Loading..
+2023-09-08 17:17:52,164 - root / INFO:  Reading save file..
+2023-09-08 17:17:52,169 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,171 - root / INFO:  Checking save file requirements..
+2023-09-08 17:17:52,173 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-08 17:17:52,175 - root / INFO:  Initallizing..
+2023-09-08 17:17:52,306 - root / INFO: [92mInitallized.[0m
+2023-09-08 17:17:52,307 - root / INFO:  Reading Images..
+2023-09-08 17:17:52,441 - root / INFO: [92mLoaded.[0m
+2023-09-08 17:17:52,444 - root / INFO:  Loading Sounds..
+2023-09-08 17:17:52,524 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,568 - root / INFO:  Resetting Font/Title..
+2023-09-08 17:17:52,576 - root / INFO: [92m Loaded.[0m
+2023-09-08 17:17:52,578 - root / INFO:  Resetting text object..
+2023-09-09 08:37:01,731 - root / INFO:  Loading..
+2023-09-09 08:37:01,733 - root / INFO:  Reading save file..
+2023-09-09 08:37:01,739 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:01,746 - root / INFO:  Checking save file requirements..
+2023-09-09 08:37:01,747 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:37:01,749 - root / INFO:  Initallizing..
+2023-09-09 08:37:02,149 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:37:02,151 - root / INFO:  Reading Images..
+2023-09-09 08:37:02,284 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:37:02,287 - root / INFO:  Loading Sounds..
+2023-09-09 08:37:02,821 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:02,823 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:37:02,838 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:02,840 - root / INFO:  Resetting text object..
+2023-09-09 08:37:38,889 - root / INFO:  Loading..
+2023-09-09 08:37:38,896 - root / INFO:  Reading save file..
+2023-09-09 08:37:38,910 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:38,914 - root / INFO:  Checking save file requirements..
+2023-09-09 08:37:38,919 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:37:38,922 - root / INFO:  Initallizing..
+2023-09-09 08:37:39,051 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:37:39,054 - root / INFO:  Reading Images..
+2023-09-09 08:37:39,160 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:37:39,180 - root / INFO:  Loading Sounds..
+2023-09-09 08:37:39,250 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:39,311 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:37:39,337 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:37:39,343 - root / INFO:  Resetting text object..
+2023-09-09 08:37:43,197 - root / INFO:  Starting..
+2023-09-09 08:37:45,841 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 931, in drawDeadScreen
+    restartGame()
+    ^^^^^^^^^^^
+NameError: name 'restartGame' is not defined
+
+2023-09-09 08:37:48,031 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:37:48,054 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1022, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 931, in drawDeadScreen
+    restartGame()
+    ^^^^^^^^^^^
+NameError: name 'restartGame' is not defined
+[0m
+2023-09-09 08:38:09,454 - root / INFO:  Loading..
+2023-09-09 08:38:09,466 - root / INFO:  Reading save file..
+2023-09-09 08:38:09,479 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,491 - root / INFO:  Checking save file requirements..
+2023-09-09 08:38:09,501 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:38:09,513 - root / INFO:  Initallizing..
+2023-09-09 08:38:09,646 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:38:09,657 - root / INFO:  Reading Images..
+2023-09-09 08:38:09,768 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:38:09,799 - root / INFO:  Loading Sounds..
+2023-09-09 08:38:09,850 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,861 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:38:09,873 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:38:09,883 - root / INFO:  Resetting text object..
+2023-09-09 08:38:10,710 - root / INFO:  Starting..
+2023-09-09 08:38:23,798 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 08:38:25,100 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:38:25,138 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1064, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1050, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 971, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 08:40:38,792 - root / INFO:  Loading..
+2023-09-09 08:40:38,807 - root / INFO:  Reading save file..
+2023-09-09 08:40:38,818 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:38,831 - root / INFO:  Checking save file requirements..
+2023-09-09 08:40:38,845 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 08:40:38,855 - root / INFO:  Initallizing..
+2023-09-09 08:40:39,003 - root / INFO: [92mInitallized.[0m
+2023-09-09 08:40:39,017 - root / INFO:  Reading Images..
+2023-09-09 08:40:39,130 - root / INFO: [92mLoaded.[0m
+2023-09-09 08:40:39,167 - root / INFO:  Loading Sounds..
+2023-09-09 08:40:39,223 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:39,236 - root / INFO:  Resetting Font/Title..
+2023-09-09 08:40:39,253 - root / INFO: [92m Loaded.[0m
+2023-09-09 08:40:39,263 - root / INFO:  Resetting text object..
+2023-09-09 08:40:40,782 - root / INFO:  Starting..
+2023-09-09 08:40:55,353 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 973, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 08:41:03,401 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 08:41:03,428 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 973, in gameDemo
+    playerGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 09:37:29,613 - root / INFO:  Loading..
+2023-09-09 09:37:29,615 - root / INFO:  Reading save file..
+2023-09-09 09:37:29,617 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:29,627 - root / INFO:  Checking save file requirements..
+2023-09-09 09:37:29,630 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:37:29,634 - root / INFO:  Initallizing..
+2023-09-09 09:37:29,860 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:37:29,886 - root / INFO:  Reading Images..
+2023-09-09 09:37:30,050 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:37:30,054 - root / INFO:  Loading Sounds..
+2023-09-09 09:37:30,252 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:30,304 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:37:30,312 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:37:30,315 - root / INFO:  Resetting text object..
+2023-09-09 09:37:32,019 - root / INFO:  Starting..
+2023-09-09 09:37:58,405 - root / INFO:  Starting..
+2023-09-09 09:38:01,241 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1023, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 928, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 972, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+
+2023-09-09 09:38:08,162 - root / CRITICAL: [91m Error occurred while replaying scene.
+2023-09-09 09:38:08,195 - root / CRITICAL: Traceback (most recent call last):
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1065, in <module>
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1023, in gameDemo
+    drawDeadScreen()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 928, in drawDeadScreen
+    mainMenu()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 1051, in mainMenu
+    gameDemo()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 972, in gameDemo
+    allSpritesGroup.update()
+  File "C:\Users\notsongro\AppData\Local\Programs\Python\Python311\Lib\site-packages\pygame\sprite.py", line 555, in update
+    sprite.update(*args, **kwargs)
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 516, in update
+    self.checkColliedWithEnemy()
+  File "C:\Users\notsongro\Documents\GitHub\time-bullet\Main.py", line 474, in checkColliedWithEnemy
+    Enemy.kill()
+TypeError: Sprite.kill() missing 1 required positional argument: 'self'
+[0m
+2023-09-09 09:39:04,141 - root / INFO:  Loading..
+2023-09-09 09:39:04,165 - root / INFO:  Reading save file..
+2023-09-09 09:39:04,184 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,203 - root / INFO:  Checking save file requirements..
+2023-09-09 09:39:04,220 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 09:39:04,235 - root / INFO:  Initallizing..
+2023-09-09 09:39:04,458 - root / INFO: [92mInitallized.[0m
+2023-09-09 09:39:04,511 - root / INFO:  Reading Images..
+2023-09-09 09:39:04,674 - root / INFO: [92mLoaded.[0m
+2023-09-09 09:39:04,689 - root / INFO:  Loading Sounds..
+2023-09-09 09:39:04,757 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,769 - root / INFO:  Resetting Font/Title..
+2023-09-09 09:39:04,787 - root / INFO: [92m Loaded.[0m
+2023-09-09 09:39:04,799 - root / INFO:  Resetting text object..
+2023-09-09 09:39:05,318 - root / INFO:  Starting..

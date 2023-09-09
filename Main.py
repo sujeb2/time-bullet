@@ -471,7 +471,6 @@ class Player(pygame.sprite.Sprite): # player
 
             if self.health <= 0:
                 self.pos = (400, 400)
-                Enemy.kill()
 
     def checkCollisionWithWall(self, direction):
         if not GameSetting.NOCLIP:
@@ -772,6 +771,20 @@ class GameLevel(pygame.sprite.Group): # load level
             Enemy(random.choice(self.enemySpawnPos))
             log.debug(f'Spawned Enemy: {i}')
 
+    def restartGame(self):
+        playerGroup.empty()
+        playerGroup.add(player)
+        allSpritesGroup.add(player)
+        bulletGroup.empty()
+        enemyGroup.empty()
+
+        for i in enemyGroup:
+            if isinstance(sprite, Enemy):
+                sprite.kill()
+                log.info(f'Killing Enemy.. {i}')
+
+        self.spawnEnemy()
+
     def custom_draw(self): 
         self.offset.x = player.rect.centerx - (GameSetting.WIDTH // 2)
         self.offset.y = player.rect.centery - (GameSetting.HEIGHT // 2)
@@ -783,15 +796,16 @@ class GameLevel(pygame.sprite.Group): # load level
         screen.blit(img_demoMapBackground, floor_offset_pos)
 
         # draw player hitbox for debug perpose
-        if GameSetting.SHOW_COLLISION_BOXES:
-            base_rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
-            pygame.draw.rect(screen, "red", base_rect, width=2)
-            rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
-            pygame.draw.rect(screen, "yellow", rect, width=2)
+        if GameSetting.IFYOUKNOWWHATAREYOUDOINGRIGHTNOWTURNONTHISFORDEBUG:
+            if GameSetting.SHOW_COLLISION_BOXES:
+                base_rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
+                pygame.draw.rect(screen, "red", base_rect, width=2)
+                rect = player.rect.copy().move(-self.offset.x, -self.offset.y)
+                pygame.draw.rect(screen, "yellow", rect, width=2)
 
-        for sprite in allSpritesGroup: 
-            offset_pos = sprite.rect.topleft - self.offset
-            screen.blit(sprite.image, offset_pos)
+            for sprite in allSpritesGroup: 
+                offset_pos = sprite.rect.topleft - self.offset
+                screen.blit(sprite.image, offset_pos)
 
 class Tile(pygame.sprite.Sprite): # load tile
     def __init__(self, pos, groups, type, unique_id):
@@ -864,18 +878,6 @@ else:
     isMainGameScene = False
     isMainMenuScene = True
 
-def restartGame():
-    playerGroup.empty()
-    playerGroup.add(player)
-    allSpritesGroup.add(player)
-    bulletGroup.empty()
-    enemyGroup.empty()
-
-    for i in range(0, GameSetting.ENEMEY_SPAWN_RATE, 1):
-        Enemy([0, 0]).kill()
-
-    demoLevel.spawnEnemy()
-
 def drawDeadScreen():
     game_over_screen_fade = pygame.Surface((GameSetting.WIDTH, GameSetting.HEIGHT))
     game_over_screen_fade.fill((0, 0, 0))
@@ -926,7 +928,7 @@ def drawDeadScreen():
         game_over_screen_fade.fill((255, 255, 255))
 
     if btnGameRestart.drawBtn(screen):
-        restartGame()
+        demoLevel.restartGame()
         game_over_screen_fade.fill((255, 255, 255))
 
 def gameDemo(): # main game
