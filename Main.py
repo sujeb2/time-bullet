@@ -856,8 +856,8 @@ itemGroup = pygame.sprite.Group()
 demoLevel = GameLevel('demo')
 btnStart = Button(30, 620, btn_Start, 1)
 btnExit = Button(30, 650, btn_Exit, 1)
-btnRestart = Button(550, 400, btn_Restart, 1)
-btnGameRestart = Button(400, 400, btn_RestartBtn, 1)
+btnRestart = Button(400, 400, btn_Restart, 1)
+#btnGameRestart = Button(400, 400, btn_RestartBtn, 1)
 
 allSpritesGroup.add(player)
 playerGroup.add(player)
@@ -920,9 +920,9 @@ def drawDeadScreen():
         mainMenu()
         game_over_screen_fade.fill((255, 255, 255))
 
-    if btnGameRestart.drawBtn(screen):
-        demoLevel.restartGame()
-        game_over_screen_fade.fill((255, 255, 255))
+    #if btnGameRestart.drawBtn(screen):
+    #    demoLevel.restartGame()
+    #    game_over_screen_fade.fill((255, 255, 255))
 
 def gameDemo(): # main game
         log.info(' Starting..')
@@ -1015,16 +1015,21 @@ def gameDemo(): # main game
                 if not playerGroup.has(player):
                     drawDeadScreen()
 
-            if state == "pause":
-                ost_MainMenu.stop()
-                ui_pausedTxt = defaultBigFont.render('일시중지됨', True, WHITE)
-                ui_unpauseTxt = defaultBulletFont.render('[L] 키를 눌러 일시중지 풀기', True, WHITE)
-                ui_pasuedTxtEaster = defaultBulletFont.render(pausedmotd, True, WHITE)
+            if playerGroup:
+                if state == "pause":
+                        ost_MainMenu.stop()
+                        ui_pausedTxt = defaultBigFont.render('일시중지됨', True, WHITE)
+                        ui_unpauseTxt = defaultBulletFont.render('[L] 키를 눌러 일시중지 풀기', True, WHITE)
+                        ui_pasuedTxtEaster = defaultBulletFont.render(pausedmotd, True, WHITE)
 
-                screen.blit(img_overlayDeadScreenBlack, [0, 0])
-                screen.blit(ui_pausedTxt, [400, 300])
-                screen.blit(ui_unpauseTxt, [400, 400])
-                screen.blit(ui_pasuedTxtEaster, [400, 350])
+                        screen.blit(img_overlayDeadScreenBlack, [0, 0])
+                        screen.blit(ui_pausedTxt, [400, 300])
+                        screen.blit(ui_unpauseTxt, [400, 400])
+                        screen.blit(ui_pasuedTxtEaster, [400, 350])
+                else:
+                    pass
+            else:
+                pass
 
             pygame.display.flip()
 
