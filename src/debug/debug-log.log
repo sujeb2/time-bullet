@@ -4315,3 +4315,1275 @@ NameError: name 'ui_pausedTxtEaster' is not defined
 2023-09-09 10:22:08,604 - root / INFO: Player Killed.
 2023-09-09 10:22:08,629 - root / INFO: Player Killed.
 2023-09-09 10:22:08,655 - root / INFO: Player Killed.
+2023-09-09 11:00:46,521 - root / INFO:  Loading..
+2023-09-09 11:00:46,524 - root / INFO:  Reading save file..
+2023-09-09 11:00:46,534 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:00:46,538 - root / INFO:  Checking save file requirements..
+2023-09-09 11:00:46,541 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 11:00:46,545 - root / INFO:  Initallizing..
+2023-09-09 11:00:59,547 - root / INFO:  Loading..
+2023-09-09 11:00:59,549 - root / INFO:  Reading save file..
+2023-09-09 11:00:59,551 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:00:59,553 - root / INFO:  Checking save file requirements..
+2023-09-09 11:00:59,555 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 11:00:59,558 - root / INFO:  Initallizing..
+2023-09-09 11:01:01,203 - root / INFO: [92mInitallized.[0m
+2023-09-09 11:01:01,232 - root / INFO:  Reading Images..
+2023-09-09 11:01:01,420 - root / INFO: [92mLoaded.[0m
+2023-09-09 11:01:01,481 - root / INFO:  Loading Sounds..
+2023-09-09 11:01:01,763 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:01:01,816 - root / INFO:  Resetting Font/Title..
+2023-09-09 11:01:01,837 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:01:01,843 - root / INFO:  Resetting text object..
+2023-09-09 11:01:01,947 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 11:01:01,955 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 11:01:01,958 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 11:01:01,961 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 11:01:01,967 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 11:01:01,973 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 11:01:01,977 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 11:01:01,982 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 11:01:01,986 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 11:01:01,990 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 11:01:01,993 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 11:01:01,996 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 11:01:02,001 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 11:01:02,006 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 11:01:02,009 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 11:01:02,011 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 11:01:02,016 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 11:01:02,020 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 11:01:02,028 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 11:01:02,039 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 11:01:02,048 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 11:01:02,057 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 11:01:02,067 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 11:01:02,076 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 11:01:02,084 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 11:01:02,094 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 11:01:02,102 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 11:01:02,109 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 11:01:02,118 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 11:01:02,124 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 11:01:03,182 - root / INFO:  Starting..
+2023-09-09 11:01:04,644 - root / INFO: Player Killed.
+2023-09-09 11:01:05,860 - root / INFO:  Starting..
+2023-09-09 11:01:05,895 - root / INFO: Player Killed.
+2023-09-09 11:01:05,932 - root / INFO: Player Killed.
+2023-09-09 11:01:05,959 - root / INFO: Player Killed.
+2023-09-09 11:01:05,982 - root / INFO: Player Killed.
+2023-09-09 11:01:06,010 - root / INFO: Player Killed.
+2023-09-09 11:01:06,033 - root / INFO: Player Killed.
+2023-09-09 11:01:06,057 - root / INFO: Player Killed.
+2023-09-09 11:01:06,080 - root / INFO: Player Killed.
+2023-09-09 11:01:06,106 - root / INFO: Player Killed.
+2023-09-09 11:01:06,130 - root / INFO: Player Killed.
+2023-09-09 11:01:06,154 - root / INFO: Player Killed.
+2023-09-09 11:01:06,181 - root / INFO: Player Killed.
+2023-09-09 11:01:06,208 - root / INFO: Player Killed.
+2023-09-09 11:01:06,235 - root / INFO: Player Killed.
+2023-09-09 11:01:06,263 - root / INFO: Player Killed.
+2023-09-09 11:01:06,285 - root / INFO: Player Killed.
+2023-09-09 11:01:06,309 - root / INFO: Player Killed.
+2023-09-09 11:01:06,330 - root / INFO: Player Killed.
+2023-09-09 11:01:06,354 - root / INFO: Player Killed.
+2023-09-09 11:01:06,379 - root / INFO: Player Killed.
+2023-09-09 11:01:06,402 - root / INFO: Player Killed.
+2023-09-09 11:01:06,426 - root / INFO: Player Killed.
+2023-09-09 11:01:06,449 - root / INFO: Player Killed.
+2023-09-09 11:01:06,478 - root / INFO: Player Killed.
+2023-09-09 11:01:06,504 - root / INFO: Player Killed.
+2023-09-09 11:01:06,531 - root / INFO: Player Killed.
+2023-09-09 11:01:06,555 - root / INFO: Player Killed.
+2023-09-09 11:01:06,583 - root / INFO: Player Killed.
+2023-09-09 11:01:06,606 - root / INFO: Player Killed.
+2023-09-09 11:01:06,643 - root / INFO: Player Killed.
+2023-09-09 11:01:06,668 - root / INFO: Player Killed.
+2023-09-09 11:01:06,693 - root / INFO: Player Killed.
+2023-09-09 11:01:06,718 - root / INFO: Player Killed.
+2023-09-09 11:01:06,744 - root / INFO: Player Killed.
+2023-09-09 11:01:06,771 - root / INFO: Player Killed.
+2023-09-09 11:01:06,794 - root / INFO: Player Killed.
+2023-09-09 11:01:06,819 - root / INFO: Player Killed.
+2023-09-09 11:01:06,843 - root / INFO: Player Killed.
+2023-09-09 11:01:06,876 - root / INFO: Player Killed.
+2023-09-09 11:01:06,904 - root / INFO: Player Killed.
+2023-09-09 11:01:06,930 - root / INFO: Player Killed.
+2023-09-09 11:01:06,954 - root / INFO: Player Killed.
+2023-09-09 11:01:06,980 - root / INFO: Player Killed.
+2023-09-09 11:01:07,003 - root / INFO: Player Killed.
+2023-09-09 11:01:07,027 - root / INFO: Player Killed.
+2023-09-09 11:01:07,052 - root / INFO: Player Killed.
+2023-09-09 11:01:07,079 - root / INFO: Player Killed.
+2023-09-09 11:01:07,104 - root / INFO: Player Killed.
+2023-09-09 11:01:07,133 - root / INFO: Player Killed.
+2023-09-09 11:01:07,162 - root / INFO: Player Killed.
+2023-09-09 11:01:07,186 - root / INFO: Player Killed.
+2023-09-09 11:01:07,218 - root / INFO: Player Killed.
+2023-09-09 11:01:07,249 - root / INFO: Player Killed.
+2023-09-09 11:01:07,277 - root / INFO: Player Killed.
+2023-09-09 11:01:07,308 - root / INFO: Player Killed.
+2023-09-09 11:01:07,335 - root / INFO: Player Killed.
+2023-09-09 11:01:07,360 - root / INFO: Player Killed.
+2023-09-09 11:01:07,386 - root / INFO: Player Killed.
+2023-09-09 11:01:07,418 - root / INFO: Player Killed.
+2023-09-09 11:01:07,455 - root / INFO: Player Killed.
+2023-09-09 11:01:07,490 - root / INFO: Player Killed.
+2023-09-09 11:01:07,526 - root / INFO: Player Killed.
+2023-09-09 11:01:07,560 - root / INFO: Player Killed.
+2023-09-09 11:01:07,590 - root / INFO: Player Killed.
+2023-09-09 11:01:07,630 - root / INFO: Player Killed.
+2023-09-09 11:01:07,664 - root / INFO: Player Killed.
+2023-09-09 11:01:07,694 - root / INFO: Player Killed.
+2023-09-09 11:01:07,725 - root / INFO: Player Killed.
+2023-09-09 11:01:07,753 - root / INFO: Player Killed.
+2023-09-09 11:01:07,781 - root / INFO: Player Killed.
+2023-09-09 11:01:07,807 - root / INFO: Player Killed.
+2023-09-09 11:01:07,832 - root / INFO: Player Killed.
+2023-09-09 11:01:07,860 - root / INFO: Player Killed.
+2023-09-09 11:01:07,888 - root / INFO: Player Killed.
+2023-09-09 11:01:07,913 - root / INFO: Player Killed.
+2023-09-09 11:01:07,943 - root / INFO: Player Killed.
+2023-09-09 11:01:07,974 - root / INFO: Player Killed.
+2023-09-09 11:01:08,012 - root / INFO: Player Killed.
+2023-09-09 11:01:08,046 - root / INFO: Player Killed.
+2023-09-09 11:01:08,075 - root / INFO: Player Killed.
+2023-09-09 11:01:08,102 - root / INFO: Player Killed.
+2023-09-09 11:01:08,133 - root / INFO: Player Killed.
+2023-09-09 11:01:08,166 - root / INFO: Player Killed.
+2023-09-09 11:01:08,192 - root / INFO: Player Killed.
+2023-09-09 11:01:08,224 - root / INFO: Player Killed.
+2023-09-09 11:01:08,261 - root / INFO: Player Killed.
+2023-09-09 11:01:08,294 - root / INFO: Player Killed.
+2023-09-09 11:01:08,328 - root / INFO: Player Killed.
+2023-09-09 11:01:08,359 - root / INFO: Player Killed.
+2023-09-09 11:01:08,391 - root / INFO: Player Killed.
+2023-09-09 11:01:08,420 - root / INFO: Player Killed.
+2023-09-09 11:01:08,450 - root / INFO: Player Killed.
+2023-09-09 11:01:08,487 - root / INFO: Player Killed.
+2023-09-09 11:01:08,509 - root / INFO: Player Killed.
+2023-09-09 11:01:08,534 - root / INFO: Player Killed.
+2023-09-09 11:01:08,566 - root / INFO: Player Killed.
+2023-09-09 11:01:08,596 - root / INFO: Player Killed.
+2023-09-09 11:01:08,623 - root / INFO: Player Killed.
+2023-09-09 11:01:08,652 - root / INFO: Player Killed.
+2023-09-09 11:01:08,680 - root / INFO: Player Killed.
+2023-09-09 11:01:08,705 - root / INFO: Player Killed.
+2023-09-09 11:01:08,732 - root / INFO: Player Killed.
+2023-09-09 11:01:08,755 - root / INFO: Player Killed.
+2023-09-09 11:01:08,780 - root / INFO: Player Killed.
+2023-09-09 11:01:08,803 - root / INFO: Player Killed.
+2023-09-09 11:01:08,832 - root / INFO: Player Killed.
+2023-09-09 11:01:08,855 - root / INFO: Player Killed.
+2023-09-09 11:01:08,923 - root / INFO: Player Killed.
+2023-09-09 11:01:09,016 - root / INFO: Player Killed.
+2023-09-09 11:01:09,054 - root / INFO: Player Killed.
+2023-09-09 11:01:09,082 - root / INFO: Player Killed.
+2023-09-09 11:01:09,108 - root / INFO: Player Killed.
+2023-09-09 11:01:09,133 - root / INFO: Player Killed.
+2023-09-09 11:01:09,158 - root / INFO: Player Killed.
+2023-09-09 11:01:09,185 - root / INFO: Player Killed.
+2023-09-09 11:01:09,211 - root / INFO: Player Killed.
+2023-09-09 11:01:09,235 - root / INFO: Player Killed.
+2023-09-09 11:01:09,260 - root / INFO: Player Killed.
+2023-09-09 11:01:09,283 - root / INFO: Player Killed.
+2023-09-09 11:01:09,308 - root / INFO: Player Killed.
+2023-09-09 11:01:09,333 - root / INFO: Player Killed.
+2023-09-09 11:01:09,359 - root / INFO: Player Killed.
+2023-09-09 11:01:09,385 - root / INFO: Player Killed.
+2023-09-09 11:01:09,416 - root / INFO: Player Killed.
+2023-09-09 11:01:09,446 - root / INFO: Player Killed.
+2023-09-09 11:01:09,472 - root / INFO: Player Killed.
+2023-09-09 11:01:09,504 - root / INFO: Player Killed.
+2023-09-09 11:01:09,533 - root / INFO: Player Killed.
+2023-09-09 11:01:09,563 - root / INFO: Player Killed.
+2023-09-09 11:01:09,593 - root / INFO: Player Killed.
+2023-09-09 11:01:09,621 - root / INFO: Player Killed.
+2023-09-09 11:01:09,645 - root / INFO: Player Killed.
+2023-09-09 11:01:09,673 - root / INFO: Player Killed.
+2023-09-09 11:01:09,700 - root / INFO: Player Killed.
+2023-09-09 11:01:09,725 - root / INFO: Player Killed.
+2023-09-09 11:01:09,753 - root / INFO: Player Killed.
+2023-09-09 11:01:09,780 - root / INFO: Player Killed.
+2023-09-09 11:01:09,807 - root / INFO: Player Killed.
+2023-09-09 11:01:09,830 - root / INFO: Player Killed.
+2023-09-09 11:01:09,857 - root / INFO: Player Killed.
+2023-09-09 11:01:09,885 - root / INFO: Player Killed.
+2023-09-09 11:01:09,909 - root / INFO: Player Killed.
+2023-09-09 11:01:09,938 - root / INFO: Player Killed.
+2023-09-09 11:01:09,962 - root / INFO: Player Killed.
+2023-09-09 11:01:09,991 - root / INFO: Player Killed.
+2023-09-09 11:01:10,019 - root / INFO: Player Killed.
+2023-09-09 11:01:10,051 - root / INFO: Player Killed.
+2023-09-09 11:01:10,082 - root / INFO: Player Killed.
+2023-09-09 11:01:10,114 - root / INFO: Player Killed.
+2023-09-09 11:01:10,149 - root / INFO: Player Killed.
+2023-09-09 11:01:10,184 - root / INFO: Player Killed.
+2023-09-09 11:01:10,220 - root / INFO: Player Killed.
+2023-09-09 11:01:10,247 - root / INFO: Player Killed.
+2023-09-09 11:01:10,276 - root / INFO: Player Killed.
+2023-09-09 11:01:10,306 - root / INFO: Player Killed.
+2023-09-09 11:01:10,339 - root / INFO: Player Killed.
+2023-09-09 11:01:10,373 - root / INFO: Player Killed.
+2023-09-09 11:01:10,401 - root / INFO: Player Killed.
+2023-09-09 11:01:10,433 - root / INFO: Player Killed.
+2023-09-09 11:01:10,463 - root / INFO: Player Killed.
+2023-09-09 11:01:10,493 - root / INFO: Player Killed.
+2023-09-09 11:01:10,522 - root / INFO: Player Killed.
+2023-09-09 11:01:10,547 - root / INFO: Player Killed.
+2023-09-09 11:01:10,578 - root / INFO: Player Killed.
+2023-09-09 11:01:10,606 - root / INFO: Player Killed.
+2023-09-09 11:01:10,638 - root / INFO: Player Killed.
+2023-09-09 11:01:10,664 - root / INFO: Player Killed.
+2023-09-09 11:01:10,692 - root / INFO: Player Killed.
+2023-09-09 11:01:10,716 - root / INFO: Player Killed.
+2023-09-09 11:01:10,743 - root / INFO: Player Killed.
+2023-09-09 11:01:10,774 - root / INFO: Player Killed.
+2023-09-09 11:01:10,796 - root / INFO: Player Killed.
+2023-09-09 11:01:10,822 - root / INFO: Player Killed.
+2023-09-09 11:01:10,847 - root / INFO: Player Killed.
+2023-09-09 11:01:10,873 - root / INFO: Player Killed.
+2023-09-09 11:01:10,900 - root / INFO: Player Killed.
+2023-09-09 11:01:10,925 - root / INFO: Player Killed.
+2023-09-09 11:01:10,956 - root / INFO: Player Killed.
+2023-09-09 11:01:10,981 - root / INFO: Player Killed.
+2023-09-09 11:01:11,007 - root / INFO: Player Killed.
+2023-09-09 11:01:11,033 - root / INFO: Player Killed.
+2023-09-09 11:01:11,059 - root / INFO: Player Killed.
+2023-09-09 11:01:11,089 - root / INFO: Player Killed.
+2023-09-09 11:01:11,113 - root / INFO: Player Killed.
+2023-09-09 11:01:11,144 - root / INFO: Player Killed.
+2023-09-09 11:01:11,177 - root / INFO: Player Killed.
+2023-09-09 11:01:11,210 - root / INFO: Player Killed.
+2023-09-09 11:01:11,237 - root / INFO: Player Killed.
+2023-09-09 11:01:11,268 - root / INFO: Player Killed.
+2023-09-09 11:01:11,299 - root / INFO: Player Killed.
+2023-09-09 11:01:11,332 - root / INFO: Player Killed.
+2023-09-09 11:01:11,358 - root / INFO: Player Killed.
+2023-09-09 11:01:11,389 - root / INFO: Player Killed.
+2023-09-09 11:01:11,417 - root / INFO: Player Killed.
+2023-09-09 11:01:11,447 - root / INFO: Player Killed.
+2023-09-09 11:01:11,476 - root / INFO: Player Killed.
+2023-09-09 11:01:11,503 - root / INFO: Player Killed.
+2023-09-09 11:01:11,541 - root / INFO: Player Killed.
+2023-09-09 11:01:11,570 - root / INFO: Player Killed.
+2023-09-09 11:01:11,608 - root / INFO: Player Killed.
+2023-09-09 11:01:11,640 - root / INFO: Player Killed.
+2023-09-09 11:01:11,681 - root / INFO: Player Killed.
+2023-09-09 11:01:11,714 - root / INFO: Player Killed.
+2023-09-09 11:01:11,757 - root / INFO: Player Killed.
+2023-09-09 11:01:11,788 - root / INFO: Player Killed.
+2023-09-09 11:01:11,824 - root / INFO: Player Killed.
+2023-09-09 11:01:11,852 - root / INFO: Player Killed.
+2023-09-09 11:01:11,891 - root / INFO: Player Killed.
+2023-09-09 11:01:11,944 - root / INFO: Player Killed.
+2023-09-09 11:01:11,993 - root / INFO: Player Killed.
+2023-09-09 11:01:12,037 - root / INFO: Player Killed.
+2023-09-09 11:01:12,070 - root / INFO: Player Killed.
+2023-09-09 11:01:12,112 - root / INFO: Player Killed.
+2023-09-09 11:01:12,143 - root / INFO: Player Killed.
+2023-09-09 11:01:12,176 - root / INFO: Player Killed.
+2023-09-09 11:01:12,209 - root / INFO: Player Killed.
+2023-09-09 11:01:12,248 - root / INFO: Player Killed.
+2023-09-09 11:01:12,290 - root / INFO: Player Killed.
+2023-09-09 11:01:12,330 - root / INFO: Player Killed.
+2023-09-09 11:01:12,375 - root / INFO: Player Killed.
+2023-09-09 11:01:12,417 - root / INFO: Player Killed.
+2023-09-09 11:01:12,459 - root / INFO: Player Killed.
+2023-09-09 11:01:12,502 - root / INFO: Player Killed.
+2023-09-09 11:01:12,547 - root / INFO: Player Killed.
+2023-09-09 11:01:12,588 - root / INFO: Player Killed.
+2023-09-09 11:01:12,618 - root / INFO: Player Killed.
+2023-09-09 11:01:12,658 - root / INFO: Player Killed.
+2023-09-09 11:01:12,691 - root / INFO: Player Killed.
+2023-09-09 11:01:12,746 - root / INFO: Player Killed.
+2023-09-09 11:01:12,778 - root / INFO: Player Killed.
+2023-09-09 11:01:12,822 - root / INFO: Player Killed.
+2023-09-09 11:01:12,889 - root / INFO: Player Killed.
+2023-09-09 11:01:12,920 - root / INFO: Player Killed.
+2023-09-09 11:01:12,952 - root / INFO: Player Killed.
+2023-09-09 11:01:12,986 - root / INFO: Player Killed.
+2023-09-09 11:01:13,013 - root / INFO: Player Killed.
+2023-09-09 11:01:13,040 - root / INFO: Player Killed.
+2023-09-09 11:01:13,067 - root / INFO: Player Killed.
+2023-09-09 11:01:13,094 - root / INFO: Player Killed.
+2023-09-09 11:01:13,123 - root / INFO: Player Killed.
+2023-09-09 11:01:13,151 - root / INFO: Player Killed.
+2023-09-09 11:01:13,183 - root / INFO: Player Killed.
+2023-09-09 11:01:13,215 - root / INFO: Player Killed.
+2023-09-09 11:01:13,244 - root / INFO: Player Killed.
+2023-09-09 11:01:13,277 - root / INFO: Player Killed.
+2023-09-09 11:01:13,308 - root / INFO: Player Killed.
+2023-09-09 11:01:13,338 - root / INFO: Player Killed.
+2023-09-09 11:01:13,367 - root / INFO: Player Killed.
+2023-09-09 11:01:13,394 - root / INFO: Player Killed.
+2023-09-09 11:01:13,426 - root / INFO: Player Killed.
+2023-09-09 11:01:13,459 - root / INFO: Player Killed.
+2023-09-09 11:01:13,492 - root / INFO: Player Killed.
+2023-09-09 11:01:13,525 - root / INFO: Player Killed.
+2023-09-09 11:01:13,551 - root / INFO: Player Killed.
+2023-09-09 11:01:13,577 - root / INFO: Player Killed.
+2023-09-09 11:01:13,613 - root / INFO: Player Killed.
+2023-09-09 11:01:13,637 - root / INFO: Player Killed.
+2023-09-09 11:01:13,666 - root / INFO: Player Killed.
+2023-09-09 11:01:13,698 - root / INFO: Player Killed.
+2023-09-09 11:01:13,731 - root / INFO: Player Killed.
+2023-09-09 11:01:13,759 - root / INFO: Player Killed.
+2023-09-09 11:01:13,790 - root / INFO: Player Killed.
+2023-09-09 11:01:17,058 - root / INFO: Player Killed.
+2023-09-09 11:01:17,083 - root / INFO: Player Killed.
+2023-09-09 11:01:17,110 - root / INFO: Player Killed.
+2023-09-09 11:01:17,138 - root / INFO: Player Killed.
+2023-09-09 11:01:17,166 - root / INFO: Player Killed.
+2023-09-09 11:01:17,197 - root / INFO: Player Killed.
+2023-09-09 11:01:17,229 - root / INFO: Player Killed.
+2023-09-09 11:01:17,258 - root / INFO: Player Killed.
+2023-09-09 11:01:17,286 - root / INFO: Player Killed.
+2023-09-09 11:01:17,313 - root / INFO: Player Killed.
+2023-09-09 11:01:17,340 - root / INFO: Player Killed.
+2023-09-09 11:01:17,366 - root / INFO: Player Killed.
+2023-09-09 11:01:17,393 - root / INFO: Player Killed.
+2023-09-09 11:01:17,424 - root / INFO: Player Killed.
+2023-09-09 11:01:17,449 - root / INFO: Player Killed.
+2023-09-09 11:01:17,480 - root / INFO: Player Killed.
+2023-09-09 11:01:17,506 - root / INFO: Player Killed.
+2023-09-09 11:01:17,532 - root / INFO: Player Killed.
+2023-09-09 11:01:17,559 - root / INFO: Player Killed.
+2023-09-09 11:01:17,586 - root / INFO: Player Killed.
+2023-09-09 11:01:17,611 - root / INFO: Player Killed.
+2023-09-09 11:01:17,637 - root / INFO: Player Killed.
+2023-09-09 11:01:17,663 - root / INFO: Player Killed.
+2023-09-09 11:01:17,692 - root / INFO: Player Killed.
+2023-09-09 11:01:17,715 - root / INFO: Player Killed.
+2023-09-09 11:01:17,742 - root / INFO: Player Killed.
+2023-09-09 11:01:17,768 - root / INFO: Player Killed.
+2023-09-09 11:01:17,793 - root / INFO: Player Killed.
+2023-09-09 11:01:17,820 - root / INFO: Player Killed.
+2023-09-09 11:01:17,846 - root / INFO: Player Killed.
+2023-09-09 11:01:17,869 - root / INFO: Player Killed.
+2023-09-09 11:01:17,892 - root / INFO: Player Killed.
+2023-09-09 11:01:17,917 - root / INFO: Player Killed.
+2023-09-09 11:01:17,946 - root / INFO: Player Killed.
+2023-09-09 11:01:17,969 - root / INFO: Player Killed.
+2023-09-09 11:01:17,994 - root / INFO: Player Killed.
+2023-09-09 11:01:18,018 - root / INFO: Player Killed.
+2023-09-09 11:01:18,043 - root / INFO: Player Killed.
+2023-09-09 11:01:18,065 - root / INFO: Player Killed.
+2023-09-09 11:01:18,089 - root / INFO: Player Killed.
+2023-09-09 11:01:18,112 - root / INFO: Player Killed.
+2023-09-09 11:01:18,136 - root / INFO: Player Killed.
+2023-09-09 11:01:18,161 - root / INFO: Player Killed.
+2023-09-09 11:01:18,186 - root / INFO: Player Killed.
+2023-09-09 11:01:18,211 - root / INFO: Player Killed.
+2023-09-09 11:01:18,238 - root / INFO: Player Killed.
+2023-09-09 11:01:18,262 - root / INFO: Player Killed.
+2023-09-09 11:01:18,287 - root / INFO: Player Killed.
+2023-09-09 11:01:18,313 - root / INFO: Player Killed.
+2023-09-09 11:01:18,338 - root / INFO: Player Killed.
+2023-09-09 11:01:18,361 - root / INFO: Player Killed.
+2023-09-09 11:01:18,387 - root / INFO: Player Killed.
+2023-09-09 11:01:18,410 - root / INFO: Player Killed.
+2023-09-09 11:01:18,433 - root / INFO: Player Killed.
+2023-09-09 11:01:18,458 - root / INFO: Player Killed.
+2023-09-09 11:01:18,483 - root / INFO: Player Killed.
+2023-09-09 11:01:18,505 - root / INFO: Player Killed.
+2023-09-09 11:01:18,527 - root / INFO: Player Killed.
+2023-09-09 11:01:18,551 - root / INFO: Player Killed.
+2023-09-09 11:01:18,572 - root / INFO: Player Killed.
+2023-09-09 11:01:18,596 - root / INFO: Player Killed.
+2023-09-09 11:01:18,618 - root / INFO: Player Killed.
+2023-09-09 11:01:18,641 - root / INFO: Player Killed.
+2023-09-09 11:01:18,662 - root / INFO: Player Killed.
+2023-09-09 11:01:18,685 - root / INFO: Player Killed.
+2023-09-09 11:01:18,712 - root / INFO: Player Killed.
+2023-09-09 11:01:18,741 - root / INFO: Player Killed.
+2023-09-09 11:01:18,766 - root / INFO: Player Killed.
+2023-09-09 11:01:18,790 - root / INFO: Player Killed.
+2023-09-09 11:01:18,820 - root / INFO: Player Killed.
+2023-09-09 11:01:18,846 - root / INFO: Player Killed.
+2023-09-09 11:01:18,874 - root / INFO: Player Killed.
+2023-09-09 11:01:18,900 - root / INFO: Player Killed.
+2023-09-09 11:01:18,926 - root / INFO: Player Killed.
+2023-09-09 11:01:18,951 - root / INFO: Player Killed.
+2023-09-09 11:01:18,980 - root / INFO: Player Killed.
+2023-09-09 11:01:19,005 - root / INFO: Player Killed.
+2023-09-09 11:01:19,034 - root / INFO: Player Killed.
+2023-09-09 11:01:19,063 - root / INFO: Player Killed.
+2023-09-09 11:01:19,091 - root / INFO: Player Killed.
+2023-09-09 11:01:19,118 - root / INFO: Player Killed.
+2023-09-09 11:01:19,149 - root / INFO: Player Killed.
+2023-09-09 11:01:19,175 - root / INFO: Player Killed.
+2023-09-09 11:01:19,200 - root / INFO: Player Killed.
+2023-09-09 11:01:19,227 - root / INFO: Player Killed.
+2023-09-09 11:01:19,257 - root / INFO: Player Killed.
+2023-09-09 11:01:19,283 - root / INFO: Player Killed.
+2023-09-09 11:01:19,308 - root / INFO: Player Killed.
+2023-09-09 11:01:19,336 - root / INFO: Player Killed.
+2023-09-09 11:01:19,363 - root / INFO: Player Killed.
+2023-09-09 11:01:19,387 - root / INFO: Player Killed.
+2023-09-09 11:01:19,417 - root / INFO: Player Killed.
+2023-09-09 11:01:19,448 - root / INFO: Player Killed.
+2023-09-09 11:01:19,480 - root / INFO: Player Killed.
+2023-09-09 11:01:19,507 - root / INFO: Player Killed.
+2023-09-09 11:01:19,533 - root / INFO: Player Killed.
+2023-09-09 11:01:19,558 - root / INFO: Player Killed.
+2023-09-09 11:01:19,583 - root / INFO: Player Killed.
+2023-09-09 11:01:19,607 - root / INFO: Player Killed.
+2023-09-09 11:01:19,631 - root / INFO: Player Killed.
+2023-09-09 11:01:19,655 - root / INFO: Player Killed.
+2023-09-09 11:01:19,685 - root / INFO: Player Killed.
+2023-09-09 11:01:19,708 - root / INFO: Player Killed.
+2023-09-09 11:01:19,737 - root / INFO: Player Killed.
+2023-09-09 11:01:19,761 - root / INFO: Player Killed.
+2023-09-09 11:01:19,787 - root / INFO: Player Killed.
+2023-09-09 11:01:19,811 - root / INFO: Player Killed.
+2023-09-09 11:01:19,834 - root / INFO: Player Killed.
+2023-09-09 11:01:19,857 - root / INFO: Player Killed.
+2023-09-09 11:01:19,879 - root / INFO: Player Killed.
+2023-09-09 11:01:19,903 - root / INFO: Player Killed.
+2023-09-09 11:01:19,930 - root / INFO: Player Killed.
+2023-09-09 11:01:19,953 - root / INFO: Player Killed.
+2023-09-09 11:01:19,980 - root / INFO: Player Killed.
+2023-09-09 11:01:20,003 - root / INFO: Player Killed.
+2023-09-09 11:01:20,028 - root / INFO: Player Killed.
+2023-09-09 11:01:20,051 - root / INFO: Player Killed.
+2023-09-09 11:01:20,075 - root / INFO: Player Killed.
+2023-09-09 11:01:20,097 - root / INFO: Player Killed.
+2023-09-09 11:01:20,121 - root / INFO: Player Killed.
+2023-09-09 11:01:20,145 - root / INFO: Player Killed.
+2023-09-09 11:01:20,169 - root / INFO: Player Killed.
+2023-09-09 11:01:20,191 - root / INFO: Player Killed.
+2023-09-09 11:01:20,217 - root / INFO: Player Killed.
+2023-09-09 11:01:20,240 - root / INFO: Player Killed.
+2023-09-09 11:01:20,265 - root / INFO: Player Killed.
+2023-09-09 11:01:20,287 - root / INFO: Player Killed.
+2023-09-09 11:01:20,313 - root / INFO: Player Killed.
+2023-09-09 11:01:20,336 - root / INFO: Player Killed.
+2023-09-09 11:01:20,361 - root / INFO: Player Killed.
+2023-09-09 11:01:20,383 - root / INFO: Player Killed.
+2023-09-09 11:01:20,408 - root / INFO: Player Killed.
+2023-09-09 11:01:20,433 - root / INFO: Player Killed.
+2023-09-09 11:01:20,458 - root / INFO: Player Killed.
+2023-09-09 11:01:20,481 - root / INFO: Player Killed.
+2023-09-09 11:01:20,504 - root / INFO: Player Killed.
+2023-09-09 11:01:20,528 - root / INFO: Player Killed.
+2023-09-09 11:01:20,551 - root / INFO: Player Killed.
+2023-09-09 11:01:20,573 - root / INFO: Player Killed.
+2023-09-09 11:01:20,596 - root / INFO: Player Killed.
+2023-09-09 11:01:20,622 - root / INFO: Player Killed.
+2023-09-09 11:01:20,645 - root / INFO: Player Killed.
+2023-09-09 11:01:20,670 - root / INFO: Player Killed.
+2023-09-09 11:01:20,693 - root / INFO: Player Killed.
+2023-09-09 11:01:20,720 - root / INFO: Player Killed.
+2023-09-09 11:01:20,745 - root / INFO: Player Killed.
+2023-09-09 11:01:20,772 - root / INFO: Player Killed.
+2023-09-09 11:01:20,801 - root / INFO: Player Killed.
+2023-09-09 11:01:20,822 - root / INFO: Player Killed.
+2023-09-09 11:01:20,847 - root / INFO: Player Killed.
+2023-09-09 11:01:20,870 - root / INFO: Player Killed.
+2023-09-09 11:01:20,891 - root / INFO: Player Killed.
+2023-09-09 11:01:20,914 - root / INFO: Player Killed.
+2023-09-09 11:01:20,938 - root / INFO: Player Killed.
+2023-09-09 11:01:20,960 - root / INFO: Player Killed.
+2023-09-09 11:01:20,986 - root / INFO: Player Killed.
+2023-09-09 11:01:21,011 - root / INFO: Player Killed.
+2023-09-09 11:01:21,036 - root / INFO: Player Killed.
+2023-09-09 11:01:21,058 - root / INFO: Player Killed.
+2023-09-09 11:01:21,086 - root / INFO: Player Killed.
+2023-09-09 11:01:21,116 - root / INFO: Player Killed.
+2023-09-09 11:01:21,140 - root / INFO: Player Killed.
+2023-09-09 11:01:21,163 - root / INFO: Player Killed.
+2023-09-09 11:01:21,188 - root / INFO: Player Killed.
+2023-09-09 11:01:21,213 - root / INFO: Player Killed.
+2023-09-09 11:01:21,239 - root / INFO: Player Killed.
+2023-09-09 11:01:21,266 - root / INFO: Player Killed.
+2023-09-09 11:01:21,288 - root / INFO: Player Killed.
+2023-09-09 11:01:21,312 - root / INFO: Player Killed.
+2023-09-09 11:01:21,336 - root / INFO: Player Killed.
+2023-09-09 11:01:21,363 - root / INFO: Player Killed.
+2023-09-09 11:01:21,389 - root / INFO: Player Killed.
+2023-09-09 11:01:21,415 - root / INFO: Player Killed.
+2023-09-09 11:01:21,440 - root / INFO: Player Killed.
+2023-09-09 11:01:21,469 - root / INFO: Player Killed.
+2023-09-09 11:01:21,494 - root / INFO: Player Killed.
+2023-09-09 11:01:21,518 - root / INFO: Player Killed.
+2023-09-09 11:01:21,546 - root / INFO: Player Killed.
+2023-09-09 11:01:21,572 - root / INFO: Player Killed.
+2023-09-09 11:01:21,596 - root / INFO: Player Killed.
+2023-09-09 11:01:21,621 - root / INFO: Player Killed.
+2023-09-09 11:01:21,644 - root / INFO: Player Killed.
+2023-09-09 11:01:21,667 - root / INFO: Player Killed.
+2023-09-09 11:01:21,688 - root / INFO: Player Killed.
+2023-09-09 11:01:21,713 - root / INFO: Player Killed.
+2023-09-09 11:01:21,739 - root / INFO: Player Killed.
+2023-09-09 11:01:21,763 - root / INFO: Player Killed.
+2023-09-09 11:01:21,788 - root / INFO: Player Killed.
+2023-09-09 11:01:21,815 - root / INFO: Player Killed.
+2023-09-09 11:01:21,838 - root / INFO: Player Killed.
+2023-09-09 11:01:21,861 - root / INFO: Player Killed.
+2023-09-09 11:01:21,886 - root / INFO: Player Killed.
+2023-09-09 11:01:21,909 - root / INFO: Player Killed.
+2023-09-09 11:01:21,933 - root / INFO: Player Killed.
+2023-09-09 11:01:21,956 - root / INFO: Player Killed.
+2023-09-09 11:01:21,979 - root / INFO: Player Killed.
+2023-09-09 11:01:22,004 - root / INFO: Player Killed.
+2023-09-09 11:01:22,031 - root / INFO: Player Killed.
+2023-09-09 11:01:22,053 - root / INFO: Player Killed.
+2023-09-09 11:01:22,080 - root / INFO: Player Killed.
+2023-09-09 11:01:22,105 - root / INFO: Player Killed.
+2023-09-09 11:01:22,128 - root / INFO: Player Killed.
+2023-09-09 11:01:22,151 - root / INFO: Player Killed.
+2023-09-09 11:01:22,174 - root / INFO: Player Killed.
+2023-09-09 11:01:22,200 - root / INFO: Player Killed.
+2023-09-09 11:01:22,224 - root / INFO: Player Killed.
+2023-09-09 11:01:22,249 - root / INFO: Player Killed.
+2023-09-09 11:01:22,273 - root / INFO: Player Killed.
+2023-09-09 11:01:22,298 - root / INFO: Player Killed.
+2023-09-09 11:01:22,322 - root / INFO: Player Killed.
+2023-09-09 11:01:22,346 - root / INFO: Player Killed.
+2023-09-09 11:01:22,369 - root / INFO: Player Killed.
+2023-09-09 11:01:22,392 - root / INFO: Player Killed.
+2023-09-09 11:01:22,416 - root / INFO: Player Killed.
+2023-09-09 11:01:22,441 - root / INFO: Player Killed.
+2023-09-09 11:01:22,469 - root / INFO: Player Killed.
+2023-09-09 11:01:23,175 - root / INFO: Player Killed.
+2023-09-09 11:01:23,240 - root / INFO: Player Killed.
+2023-09-09 11:01:23,269 - root / INFO: Player Killed.
+2023-09-09 11:01:23,292 - root / INFO: Player Killed.
+2023-09-09 11:01:23,316 - root / INFO: Player Killed.
+2023-09-09 11:01:23,342 - root / INFO: Player Killed.
+2023-09-09 11:01:23,367 - root / INFO: Player Killed.
+2023-09-09 11:01:23,391 - root / INFO: Player Killed.
+2023-09-09 11:01:23,417 - root / INFO: Player Killed.
+2023-09-09 11:01:23,440 - root / INFO: Player Killed.
+2023-09-09 11:01:23,465 - root / INFO: Player Killed.
+2023-09-09 11:01:23,487 - root / INFO: Player Killed.
+2023-09-09 11:01:23,513 - root / INFO: Player Killed.
+2023-09-09 11:01:23,540 - root / INFO: Player Killed.
+2023-09-09 11:01:23,679 - root / INFO: Player Killed.
+2023-09-09 11:01:23,701 - root / INFO: Player Killed.
+2023-09-09 11:01:23,726 - root / INFO: Player Killed.
+2023-09-09 11:01:23,749 - root / INFO: Player Killed.
+2023-09-09 11:01:23,774 - root / INFO: Player Killed.
+2023-09-09 11:01:23,798 - root / INFO: Player Killed.
+2023-09-09 11:01:23,823 - root / INFO: Player Killed.
+2023-09-09 11:01:23,927 - root / INFO: Player Killed.
+2023-09-09 11:01:23,975 - root / INFO: Player Killed.
+2023-09-09 11:01:23,999 - root / INFO: Player Killed.
+2023-09-09 11:01:24,021 - root / INFO: Player Killed.
+2023-09-09 11:01:24,047 - root / INFO: Player Killed.
+2023-09-09 11:01:24,071 - root / INFO: Player Killed.
+2023-09-09 11:01:24,158 - root / INFO: Player Killed.
+2023-09-09 11:01:24,211 - root / INFO: Player Killed.
+2023-09-09 11:01:24,233 - root / INFO: Player Killed.
+2023-09-09 11:01:24,258 - root / INFO: Player Killed.
+2023-09-09 11:01:24,346 - root / INFO: Player Killed.
+2023-09-09 11:01:24,400 - root / INFO: Player Killed.
+2023-09-09 11:01:24,427 - root / INFO: Player Killed.
+2023-09-09 11:01:24,450 - root / INFO: Player Killed.
+2023-09-09 11:01:24,473 - root / INFO: Player Killed.
+2023-09-09 11:01:24,559 - root / INFO: Player Killed.
+2023-09-09 11:01:24,617 - root / INFO: Player Killed.
+2023-09-09 11:01:24,641 - root / INFO: Player Killed.
+2023-09-09 11:01:24,665 - root / INFO: Player Killed.
+2023-09-09 11:01:24,687 - root / INFO: Player Killed.
+2023-09-09 11:01:24,760 - root / INFO: Player Killed.
+2023-09-09 11:01:24,832 - root / INFO: Player Killed.
+2023-09-09 11:01:24,857 - root / INFO: Player Killed.
+2023-09-09 11:01:24,882 - root / INFO: Player Killed.
+2023-09-09 11:01:24,908 - root / INFO: Player Killed.
+2023-09-09 11:01:24,960 - root / INFO: Player Killed.
+2023-09-09 11:01:24,983 - root / INFO: Player Killed.
+2023-09-09 11:01:25,010 - root / INFO: Player Killed.
+2023-09-09 11:01:25,036 - root / INFO: Player Killed.
+2023-09-09 11:01:25,061 - root / INFO: Player Killed.
+2023-09-09 11:01:25,085 - root / INFO: Player Killed.
+2023-09-09 11:01:25,163 - root / INFO: Player Killed.
+2023-09-09 11:01:25,225 - root / INFO: Player Killed.
+2023-09-09 11:01:25,251 - root / INFO: Player Killed.
+2023-09-09 11:01:25,275 - root / INFO: Player Killed.
+2023-09-09 11:01:25,304 - root / INFO: Player Killed.
+2023-09-09 11:01:25,356 - root / INFO: Player Killed.
+2023-09-09 11:01:25,383 - root / INFO: Player Killed.
+2023-09-09 11:01:25,406 - root / INFO: Player Killed.
+2023-09-09 11:01:25,436 - root / INFO: Player Killed.
+2023-09-09 11:01:25,457 - root / INFO: Player Killed.
+2023-09-09 11:01:25,484 - root / INFO: Player Killed.
+2023-09-09 11:01:25,550 - root / INFO: Player Killed.
+2023-09-09 11:01:25,627 - root / INFO: Player Killed.
+2023-09-09 11:01:25,647 - root / INFO: Player Killed.
+2023-09-09 11:01:25,670 - root / INFO: Player Killed.
+2023-09-09 11:01:25,692 - root / INFO: Player Killed.
+2023-09-09 11:01:25,747 - root / INFO: Player Killed.
+2023-09-09 11:01:25,771 - root / INFO: Player Killed.
+2023-09-09 11:01:25,801 - root / INFO: Player Killed.
+2023-09-09 11:01:25,822 - root / INFO: Player Killed.
+2023-09-09 11:01:25,845 - root / INFO: Player Killed.
+2023-09-09 11:01:25,922 - root / INFO: Player Killed.
+2023-09-09 11:01:25,987 - root / INFO: Player Killed.
+2023-09-09 11:01:26,008 - root / INFO: Player Killed.
+2023-09-09 11:01:26,030 - root / INFO: Player Killed.
+2023-09-09 11:01:26,091 - root / INFO: Player Killed.
+2023-09-09 11:01:26,176 - root / INFO: Player Killed.
+2023-09-09 11:01:26,195 - root / INFO: Player Killed.
+2023-09-09 11:01:26,220 - root / INFO: Player Killed.
+2023-09-09 11:01:26,265 - root / INFO: Player Killed.
+2023-09-09 11:01:26,287 - root / INFO: Player Killed.
+2023-09-09 11:01:26,311 - root / INFO: Player Killed.
+2023-09-09 11:01:26,334 - root / INFO: Player Killed.
+2023-09-09 11:01:26,418 - root / INFO: Player Killed.
+2023-09-09 11:01:26,487 - root / INFO: Player Killed.
+2023-09-09 11:01:26,510 - root / INFO: Player Killed.
+2023-09-09 11:01:26,532 - root / INFO: Player Killed.
+2023-09-09 11:01:26,569 - root / INFO: Player Killed.
+2023-09-09 11:01:26,596 - root / INFO: Player Killed.
+2023-09-09 11:01:26,622 - root / INFO: Player Killed.
+2023-09-09 11:01:26,643 - root / INFO: Player Killed.
+2023-09-09 11:01:26,666 - root / INFO: Player Killed.
+2023-09-09 11:01:26,703 - root / INFO: Player Killed.
+2023-09-09 11:01:26,725 - root / INFO: Player Killed.
+2023-09-09 11:01:26,747 - root / INFO: Player Killed.
+2023-09-09 11:01:26,768 - root / INFO: Player Killed.
+2023-09-09 11:01:26,789 - root / INFO: Player Killed.
+2023-09-09 11:01:26,844 - root / INFO: Player Killed.
+2023-09-09 11:01:26,868 - root / INFO: Player Killed.
+2023-09-09 11:01:26,890 - root / INFO: Player Killed.
+2023-09-09 11:01:26,912 - root / INFO: Player Killed.
+2023-09-09 11:01:26,986 - root / INFO: Player Killed.
+2023-09-09 11:01:27,062 - root / INFO: Player Killed.
+2023-09-09 11:01:27,082 - root / INFO: Player Killed.
+2023-09-09 11:01:27,121 - root / INFO: Player Killed.
+2023-09-09 11:01:27,144 - root / INFO: Player Killed.
+2023-09-09 11:01:27,165 - root / INFO: Player Killed.
+2023-09-09 11:01:27,191 - root / INFO: Player Killed.
+2023-09-09 11:01:27,246 - root / INFO: Player Killed.
+2023-09-09 11:01:27,267 - root / INFO: Player Killed.
+2023-09-09 11:01:27,289 - root / INFO: Player Killed.
+2023-09-09 11:01:27,311 - root / INFO: Player Killed.
+2023-09-09 11:01:27,332 - root / INFO: Player Killed.
+2023-09-09 11:01:27,375 - root / INFO: Player Killed.
+2023-09-09 11:01:27,395 - root / INFO: Player Killed.
+2023-09-09 11:01:27,420 - root / INFO: Player Killed.
+2023-09-09 11:01:27,441 - root / INFO: Player Killed.
+2023-09-09 11:01:27,464 - root / INFO: Player Killed.
+2023-09-09 11:01:27,500 - root / INFO: Player Killed.
+2023-09-09 11:01:27,521 - root / INFO: Player Killed.
+2023-09-09 11:01:27,544 - root / INFO: Player Killed.
+2023-09-09 11:01:27,567 - root / INFO: Player Killed.
+2023-09-09 11:01:27,586 - root / INFO: Player Killed.
+2023-09-09 11:01:27,634 - root / INFO: Player Killed.
+2023-09-09 11:01:27,657 - root / INFO: Player Killed.
+2023-09-09 11:01:27,678 - root / INFO: Player Killed.
+2023-09-09 11:01:27,703 - root / INFO: Player Killed.
+2023-09-09 11:01:27,730 - root / INFO: Player Killed.
+2023-09-09 11:01:27,753 - root / INFO: Player Killed.
+2023-09-09 11:01:27,776 - root / INFO: Player Killed.
+2023-09-09 11:01:27,797 - root / INFO: Player Killed.
+2023-09-09 11:01:27,818 - root / INFO: Player Killed.
+2023-09-09 11:01:27,841 - root / INFO: Player Killed.
+2023-09-09 11:01:27,862 - root / INFO: Player Killed.
+2023-09-09 11:01:27,886 - root / INFO: Player Killed.
+2023-09-09 11:01:27,909 - root / INFO: Player Killed.
+2023-09-09 11:01:27,929 - root / INFO: Player Killed.
+2023-09-09 11:01:27,952 - root / INFO: Player Killed.
+2023-09-09 11:01:27,974 - root / INFO: Player Killed.
+2023-09-09 11:01:27,996 - root / INFO: Player Killed.
+2023-09-09 11:01:28,023 - root / INFO: Player Killed.
+2023-09-09 11:01:28,046 - root / INFO: Player Killed.
+2023-09-09 11:01:28,070 - root / INFO: Player Killed.
+2023-09-09 11:01:28,107 - root / INFO: Player Killed.
+2023-09-09 11:01:28,144 - root / INFO: Player Killed.
+2023-09-09 11:01:28,189 - root / INFO: Player Killed.
+2023-09-09 11:01:28,216 - root / INFO: Player Killed.
+2023-09-09 11:01:28,261 - root / INFO: Player Killed.
+2023-09-09 11:01:28,287 - root / INFO: Player Killed.
+2023-09-09 11:01:28,309 - root / INFO: Player Killed.
+2023-09-09 11:01:28,329 - root / INFO: Player Killed.
+2023-09-09 11:01:28,353 - root / INFO: Player Killed.
+2023-09-09 11:01:28,375 - root / INFO: Player Killed.
+2023-09-09 11:01:28,396 - root / INFO: Player Killed.
+2023-09-09 11:01:28,418 - root / INFO: Player Killed.
+2023-09-09 11:01:28,439 - root / INFO: Player Killed.
+2023-09-09 11:01:28,460 - root / INFO: Player Killed.
+2023-09-09 11:01:28,483 - root / INFO: Player Killed.
+2023-09-09 11:01:28,506 - root / INFO: Player Killed.
+2023-09-09 11:01:28,527 - root / INFO: Player Killed.
+2023-09-09 11:01:28,547 - root / INFO: Player Killed.
+2023-09-09 11:01:28,568 - root / INFO: Player Killed.
+2023-09-09 11:01:28,588 - root / INFO: Player Killed.
+2023-09-09 11:01:28,609 - root / INFO: Player Killed.
+2023-09-09 11:01:28,632 - root / INFO: Player Killed.
+2023-09-09 11:01:28,656 - root / INFO: Player Killed.
+2023-09-09 11:01:28,677 - root / INFO: Player Killed.
+2023-09-09 11:01:28,700 - root / INFO: Player Killed.
+2023-09-09 11:01:28,723 - root / INFO: Player Killed.
+2023-09-09 11:01:28,745 - root / INFO: Player Killed.
+2023-09-09 11:01:28,768 - root / INFO: Player Killed.
+2023-09-09 11:01:28,795 - root / INFO: Player Killed.
+2023-09-09 11:01:28,820 - root / INFO: Player Killed.
+2023-09-09 11:01:28,845 - root / INFO: Player Killed.
+2023-09-09 11:01:28,867 - root / INFO: Player Killed.
+2023-09-09 11:01:28,891 - root / INFO: Player Killed.
+2023-09-09 11:01:28,911 - root / INFO: Player Killed.
+2023-09-09 11:01:28,937 - root / INFO: Player Killed.
+2023-09-09 11:01:28,959 - root / INFO: Player Killed.
+2023-09-09 11:01:28,981 - root / INFO: Player Killed.
+2023-09-09 11:01:29,004 - root / INFO: Player Killed.
+2023-09-09 11:01:29,038 - root / INFO: Player Killed.
+2023-09-09 11:01:29,061 - root / INFO: Player Killed.
+2023-09-09 11:01:29,090 - root / INFO: Player Killed.
+2023-09-09 11:01:29,111 - root / INFO: Player Killed.
+2023-09-09 11:01:29,133 - root / INFO: Player Killed.
+2023-09-09 11:01:29,158 - root / INFO: Player Killed.
+2023-09-09 11:01:29,185 - root / INFO: Player Killed.
+2023-09-09 11:01:29,206 - root / INFO: Player Killed.
+2023-09-09 11:01:29,229 - root / INFO: Player Killed.
+2023-09-09 11:01:29,253 - root / INFO: Player Killed.
+2023-09-09 11:01:29,279 - root / INFO: Player Killed.
+2023-09-09 11:01:29,301 - root / INFO: Player Killed.
+2023-09-09 11:01:29,327 - root / INFO: Player Killed.
+2023-09-09 11:01:29,351 - root / INFO: Player Killed.
+2023-09-09 11:01:29,376 - root / INFO: Player Killed.
+2023-09-09 11:01:29,397 - root / INFO: Player Killed.
+2023-09-09 11:01:29,421 - root / INFO: Player Killed.
+2023-09-09 11:01:29,448 - root / INFO: Player Killed.
+2023-09-09 11:01:29,469 - root / INFO: Player Killed.
+2023-09-09 11:01:29,491 - root / INFO: Player Killed.
+2023-09-09 11:01:29,516 - root / INFO: Player Killed.
+2023-09-09 11:01:29,541 - root / INFO: Player Killed.
+2023-09-09 11:01:29,563 - root / INFO: Player Killed.
+2023-09-09 11:01:29,669 - root / INFO: Saving..
+2023-09-09 11:01:29,701 - root / INFO: [92m Saved.[0m
+2023-09-09 11:03:48,973 - root / INFO:  Loading..
+2023-09-09 11:03:48,978 - root / INFO:  Reading save file..
+2023-09-09 11:03:48,983 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:03:48,986 - root / INFO:  Checking save file requirements..
+2023-09-09 11:03:48,989 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 11:03:48,993 - root / INFO:  Initallizing..
+2023-09-09 11:03:49,381 - root / INFO: [92mInitallized.[0m
+2023-09-09 11:03:49,387 - root / INFO:  Reading Images..
+2023-09-09 11:03:49,511 - root / INFO: [92mLoaded.[0m
+2023-09-09 11:03:49,514 - root / INFO:  Loading Sounds..
+2023-09-09 11:03:49,613 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:03:49,638 - root / INFO:  Resetting Font/Title..
+2023-09-09 11:03:49,642 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:03:49,646 - root / INFO:  Resetting text object..
+2023-09-09 11:03:49,707 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 11:03:49,711 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 11:03:49,713 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 11:03:49,715 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 11:03:49,718 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 11:03:49,720 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 11:03:49,721 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 11:03:49,722 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 11:03:49,724 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 11:03:49,727 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 11:03:49,729 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 11:03:49,731 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 11:03:49,733 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 11:03:49,735 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 11:03:49,737 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 11:03:49,739 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 11:03:49,742 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 11:03:49,746 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 11:03:49,751 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 11:03:49,759 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 11:03:49,765 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 11:03:49,770 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 11:03:49,776 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 11:03:49,783 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 11:03:49,788 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 11:03:49,795 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 11:03:49,800 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 11:03:49,808 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 11:03:49,814 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 11:03:49,818 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 11:03:58,006 - root / INFO:  Starting..
+2023-09-09 11:03:58,833 - root / DEBUG: Killed Enemy: 1, 29
+2023-09-09 11:04:01,310 - root / INFO: Player Killed.
+2023-09-09 11:04:01,351 - root / INFO: Player Killed.
+2023-09-09 11:04:01,387 - root / INFO: Player Killed.
+2023-09-09 11:04:01,426 - root / INFO: Player Killed.
+2023-09-09 11:04:01,464 - root / INFO: Player Killed.
+2023-09-09 11:04:01,502 - root / INFO: Player Killed.
+2023-09-09 11:04:01,536 - root / INFO: Player Killed.
+2023-09-09 11:04:01,569 - root / INFO: Player Killed.
+2023-09-09 11:04:01,602 - root / INFO: Player Killed.
+2023-09-09 11:04:01,630 - root / INFO: Player Killed.
+2023-09-09 11:04:01,658 - root / INFO: Player Killed.
+2023-09-09 11:04:01,689 - root / INFO: Player Killed.
+2023-09-09 11:04:01,720 - root / INFO: Player Killed.
+2023-09-09 11:04:01,749 - root / INFO: Player Killed.
+2023-09-09 11:04:01,776 - root / INFO: Player Killed.
+2023-09-09 11:04:01,804 - root / INFO: Player Killed.
+2023-09-09 11:04:01,832 - root / INFO: Player Killed.
+2023-09-09 11:04:01,858 - root / INFO: Player Killed.
+2023-09-09 11:04:01,887 - root / INFO: Player Killed.
+2023-09-09 11:04:01,913 - root / INFO: Player Killed.
+2023-09-09 11:04:01,935 - root / INFO: Player Killed.
+2023-09-09 11:04:01,961 - root / INFO: Player Killed.
+2023-09-09 11:04:01,984 - root / INFO: Player Killed.
+2023-09-09 11:04:03,112 - root / INFO: Player Killed.
+2023-09-09 11:04:03,138 - root / INFO: Player Killed.
+2023-09-09 11:04:03,161 - root / INFO: Player Killed.
+2023-09-09 11:04:03,183 - root / INFO: Player Killed.
+2023-09-09 11:04:03,204 - root / INFO: Player Killed.
+2023-09-09 11:04:03,224 - root / INFO: Player Killed.
+2023-09-09 11:04:03,246 - root / INFO: Player Killed.
+2023-09-09 11:04:03,266 - root / INFO: Player Killed.
+2023-09-09 11:04:03,288 - root / INFO: Player Killed.
+2023-09-09 11:04:03,313 - root / INFO: Player Killed.
+2023-09-09 11:04:03,340 - root / INFO: Player Killed.
+2023-09-09 11:04:03,366 - root / INFO: Player Killed.
+2023-09-09 11:04:03,391 - root / INFO: Player Killed.
+2023-09-09 11:04:03,415 - root / INFO: Player Killed.
+2023-09-09 11:04:03,439 - root / INFO: Player Killed.
+2023-09-09 11:04:03,463 - root / INFO: Player Killed.
+2023-09-09 11:04:03,485 - root / INFO: Player Killed.
+2023-09-09 11:04:03,795 - root / INFO: Player Killed.
+2023-09-09 11:04:03,818 - root / INFO: Player Killed.
+2023-09-09 11:04:03,841 - root / INFO: Player Killed.
+2023-09-09 11:04:03,861 - root / INFO: Player Killed.
+2023-09-09 11:04:03,886 - root / INFO: Player Killed.
+2023-09-09 11:04:03,906 - root / INFO: Player Killed.
+2023-09-09 11:04:03,930 - root / INFO: Player Killed.
+2023-09-09 11:04:03,952 - root / INFO: Player Killed.
+2023-09-09 11:04:04,019 - root / INFO: Player Killed.
+2023-09-09 11:04:04,100 - root / INFO: Player Killed.
+2023-09-09 11:04:04,122 - root / INFO: Player Killed.
+2023-09-09 11:04:04,141 - root / INFO: Player Killed.
+2023-09-09 11:04:04,203 - root / INFO: Player Killed.
+2023-09-09 11:04:04,229 - root / INFO: Player Killed.
+2023-09-09 11:04:04,249 - root / INFO: Player Killed.
+2023-09-09 11:04:04,268 - root / INFO: Player Killed.
+2023-09-09 11:04:04,291 - root / INFO: Player Killed.
+2023-09-09 11:04:04,320 - root / INFO: Player Killed.
+2023-09-09 11:04:04,373 - root / INFO: Player Killed.
+2023-09-09 11:04:04,393 - root / INFO: Player Killed.
+2023-09-09 11:04:04,413 - root / INFO: Player Killed.
+2023-09-09 11:04:04,433 - root / INFO: Player Killed.
+2023-09-09 11:04:04,458 - root / INFO: Player Killed.
+2023-09-09 11:04:04,480 - root / INFO: Player Killed.
+2023-09-09 11:04:04,522 - root / INFO: Player Killed.
+2023-09-09 11:04:04,542 - root / INFO: Player Killed.
+2023-09-09 11:04:04,565 - root / INFO: Player Killed.
+2023-09-09 11:04:04,589 - root / INFO: Player Killed.
+2023-09-09 11:04:04,611 - root / INFO: Player Killed.
+2023-09-09 11:04:04,631 - root / INFO: Player Killed.
+2023-09-09 11:04:04,678 - root / INFO: Player Killed.
+2023-09-09 11:04:04,699 - root / INFO: Player Killed.
+2023-09-09 11:04:04,718 - root / INFO: Player Killed.
+2023-09-09 11:04:04,739 - root / INFO: Player Killed.
+2023-09-09 11:04:04,761 - root / INFO: Player Killed.
+2023-09-09 11:04:04,783 - root / INFO: Player Killed.
+2023-09-09 11:04:04,829 - root / INFO: Player Killed.
+2023-09-09 11:04:04,853 - root / INFO: Player Killed.
+2023-09-09 11:04:04,880 - root / INFO: Player Killed.
+2023-09-09 11:04:04,904 - root / INFO: Player Killed.
+2023-09-09 11:04:04,926 - root / INFO: Player Killed.
+2023-09-09 11:04:04,979 - root / INFO: Player Killed.
+2023-09-09 11:04:05,001 - root / INFO: Player Killed.
+2023-09-09 11:04:05,022 - root / INFO: Player Killed.
+2023-09-09 11:04:05,040 - root / INFO: Player Killed.
+2023-09-09 11:04:05,062 - root / INFO: Player Killed.
+2023-09-09 11:04:05,083 - root / INFO: Player Killed.
+2023-09-09 11:04:05,141 - root / INFO: Player Killed.
+2023-09-09 11:04:05,224 - root / INFO: Player Killed.
+2023-09-09 11:04:05,245 - root / INFO: Player Killed.
+2023-09-09 11:04:05,264 - root / INFO: Player Killed.
+2023-09-09 11:04:05,305 - root / INFO: Player Killed.
+2023-09-09 11:04:05,325 - root / INFO: Player Killed.
+2023-09-09 11:04:05,348 - root / INFO: Player Killed.
+2023-09-09 11:04:05,370 - root / INFO: Player Killed.
+2023-09-09 11:04:05,396 - root / INFO: Player Killed.
+2023-09-09 11:04:05,417 - root / INFO: Player Killed.
+2023-09-09 11:04:05,452 - root / INFO: Player Killed.
+2023-09-09 11:04:05,474 - root / INFO: Player Killed.
+2023-09-09 11:04:05,496 - root / INFO: Player Killed.
+2023-09-09 11:04:05,516 - root / INFO: Player Killed.
+2023-09-09 11:04:05,537 - root / INFO: Player Killed.
+2023-09-09 11:04:05,558 - root / INFO: Player Killed.
+2023-09-09 11:04:05,579 - root / INFO: Player Killed.
+2023-09-09 11:04:05,949 - root / INFO: Player Killed.
+2023-09-09 11:04:05,979 - root / INFO: Player Killed.
+2023-09-09 11:04:06,000 - root / INFO: Player Killed.
+2023-09-09 11:04:06,024 - root / INFO: Player Killed.
+2023-09-09 11:04:06,045 - root / INFO: Player Killed.
+2023-09-09 11:04:06,066 - root / INFO: Player Killed.
+2023-09-09 11:04:06,086 - root / INFO: Player Killed.
+2023-09-09 11:04:06,109 - root / INFO: Player Killed.
+2023-09-09 11:04:06,212 - root / INFO: Player Killed.
+2023-09-09 11:04:06,257 - root / INFO: Player Killed.
+2023-09-09 11:04:06,276 - root / INFO: Player Killed.
+2023-09-09 11:04:06,295 - root / INFO: Player Killed.
+2023-09-09 11:04:06,314 - root / INFO: Player Killed.
+2023-09-09 11:04:06,335 - root / INFO: Player Killed.
+2023-09-09 11:04:06,356 - root / INFO: Player Killed.
+2023-09-09 11:04:06,482 - root / INFO: Player Killed.
+2023-09-09 11:04:06,505 - root / INFO: Player Killed.
+2023-09-09 11:04:06,526 - root / INFO: Player Killed.
+2023-09-09 11:04:06,546 - root / INFO: Player Killed.
+2023-09-09 11:04:06,567 - root / INFO: Player Killed.
+2023-09-09 11:04:06,590 - root / INFO: Player Killed.
+2023-09-09 11:04:06,614 - root / INFO: Player Killed.
+2023-09-09 11:04:06,636 - root / INFO: Player Killed.
+2023-09-09 11:04:06,773 - root / INFO: Player Killed.
+2023-09-09 11:04:06,792 - root / INFO: Player Killed.
+2023-09-09 11:04:06,811 - root / INFO: Player Killed.
+2023-09-09 11:04:06,833 - root / INFO: Player Killed.
+2023-09-09 11:04:06,854 - root / INFO: Player Killed.
+2023-09-09 11:04:06,871 - root / INFO: Player Killed.
+2023-09-09 11:04:06,892 - root / INFO: Player Killed.
+2023-09-09 11:04:06,913 - root / INFO: Player Killed.
+2023-09-09 11:04:06,936 - root / INFO: Player Killed.
+2023-09-09 11:04:06,954 - root / INFO: Player Killed.
+2023-09-09 11:04:06,975 - root / INFO: Player Killed.
+2023-09-09 11:04:06,993 - root / INFO: Player Killed.
+2023-09-09 11:04:07,015 - root / INFO: Player Killed.
+2023-09-09 11:04:08,318 - root / INFO: Saving..
+2023-09-09 11:04:08,324 - root / INFO: [92m Saved.[0m
+2023-09-09 11:04:25,957 - root / INFO:  Loading..
+2023-09-09 11:04:25,963 - root / INFO:  Reading save file..
+2023-09-09 11:04:25,971 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:04:25,983 - root / INFO:  Checking save file requirements..
+2023-09-09 11:04:25,992 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 11:04:26,000 - root / INFO:  Initallizing..
+2023-09-09 11:04:26,239 - root / INFO: [92mInitallized.[0m
+2023-09-09 11:04:26,264 - root / INFO:  Reading Images..
+2023-09-09 11:04:26,410 - root / INFO: [92mLoaded.[0m
+2023-09-09 11:04:26,423 - root / INFO:  Loading Sounds..
+2023-09-09 11:04:26,502 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:04:26,562 - root / INFO:  Resetting Font/Title..
+2023-09-09 11:04:26,573 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:04:26,582 - root / INFO:  Resetting text object..
+2023-09-09 11:04:26,638 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 11:04:26,646 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 11:04:26,656 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 11:04:26,664 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 11:04:26,671 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 11:04:26,680 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 11:04:26,688 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 11:04:26,695 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 11:04:26,702 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 11:04:26,709 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 11:04:26,716 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 11:04:26,723 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 11:04:26,733 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 11:04:26,740 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 11:04:26,749 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 11:04:26,754 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 11:04:26,761 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 11:04:26,768 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 11:04:26,773 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 11:04:26,780 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 11:04:26,786 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 11:04:26,794 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 11:04:26,799 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 11:04:26,806 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 11:04:26,814 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 11:04:26,821 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 11:04:26,827 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 11:04:26,833 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 11:04:26,840 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 11:04:26,846 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 11:04:29,314 - root / INFO:  Starting..
+2023-09-09 11:04:33,061 - root / INFO: Player Killed.
+2023-09-09 11:04:33,118 - root / INFO: Player Killed.
+2023-09-09 11:04:33,155 - root / INFO: Player Killed.
+2023-09-09 11:04:33,191 - root / INFO: Player Killed.
+2023-09-09 11:04:33,229 - root / INFO: Player Killed.
+2023-09-09 11:04:33,253 - root / INFO: Player Killed.
+2023-09-09 11:04:33,275 - root / INFO: Player Killed.
+2023-09-09 11:04:33,297 - root / INFO: Player Killed.
+2023-09-09 11:04:33,323 - root / INFO: Player Killed.
+2023-09-09 11:04:33,348 - root / INFO: Player Killed.
+2023-09-09 11:04:33,370 - root / INFO: Player Killed.
+2023-09-09 11:04:33,392 - root / INFO: Player Killed.
+2023-09-09 11:04:33,414 - root / INFO: Player Killed.
+2023-09-09 11:04:33,434 - root / INFO: Player Killed.
+2023-09-09 11:04:33,455 - root / INFO: Player Killed.
+2023-09-09 11:04:33,478 - root / INFO: Player Killed.
+2023-09-09 11:04:33,501 - root / INFO: Player Killed.
+2023-09-09 11:04:33,528 - root / INFO: Player Killed.
+2023-09-09 11:04:33,550 - root / INFO: Player Killed.
+2023-09-09 11:04:33,575 - root / INFO: Player Killed.
+2023-09-09 11:04:33,597 - root / INFO: Player Killed.
+2023-09-09 11:04:33,621 - root / INFO: Player Killed.
+2023-09-09 11:04:33,644 - root / INFO: Player Killed.
+2023-09-09 11:04:33,669 - root / INFO: Player Killed.
+2023-09-09 11:04:33,690 - root / INFO: Player Killed.
+2023-09-09 11:04:33,713 - root / INFO: Player Killed.
+2023-09-09 11:04:33,736 - root / INFO: Player Killed.
+2023-09-09 11:04:33,755 - root / INFO: Player Killed.
+2023-09-09 11:04:33,777 - root / INFO: Player Killed.
+2023-09-09 11:04:33,802 - root / INFO: Player Killed.
+2023-09-09 11:04:33,838 - root / INFO: Player Killed.
+2023-09-09 11:04:33,872 - root / INFO: Player Killed.
+2023-09-09 11:04:33,906 - root / INFO: Player Killed.
+2023-09-09 11:04:33,936 - root / INFO: Player Killed.
+2023-09-09 11:04:33,976 - root / INFO: Player Killed.
+2023-09-09 11:04:34,003 - root / INFO: Player Killed.
+2023-09-09 11:04:34,026 - root / INFO: Player Killed.
+2023-09-09 11:04:34,049 - root / INFO: Player Killed.
+2023-09-09 11:04:34,072 - root / INFO: Player Killed.
+2023-09-09 11:04:34,094 - root / INFO: Player Killed.
+2023-09-09 11:04:34,116 - root / INFO: Player Killed.
+2023-09-09 11:04:34,139 - root / INFO: Player Killed.
+2023-09-09 11:04:34,162 - root / INFO: Player Killed.
+2023-09-09 11:04:34,186 - root / INFO: Player Killed.
+2023-09-09 11:04:34,210 - root / INFO: Player Killed.
+2023-09-09 11:04:34,234 - root / INFO: Player Killed.
+2023-09-09 11:04:34,257 - root / INFO: Player Killed.
+2023-09-09 11:04:34,281 - root / INFO: Player Killed.
+2023-09-09 11:04:34,303 - root / INFO: Player Killed.
+2023-09-09 11:04:34,329 - root / INFO: Player Killed.
+2023-09-09 11:04:34,354 - root / INFO: Player Killed.
+2023-09-09 11:04:34,379 - root / INFO: Player Killed.
+2023-09-09 11:04:34,401 - root / INFO: Player Killed.
+2023-09-09 11:04:34,423 - root / INFO: Player Killed.
+2023-09-09 11:04:34,445 - root / INFO: Player Killed.
+2023-09-09 11:04:34,469 - root / INFO: Player Killed.
+2023-09-09 11:04:34,491 - root / INFO: Player Killed.
+2023-09-09 11:04:34,516 - root / INFO: Player Killed.
+2023-09-09 11:04:34,538 - root / INFO: Player Killed.
+2023-09-09 11:04:34,561 - root / INFO: Player Killed.
+2023-09-09 11:04:34,584 - root / INFO: Player Killed.
+2023-09-09 11:04:34,607 - root / INFO: Player Killed.
+2023-09-09 11:04:34,625 - root / INFO: Player Killed.
+2023-09-09 11:04:34,650 - root / INFO: Player Killed.
+2023-09-09 11:04:34,672 - root / INFO: Player Killed.
+2023-09-09 11:04:34,696 - root / INFO: Player Killed.
+2023-09-09 11:04:34,717 - root / INFO: Player Killed.
+2023-09-09 11:04:34,737 - root / INFO: Player Killed.
+2023-09-09 11:04:34,759 - root / INFO: Player Killed.
+2023-09-09 11:04:34,783 - root / INFO: Player Killed.
+2023-09-09 11:04:34,808 - root / INFO: Player Killed.
+2023-09-09 11:04:34,829 - root / INFO: Player Killed.
+2023-09-09 11:04:34,852 - root / INFO: Player Killed.
+2023-09-09 11:04:34,874 - root / INFO: Player Killed.
+2023-09-09 11:04:34,894 - root / INFO: Player Killed.
+2023-09-09 11:04:34,918 - root / INFO: Player Killed.
+2023-09-09 11:04:34,937 - root / INFO: Player Killed.
+2023-09-09 11:04:34,958 - root / INFO: Player Killed.
+2023-09-09 11:04:34,978 - root / INFO: Player Killed.
+2023-09-09 11:04:35,002 - root / INFO: Player Killed.
+2023-09-09 11:04:35,024 - root / INFO: Player Killed.
+2023-09-09 11:04:35,047 - root / INFO: Player Killed.
+2023-09-09 11:04:35,069 - root / INFO: Player Killed.
+2023-09-09 11:04:35,090 - root / INFO: Player Killed.
+2023-09-09 11:04:35,114 - root / INFO: Player Killed.
+2023-09-09 11:04:35,137 - root / INFO: Player Killed.
+2023-09-09 11:04:35,157 - root / INFO: Player Killed.
+2023-09-09 11:04:35,180 - root / INFO: Player Killed.
+2023-09-09 11:04:35,200 - root / INFO: Player Killed.
+2023-09-09 11:04:35,222 - root / INFO: Player Killed.
+2023-09-09 11:04:35,243 - root / INFO: Player Killed.
+2023-09-09 11:04:35,265 - root / INFO: Player Killed.
+2023-09-09 11:04:35,287 - root / INFO: Player Killed.
+2023-09-09 11:04:35,309 - root / INFO: Player Killed.
+2023-09-09 11:04:35,331 - root / INFO: Player Killed.
+2023-09-09 11:04:35,352 - root / INFO: Player Killed.
+2023-09-09 11:04:35,373 - root / INFO: Player Killed.
+2023-09-09 11:04:35,396 - root / INFO: Player Killed.
+2023-09-09 11:04:35,418 - root / INFO: Player Killed.
+2023-09-09 11:04:35,441 - root / INFO: Player Killed.
+2023-09-09 11:04:35,465 - root / INFO: Player Killed.
+2023-09-09 11:04:35,487 - root / INFO: Player Killed.
+2023-09-09 11:04:35,509 - root / INFO: Player Killed.
+2023-09-09 11:04:35,532 - root / INFO: Player Killed.
+2023-09-09 11:04:35,556 - root / INFO: Player Killed.
+2023-09-09 11:04:35,581 - root / INFO: Player Killed.
+2023-09-09 11:04:35,604 - root / INFO: Player Killed.
+2023-09-09 11:04:35,625 - root / INFO: Player Killed.
+2023-09-09 11:04:35,645 - root / INFO: Player Killed.
+2023-09-09 11:04:35,666 - root / INFO: Player Killed.
+2023-09-09 11:04:35,687 - root / INFO: Player Killed.
+2023-09-09 11:04:35,706 - root / INFO: Player Killed.
+2023-09-09 11:04:35,727 - root / INFO: Player Killed.
+2023-09-09 11:04:35,746 - root / INFO: Player Killed.
+2023-09-09 11:04:35,772 - root / INFO: Player Killed.
+2023-09-09 11:04:35,794 - root / INFO: Player Killed.
+2023-09-09 11:04:35,821 - root / INFO: Player Killed.
+2023-09-09 11:04:35,843 - root / INFO: Player Killed.
+2023-09-09 11:04:35,867 - root / INFO: Player Killed.
+2023-09-09 11:04:35,892 - root / INFO: Player Killed.
+2023-09-09 11:04:35,916 - root / INFO: Player Killed.
+2023-09-09 11:04:35,941 - root / INFO: Player Killed.
+2023-09-09 11:04:35,963 - root / INFO: Player Killed.
+2023-09-09 11:04:35,982 - root / INFO: Player Killed.
+2023-09-09 11:04:36,007 - root / INFO: Player Killed.
+2023-09-09 11:04:36,027 - root / INFO: Player Killed.
+2023-09-09 11:04:36,052 - root / INFO: Player Killed.
+2023-09-09 11:04:36,073 - root / INFO: Player Killed.
+2023-09-09 11:04:36,096 - root / INFO: Player Killed.
+2023-09-09 11:04:36,119 - root / INFO: Player Killed.
+2023-09-09 11:04:36,146 - root / INFO: Player Killed.
+2023-09-09 11:04:36,168 - root / INFO: Player Killed.
+2023-09-09 11:04:36,190 - root / INFO: Player Killed.
+2023-09-09 11:04:36,209 - root / INFO: Player Killed.
+2023-09-09 11:04:36,229 - root / INFO: Player Killed.
+2023-09-09 11:04:36,251 - root / INFO: Player Killed.
+2023-09-09 11:04:36,272 - root / INFO: Player Killed.
+2023-09-09 11:04:36,293 - root / INFO: Player Killed.
+2023-09-09 11:04:36,316 - root / INFO: Player Killed.
+2023-09-09 11:04:36,336 - root / INFO: Player Killed.
+2023-09-09 11:04:36,357 - root / INFO: Player Killed.
+2023-09-09 11:04:36,381 - root / INFO: Player Killed.
+2023-09-09 11:04:36,402 - root / INFO: Player Killed.
+2023-09-09 11:04:36,423 - root / INFO: Player Killed.
+2023-09-09 11:04:36,445 - root / INFO: Player Killed.
+2023-09-09 11:04:36,466 - root / INFO: Player Killed.
+2023-09-09 11:04:36,486 - root / INFO: Player Killed.
+2023-09-09 11:04:36,506 - root / INFO: Player Killed.
+2023-09-09 11:04:36,528 - root / INFO: Player Killed.
+2023-09-09 11:04:36,547 - root / INFO: Player Killed.
+2023-09-09 11:04:36,567 - root / INFO: Player Killed.
+2023-09-09 11:04:36,585 - root / INFO: Player Killed.
+2023-09-09 11:04:36,606 - root / INFO: Player Killed.
+2023-09-09 11:04:36,627 - root / INFO: Player Killed.
+2023-09-09 11:04:36,647 - root / INFO: Player Killed.
+2023-09-09 11:04:36,668 - root / INFO: Player Killed.
+2023-09-09 11:04:36,689 - root / INFO: Player Killed.
+2023-09-09 11:04:36,709 - root / INFO: Player Killed.
+2023-09-09 11:04:36,729 - root / INFO: Player Killed.
+2023-09-09 11:04:36,750 - root / INFO: Player Killed.
+2023-09-09 11:04:36,777 - root / INFO: Player Killed.
+2023-09-09 11:04:38,649 - root / INFO: Player Killed.
+2023-09-09 11:04:38,671 - root / INFO: Player Killed.
+2023-09-09 11:04:38,693 - root / INFO: Player Killed.
+2023-09-09 11:04:38,713 - root / INFO: Player Killed.
+2023-09-09 11:04:38,735 - root / INFO: Player Killed.
+2023-09-09 11:04:38,757 - root / INFO: Player Killed.
+2023-09-09 11:04:38,778 - root / INFO: Player Killed.
+2023-09-09 11:04:38,798 - root / INFO: Player Killed.
+2023-09-09 11:04:38,822 - root / INFO: Player Killed.
+2023-09-09 11:04:38,846 - root / INFO: Player Killed.
+2023-09-09 11:04:38,868 - root / INFO: Player Killed.
+2023-09-09 11:04:38,887 - root / INFO: Player Killed.
+2023-09-09 11:04:38,909 - root / INFO: Player Killed.
+2023-09-09 11:04:38,932 - root / INFO: Player Killed.
+2023-09-09 11:04:38,954 - root / INFO: Player Killed.
+2023-09-09 11:04:38,975 - root / INFO: Player Killed.
+2023-09-09 11:04:38,997 - root / INFO: Player Killed.
+2023-09-09 11:04:39,020 - root / INFO: Player Killed.
+2023-09-09 11:04:39,046 - root / INFO: Player Killed.
+2023-09-09 11:04:39,069 - root / INFO: Player Killed.
+2023-09-09 11:04:39,090 - root / INFO: Player Killed.
+2023-09-09 11:04:39,110 - root / INFO: Player Killed.
+2023-09-09 11:04:39,132 - root / INFO: Player Killed.
+2023-09-09 11:04:39,151 - root / INFO: Player Killed.
+2023-09-09 11:04:39,173 - root / INFO: Player Killed.
+2023-09-09 11:04:39,193 - root / INFO: Player Killed.
+2023-09-09 11:04:39,215 - root / INFO: Player Killed.
+2023-09-09 11:04:39,237 - root / INFO: Player Killed.
+2023-09-09 11:04:39,261 - root / INFO: Player Killed.
+2023-09-09 11:04:39,282 - root / INFO: Player Killed.
+2023-09-09 11:04:39,302 - root / INFO: Player Killed.
+2023-09-09 11:04:39,323 - root / INFO: Player Killed.
+2023-09-09 11:04:39,346 - root / INFO: Player Killed.
+2023-09-09 11:04:39,366 - root / INFO: Player Killed.
+2023-09-09 11:04:39,388 - root / INFO: Player Killed.
+2023-09-09 11:04:39,410 - root / INFO: Player Killed.
+2023-09-09 11:04:39,430 - root / INFO: Player Killed.
+2023-09-09 11:04:39,451 - root / INFO: Player Killed.
+2023-09-09 11:04:39,472 - root / INFO: Player Killed.
+2023-09-09 11:04:39,493 - root / INFO: Player Killed.
+2023-09-09 11:04:39,513 - root / INFO: Player Killed.
+2023-09-09 11:04:39,536 - root / INFO: Player Killed.
+2023-09-09 11:04:39,557 - root / INFO: Player Killed.
+2023-09-09 11:04:39,579 - root / INFO: Player Killed.
+2023-09-09 11:04:39,946 - root / INFO: Player Killed.
+2023-09-09 11:04:39,974 - root / INFO: Player Killed.
+2023-09-09 11:04:39,994 - root / INFO: Player Killed.
+2023-09-09 11:04:40,014 - root / INFO: Player Killed.
+2023-09-09 11:04:40,039 - root / INFO: Player Killed.
+2023-09-09 11:04:40,063 - root / INFO: Player Killed.
+2023-09-09 11:04:40,086 - root / INFO: Player Killed.
+2023-09-09 11:04:40,107 - root / INFO: Player Killed.
+2023-09-09 11:04:40,129 - root / INFO: Player Killed.
+2023-09-09 11:04:40,151 - root / INFO: Player Killed.
+2023-09-09 11:04:40,173 - root / INFO: Player Killed.
+2023-09-09 11:04:40,196 - root / INFO: Player Killed.
+2023-09-09 11:04:40,219 - root / INFO: Player Killed.
+2023-09-09 11:04:40,243 - root / INFO: Player Killed.
+2023-09-09 11:04:40,264 - root / INFO: Player Killed.
+2023-09-09 11:04:40,287 - root / INFO: Player Killed.
+2023-09-09 11:04:40,309 - root / INFO: Player Killed.
+2023-09-09 11:04:40,331 - root / INFO: Player Killed.
+2023-09-09 11:04:41,962 - root / INFO: Saving..
+2023-09-09 11:04:41,969 - root / INFO: [92m Saved.[0m
+2023-09-09 11:05:20,851 - root / INFO:  Loading..
+2023-09-09 11:05:20,853 - root / INFO:  Reading save file..
+2023-09-09 11:05:20,856 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:05:20,859 - root / INFO:  Checking save file requirements..
+2023-09-09 11:05:20,861 - root / INFO: [96m playerSaveData is vaild.[0m
+2023-09-09 11:05:20,864 - root / INFO:  Initallizing..
+2023-09-09 11:05:21,298 - root / INFO: [92mInitallized.[0m
+2023-09-09 11:05:21,305 - root / INFO:  Reading Images..
+2023-09-09 11:05:21,435 - root / INFO: [92mLoaded.[0m
+2023-09-09 11:05:21,437 - root / INFO:  Loading Sounds..
+2023-09-09 11:05:21,520 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:05:21,568 - root / INFO:  Resetting Font/Title..
+2023-09-09 11:05:21,572 - root / INFO: [92m Loaded.[0m
+2023-09-09 11:05:21,577 - root / INFO:  Resetting text object..
+2023-09-09 11:05:21,625 - root / DEBUG: Spawned Enemy: 0
+2023-09-09 11:05:21,628 - root / DEBUG: Spawned Enemy: 1
+2023-09-09 11:05:21,631 - root / DEBUG: Spawned Enemy: 2
+2023-09-09 11:05:21,634 - root / DEBUG: Spawned Enemy: 3
+2023-09-09 11:05:21,636 - root / DEBUG: Spawned Enemy: 4
+2023-09-09 11:05:21,639 - root / DEBUG: Spawned Enemy: 5
+2023-09-09 11:05:21,641 - root / DEBUG: Spawned Enemy: 6
+2023-09-09 11:05:21,642 - root / DEBUG: Spawned Enemy: 7
+2023-09-09 11:05:21,645 - root / DEBUG: Spawned Enemy: 8
+2023-09-09 11:05:21,648 - root / DEBUG: Spawned Enemy: 9
+2023-09-09 11:05:21,651 - root / DEBUG: Spawned Enemy: 10
+2023-09-09 11:05:21,653 - root / DEBUG: Spawned Enemy: 11
+2023-09-09 11:05:21,655 - root / DEBUG: Spawned Enemy: 12
+2023-09-09 11:05:21,658 - root / DEBUG: Spawned Enemy: 13
+2023-09-09 11:05:21,662 - root / DEBUG: Spawned Enemy: 14
+2023-09-09 11:05:21,666 - root / DEBUG: Spawned Enemy: 15
+2023-09-09 11:05:21,668 - root / DEBUG: Spawned Enemy: 16
+2023-09-09 11:05:21,671 - root / DEBUG: Spawned Enemy: 17
+2023-09-09 11:05:21,677 - root / DEBUG: Spawned Enemy: 18
+2023-09-09 11:05:21,683 - root / DEBUG: Spawned Enemy: 19
+2023-09-09 11:05:21,691 - root / DEBUG: Spawned Enemy: 20
+2023-09-09 11:05:21,698 - root / DEBUG: Spawned Enemy: 21
+2023-09-09 11:05:21,704 - root / DEBUG: Spawned Enemy: 22
+2023-09-09 11:05:21,712 - root / DEBUG: Spawned Enemy: 23
+2023-09-09 11:05:21,717 - root / DEBUG: Spawned Enemy: 24
+2023-09-09 11:05:21,723 - root / DEBUG: Spawned Enemy: 25
+2023-09-09 11:05:21,734 - root / DEBUG: Spawned Enemy: 26
+2023-09-09 11:05:21,741 - root / DEBUG: Spawned Enemy: 27
+2023-09-09 11:05:21,748 - root / DEBUG: Spawned Enemy: 28
+2023-09-09 11:05:21,753 - root / DEBUG: Spawned Enemy: 29
+2023-09-09 11:05:22,836 - root / INFO:  Starting..
+2023-09-09 11:05:25,565 - root / INFO: Player Killed.
+2023-09-09 11:05:25,597 - root / INFO: Player Killed.
+2023-09-09 11:05:25,620 - root / INFO: Player Killed.
+2023-09-09 11:05:25,642 - root / INFO: Player Killed.
+2023-09-09 11:05:25,666 - root / INFO: Player Killed.
+2023-09-09 11:05:25,690 - root / INFO: Player Killed.
+2023-09-09 11:05:25,712 - root / INFO: Player Killed.
+2023-09-09 11:05:25,733 - root / INFO: Player Killed.
+2023-09-09 11:05:25,755 - root / INFO: Player Killed.
+2023-09-09 11:05:25,777 - root / INFO: Player Killed.
+2023-09-09 11:05:25,799 - root / INFO: Player Killed.
+2023-09-09 11:05:25,821 - root / INFO: Player Killed.
+2023-09-09 11:05:25,843 - root / INFO: Player Killed.
+2023-09-09 11:05:25,868 - root / INFO: Player Killed.
+2023-09-09 11:05:25,891 - root / INFO: Player Killed.
+2023-09-09 11:05:25,912 - root / INFO: Player Killed.
+2023-09-09 11:05:25,935 - root / INFO: Player Killed.
+2023-09-09 11:05:25,958 - root / INFO: Player Killed.
+2023-09-09 11:05:25,985 - root / INFO: Player Killed.
+2023-09-09 11:05:26,008 - root / INFO: Player Killed.
+2023-09-09 11:05:26,034 - root / INFO: Player Killed.
+2023-09-09 11:05:26,057 - root / INFO: Player Killed.
+2023-09-09 11:05:26,082 - root / INFO: Player Killed.
+2023-09-09 11:05:26,107 - root / INFO: Player Killed.
+2023-09-09 11:05:26,131 - root / INFO: Player Killed.
+2023-09-09 11:05:26,154 - root / INFO: Player Killed.
+2023-09-09 11:05:26,177 - root / INFO: Player Killed.
+2023-09-09 11:05:26,199 - root / INFO: Player Killed.
+2023-09-09 11:05:26,221 - root / INFO: Player Killed.
+2023-09-09 11:05:26,244 - root / INFO: Player Killed.
